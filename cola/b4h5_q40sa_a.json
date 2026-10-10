@@ -1,0 +1,72 @@
+{
+ "nombre": "b4h5_q40sa_a",
+ "firma": "[ESC·f535]",
+ "nota": "frunce a 5 mm con la regla corregida COMPLETA (bending_damping igual, quality x4): c dt/m igual que a 10 mm",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 1,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 1,
+  "sand_lvl": 0,
+  "sep_h": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0
+ },
+ "nf": 96,
+ "dumps": [
+  1,
+  24,
+  48,
+  72,
+  84,
+  96
+ ],
+ "variantes": [
+  {
+   "tag": "h5a0q40sa",
+   "escena": "b4_canal_marco_h5",
+   "encoge": {
+    "cascara": 0.0
+   },
+   "params": {
+    "quality": 40
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 5,
+    "sin": [
+     "amort_flexion"
+    ]
+   },
+   "nota": "liso 5 mm q40 regla corregida (control: frunce sin exceso?)"
+  },
+  {
+   "tag": "h5a35q40sa",
+   "escena": "b4_canal_marco_h5",
+   "encoge": {
+    "cascara": 0.035
+   },
+   "params": {
+    "quality": 40
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 5,
+    "sin": [
+     "amort_flexion"
+    ]
+   },
+   "nota": "exceso 3,5 % 5 mm q40 regla corregida"
+  }
+ ]
+}
