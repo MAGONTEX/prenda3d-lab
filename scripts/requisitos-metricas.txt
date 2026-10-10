@@ -1,0 +1,3 @@
+# [ESC·f535] dependencias de lab/metricas*.py en la cola (fijas)
+numpy==2.1.3
+scipy==1.14.1

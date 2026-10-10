@@ -41,3 +41,9 @@ La version de Blender debe ser la misma en ambos lados: el simulador lee estado 
 - Regla: comparar variantes solo dentro de una misma plataforma. En Actions es seguro; no mezclar con corridas locales.
 
 Comando de comparacion: `python scripts/comparar.py carpeta_a carpeta_b 0.1`.
+
+## Cola autonoma [ESC·f535]
+`cola/<tanda>.json` (mismo formato que `lab/tandas/`) -> el workflow `cola.yml` (push a `cola/`, cada 2 h o a mano) la
+mueve a `tomadas/`, corre cada tanda en su propio trabajo (hasta 20 en paralelo), calcula las metricas y commitea
+`resultados/<tanda>.json` (resumen chico); los `.npy` quedan como artifact `npy-<tanda>-<run>` 14 dias. Termina en
+`hecho/` o `fallo/`. Validador y pasos: `scripts/cola.py`. Solo bancos sinteticos del laboratorio.

@@ -1,0 +1,172 @@
+# [ESC·f535] Cola autonoma: toma las tandas de cola/, las corre en paralelo (una por trabajo, hasta 20) y commitea
+# resultados/<tanda>.json. Solo bancos sinteticos del laboratorio (pruebas del software): ni prendas ni datos reales.
+name: cola
+
+on:
+  push:
+    branches: [main]
+    paths: ["cola/**"]
+  schedule:
+    - cron: "41 */2 * * *"   # cada 2 h: levanta lo que haya quedado (mas de 20, tomas viejas, pushes perdidos)
+  workflow_dispatch:
+
+permissions:
+  contents: write   # commitear tomas y resultados
+  actions: write    # relanzarse si quedan tandas en la cola
+
+env:
+  BLENDER_VERSION: "5.1.0"
+  BLENDER_SHA256: "7f2475990613c8d4c7ac5697803fcf40d09541c1fd8c23936f4b07a169a920c7"
+  GIT_AUTHOR_NAME: cola-lab
+  GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+  GIT_COMMITTER_NAME: cola-lab
+  GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+
+jobs:
+  tomar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    outputs:
+      tandas: ${{ steps.t.outputs.tandas }}
+      sha: ${{ steps.t.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Tomar tandas (git mv cola -> tomadas; el push es el candado contra otra corrida o el VPS)
+        id: t
+        run: |
+          set -uo pipefail
+          L='[]'
+          for i in 1 2 3 4 5 6; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            L=$(python3 scripts/cola.py tomar --quien "actions ${GITHUB_RUN_ID}" --max 20 --donde actions --viejas-h 6)
+            if git diff --cached --quiet; then break; fi
+            git commit -qm "[ESC·f535] cola: toma ${L} (run ${GITHUB_RUN_ID})" && git push -q origin HEAD:main && break
+            L='[]'; sleep $((RANDOM % 8 + 3))
+          done
+          echo "tomadas: $L" | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "tandas=$L" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  correr:
+    needs: tomar
+    if: needs.tomar.outputs.tandas != '[]' && needs.tomar.outputs.tandas != ''
+    name: correr ${{ matrix.tanda }}
+    runs-on: ubuntu-24.04   # fijo: ubuntu-latest pasa a Ubuntu 26 el 2026-10-19 y cambiaria las librerias
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        tanda: ${{ fromJSON(needs.tomar.outputs.tandas) }}
+    env:
+      T: ${{ matrix.tanda }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: "${{ needs.tomar.outputs.sha }}" }
+
+      - name: Cache de Blender
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: ~/blender-${{ env.BLENDER_VERSION }}-linux-x64
+          key: blender-${{ env.BLENDER_VERSION }}-linux-x64
+
+      - name: Bajar Blender (solo si el cache esta vacio)
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          set -euo pipefail
+          A="blender-${BLENDER_VERSION}-linux-x64.tar.xz"
+          curl -fsSL -o "$A" "https://download.blender.org/release/Blender${BLENDER_VERSION%.*}/$A"
+          echo "${BLENDER_SHA256}  $A" | sha256sum -c -
+          tar -xf "$A" -C "$HOME"
+
+      - name: Librerias de sistema que Blender enlaza aunque corra en -b
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq libxi6 libxrender1 libxfixes3 libgl1 libegl1 libxkbcommon0 libsm6 libxxf86vm1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requisitos-metricas.txt
+      - run: pip install -q -r scripts/requisitos-metricas.txt
+
+      - name: Correr la tanda
+        id: correr
+        run: |
+          set -uo pipefail
+          B="$HOME/blender-${BLENDER_VERSION}-linux-x64/blender"
+          H=$(python3 -c "import json;print(json.load(open('tomadas/$T.json')).get('hilos',4))")
+          mkdir -p out; S0=$SECONDS
+          "$B" -b --factory-startup -t "$H" --python lab/correr.py -- tanda="tomadas/$T.json" salida="out/$T" > "out/$T.log" 2>&1; RC=$?
+          echo "$((SECONDS-S0))" > out/t_blender.txt
+          echo "| $T | rc $RC | $((SECONDS-S0)) s |" | tee -a "$GITHUB_STEP_SUMMARY"
+          tail -3 "out/$T.log"
+          exit $RC
+
+      - name: Metricas
+        id: metricas
+        if: steps.correr.outcome == 'success'
+        run: python3 scripts/cola.py metricas "tomadas/$T.json" "out/$T"
+
+      - name: Resumen chico
+        if: always()
+        run: |
+          mkdir -p resumen
+          python3 scripts/cola.py resumir "tomadas/$T.json" "out/$T" --estado-correr "${{ steps.correr.outcome }}" \
+            --estado-metricas "${{ steps.metricas.outcome }}" --quien "actions ${GITHUB_RUN_ID}" \
+            --t-blender "$(cat out/t_blender.txt 2>/dev/null || echo 0)" > "resumen/$T.json"
+          head -c 600 "resumen/$T.json"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: resumen-${{ matrix.tanda }}
+          path: resumen/${{ matrix.tanda }}.json
+          retention-days: 3
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: npy-${{ matrix.tanda }}-${{ github.run_id }}
+          path: out/
+          retention-days: 14
+
+  cerrar:
+    needs: [tomar, correr]
+    if: always() && needs.tomar.result == 'success' && needs.tomar.outputs.tandas != '[]' && needs.tomar.outputs.tandas != ''
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: resumen-*
+          merge-multiple: true
+          path: ${{ runner.temp }}/resumenes
+      - name: Escribir resultados/, mover a hecho/ o fallo/, commit
+        env:
+          TANDAS: ${{ needs.tomar.outputs.tandas }}
+          URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -uo pipefail
+          for i in 1 2 3 4 5 6; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python3 scripts/cola.py cerrar --resumenes "$RUNNER_TEMP/resumenes" --tandas "$TANDAS" --url "$URL"
+            # limpieza generica (la lista privada de nombres la aplica encolar.py en la laptop)
+            if git diff --cached -U0 | grep -nEi '(C:[/\\]Users|/home/[a-z]|BEGIN [A-Z ]*PRIVATE KEY|ghp_[A-Za-z0-9]{20}|github_pat_|AKIA[0-9A-Z]{16}|\.dxf\b)'; then
+              echo "LIMPIEZA: algo sospechoso en el diff, no se pushea"; exit 1
+            fi
+            git commit -qm "[ESC·f535] cola: resultados ${TANDAS} (run ${GITHUB_RUN_ID})" && git push -q origin HEAD:main && break
+            sleep $((RANDOM % 8 + 3))
+          done
+          for t in $(python3 -c "import json,os;print(' '.join(json.loads(os.environ['TANDAS'])))"); do
+            python3 -c "import json;R=json.load(open('resultados/$t.json'));print('| $t |',R['estado'],'|',R.get('t_cola_a_resultado_s'),'s |')" | tee -a "$GITHUB_STEP_SUMMARY"
+          done
+      - name: Relanzar si quedan tandas en la cola
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ls cola/*.json >/dev/null 2>&1; then gh workflow run cola.yml --ref main && echo "quedan tandas: relanzado"; fi
