@@ -1,0 +1,94 @@
+{
+ "nombre": "b8b_m1",
+ "firma": "[ESC·f535]",
+ "nota": "B8b margen 1: cartera 500 + capa de abajo (fL) en la huella canto-b2 (rig_cuello, 82 v) a 5 / 104 / 500 (w_neck 0 / 0,2 / 1), con replica. agujero_mm2 del resumen de la cola = metricas_b78.py del repo SIN la correccion de la costura x=-15 (433 mm2 falsos): el valido se recalcula en la laptop desde los .npy",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 0,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 0,
+  "sand_lvl": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0,
+  "sep_h": 4.5
+ },
+ "nf": 72,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  6,
+  12,
+  24,
+  30,
+  36,
+  48,
+  60,
+  72
+ ],
+ "metricas": [
+  "lab/metricas_b78.py",
+  "b8",
+  "{sal}"
+ ],
+ "variantes": [
+  {
+   "tag": "m1base",
+   "escena": "b8h_m1",
+   "params": {
+    "bth": 0.001,
+    "ath": 0.001,
+    "w_neck": 0.0
+   }
+  },
+  {
+   "tag": "m1h104",
+   "escena": "b8h_m1",
+   "params": {
+    "bth": 0.001,
+    "ath": 0.001,
+    "w_neck": 0.2
+   }
+  },
+  {
+   "tag": "m1h104r",
+   "escena": "b8h_m1",
+   "params": {
+    "bth": 0.001,
+    "ath": 0.001,
+    "w_neck": 0.2
+   },
+   "replica": 1
+  },
+  {
+   "tag": "m1h500",
+   "escena": "b8h_m1",
+   "params": {
+    "bth": 0.001,
+    "ath": 0.001,
+    "w_neck": 1.0
+   }
+  },
+  {
+   "tag": "m1h500r",
+   "escena": "b8h_m1",
+   "params": {
+    "bth": 0.001,
+    "ath": 0.001,
+    "w_neck": 1.0
+   },
+   "replica": 1
+  }
+ ]
+}

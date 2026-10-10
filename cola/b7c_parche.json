@@ -1,0 +1,87 @@
+{
+ "nombre": "b7c_parche",
+ "firma": "[ESC·f535]",
+ "nota": "B7c: franja cerrada a 104 (bend_max 500, w_plk 0,2 = el cuello de la M133) + parche de un lado del CF (y 0-70, alto entero, 104 v) a 104 / 500 (w_neck 0,2 / 1): efecto en el cuello (M-09) de subir la hsL bajo la tapeta",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 0,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 0,
+  "sand_lvl": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0,
+  "sep_h": 0,
+  "quality": 20,
+  "w_plk": 1
+ },
+ "nf": 72,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  6,
+  12,
+  24,
+  30,
+  36,
+  48,
+  60,
+  72
+ ],
+ "metricas": [
+  "lab/metricas_b78.py",
+  "b7",
+  "{sal}"
+ ],
+ "variantes": [
+  {
+   "tag": "base104",
+   "escena": "b7p_cuello",
+   "params": {
+    "bend_max": 500,
+    "w_plk": 0.2,
+    "w_neck": 0.2
+   }
+  },
+  {
+   "tag": "base104r",
+   "escena": "b7p_cuello",
+   "params": {
+    "bend_max": 500,
+    "w_plk": 0.2,
+    "w_neck": 0.2
+   },
+   "replica": 1
+  },
+  {
+   "tag": "p500",
+   "escena": "b7p_cuello",
+   "params": {
+    "bend_max": 500,
+    "w_plk": 0.2,
+    "w_neck": 1.0
+   }
+  },
+  {
+   "tag": "p500r",
+   "escena": "b7p_cuello",
+   "params": {
+    "bend_max": 500,
+    "w_plk": 0.2,
+    "w_neck": 1.0
+   },
+   "replica": 1
+  }
+ ]
+}
