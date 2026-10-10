@@ -1,0 +1,119 @@
+{
+ "nombre": "b8_cartera",
+ "firma": "[ESC\u00b7f535]",
+ "nota": "B8 cartera + 3 broches con altura sobre cilindro R150: margen 1/5/8/12 con cartera 500; control cartera 50 en 5 y 12 (D1)",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 0,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 0,
+  "sand_lvl": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0,
+  "sep_h": 4.5
+ },
+ "nf": 72,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  6,
+  12,
+  24,
+  30,
+  36,
+  48,
+  60,
+  72
+ ],
+ "variantes": [
+  {
+   "tag": "m1c500",
+   "escena": "b8_m1",
+   "params": {
+    "bth": 0.001,
+    "ath": 0.001
+   }
+  },
+  {
+   "tag": "m5c500",
+   "escena": "b8_m5",
+   "params": {
+    "bth": 0.005,
+    "ath": 0.005
+   }
+  },
+  {
+   "tag": "m5c500r",
+   "escena": "b8_m5",
+   "params": {
+    "bth": 0.005,
+    "ath": 0.005
+   },
+   "replica": 1
+  },
+  {
+   "tag": "m5c50",
+   "escena": "b8_m5",
+   "params": {
+    "bth": 0.005,
+    "ath": 0.005,
+    "w_plk": 0.09091
+   }
+  },
+  {
+   "tag": "m8c500",
+   "escena": "b8_m8",
+   "params": {
+    "bth": 0.008,
+    "ath": 0.008
+   }
+  },
+  {
+   "tag": "m8c500r",
+   "escena": "b8_m8",
+   "params": {
+    "bth": 0.008,
+    "ath": 0.008
+   },
+   "replica": 1
+  },
+  {
+   "tag": "m12c500",
+   "escena": "b8_m12",
+   "params": {
+    "bth": 0.012,
+    "ath": 0.012
+   }
+  },
+  {
+   "tag": "m12c500r",
+   "escena": "b8_m12",
+   "params": {
+    "bth": 0.012,
+    "ath": 0.012
+   },
+   "replica": 1
+  },
+  {
+   "tag": "m12c50",
+   "escena": "b8_m12",
+   "params": {
+    "bth": 0.012,
+    "ath": 0.012,
+    "w_plk": 0.09091
+   }
+  }
+ ]
+}

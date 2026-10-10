@@ -1,0 +1,12 @@
+{"nombre": "humo_armazon", "firma": "[ESC·f535]", "nota": "humo del armazon: cada tipo de escena pasa por el nucleo (8 cuadros)",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {"fric": 40, "bth": 0.001, "ath": 0.001, "sand_len": 20, "sand_kc": 2, "pres": 0, "arm_end": -1, "tfric_f": 0,
+                "sand": 0, "sand_rot": 1, "sand_lvl": 0, "sep_h": 0, "deltoid": 0, "mano": 0, "renders": 0, "stop_open": 0, "settle_min": 0},
+ "nf": 8, "dumps": [1, 2, 8],
+ "variantes": [
+  {"tag": "h_b1", "escena": "b1_tiras"},
+  {"tag": "h_b1c", "escena": "b1_cil150"},
+  {"tag": "h_b2", "escena": "b2_panel_fijo", "escala": 0.85, "ruido_z_mm": 0.3, "params": {"g0": 9999, "g1": 10000}},
+  {"tag": "h_b3", "escena": "b3_sandwich", "params": {"sand": 1, "sand_zs": -1}},
+  {"tag": "h_cn", "escena": "canelon", "params": {"pres": 1}}
+ ]}

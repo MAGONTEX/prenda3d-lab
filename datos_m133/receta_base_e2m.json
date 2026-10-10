@@ -1,0 +1,36 @@
+{
+ "version": 1,
+ "nombre": "base_e2m",
+ "params": {
+  "p0": 80,
+  "w0": 0.15,
+  "bend_max": 500,
+  "w_cuff": 0.06,
+  "w_band": 0.09,
+  "head": 1,
+  "hood_bend": 0.5,
+  "hood_soft": 1,
+  "hood_scope": 1,
+  "arm_f0": 12,
+  "arm_f1": 72,
+  "uarm": 0.2,
+  "selfarm": 1,
+  "q_ramp": 15,
+  "stop_open": 5,
+  "arm_x1": 0.23,
+  "settle_min": 120,
+  "settle_tol": 2,
+  "settle_n": 2,
+  "nar": 15,
+  "cinch": 0.15,
+  "cz0": 6,
+  "cz1": 36,
+  "hfric": 40
+ },
+ "origen": {
+  "lanzador": "_qc_e2zw/lanza_w.sh (BASE=\"...\", identico a lanzar_e2m.sh)",
+  "cadena_cruda": "p0=80 w0=0.15 bend_max=500 w_cuff=0.06 w_band=0.09 head=1 hood_bend=0.5 hood_soft=1 hood_scope=1 arm_f0=12 arm_f1=72 uarm=0.2 selfarm=1 q_ramp=15 stop_open=5 arm_x1=0.23 settle_min=120 settle_tol=2 settle_n=2 nar=15 cinch=0.15 cz0=6 cz1=36 hfric=40",
+  "repetidas": {}
+ },
+ "descripcion": "BASE que antepone todo lanzador de la M133 (lanza_w.sh / lanzar_e2m.sh): lo que la cadena concatenaba delante de QA y de la linea de la cola."
+}

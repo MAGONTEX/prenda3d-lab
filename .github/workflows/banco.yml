@@ -1,0 +1,75 @@
+# [ESC·f535] Corre bancos del laboratorio de simulacion de prenda en Blender 5.1.0 (CPU, headless) y sube los resultados.
+name: banco
+
+on:
+  workflow_dispatch:
+    inputs:
+      tandas:
+        description: "Tandas separadas por espacio (nombres de lab/tandas/*.json, sin .json)"
+        default: "b1_bisagra b2_salto b3_sandwich"
+      hilos:
+        description: "Hilos de Blender (-t)"
+        default: "4"
+      etiqueta:
+        description: "Etiqueta de la corrida (nombre del artifact)"
+        default: "manual"
+  schedule:
+    - cron: "17 6 * * *"   # nocturno: 03:17 hora de Argentina
+
+env:
+  BLENDER_VERSION: "5.1.0"
+  BLENDER_SHA256: "7f2475990613c8d4c7ac5697803fcf40d09541c1fd8c23936f4b07a169a920c7"   # blender-5.1.0.sha256 de download.blender.org
+
+jobs:
+  banco:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache de Blender
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: ~/blender-${{ env.BLENDER_VERSION }}-linux-x64
+          key: blender-${{ env.BLENDER_VERSION }}-linux-x64
+
+      - name: Bajar Blender (solo si el cache esta vacio)
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          set -euo pipefail
+          T="blender-${BLENDER_VERSION}-linux-x64.tar.xz"
+          curl -fsSL -o "$T" "https://download.blender.org/release/Blender${BLENDER_VERSION%.*}/$T"
+          echo "${BLENDER_SHA256}  $T" | sha256sum -c -
+          tar -xf "$T" -C "$HOME"
+
+      - name: Librerias de sistema que Blender enlaza aunque corra en -b
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq libxi6 libxrender1 libxfixes3 libgl1 libegl1 libxkbcommon0 libsm6 libxxf86vm1
+
+      - name: Entorno
+        run: |
+          B="$HOME/blender-${BLENDER_VERSION}-linux-x64/blender"
+          "$B" --version | head -2
+          nproc; grep -m1 'model name' /proc/cpuinfo; free -g | head -2
+
+      - name: Correr tandas
+        env:
+          TANDAS: ${{ github.event.inputs.tandas || 'b1_bisagra b2_salto b3_sandwich' }}
+          HILOS: ${{ github.event.inputs.hilos || '4' }}
+        run: |
+          set -uo pipefail
+          B="$HOME/blender-${BLENDER_VERSION}-linux-x64/blender"
+          mkdir -p out; FALLO=0; SECONDS=0
+          for t in $TANDAS; do
+            T0=$SECONDS
+            "$B" -b --factory-startup -t "$HILOS" --python lab/correr.py -- tanda="lab/tandas/$t.json" salida="out/$t" > "out/$t.log" 2>&1 || { echo "FALLO $t"; FALLO=1; }
+            echo "| $t | $((SECONDS-T0)) s |" | tee -a "$GITHUB_STEP_SUMMARY"
+          done
+          exit $FALLO
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: banco-${{ github.event.inputs.etiqueta || 'nocturno' }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: out/
+          retention-days: 14

@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Receta de simulacion (CÓMO se simula; QUÉ es la prenda vive en prenda.json)",
+  "description": "Receta base + overrides -> dict plano k=v del simulador. Herencia de UN nivel (`base`). El esquema valida la FORMA; que cada clave de `params` exista en sim_e2s.py lo valida prenda3d.receta leyendo el codigo del simulador (clave desconocida = error).",
+  "type": "object",
+  "required": ["version", "nombre"],
+  "additionalProperties": false,
+  "properties": {
+    "version": {"const": 1},
+    "nombre": {"type": "string", "minLength": 1, "description": "tag de la corrida (e2zw1) o nombre de la base (base_e2m)"},
+    "descripcion": {"type": "string"},
+    "base": {"type": ["string", "null"], "description": "ruta de otra receta, relativa a esta; esa receta no puede tener base"},
+    "params": {
+      "type": "object",
+      "description": "parametros del simulador (los de `P`). Numeros: el simulador hace float(v). Ultimo valor gana al importar; aca cada clave una vez.",
+      "additionalProperties": {"type": "number"}
+    },
+    "malla": {"type": "string", "description": "mesh=<json> (relativo a etapa2/)"},
+    "cuerpo": {"type": "string", "description": "body=<npz> (relativo a etapa2/)"},
+    "dumps": {"type": "array", "items": {"type": "integer", "minimum": 1}, "description": "cuadros a volcar (dumps=...)"},
+    "rk": {"type": "string"},
+    "wini": {"type": "string"},
+    "pramp": {"type": "string"},
+    "pfit": {"type": "string"},
+    "frames": {"type": "integer", "minimum": 1, "description": "cuadros de la corrida (argumento posicional NF)"},
+    "diagnostico": {
+      "type": "array",
+      "items": {"enum": ["notp", "snaps", "tp_nocol"]},
+      "description": "flags de diagnostico que esta receta usa a proposito (el manifest los marca)"
+    },
+    "origen": {"type": "object", "description": "procedencia: de que strings viene (cadena_cruda, repetidas). No la usa el resolvedor."}
+  }
+}

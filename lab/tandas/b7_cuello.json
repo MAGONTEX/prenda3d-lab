@@ -1,0 +1,89 @@
+{
+ "nombre": "b7_cuello",
+ "firma": "[ESC\u00b7f535]",
+ "nota": "B7 cuello parado: flexion de la franja (bend_max con w_plk 1) a q20 (tope ~1460)",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 0,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 0,
+  "sand_lvl": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0,
+  "sep_h": 0,
+  "quality": 20,
+  "w_plk": 1
+ },
+ "nf": 72,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  6,
+  12,
+  24,
+  30,
+  36,
+  48,
+  60,
+  72
+ ],
+ "variantes": [
+  {
+   "tag": "f100",
+   "escena": "b7_cuello",
+   "params": {
+    "bend_max": 100
+   }
+  },
+  {
+   "tag": "f250",
+   "escena": "b7_cuello",
+   "params": {
+    "bend_max": 250
+   }
+  },
+  {
+   "tag": "f500",
+   "escena": "b7_cuello",
+   "params": {
+    "bend_max": 500
+   }
+  },
+  {
+   "tag": "f1000",
+   "escena": "b7_cuello",
+   "params": {
+    "bend_max": 1000
+   }
+  },
+  {
+   "tag": "f500r",
+   "escena": "b7_cuello",
+   "params": {
+    "bend_max": 500
+   },
+   "replica": 1
+  },
+  {
+   "tag": "f500q10",
+   "escena": "b7_cuello",
+   "params": {
+    "bend_max": 500,
+    "quality": 10
+   },
+   "nota": "control del tope: 500 > 365 a q10"
+  }
+ ]
+}

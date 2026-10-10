@@ -1,0 +1,8 @@
+{
+ "prenda": "M133",
+ "nota": "Datos de simulacion de la M133 que antes eran literales en sim_e2s.py. El nucleo los lee como ES.RD. Destino final: prenda.json (piezas[].construccion = inyectado, zonas) cuando reconstruir_m133.py los escriba.",
+ "piezas_inyectadas": ["back", "fcR", "fcL", "fsR", "fsL", "slR", "slL"],
+ "prefijo_manga": ["sl"],
+ "costuras_clave": ["costado R", "costado L", "bajo manga R", "bajo manga L", "sisa espalda R", "sisa frente R", "sisa espalda L", "sisa frente L", "elastico R", "elastico L"],
+ "indices_cf": "cfidx_e2e3.json"
+}

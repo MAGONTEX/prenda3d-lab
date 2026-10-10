@@ -1,0 +1,101 @@
+{
+ "nombre": "b3_sandwich",
+ "firma": "[ESC·f535]",
+ "nota": "B3 sandwich hs-ht con el codigo de la M133: sand_kc, sand_len, self_d; fila 3 del CSV (g2)",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 0,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 1,
+  "sand_rot": 1,
+  "sand_lvl": 0,
+  "sep_h": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0,
+  "sand_zs": -1
+ },
+ "nf": 120,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  6,
+  12,
+  24,
+  48,
+  72,
+  96,
+  114,
+  120
+ ],
+ "variantes": [
+  {
+   "tag": "base",
+   "escena": "b3_sandwich"
+  },
+  {
+   "tag": "base_r",
+   "escena": "b3_sandwich",
+   "replica": 1
+  },
+  {
+   "tag": "kc10",
+   "escena": "b3_sandwich",
+   "params": {
+    "sand_kc": 10
+   }
+  },
+  {
+   "tag": "kc100",
+   "escena": "b3_sandwich",
+   "params": {
+    "sand_kc": 100
+   }
+  },
+  {
+   "tag": "len6",
+   "escena": "b3_sandwich",
+   "params": {
+    "sand_len": 6
+   }
+  },
+  {
+   "tag": "len10",
+   "escena": "b3_sandwich",
+   "params": {
+    "sand_len": 10
+   }
+  },
+  {
+   "tag": "sd1",
+   "escena": "b3_sandwich",
+   "params": {
+    "self_d": 0.001
+   }
+  },
+  {
+   "tag": "sd3",
+   "escena": "b3_sandwich",
+   "params": {
+    "self_d": 0.003
+   }
+  },
+  {
+   "tag": "g2",
+   "escena": "b3_sandwich_g2",
+   "params": {
+    "sand_d": 2.0
+   }
+  }
+ ]
+}
