@@ -1,0 +1,102 @@
+{
+ "nombre": "esc_amort2_a",
+ "firma": "[ESC·f535]",
+ "nota": "ronda 2: masa total conservada (no r^2) y aire x10 para asentar (implicito), a 10 y 5 mm",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 0,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 1,
+  "sand_lvl": 0,
+  "sep_h": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0
+ },
+ "nf": 200,
+ "dumps": [
+  1,
+  50,
+  100,
+  150,
+  170,
+  194,
+  199,
+  200
+ ],
+ "variantes": [
+  {
+   "tag": "vc10aire",
+   "escena": "b5_voladizo80_h10",
+   "nota": "10 mm aire x10 (control: el aire no cambia el reposo)",
+   "params": {
+    "bending": 80,
+    "air": 10
+   }
+  },
+  {
+   "tag": "vc5m",
+   "escena": "b5_voladizo80_h5",
+   "nota": "5 mm masa TOTAL conservada (x48/161) q40",
+   "params": {
+    "bending": 80,
+    "quality": 40,
+    "mass": 0.0059627,
+    "air": 0.298137
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 5,
+    "sin": [
+     "amort_flexion",
+     "masa"
+    ]
+   }
+  },
+  {
+   "tag": "vc5aire",
+   "escena": "b5_voladizo80_h5",
+   "nota": "5 mm aire x10 q40",
+   "params": {
+    "bending": 80,
+    "quality": 40,
+    "air": 10
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 5,
+    "sin": [
+     "amort_flexion"
+    ]
+   }
+  },
+  {
+   "tag": "vc5maire",
+   "escena": "b5_voladizo80_h5",
+   "nota": "5 mm masa total + aire x10 q40",
+   "params": {
+    "bending": 80,
+    "quality": 40,
+    "mass": 0.0059627,
+    "air": 2.981366
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 5,
+    "sin": [
+     "amort_flexion",
+     "masa"
+    ]
+   }
+  }
+ ]
+}

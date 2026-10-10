@@ -1,0 +1,74 @@
+{
+ "nombre": "esc_amort2_b",
+ "firma": "[ESC·f535]",
+ "nota": "ronda 2: 3,3 mm con aire x10 (asentar sin tocar la estabilidad) y masa total conservada",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 0,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 1,
+  "sand_lvl": 0,
+  "sep_h": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0
+ },
+ "nf": 200,
+ "dumps": [
+  1,
+  50,
+  100,
+  150,
+  170,
+  194,
+  199,
+  200
+ ],
+ "variantes": [
+  {
+   "tag": "vc3aire",
+   "escena": "b5_voladizo80_h3",
+   "nota": "3,3 mm aire x10 q90",
+   "params": {
+    "bending": 80,
+    "quality": 90,
+    "air": 10
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 3.3333333333333335,
+    "sin": [
+     "amort_flexion"
+    ]
+   }
+  },
+  {
+   "tag": "vc3maire",
+   "escena": "b5_voladizo80_h3",
+   "nota": "3,3 mm masa total (x48/371) + aire x10 q90",
+   "params": {
+    "bending": 80,
+    "quality": 90,
+    "mass": 0.0025876,
+    "air": 1.293801
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 3.3333333333333335,
+    "sin": [
+     "amort_flexion",
+     "masa"
+    ]
+   }
+  }
+ ]
+}
