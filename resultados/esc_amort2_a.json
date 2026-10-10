@@ -1,0 +1,48 @@
+{
+ "firma": "[ESC·f535]",
+ "tanda": "esc_amort2_a",
+ "estado": "ok",
+ "quien": "actions 38093436993",
+ "fin_trabajo": "2026-10-10T23:00:37+00:00",
+ "estado_correr": "success",
+ "estado_metricas": "success",
+ "t_blender_s": 31.0,
+ "n_variantes": 4,
+ "faltan": [],
+ "variantes": {
+  "vc10aire": {
+   "estado": "FIN",
+   "t_total": 0.49,
+   "t_sim": 0.48,
+   "s_por_cuadro": 0.002
+  },
+  "vc5aire": {
+   "estado": "FIN",
+   "t_total": 9.86,
+   "t_sim": 9.86,
+   "s_por_cuadro": 0.049
+  },
+  "vc5m": {
+   "estado": "FIN",
+   "t_total": 10.54,
+   "t_sim": 10.53,
+   "s_por_cuadro": 0.053
+  },
+  "vc5maire": {
+   "estado": "FIN",
+   "t_total": 10.1,
+   "t_sim": 10.1,
+   "s_por_cuadro": 0.05
+  }
+ },
+ "metricas": {},
+ "maquina": {
+  "nproc": 4,
+  "cpu": "AMD EPYC 7763 64-Core Processor"
+ },
+ "tomada": "2026-10-10T22:59:36+00:00",
+ "encolada": "2026-10-10T19:59:27-03:00",
+ "cerrada": "2026-10-10T23:23:13+00:00",
+ "corrida": "https://github.com/MAGONTEX/prenda3d-lab/actions/runs/38093436993",
+ "t_cola_a_resultado_s": 1426
+}

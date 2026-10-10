@@ -1,0 +1,30 @@
+{
+ "firma": "[ESC·f535]",
+ "tanda": "esc_amort2_alm",
+ "estado": "ok",
+ "quien": "actions 38093436993",
+ "fin_trabajo": "2026-10-10T23:23:00+00:00",
+ "estado_correr": "success",
+ "estado_metricas": "success",
+ "t_blender_s": 1364.0,
+ "n_variantes": 1,
+ "faltan": [],
+ "variantes": {
+  "a3saq90": {
+   "estado": "FIN",
+   "t_total": 1363.61,
+   "t_sim": 1363.5,
+   "s_por_cuadro": 14.203
+  }
+ },
+ "metricas": {},
+ "maquina": {
+  "nproc": 4,
+  "cpu": "AMD EPYC 9V74 80-Core Processor"
+ },
+ "tomada": "2026-10-10T22:59:36+00:00",
+ "encolada": "2026-10-10T19:59:27-03:00",
+ "cerrada": "2026-10-10T23:23:13+00:00",
+ "corrida": "https://github.com/MAGONTEX/prenda3d-lab/actions/runs/38093436993",
+ "t_cola_a_resultado_s": 1426
+}
