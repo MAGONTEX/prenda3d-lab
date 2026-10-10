@@ -1,0 +1,256 @@
+{
+ "firma": "[ESC·f535]",
+ "tanda": "b2_salto",
+ "estado": "ok",
+ "quien": "actions 38090218699",
+ "fin_trabajo": "2026-10-10T22:08:09+00:00",
+ "estado_correr": "success",
+ "estado_metricas": "success",
+ "t_blender_s": 14.0,
+ "n_variantes": 13,
+ "faltan": [],
+ "variantes": {
+  "f075": {
+   "estado": "FIN",
+   "t_total": 0.87,
+   "t_sim": 0.86,
+   "s_por_cuadro": 0.018
+  },
+  "f085": {
+   "estado": "FIN",
+   "t_total": 1.21,
+   "t_sim": 1.21,
+   "s_por_cuadro": 0.025
+  },
+  "f085r": {
+   "estado": "FIN",
+   "t_total": 0.81,
+   "t_sim": 0.81,
+   "s_por_cuadro": 0.017
+  },
+  "f095": {
+   "estado": "FIN",
+   "t_total": 0.54,
+   "t_sim": 0.54,
+   "s_por_cuadro": 0.011
+  },
+  "f10": {
+   "estado": "FIN",
+   "t_total": 1.13,
+   "t_sim": 1.13,
+   "s_por_cuadro": 0.023
+  },
+  "f105": {
+   "estado": "FIN",
+   "t_total": 1.2,
+   "t_sim": 1.2,
+   "s_por_cuadro": 0.025
+  },
+  "s075": {
+   "estado": "FIN",
+   "t_total": 1.13,
+   "t_sim": 1.12,
+   "s_por_cuadro": 0.023
+  },
+  "s085": {
+   "estado": "FIN",
+   "t_total": 1.14,
+   "t_sim": 1.14,
+   "s_por_cuadro": 0.024
+  },
+  "s0877": {
+   "estado": "FIN",
+   "t_total": 1.16,
+   "t_sim": 1.15,
+   "s_por_cuadro": 0.024
+  },
+  "s0877r": {
+   "estado": "FIN",
+   "t_total": 1.14,
+   "t_sim": 1.14,
+   "s_por_cuadro": 0.024
+  },
+  "s095": {
+   "estado": "FIN",
+   "t_total": 1.14,
+   "t_sim": 1.13,
+   "s_por_cuadro": 0.024
+  },
+  "s10": {
+   "estado": "FIN",
+   "t_total": 1.12,
+   "t_sim": 1.11,
+   "s_por_cuadro": 0.023
+  },
+  "s105": {
+   "estado": "FIN",
+   "t_total": 1.14,
+   "t_sim": 1.13,
+   "s_por_cuadro": 0.024
+  }
+ },
+ "metricas": {
+  "b2_b2_salto.json": {
+   "firma": "[ESC·f535]",
+   "banco": "b2",
+   "salida": "b2_salto",
+   "banda": {
+    "fraccion_f2": 0.021
+   },
+   "variantes": {
+    "f075": {
+     "estado": "FIN",
+     "s_cuadro": 0.018,
+     "t_total": 0.87,
+     "escala": null,
+     "params": {
+      "g0": 9999,
+      "g1": 10000
+     },
+     "fraccion_f2": 0.327
+    },
+    "f085": {
+     "estado": "FIN",
+     "s_cuadro": 0.025,
+     "t_total": 1.21,
+     "escala": null,
+     "params": {
+      "g0": 9999,
+      "g1": 10000
+     },
+     "fraccion_f2": 0.215
+    },
+    "f085r": {
+     "estado": "FIN",
+     "s_cuadro": 0.017,
+     "t_total": 0.81,
+     "escala": null,
+     "params": {
+      "g0": 9999,
+      "g1": 10000
+     },
+     "fraccion_f2": 0.314
+    },
+    "f095": {
+     "estado": "FIN",
+     "s_cuadro": 0.011,
+     "t_total": 0.54,
+     "escala": null,
+     "params": {
+      "g0": 9999,
+      "g1": 10000
+     },
+     "fraccion_f2": 0.987
+    },
+    "f10": {
+     "estado": "FIN",
+     "s_cuadro": 0.023,
+     "t_total": 1.13,
+     "escala": null,
+     "params": {
+      "g0": 9999,
+      "g1": 10000
+     },
+     "fraccion_f2": 0.73
+    },
+    "f105": {
+     "estado": "FIN",
+     "s_cuadro": 0.025,
+     "t_total": 1.2,
+     "escala": null,
+     "params": {
+      "g0": 9999,
+      "g1": 10000
+     },
+     "fraccion_f2": 1.0
+    },
+    "s075": {
+     "estado": "FIN",
+     "s_cuadro": 0.023,
+     "t_total": 1.13,
+     "escala": null,
+     "params": {
+      "g0": 9999,
+      "g1": 10000
+     },
+     "fraccion_f2": 0.678
+    },
+    "s085": {
+     "estado": "FIN",
+     "s_cuadro": 0.024,
+     "t_total": 1.14,
+     "escala": null,
+     "params": {
+      "g0": 9999,
+      "g1": 10000
+     },
+     "fraccion_f2": 0.577
+    },
+    "s0877": {
+     "estado": "FIN",
+     "s_cuadro": 0.024,
+     "t_total": 1.16,
+     "escala": null,
+     "params": {
+      "g0": 9999,
+      "g1": 10000
+     },
+     "fraccion_f2": 0.521
+    },
+    "s0877r": {
+     "estado": "FIN",
+     "s_cuadro": 0.024,
+     "t_total": 1.14,
+     "escala": null,
+     "params": {
+      "g0": 9999,
+      "g1": 10000
+     },
+     "fraccion_f2": 0.542
+    },
+    "s095": {
+     "estado": "FIN",
+     "s_cuadro": 0.024,
+     "t_total": 1.14,
+     "escala": null,
+     "params": {
+      "g0": 9999,
+      "g1": 10000
+     },
+     "fraccion_f2": 0.918
+    },
+    "s10": {
+     "estado": "FIN",
+     "s_cuadro": 0.023,
+     "t_total": 1.12,
+     "escala": null,
+     "params": {
+      "g0": 9999,
+      "g1": 10000
+     },
+     "fraccion_f2": 0.308
+    },
+    "s105": {
+     "estado": "FIN",
+     "s_cuadro": 0.024,
+     "t_total": 1.14,
+     "escala": null,
+     "params": {
+      "g0": 9999,
+      "g1": 10000
+     },
+     "fraccion_f2": 1.003
+    }
+   }
+  }
+ },
+ "maquina": {
+  "nproc": 4,
+  "cpu": "AMD EPYC 9V45 96-Core Processor"
+ },
+ "tomada": "2026-10-10T22:07:23+00:00",
+ "encolada": "2026-10-10T19:07:14-03:00",
+ "cerrada": "2026-10-10T22:08:25+00:00",
+ "corrida": "https://github.com/MAGONTEX/prenda3d-lab/actions/runs/38090218699",
+ "t_cola_a_resultado_s": 71
+}
