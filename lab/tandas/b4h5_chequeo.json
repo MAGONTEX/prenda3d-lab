@@ -1,0 +1,93 @@
+{
+ "nombre": "b4h5_chequeo",
+ "firma": "[ESC·f535]",
+ "nota": "banco 4 a 5 mm, chequeo de la regla de reescala: canal LISO 5 mm (reescalado) contra 10 mm, misma plataforma",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 1,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 1,
+  "sand_lvl": 0,
+  "sep_h": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0
+ },
+ "nf": 96,
+ "dumps": [
+  1,
+  24,
+  48,
+  72,
+  84,
+  96
+ ],
+ "variantes": [
+  {
+   "tag": "h10a0",
+   "escena": "b4_canal_marco",
+   "encoge": {
+    "cascara": 0.0
+   },
+   "nota": "control 10 mm liso"
+  },
+  {
+   "tag": "h10a0r",
+   "escena": "b4_canal_marco",
+   "encoge": {
+    "cascara": 0.0
+   },
+   "nota": "replica del control 10 mm (banda)",
+   "replica": 11
+  },
+  {
+   "tag": "h5a0",
+   "escena": "b4_canal_marco_h5",
+   "encoge": {
+    "cascara": 0.0
+   },
+   "nota": "liso 5 mm con reescala, q10",
+   "reescala": {
+    "h": 10,
+    "h2": 5
+   }
+  },
+  {
+   "tag": "h5a0r",
+   "escena": "b4_canal_marco_h5",
+   "encoge": {
+    "cascara": 0.0
+   },
+   "nota": "replica liso 5 mm (banda)",
+   "reescala": {
+    "h": 10,
+    "h2": 5
+   },
+   "replica": 11
+  },
+  {
+   "tag": "h5a0q40",
+   "escena": "b4_canal_marco_h5",
+   "encoge": {
+    "cascara": 0.0
+   },
+   "nota": "liso 5 mm con reescala + quality x4 (40)",
+   "reescala": {
+    "h": 10,
+    "h2": 5
+   },
+   "params": {
+    "quality": 40
+   }
+  }
+ ]
+}

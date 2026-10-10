@@ -54,6 +54,20 @@ def reglas():
     m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m); return m
 
 
+def encoge(ES, var):
+    """[ESC·f535] B4: exceso de tela / mascara de acortamiento por clase (lab/encoge_lab.py). Sin `encoge` en la variante: nada."""
+    if var.get("encoge") is not None:
+        import encoge_lab
+        encoge_lab.aplicar(ES, var["encoge"])
+
+
+def reescala(ES, var, cambios_P):
+    """[ESC·f535] banco 4 a 5 mm: regla de reescala (lab/reescala_lab.py). Sin `reescala` en la variante: nada."""
+    if var.get("reescala"):
+        import reescala_lab
+        ES.log(f"[ESC·f535] REESCALA {var['reescala']}: " + " ".join(f"{k} {a:g}->{b:g}" for k, a, b in cambios_P + reescala_lab.cloth(ES, var)) + f" | quality {ES.s.quality}")
+
+
 def limpiar():
     sc = bpy.data.scenes.new("LAB")
     try:
@@ -141,7 +155,7 @@ def cierre_lab(ES, res):
 
 def correr_variante(T, var, sp, salida, R):
     tag = var["tag"]; esc = json.load(open(os.path.join(AQUI, "escenas", var["escena"] + ".json"), encoding="utf-8")); M = esc["lab"]
-    P, rnom = parametros(T, var, sp); nf = int(var.get("nf", T.get("nf", 72))); dumps = var.get("dumps", T.get("dumps", [1, 2, 3, 4, 6, 12, 24, 36, 48, 60, 72]))
+    P, rnom = parametros(T, var, sp); import reescala_lab; P, cambios_P = reescala_lab.params(P, var); nf = int(var.get("nf", T.get("nf", 72))); dumps = var.get("dumps", T.get("dumps", [1, 2, 3, 4, 6, 12, 24, 36, 48, 60, 72]))
     tmp = os.path.join(salida, f"_malla_{tag}.json"); json.dump(esc, open(tmp, "w", encoding="utf-8"))
     res = dict(tag=tag, escena=var["escena"], receta=rnom, receta_hash=RC.hash_params(P), params_var=var.get("params", {}), estado="ERROR",
                nota=var.get("nota", ""), blender=bpy.app.version_string, hilos=[sys.argv[i + 1] for i, t in enumerate(sys.argv) if t == "-t"][:1])
@@ -149,7 +163,7 @@ def correr_variante(T, var, sp, salida, R):
     try:
         ES = nucleo.preparar(P, nf, tag, tmp, salida, salida, "lab", dumps=dumps, reglas=R, datos_reglas=M.get("datos_reglas"))
         escena_lab(ES, var, M); t1 = time.time()
-        nucleo.tela(ES); nucleo.cloth(ES); t2 = time.time(); nucleo.bucle(ES); t3 = time.time()
+        nucleo.tela(ES); nucleo.cloth(ES); encoge(ES, var); reescala(ES, var, cambios_P); t2 = time.time(); nucleo.bucle(ES); t3 = time.time()
         cierre_lab(ES, res); res["estado"] = "STOP" if ES.STOP else ("ROTA" if not res["finito"] else "FIN")
         res.update(t_escena=round(t1 - t0, 2), t_armado=round(t2 - t1, 2), t_sim=round(t3 - t2, 2), s_por_cuadro=round((t3 - t2) / max(ES.f, 1), 3),
                    avisos_except=dict(ES.AVISOS), params_finales={k: v for k, v in ES.P.items() if P.get(k) != v})
