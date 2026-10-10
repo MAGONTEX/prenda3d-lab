@@ -1,0 +1,72 @@
+{
+ "nombre": "b9_pandeo_v2",
+ "firma": "[ESC·f535]",
+ "nota": "B9 pandeo: base 150x200 (rig_cuello, w_neck 0,2 = 104) + cartera 500 + 2 broches a 85 mm; el borde de arriba de la base baja 0 / 5 / 13 mm entre f12 y f30 (pines moviles, correr.mover); cilindro detras a 35 mm. d0 = control negativo, d13r = replica.",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 0,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 0,
+  "sand_lvl": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0,
+  "sep_h": 4.5
+ },
+ "nf": 72,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  6,
+  12,
+  18,
+  24,
+  30,
+  36,
+  48,
+  60,
+  72
+ ],
+ "variantes": [
+  {
+   "tag": "d0",
+   "escena": "b9_d0",
+   "params": {
+    "w_neck": 0.2
+   }
+  },
+  {
+   "tag": "d5",
+   "escena": "b9_d5",
+   "params": {
+    "w_neck": 0.2
+   }
+  },
+  {
+   "tag": "d13",
+   "escena": "b9_d13",
+   "params": {
+    "w_neck": 0.2
+   }
+  },
+  {
+   "tag": "d13r",
+   "escena": "b9_d13",
+   "params": {
+    "w_neck": 0.2
+   },
+   "replica": 1
+  }
+ ]
+}
