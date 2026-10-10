@@ -19,6 +19,8 @@ PASOS = {"h10": 10.0, "h5": 5.0, "h3": 10.0 / 3.0}
 def voladizo(nombre, paso, W=30.0, XR=30.0, L=183.0):   # 30 de ancho: con 25 a 10 mm quedan 2 filas de 12,5 (arista p50 13,2)
     E = Escena(nombre); P, T = pieza(0, 0, L, W, lineas_x=[XR], paso=paso); E.agregar("C", P, T)
     E.fijar("C", lambda Q: Q[:, 0] <= XR + 1e-6)
+    r = sorted(range(len(P)), key=lambda i: (P[i, 0], P[i, 1]))[:2]   # el nucleo pide >= 1 par cosido: dos vertices CLAVADOS (sin efecto)
+    assert all(P[i, 0] < 1e-6 for i in r); E.sew.append([E.groups["C"][0] + r[0], E.groups["C"][0] + r[1]]); E.seam.append("ancla")
     return E.guardar(dict(banco="b5", colisionadores=[], paso=paso, tiras={"C": dict(piezas=["C"], x_costura=(XR + L) / 2, x_raiz=XR, x_punta=L)}))
 
 
