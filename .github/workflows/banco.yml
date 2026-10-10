@@ -22,7 +22,7 @@ env:
 
 jobs:
   banco:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04   # fijo: ubuntu-latest pasa a Ubuntu 26 el 2026-10-19 y cambiaria las librerias del sistema
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
