@@ -1,0 +1,97 @@
+{
+ "nombre": "b4h5_barrido_rn",
+ "firma": "[ESC·f535]",
+ "nota": "barrido del exceso a 5 mm con la regla corregida (bending_damping sin reescalar); A/B del run 38089016412",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 1,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 1,
+  "sand_lvl": 0,
+  "sep_h": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0
+ },
+ "nf": 96,
+ "dumps": [
+  1,
+  24,
+  48,
+  72,
+  84,
+  96
+ ],
+ "variantes": [
+  {
+   "tag": "h5a2",
+   "escena": "b4_canal_marco_h5",
+   "encoge": {
+    "cascara": 0.02
+   },
+   "nota": "exceso 2 % a 5 mm, q10 regla corregida",
+   "reescala": {
+    "h": 10,
+    "h2": 5,
+    "sin": [
+     "amort_flexion"
+    ]
+   }
+  },
+  {
+   "tag": "h5a35",
+   "escena": "b4_canal_marco_h5",
+   "encoge": {
+    "cascara": 0.035
+   },
+   "nota": "exceso 3,5 % a 5 mm, q10 regla corregida",
+   "reescala": {
+    "h": 10,
+    "h2": 5,
+    "sin": [
+     "amort_flexion"
+    ]
+   }
+  },
+  {
+   "tag": "h5a35r",
+   "escena": "b4_canal_marco_h5",
+   "encoge": {
+    "cascara": 0.035
+   },
+   "nota": "replica exceso 3,5 % a 5 mm (banda arrugada) regla corregida",
+   "reescala": {
+    "h": 10,
+    "h2": 5,
+    "sin": [
+     "amort_flexion"
+    ]
+   },
+   "replica": 11
+  },
+  {
+   "tag": "h5a6",
+   "escena": "b4_canal_marco_h5",
+   "encoge": {
+    "cascara": 0.06
+   },
+   "nota": "exceso 6 % a 5 mm, q10 regla corregida",
+   "reescala": {
+    "h": 10,
+    "h2": 5,
+    "sin": [
+     "amort_flexion"
+    ]
+   }
+  }
+ ]
+}

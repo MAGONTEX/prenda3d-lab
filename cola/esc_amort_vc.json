@@ -1,0 +1,149 @@
+{
+ "nombre": "esc_amort_vc",
+ "firma": "[ESC·f535]",
+ "nota": "diagnostico: tira corta 30x80 libres (theta ~45) a 10/5/3,3 mm con bending_damping SIN reescalar; vc5 = regla completa (A/B); q20/q80 = convergencia en quality",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 0,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 1,
+  "sand_lvl": 0,
+  "sep_h": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0
+ },
+ "nf": 200,
+ "dumps": [
+  1,
+  50,
+  100,
+  150,
+  170,
+  194,
+  199,
+  200
+ ],
+ "variantes": [
+  {
+   "tag": "vc10",
+   "escena": "b5_voladizo80_h10",
+   "nota": "10 mm",
+   "params": {
+    "bending": 80
+   }
+  },
+  {
+   "tag": "vc10r",
+   "escena": "b5_voladizo80_h10",
+   "nota": "replica 10 mm",
+   "params": {
+    "bending": 80
+   },
+   "replica": 1
+  },
+  {
+   "tag": "vc5sa",
+   "escena": "b5_voladizo80_h5",
+   "nota": "5 mm regla sin amort q40",
+   "params": {
+    "bending": 80,
+    "quality": 40
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 5,
+    "sin": [
+     "amort_flexion"
+    ]
+   }
+  },
+  {
+   "tag": "vc5sar",
+   "escena": "b5_voladizo80_h5",
+   "nota": "replica 5 mm",
+   "params": {
+    "bending": 80,
+    "quality": 40
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 5,
+    "sin": [
+     "amort_flexion"
+    ]
+   },
+   "replica": 1
+  },
+  {
+   "tag": "vc3sa",
+   "escena": "b5_voladizo80_h3",
+   "nota": "3,3 mm regla sin amort q90",
+   "params": {
+    "bending": 80,
+    "quality": 90
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 3.3333333333333335,
+    "sin": [
+     "amort_flexion"
+    ]
+   }
+  },
+  {
+   "tag": "vc5",
+   "escena": "b5_voladizo80_h5",
+   "nota": "5 mm regla COMPLETA q40 (A/B)",
+   "params": {
+    "bending": 80,
+    "quality": 40
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 5
+   }
+  },
+  {
+   "tag": "vc5saq20",
+   "escena": "b5_voladizo80_h5",
+   "nota": "5 mm sin amort q20 (88 % del tope)",
+   "params": {
+    "bending": 80,
+    "quality": 20
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 5,
+    "sin": [
+     "amort_flexion"
+    ]
+   }
+  },
+  {
+   "tag": "vc5saq80",
+   "escena": "b5_voladizo80_h5",
+   "nota": "5 mm sin amort q80 (convergencia)",
+   "params": {
+    "bending": 80,
+    "quality": 80
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 5,
+    "sin": [
+     "amort_flexion"
+    ]
+   }
+  }
+ ]
+}

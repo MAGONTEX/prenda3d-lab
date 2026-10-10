@@ -1,0 +1,54 @@
+{
+ "nombre": "b4h3_a35",
+ "firma": "[ESC·f535]",
+ "nota": "frunce a 3,3 mm (q20, regla corregida) con exceso 3,5 %: lambda contra 5 mm (L4-4: la arista pone el frunce?)",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 1,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 1,
+  "sand_lvl": 0,
+  "sep_h": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0
+ },
+ "nf": 96,
+ "dumps": [
+  1,
+  24,
+  48,
+  72,
+  84,
+  96
+ ],
+ "variantes": [
+  {
+   "tag": "h3a35",
+   "escena": "b4_canal_marco_h3",
+   "nota": "3,3 mm exceso 3,5 % q20",
+   "encoge": {
+    "cascara": 0.035
+   },
+   "params": {
+    "quality": 20
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 3.3333333333333335,
+    "sin": [
+     "amort_flexion"
+    ]
+   }
+  }
+ ]
+}

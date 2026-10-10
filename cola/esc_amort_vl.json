@@ -1,0 +1,70 @@
+{
+ "nombre": "esc_amort_vl",
+ "firma": "[ESC·f535]",
+ "nota": "diagnostico A/B sobre la tira larga 30x153 del run 38090931940: misma regla con bending_damping SIN reescalar",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 0,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 1,
+  "sand_lvl": 0,
+  "sep_h": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0
+ },
+ "nf": 200,
+ "dumps": [
+  1,
+  50,
+  100,
+  150,
+  170,
+  194,
+  199,
+  200
+ ],
+ "variantes": [
+  {
+   "tag": "vl5sa",
+   "escena": "b5_voladizo_h5",
+   "nota": "5 mm sin amort q40 (A/B de v5)",
+   "params": {
+    "bending": 80,
+    "quality": 40
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 5,
+    "sin": [
+     "amort_flexion"
+    ]
+   }
+  },
+  {
+   "tag": "vl3sa",
+   "escena": "b5_voladizo_h3",
+   "nota": "3,3 mm sin amort q90 (A/B de v3)",
+   "params": {
+    "bending": 80,
+    "quality": 90
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 3.3333333333333335,
+    "sin": [
+     "amort_flexion"
+    ]
+   }
+  }
+ ]
+}
