@@ -13,8 +13,6 @@ on:
       etiqueta:
         description: "Etiqueta de la corrida (nombre del artifact)"
         default: "manual"
-  schedule:
-    - cron: "17 6 * * *"   # nocturno: 03:17 hora de Argentina
 
 env:
   BLENDER_VERSION: "5.1.0"
