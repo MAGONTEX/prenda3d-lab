@@ -7,7 +7,7 @@ B7 (mm): alto_cf = Z max de la columna del CF (|arco| <= 15 mm) sobre la costura
   base-canto (plano r-z); alto_medio / alto_espalda; desp16 = max |X6 - X1|; osc = max |X72 - X60| (asentada si < 1).
 B8: ang_k = angulo (grados) entre el eje del broche k (base en fL -> vertice t de la cartera; el apice va cosido a t) y la normal de la
   cartera en t; hueco = separacion radial cartera - capa de abajo (p50 / p95, mm) entre broches 1 y 3, a > 5 mm de los cantos; agujero =
-  area (mm2, 86,6 mm2 por vertice) de cartera entre broches 1 y 2 con la capa de abajo por ENCIMA (separacion < 0,5 mm); canto = canto
+  area (mm2, 86,6 mm2 por vertice) de cartera entre broches 1 y 2, a > 5 mm de su costura, con la capa de abajo por ENCIMA (separacion < 0,5 mm); canto = canto
   superior (y 50): desvio max a su recta (mm) y labio = separacion en el canto - p50 del interior (mm).
 """
 import glob
@@ -71,11 +71,12 @@ def b8(tag, Xs, D):
         rad = lambda Y: np.hypot(Y[:, 0], Y[:, 2])
         Xc = X[ac:bc]; rf = griddata(pc(X[fr]), rad(X[fr]), pc(Xc), method="linear"); gap = rad(Xc) - rf
         inn = (Uc[:, 1] > yb[0]) & (Uc[:, 1] < yb[2]) & (Uc[:, 0] > -10) & (Uc[:, 0] < 40) & np.isfinite(gap)
-        h12 = (Uc[:, 1] > yb[0]) & (Uc[:, 1] < yb[1]) & np.isfinite(gap)
+        # [ESC·f535] fuera de la costura de la cartera (x = -15, gap 0 por construccion): con ella el humo daba 433 mm2 falsos
+        h12 = (Uc[:, 1] > yb[0]) & (Uc[:, 1] < yb[1]) & (Uc[:, 0] > -10) & np.isfinite(gap)
         cs = np.abs(Uc[:, 1] - 50.0) < 1e-6; P = Xc[cs]; c0 = P.mean(0); w = np.linalg.svd(P - c0)[2][0]
         dev = np.linalg.norm((P - c0) - np.outer((P - c0) @ w, w), axis=1)
         r.update(hueco_p50=float(np.median(gap[inn])), hueco_p95=float(np.percentile(gap[inn], 95)),
-                 agujero_mm2=float(86.6 * np.sum(gap[h12] < 0.5)), canto_dev=float(dev.max()),
+                 agujero_mm2=float(86.6 * np.sum(gap[h12] < 0.5)), gap_min12=float(np.min(gap[h12])), canto_dev=float(dev.max()),
                  labio=float(np.nanmax(gap[cs]) - np.median(gap[inn])))
         o[f"f{f}"] = r
     o["osc"] = float(np.linalg.norm(Xs[72][ac:bc] - Xs[60][ac:bc], axis=1).max())
