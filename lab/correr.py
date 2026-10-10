@@ -156,6 +156,8 @@ def cierre_lab(ES, res):
 def mover(ES, var, M):
     """[ESC·f535] b9: pines que se MUEVEN. M["mover"] = [dict(ids, d_mm, f0, f1), ...]; var["mover_d_mm"] = [d_mm, ...] los pisa.
     Shape key relativa a molde_plano (ES.kc): solo los ids se corren d_mm, valor 0 hasta f0 -> 1 en f1. Sin "mover": no hace nada."""
+    if M.get("gravedad"):                            # b9: arranque = molde en XY, el "abajo" del banco es -y
+        bpy.context.scene.gravity = tuple(M["gravedad"]); ES.log(f"GRAVEDAD de la escena {tuple(M['gravedad'])}")
     mv = M.get("mover") or []
     for k_, m_ in enumerate(mv):
         d = np.array((var.get("mover_d_mm") or [m_["d_mm"]] * len(mv))[k_], float) / 1000.0; ids = np.array(m_["ids"], int)
