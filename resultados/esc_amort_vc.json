@@ -1,0 +1,72 @@
+{
+ "firma": "[ESC·f535]",
+ "tanda": "esc_amort_vc",
+ "estado": "ok",
+ "quien": "actions 38092444228",
+ "fin_trabajo": "2026-10-10T22:46:25+00:00",
+ "estado_correr": "success",
+ "estado_metricas": "success",
+ "t_blender_s": 180.0,
+ "n_variantes": 8,
+ "faltan": [],
+ "variantes": {
+  "vc10": {
+   "estado": "FIN",
+   "t_total": 0.48,
+   "t_sim": 0.47,
+   "s_por_cuadro": 0.002
+  },
+  "vc10r": {
+   "estado": "FIN",
+   "t_total": 0.48,
+   "t_sim": 0.47,
+   "s_por_cuadro": 0.002
+  },
+  "vc3sa": {
+   "estado": "FIN",
+   "t_total": 126.48,
+   "t_sim": 126.47,
+   "s_por_cuadro": 0.632
+  },
+  "vc5": {
+   "estado": "FIN",
+   "t_total": 9.17,
+   "t_sim": 9.17,
+   "s_por_cuadro": 0.046
+  },
+  "vc5sa": {
+   "estado": "FIN",
+   "t_total": 10.16,
+   "t_sim": 10.16,
+   "s_por_cuadro": 0.051
+  },
+  "vc5saq20": {
+   "estado": "FIN",
+   "t_total": 4.68,
+   "t_sim": 4.68,
+   "s_por_cuadro": 0.023
+  },
+  "vc5saq80": {
+   "estado": "FIN",
+   "t_total": 18.65,
+   "t_sim": 18.64,
+   "s_por_cuadro": 0.093
+  },
+  "vc5sar": {
+   "estado": "FIN",
+   "t_total": 9.85,
+   "t_sim": 9.84,
+   "s_por_cuadro": 0.049
+  }
+ },
+ "metricas": {},
+ "maquina": {
+  "nproc": 4,
+  "cpu": "AMD EPYC 7763 64-Core Processor"
+ },
+ "tomada": "2026-10-10T22:42:51+00:00",
+ "encolada": "2026-10-10T19:42:41-03:00",
+ "cerrada": "2026-10-10T23:00:24+00:00",
+ "corrida": "https://github.com/MAGONTEX/prenda3d-lab/actions/runs/38092444228",
+ "t_cola_a_resultado_s": 1063
+}

@@ -1,0 +1,36 @@
+{
+ "firma": "[ESC·f535]",
+ "tanda": "esc_amort_vl",
+ "estado": "ok",
+ "quien": "actions 38092444228",
+ "fin_trabajo": "2026-10-10T22:47:52+00:00",
+ "estado_correr": "success",
+ "estado_metricas": "success",
+ "t_blender_s": 261.0,
+ "n_variantes": 2,
+ "faltan": [],
+ "variantes": {
+  "vl3sa": {
+   "estado": "FIN",
+   "t_total": 240.91,
+   "t_sim": 240.9,
+   "s_por_cuadro": 1.205
+  },
+  "vl5sa": {
+   "estado": "FIN",
+   "t_total": 19.75,
+   "t_sim": 19.74,
+   "s_por_cuadro": 0.099
+  }
+ },
+ "metricas": {},
+ "maquina": {
+  "nproc": 4,
+  "cpu": "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz"
+ },
+ "tomada": "2026-10-10T22:42:51+00:00",
+ "encolada": "2026-10-10T19:42:41-03:00",
+ "cerrada": "2026-10-10T23:00:24+00:00",
+ "corrida": "https://github.com/MAGONTEX/prenda3d-lab/actions/runs/38092444228",
+ "t_cola_a_resultado_s": 1063
+}

@@ -1,0 +1,30 @@
+{
+ "firma": "[ESC·f535]",
+ "tanda": "b4h3_a35",
+ "estado": "ok",
+ "quien": "actions 38092444228",
+ "fin_trabajo": "2026-10-10T23:00:13+00:00",
+ "estado_correr": "success",
+ "estado_metricas": "success",
+ "t_blender_s": 1009.0,
+ "n_variantes": 1,
+ "faltan": [],
+ "variantes": {
+  "h3a35": {
+   "estado": "FIN",
+   "t_total": 1007.61,
+   "t_sim": 1007.25,
+   "s_por_cuadro": 10.492
+  }
+ },
+ "metricas": {},
+ "maquina": {
+  "nproc": 4,
+  "cpu": "INTEL(R) XEON(R) PLATINUM 8573C"
+ },
+ "tomada": "2026-10-10T22:42:51+00:00",
+ "encolada": "2026-10-10T19:42:41-03:00",
+ "cerrada": "2026-10-10T23:00:24+00:00",
+ "corrida": "https://github.com/MAGONTEX/prenda3d-lab/actions/runs/38092444228",
+ "t_cola_a_resultado_s": 1063
+}

@@ -1,0 +1,48 @@
+{
+ "firma": "[ESC·f535]",
+ "tanda": "b4h5_barrido_rn",
+ "estado": "ok",
+ "quien": "actions 38092444228",
+ "fin_trabajo": "2026-10-10T22:48:45+00:00",
+ "estado_correr": "success",
+ "estado_metricas": "success",
+ "t_blender_s": 297.0,
+ "n_variantes": 4,
+ "faltan": [],
+ "variantes": {
+  "h5a2": {
+   "estado": "FIN",
+   "t_total": 76.89,
+   "t_sim": 76.75,
+   "s_por_cuadro": 0.799
+  },
+  "h5a35": {
+   "estado": "FIN",
+   "t_total": 73.87,
+   "t_sim": 73.73,
+   "s_por_cuadro": 0.768
+  },
+  "h5a35r": {
+   "estado": "FIN",
+   "t_total": 72.53,
+   "t_sim": 72.38,
+   "s_por_cuadro": 0.754
+  },
+  "h5a6": {
+   "estado": "FIN",
+   "t_total": 72.13,
+   "t_sim": 71.96,
+   "s_por_cuadro": 0.75
+  }
+ },
+ "metricas": {},
+ "maquina": {
+  "nproc": 4,
+  "cpu": "AMD EPYC 9V74 80-Core Processor"
+ },
+ "tomada": "2026-10-10T22:42:51+00:00",
+ "encolada": "2026-10-10T19:42:41-03:00",
+ "cerrada": "2026-10-10T23:00:24+00:00",
+ "corrida": "https://github.com/MAGONTEX/prenda3d-lab/actions/runs/38092444228",
+ "t_cola_a_resultado_s": 1063
+}
