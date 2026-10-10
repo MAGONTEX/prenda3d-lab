@@ -1,0 +1,143 @@
+{
+ "nombre": "b1_bisagra",
+ "firma": "[ESC·f535]",
+ "nota": "B1 costura-bisagra (flexion, margen, pespunte) + D2 umbral de flexion a q10 + filas 2 y 4 del CSV",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 0,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 1,
+  "sand_lvl": 0,
+  "sep_h": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0
+ },
+ "nf": 120,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  6,
+  12,
+  24,
+  36,
+  48,
+  60,
+  72,
+  96,
+  108,
+  114,
+  117,
+  118,
+  119,
+  120
+ ],
+ "variantes": [
+  {
+   "tag": "b5",
+   "escena": "b1_tiras",
+   "params": {
+    "bending": 5
+   }
+  },
+  {
+   "tag": "b5r",
+   "escena": "b1_tiras",
+   "params": {
+    "bending": 5
+   },
+   "replica": 1
+  },
+  {
+   "tag": "b50",
+   "escena": "b1_tiras",
+   "params": {
+    "bending": 50
+   }
+  },
+  {
+   "tag": "b120",
+   "escena": "b1_tiras",
+   "params": {
+    "bending": 120
+   }
+  },
+  {
+   "tag": "b240",
+   "escena": "b1_tiras",
+   "params": {
+    "bending": 240
+   }
+  },
+  {
+   "tag": "b240r",
+   "escena": "b1_tiras",
+   "params": {
+    "bending": 240
+   },
+   "replica": 2
+  },
+  {
+   "tag": "b480",
+   "escena": "b1_tiras",
+   "params": {
+    "bending": 480
+   }
+  },
+  {
+   "tag": "b960",
+   "escena": "b1_tiras",
+   "params": {
+    "bending": 960
+   }
+  },
+  {
+   "tag": "m10",
+   "escena": "b1_tiras_m10",
+   "params": {
+    "bending": 240
+   }
+  },
+  {
+   "tag": "m20",
+   "escena": "b1_tiras_m20",
+   "params": {
+    "bending": 240
+   }
+  },
+  {
+   "tag": "m10p",
+   "escena": "b1_tiras_m10p",
+   "params": {
+    "bending": 240
+   }
+  },
+  {
+   "tag": "cil",
+   "escena": "b1_cil150",
+   "params": {
+    "bending": 5
+   }
+  }
+ ],
+ "metricas": [
+  "lab/metricas.py",
+  "b1",
+  "{sal}",
+  "--base",
+  "b240",
+  "--replica",
+  "b240r"
+ ]
+}

@@ -1,0 +1,184 @@
+{
+ "nombre": "b2_salto",
+ "firma": "[ESC·f535]",
+ "nota": "B2 salto de reposo sin gravedad: arranque = molde x s; libre y con lados cortos fijos; fila 1 del CSV (s 0.877 = area 0.77)",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 0,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 1,
+  "sand_lvl": 0,
+  "sep_h": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0
+ },
+ "nf": 48,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  8,
+  12,
+  18,
+  24,
+  30,
+  36,
+  48
+ ],
+ "variantes": [
+  {
+   "tag": "s075",
+   "escena": "b2_panel",
+   "escala": 0.75,
+   "ruido_z_mm": 0.3,
+   "params": {
+    "g0": 9999,
+    "g1": 10000
+   }
+  },
+  {
+   "tag": "s085",
+   "escena": "b2_panel",
+   "escala": 0.85,
+   "ruido_z_mm": 0.3,
+   "params": {
+    "g0": 9999,
+    "g1": 10000
+   }
+  },
+  {
+   "tag": "s0877",
+   "escena": "b2_panel",
+   "escala": 0.877,
+   "ruido_z_mm": 0.3,
+   "params": {
+    "g0": 9999,
+    "g1": 10000
+   }
+  },
+  {
+   "tag": "s095",
+   "escena": "b2_panel",
+   "escala": 0.95,
+   "ruido_z_mm": 0.3,
+   "params": {
+    "g0": 9999,
+    "g1": 10000
+   }
+  },
+  {
+   "tag": "s10",
+   "escena": "b2_panel",
+   "escala": 1.0,
+   "ruido_z_mm": 0.3,
+   "params": {
+    "g0": 9999,
+    "g1": 10000
+   }
+  },
+  {
+   "tag": "s105",
+   "escena": "b2_panel",
+   "escala": 1.05,
+   "ruido_z_mm": 0.3,
+   "params": {
+    "g0": 9999,
+    "g1": 10000
+   }
+  },
+  {
+   "tag": "s0877r",
+   "escena": "b2_panel",
+   "escala": 0.877,
+   "ruido_z_mm": 0.3,
+   "params": {
+    "g0": 9999,
+    "g1": 10000
+   },
+   "replica": 1
+  },
+  {
+   "tag": "f075",
+   "escena": "b2_panel_fijo",
+   "escala": 0.75,
+   "ruido_z_mm": 0.3,
+   "params": {
+    "g0": 9999,
+    "g1": 10000
+   }
+  },
+  {
+   "tag": "f085",
+   "escena": "b2_panel_fijo",
+   "escala": 0.85,
+   "ruido_z_mm": 0.3,
+   "params": {
+    "g0": 9999,
+    "g1": 10000
+   }
+  },
+  {
+   "tag": "f095",
+   "escena": "b2_panel_fijo",
+   "escala": 0.95,
+   "ruido_z_mm": 0.3,
+   "params": {
+    "g0": 9999,
+    "g1": 10000
+   }
+  },
+  {
+   "tag": "f10",
+   "escena": "b2_panel_fijo",
+   "escala": 1.0,
+   "ruido_z_mm": 0.3,
+   "params": {
+    "g0": 9999,
+    "g1": 10000
+   }
+  },
+  {
+   "tag": "f105",
+   "escena": "b2_panel_fijo",
+   "escala": 1.05,
+   "ruido_z_mm": 0.3,
+   "params": {
+    "g0": 9999,
+    "g1": 10000
+   }
+  },
+  {
+   "tag": "f085r",
+   "escena": "b2_panel_fijo",
+   "escala": 0.85,
+   "ruido_z_mm": 0.3,
+   "params": {
+    "g0": 9999,
+    "g1": 10000
+   },
+   "replica": 1
+  }
+ ],
+ "metricas": [
+  "lab/metricas.py",
+  "b2",
+  "{sal}",
+  "--base",
+  "s0877",
+  "--replica",
+  "s0877r"
+ ]
+}
