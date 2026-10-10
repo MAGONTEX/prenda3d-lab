@@ -190,7 +190,14 @@ def resumir(tanda, sal, est_correr, est_metricas, quien, t_blender):
     if len(txt.encode()) > LIMITE_RESUMEN:
         R["metricas"] = {k: {"banda": v.get("banda"), "nota": "recortado: ver artifact"} for k, v in met.items()}
         txt = json.dumps(R, ensure_ascii=False, indent=1)
-    print(txt)
+    print(sanear(txt))
+
+
+def sanear(txt):
+    """El resumen va a un repo publico: sin rutas de la maquina (repo -> <repo>, home -> ~, otros /home/x -> ~)."""
+    for a, b in ((RAIZ, "<repo>"), (RAIZ.replace("\\", "\\\\"), "<repo>"), (os.path.expanduser("~"), "~")):
+        txt = txt.replace(a, b)
+    return re.sub(r"/home/[A-Za-z0-9_.-]+", "~", txt)
 
 
 def maquina():
