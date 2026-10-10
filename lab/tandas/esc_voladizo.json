@@ -1,0 +1,99 @@
+{
+ "nombre": "esc_voladizo",
+ "firma": "[ESC·f535]",
+ "nota": "banco 5 voladizo 30x153 (empotrado 30) a 10/5/3,3 mm: flexion contra masa, filas B5-* de PREDICCIONES",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 0,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 1,
+  "sand_lvl": 0,
+  "sep_h": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0
+ },
+ "nf": 200,
+ "dumps": [
+  1,
+  50,
+  100,
+  150,
+  170,
+  194,
+  199,
+  200
+ ],
+ "variantes": [
+  {
+   "tag": "v10",
+   "escena": "b5_voladizo_h10",
+   "nota": "B5-h10",
+   "params": {
+    "bending": 80
+   }
+  },
+  {
+   "tag": "v10r",
+   "escena": "b5_voladizo_h10",
+   "nota": "replica",
+   "params": {
+    "bending": 80
+   },
+   "replica": 1
+  },
+  {
+   "tag": "v5",
+   "escena": "b5_voladizo_h5",
+   "nota": "B5-h5-reesc q40",
+   "params": {
+    "bending": 80,
+    "quality": 40
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 5
+   }
+  },
+  {
+   "tag": "v3",
+   "escena": "b5_voladizo_h3",
+   "nota": "B5-h3-reesc q90",
+   "params": {
+    "bending": 80,
+    "quality": 90
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 3.3333333333333335
+   }
+  },
+  {
+   "tag": "v5crudo",
+   "escena": "b5_voladizo_h5",
+   "nota": "B5-h5-crudo",
+   "params": {
+    "bending": 80
+   }
+  },
+  {
+   "tag": "v5masa",
+   "escena": "b5_voladizo_h5",
+   "nota": "B5-h5-masa (q20 por el tope)",
+   "params": {
+    "bending": 80,
+    "mass": 0.005,
+    "quality": 20
+   }
+  }
+ ]
+}

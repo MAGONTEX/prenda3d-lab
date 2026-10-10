@@ -1,0 +1,86 @@
+{
+ "nombre": "esc_canal_h3",
+ "firma": "[ESC·f535]",
+ "nota": "canal con pespunte a 3,3 mm (q20) contra 5 mm; h10a0/h5a0 repiten el run 38089013649 (bit a bit)",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 1,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 1,
+  "sand_lvl": 0,
+  "sep_h": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0
+ },
+ "nf": 96,
+ "dumps": [
+  1,
+  24,
+  48,
+  72,
+  84,
+  96
+ ],
+ "variantes": [
+  {
+   "tag": "h10a0",
+   "escena": "b4_canal_marco",
+   "nota": "control 10 mm (repite)",
+   "encoge": {
+    "cascara": 0.0
+   }
+  },
+  {
+   "tag": "h5a0",
+   "escena": "b4_canal_marco_h5",
+   "nota": "5 mm (repite)",
+   "encoge": {
+    "cascara": 0.0
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 5
+   }
+  },
+  {
+   "tag": "h5a0q20",
+   "escena": "b4_canal_marco_h5",
+   "nota": "5 mm q20 (aisla quality)",
+   "encoge": {
+    "cascara": 0.0
+   },
+   "params": {
+    "quality": 20
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 5
+   }
+  },
+  {
+   "tag": "h3a0",
+   "escena": "b4_canal_marco_h3",
+   "nota": "3,3 mm q20",
+   "encoge": {
+    "cascara": 0.0
+   },
+   "params": {
+    "quality": 20
+   },
+   "reescala": {
+    "h": 10,
+    "h2": 3.3333333333333335
+   }
+  }
+ ]
+}

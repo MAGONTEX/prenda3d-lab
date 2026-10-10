@@ -15,6 +15,15 @@ Exponente de r por parametro (factor = r ** e). Solo se escalan valores > 0 (los
 EXP = {"mass": 2, "air": 2, "bending": -2, "bend_max": -2, "pl_bh": -2, "tension": 1, "compression": 1, "soft": 1, "shear": 1,
        "ent_c": 1, "pl_hc": 1, "sand_k": 3, "sand_kc": 3}
 EXP_CLOTH = {"bending_damping": -2, "pin_stiffness": 3}
+# [ESC·f535] diagnostico por termino: "reescala": {"h": 10, "h2": 5, "sin": ["traccion"]} deja ese grupo SIN reescalar.
+TERMINO = {"masa": ("mass", "air"), "flexion": ("bending", "bend_max", "pl_bh", "bending_damping"),
+           "traccion": ("tension", "compression", "soft", "shear", "ent_c", "pl_hc"), "internos": ("sand_k", "sand_kc"), "pin": ("pin_stiffness",)}
+
+
+def _fuera(var):
+    sin = (var.get("reescala") or {}).get("sin", [])
+    assert all(t in TERMINO for t in sin), f"termino desconocido en sin: {sin}"
+    return {k for t in sin for k in TERMINO[t]}
 
 
 def factor(var):
@@ -28,8 +37,9 @@ def params(P, var):
     if r is None:
         return P, []
     Q = dict(P); cambios = []
+    fuera = _fuera(var)
     for k, e in EXP.items():
-        if k in Q and Q[k] > 0:
+        if k in Q and Q[k] > 0 and k not in fuera:
             Q[k] = Q[k] * r ** e; cambios.append((k, P[k], Q[k]))
     return Q, cambios
 
@@ -40,6 +50,9 @@ def cloth(ES, var):
     if r is None:
         return []
     cambios = []
+    fuera = _fuera(var)
     for k, e in EXP_CLOTH.items():
+        if k in fuera:
+            continue
         v0 = getattr(ES.s, k); setattr(ES.s, k, v0 * r ** e); cambios.append((k, v0, getattr(ES.s, k)))
     return cambios
