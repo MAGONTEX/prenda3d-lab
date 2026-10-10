@@ -153,6 +153,20 @@ def cierre_lab(ES, res):
     res["finito"] = bool(np.isfinite(X).all()); res["cuadros"] = int(ES.f)
 
 
+def mover(ES, var, M):
+    """[ESC·f535] b9: pines que se MUEVEN. M["mover"] = [dict(ids, d_mm, f0, f1), ...]; var["mover_d_mm"] = [d_mm, ...] los pisa.
+    Shape key relativa a molde_plano (ES.kc): solo los ids se corren d_mm, valor 0 hasta f0 -> 1 en f1. Sin "mover": no hace nada."""
+    mv = M.get("mover") or []
+    for k_, m_ in enumerate(mv):
+        d = np.array((var.get("mover_d_mm") or [m_["d_mm"]] * len(mv))[k_], float) / 1000.0; ids = np.array(m_["ids"], int)
+        sk = ES.gar.shape_key_add(name=f"mover{k_}", from_mix=False); sk.relative_key = ES.kc
+        co = np.zeros(len(ES.gar.data.vertices) * 3); ES.kc.data.foreach_get("co", co); co = co.reshape(-1, 3); co[ids] += d
+        sk.data.foreach_set("co", co.ravel())
+        for f_, v_ in ((1, 0.0), (int(m_["f0"]), 0.0), (int(m_["f1"]), 1.0)):
+            sk.value = v_; sk.keyframe_insert("value", frame=f_)
+        ES.log(f"MOVER {k_}: {len(ids)} pines d {np.round(d * 1000, 2).tolist()} mm entre f{m_['f0']} y f{m_['f1']}")
+
+
 def correr_variante(T, var, sp, salida, R):
     tag = var["tag"]; esc = json.load(open(os.path.join(AQUI, "escenas", var["escena"] + ".json"), encoding="utf-8")); M = esc["lab"]
     P, rnom = parametros(T, var, sp); import reescala_lab; P, cambios_P = reescala_lab.params(P, var); nf = int(var.get("nf", T.get("nf", 72))); dumps = var.get("dumps", T.get("dumps", [1, 2, 3, 4, 6, 12, 24, 36, 48, 60, 72]))
@@ -163,7 +177,7 @@ def correr_variante(T, var, sp, salida, R):
     try:
         ES = nucleo.preparar(P, nf, tag, tmp, salida, salida, "lab", dumps=dumps, reglas=R, datos_reglas=M.get("datos_reglas"))
         escena_lab(ES, var, M); t1 = time.time()
-        nucleo.tela(ES); nucleo.cloth(ES); encoge(ES, var); reescala(ES, var, cambios_P); t2 = time.time(); nucleo.bucle(ES); t3 = time.time()
+        nucleo.tela(ES); mover(ES, var, M); nucleo.cloth(ES); encoge(ES, var); reescala(ES, var, cambios_P); t2 = time.time(); nucleo.bucle(ES); t3 = time.time()
         cierre_lab(ES, res); res["estado"] = "STOP" if ES.STOP else ("ROTA" if not res["finito"] else "FIN")
         res.update(t_escena=round(t1 - t0, 2), t_armado=round(t2 - t1, 2), t_sim=round(t3 - t2, 2), s_por_cuadro=round((t3 - t2) / max(ES.f, 1), 3),
                    avisos_except=dict(ES.AVISOS), params_finales={k: v for k, v in ES.P.items() if P.get(k) != v})
