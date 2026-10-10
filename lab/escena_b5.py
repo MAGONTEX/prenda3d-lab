@@ -28,4 +28,5 @@ if __name__ == "__main__":
     for k, p in PASOS.items():
         b4_canal(n_canales=1, nombre=f"b5_almohadon_{k}", marco=True, paso=p)
         voladizo(f"b5_voladizo_{k}", p)
+        voladizo(f"b5_voladizo80_{k}", p, L=110.0)   # [ESC·f535] tira corta: 80 libres (l ~ 2c, theta ~45 grados: Peirce sensible)
     b4_canal(nombre="b4_canal_marco_h3", marco=True, paso=PASOS["h3"])

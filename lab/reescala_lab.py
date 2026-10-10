@@ -17,7 +17,8 @@ EXP = {"mass": 2, "air": 2, "bending": -2, "bend_max": -2, "pl_bh": -2, "tension
 EXP_CLOTH = {"bending_damping": -2, "pin_stiffness": 3}
 # [ESC·f535] diagnostico por termino: "reescala": {"h": 10, "h2": 5, "sin": ["traccion"]} deja ese grupo SIN reescalar.
 TERMINO = {"masa": ("mass", "air"), "flexion": ("bending", "bend_max", "pl_bh", "bending_damping"),
-           "traccion": ("tension", "compression", "soft", "shear", "ent_c", "pl_hc"), "internos": ("sand_k", "sand_kc"), "pin": ("pin_stiffness",)}
+           "traccion": ("tension", "compression", "soft", "shear", "ent_c", "pl_hc"), "internos": ("sand_k", "sand_kc"), "pin": ("pin_stiffness",),
+           "amort_flexion": ("bending_damping",)}   # [ESC·f535] 10-10 22:50: separado para el diagnostico (explicito en Blender)
 
 
 def _fuera(var):
