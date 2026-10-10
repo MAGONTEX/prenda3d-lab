@@ -1,0 +1,28 @@
+{
+ "firma": "[ESC·f535]",
+ "tanda": "b9_pandeo_v2",
+ "estado": "fallo",
+ "quien": "actions 38094942051",
+ "fin_trabajo": "2026-10-10T23:25:26+00:00",
+ "estado_correr": "skipped",
+ "estado_metricas": "skipped",
+ "t_blender_s": 0.0,
+ "n_variantes": 4,
+ "faltan": [
+  "d0",
+  "d5",
+  "d13",
+  "d13r"
+ ],
+ "variantes": {},
+ "metricas": {},
+ "maquina": {
+  "nproc": 4,
+  "cpu": "Intel(R) Xeon(R) 6973P-C"
+ },
+ "tomada": "2026-10-10T23:25:01+00:00",
+ "encolada": "2026-10-10T20:24:50-03:00",
+ "cerrada": "2026-10-10T23:25:36+00:00",
+ "corrida": "https://github.com/MAGONTEX/prenda3d-lab/actions/runs/38094942051",
+ "t_cola_a_resultado_s": 46
+}
