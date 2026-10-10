@@ -1,0 +1,227 @@
+{
+ "firma": "[ESC·f535]",
+ "tanda": "b8b_m1",
+ "estado": "ok",
+ "quien": "actions 38092309760",
+ "fin_trabajo": "2026-10-10T22:41:57+00:00",
+ "estado_correr": "success",
+ "estado_metricas": "success",
+ "t_blender_s": 47.0,
+ "n_variantes": 5,
+ "faltan": [],
+ "variantes": {
+  "m1base": {
+   "estado": "FIN",
+   "t_total": 10.19,
+   "t_sim": 10.16,
+   "s_por_cuadro": 0.141
+  },
+  "m1h104": {
+   "estado": "FIN",
+   "t_total": 8.99,
+   "t_sim": 8.97,
+   "s_por_cuadro": 0.125
+  },
+  "m1h104r": {
+   "estado": "FIN",
+   "t_total": 8.5,
+   "t_sim": 8.47,
+   "s_por_cuadro": 0.118
+  },
+  "m1h500": {
+   "estado": "FIN",
+   "t_total": 8.85,
+   "t_sim": 8.82,
+   "s_por_cuadro": 0.123
+  },
+  "m1h500r": {
+   "estado": "FIN",
+   "t_total": 9.19,
+   "t_sim": 9.16,
+   "s_por_cuadro": 0.127
+  }
+ },
+ "metricas": {
+  "b8_b8b_m1.json": {
+   "firma": "[ESC·f535]",
+   "banco": "b8",
+   "salida": "b8b_m1",
+   "variantes": {
+    "m1base": {
+     "f30": {
+      "ang1": 19.3082,
+      "ang2": 14.7054,
+      "ang3": 12.3512,
+      "hueco_p50": 5.4673,
+      "hueco_p95": 8.2089,
+      "agujero_mm2": 519.6,
+      "canto_dev": 1.9426,
+      "labio": 3.2918
+     },
+     "f48": {
+      "ang1": 18.5384,
+      "ang2": 12.5214,
+      "ang3": 12.1553,
+      "hueco_p50": 5.5688,
+      "hueco_p95": 8.1131,
+      "agujero_mm2": 519.6,
+      "canto_dev": 1.4481,
+      "labio": 4.5612
+     },
+     "f72": {
+      "ang1": 17.4299,
+      "ang2": 14.755,
+      "ang3": 11.8403,
+      "hueco_p50": 5.5917,
+      "hueco_p95": 7.7216,
+      "agujero_mm2": 433.0,
+      "canto_dev": 1.4845,
+      "labio": 6.0375
+     },
+     "osc": 2.7371
+    },
+    "m1h104": {
+     "f30": {
+      "ang1": 10.9043,
+      "ang2": 7.9501,
+      "ang3": 10.9582,
+      "hueco_p50": 5.384,
+      "hueco_p95": 7.9664,
+      "agujero_mm2": 346.4,
+      "canto_dev": 1.9608,
+      "labio": 5.4366
+     },
+     "f48": {
+      "ang1": 9.9064,
+      "ang2": 4.7755,
+      "ang3": 11.3118,
+      "hueco_p50": 5.3226,
+      "hueco_p95": 7.8052,
+      "agujero_mm2": 433.0,
+      "canto_dev": 1.875,
+      "labio": 3.1062
+     },
+     "f72": {
+      "ang1": 7.2295,
+      "ang2": 5.3819,
+      "ang3": 9.7214,
+      "hueco_p50": 5.3001,
+      "hueco_p95": 7.5592,
+      "agujero_mm2": 433.0,
+      "canto_dev": 2.1783,
+      "labio": 1.8407
+     },
+     "osc": 1.8757
+    },
+    "m1h104r": {
+     "f30": {
+      "ang1": 5.6801,
+      "ang2": 6.2774,
+      "ang3": 13.4857,
+      "hueco_p50": 5.463,
+      "hueco_p95": 8.0566,
+      "agujero_mm2": 433.0,
+      "canto_dev": 2.5026,
+      "labio": 1.0715
+     },
+     "f48": {
+      "ang1": 6.7914,
+      "ang2": 5.0823,
+      "ang3": 13.279,
+      "hueco_p50": 5.4968,
+      "hueco_p95": 8.1719,
+      "agujero_mm2": 433.0,
+      "canto_dev": 2.0523,
+      "labio": 2.1884
+     },
+     "f72": {
+      "ang1": 7.6374,
+      "ang2": 4.891,
+      "ang3": 12.8843,
+      "hueco_p50": 5.5735,
+      "hueco_p95": 8.2994,
+      "agujero_mm2": 433.0,
+      "canto_dev": 2.015,
+      "labio": 3.9053
+     },
+     "osc": 2.8072
+    },
+    "m1h500": {
+     "f30": {
+      "ang1": 5.6199,
+      "ang2": 4.9671,
+      "ang3": 22.4251,
+      "hueco_p50": 5.6397,
+      "hueco_p95": 7.7814,
+      "agujero_mm2": 433.0,
+      "canto_dev": 1.9353,
+      "labio": 3.8083
+     },
+     "f48": {
+      "ang1": 6.7717,
+      "ang2": 2.3045,
+      "ang3": 22.51,
+      "hueco_p50": 5.4436,
+      "hueco_p95": 7.6356,
+      "agujero_mm2": 433.0,
+      "canto_dev": 2.023,
+      "labio": 2.5195
+     },
+     "f72": {
+      "ang1": 5.3171,
+      "ang2": 1.8829,
+      "ang3": 23.6149,
+      "hueco_p50": 5.6095,
+      "hueco_p95": 7.3195,
+      "agujero_mm2": 346.4,
+      "canto_dev": 2.27,
+      "labio": 0.4889
+     },
+     "osc": 5.9674
+    },
+    "m1h500r": {
+     "f30": {
+      "ang1": 4.0681,
+      "ang2": 11.6247,
+      "ang3": 11.8714,
+      "hueco_p50": 5.7046,
+      "hueco_p95": 7.4953,
+      "agujero_mm2": 606.2,
+      "canto_dev": 1.4904,
+      "labio": 2.915
+     },
+     "f48": {
+      "ang1": 3.0942,
+      "ang2": 7.978,
+      "ang3": 10.1084,
+      "hueco_p50": 5.8185,
+      "hueco_p95": 7.9933,
+      "agujero_mm2": 606.2,
+      "canto_dev": 1.3162,
+      "labio": 4.9289
+     },
+     "f72": {
+      "ang1": 2.463,
+      "ang2": 10.2194,
+      "ang3": 11.5712,
+      "hueco_p50": 5.7365,
+      "hueco_p95": 7.0921,
+      "agujero_mm2": 606.2,
+      "canto_dev": 2.4623,
+      "labio": 0.0855
+     },
+     "osc": 4.7329
+    }
+   }
+  }
+ },
+ "maquina": {
+  "nproc": 4,
+  "cpu": "AMD EPYC 7763 64-Core Processor"
+ },
+ "tomada": "2026-10-10T22:40:37+00:00",
+ "encolada": "2026-10-10T19:40:26-03:00",
+ "cerrada": "2026-10-10T22:42:11+00:00",
+ "corrida": "https://github.com/MAGONTEX/prenda3d-lab/actions/runs/38092309760",
+ "t_cola_a_resultado_s": 105
+}

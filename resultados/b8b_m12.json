@@ -1,0 +1,305 @@
+{
+ "firma": "[ESC·f535]",
+ "tanda": "b8b_m12",
+ "estado": "ok",
+ "quien": "actions 38092309760",
+ "fin_trabajo": "2026-10-10T22:41:59+00:00",
+ "estado_correr": "success",
+ "estado_metricas": "success",
+ "t_blender_s": 46.0,
+ "n_variantes": 7,
+ "faltan": [],
+ "variantes": {
+  "m12base": {
+   "estado": "FIN",
+   "t_total": 7.22,
+   "t_sim": 7.21,
+   "s_por_cuadro": 0.1
+  },
+  "m12c50": {
+   "estado": "FIN",
+   "t_total": 5.01,
+   "t_sim": 5.0,
+   "s_por_cuadro": 0.069
+  },
+  "m12c50r": {
+   "estado": "FIN",
+   "t_total": 4.31,
+   "t_sim": 4.29,
+   "s_por_cuadro": 0.06
+  },
+  "m12h104": {
+   "estado": "FIN",
+   "t_total": 7.9,
+   "t_sim": 7.88,
+   "s_por_cuadro": 0.109
+  },
+  "m12h104r": {
+   "estado": "FIN",
+   "t_total": 7.49,
+   "t_sim": 7.47,
+   "s_por_cuadro": 0.104
+  },
+  "m12h500": {
+   "estado": "FIN",
+   "t_total": 6.74,
+   "t_sim": 6.72,
+   "s_por_cuadro": 0.093
+  },
+  "m12h500r": {
+   "estado": "FIN",
+   "t_total": 7.02,
+   "t_sim": 7.01,
+   "s_por_cuadro": 0.097
+  }
+ },
+ "metricas": {
+  "b8_b8b_m12.json": {
+   "firma": "[ESC·f535]",
+   "banco": "b8",
+   "salida": "b8b_m12",
+   "variantes": {
+    "m12base": {
+     "f30": {
+      "ang1": 12.1909,
+      "ang2": 12.7019,
+      "ang3": 23.2568,
+      "hueco_p50": 5.6609,
+      "hueco_p95": 8.2754,
+      "agujero_mm2": 433.0,
+      "canto_dev": 2.1953,
+      "labio": 2.0643
+     },
+     "f48": {
+      "ang1": 15.7248,
+      "ang2": 13.2813,
+      "ang3": 20.5614,
+      "hueco_p50": 5.7324,
+      "hueco_p95": 8.0967,
+      "agujero_mm2": 433.0,
+      "canto_dev": 2.1138,
+      "labio": 3.0172
+     },
+     "f72": {
+      "ang1": 9.9135,
+      "ang2": 13.2616,
+      "ang3": 23.0903,
+      "hueco_p50": 5.7753,
+      "hueco_p95": 8.3749,
+      "agujero_mm2": 433.0,
+      "canto_dev": 2.1318,
+      "labio": 3.0933
+     },
+     "osc": 5.1343
+    },
+    "m12c50": {
+     "f30": {
+      "ang1": 48.3169,
+      "ang2": 40.2191,
+      "ang3": 30.3427,
+      "hueco_p50": 9.4545,
+      "hueco_p95": 16.6487,
+      "agujero_mm2": 346.4,
+      "canto_dev": 2.7125,
+      "labio": 10.4946
+     },
+     "f48": {
+      "ang1": 15.0775,
+      "ang2": 22.3969,
+      "ang3": 21.2186,
+      "hueco_p50": 7.9462,
+      "hueco_p95": 15.7178,
+      "agujero_mm2": 346.4,
+      "canto_dev": 3.2367,
+      "labio": 14.8029
+     },
+     "f72": {
+      "ang1": 18.8881,
+      "ang2": 16.8359,
+      "ang3": 22.3418,
+      "hueco_p50": 7.9523,
+      "hueco_p95": 16.6253,
+      "agujero_mm2": 519.6,
+      "canto_dev": 4.1596,
+      "labio": 12.472
+     },
+     "osc": 71.7475
+    },
+    "m12c50r": {
+     "f30": {
+      "ang1": 9.3967,
+      "ang2": 19.4682,
+      "ang3": 38.4057,
+      "hueco_p50": 8.8458,
+      "hueco_p95": 14.5047,
+      "agujero_mm2": 519.6,
+      "canto_dev": 4.789,
+      "labio": 2.8544
+     },
+     "f48": {
+      "ang1": 1.0048,
+      "ang2": 19.9189,
+      "ang3": 25.5672,
+      "hueco_p50": 8.9555,
+      "hueco_p95": 16.6064,
+      "agujero_mm2": 519.6,
+      "canto_dev": 2.4439,
+      "labio": -2.1999
+     },
+     "f72": {
+      "ang1": 15.2556,
+      "ang2": 39.7095,
+      "ang3": 20.2797,
+      "hueco_p50": 10.9892,
+      "hueco_p95": 27.2977,
+      "agujero_mm2": 779.4,
+      "canto_dev": 3.2186,
+      "labio": -2.059
+     },
+     "osc": 63.9858
+    },
+    "m12h104": {
+     "f30": {
+      "ang1": 8.6564,
+      "ang2": 10.669,
+      "ang3": 23.2053,
+      "hueco_p50": 5.2145,
+      "hueco_p95": 6.9284,
+      "agujero_mm2": 433.0,
+      "canto_dev": 2.0304,
+      "labio": 1.5932
+     },
+     "f48": {
+      "ang1": 1.8771,
+      "ang2": 11.3784,
+      "ang3": 22.6513,
+      "hueco_p50": 5.1785,
+      "hueco_p95": 6.9114,
+      "agujero_mm2": 433.0,
+      "canto_dev": 2.0438,
+      "labio": 1.4862
+     },
+     "f72": {
+      "ang1": 5.5825,
+      "ang2": 11.0956,
+      "ang3": 21.2885,
+      "hueco_p50": 5.1935,
+      "hueco_p95": 7.2413,
+      "agujero_mm2": 433.0,
+      "canto_dev": 2.8419,
+      "labio": 1.0044
+     },
+     "osc": 2.4341
+    },
+    "m12h104r": {
+     "f30": {
+      "ang1": 10.2523,
+      "ang2": 12.246,
+      "ang3": 11.3719,
+      "hueco_p50": 5.1222,
+      "hueco_p95": 7.2522,
+      "agujero_mm2": 433.0,
+      "canto_dev": 1.8848,
+      "labio": 3.7907
+     },
+     "f48": {
+      "ang1": 11.3639,
+      "ang2": 14.8645,
+      "ang3": 10.4785,
+      "hueco_p50": 5.137,
+      "hueco_p95": 7.2995,
+      "agujero_mm2": 433.0,
+      "canto_dev": 1.6329,
+      "labio": 3.74
+     },
+     "f72": {
+      "ang1": 12.6295,
+      "ang2": 14.5759,
+      "ang3": 10.0986,
+      "hueco_p50": 5.1221,
+      "hueco_p95": 7.5022,
+      "agujero_mm2": 433.0,
+      "canto_dev": 2.2963,
+      "labio": 3.0371
+     },
+     "osc": 2.9663
+    },
+    "m12h500": {
+     "f30": {
+      "ang1": 2.2584,
+      "ang2": 6.9505,
+      "ang3": 28.0608,
+      "hueco_p50": 5.5967,
+      "hueco_p95": 7.6715,
+      "agujero_mm2": 433.0,
+      "canto_dev": 1.7988,
+      "labio": 1.5378
+     },
+     "f48": {
+      "ang1": 4.9675,
+      "ang2": 7.3036,
+      "ang3": 25.049,
+      "hueco_p50": 5.566,
+      "hueco_p95": 7.4204,
+      "agujero_mm2": 433.0,
+      "canto_dev": 1.5914,
+      "labio": 1.0445
+     },
+     "f72": {
+      "ang1": 4.3719,
+      "ang2": 8.0718,
+      "ang3": 25.5351,
+      "hueco_p50": 5.5009,
+      "hueco_p95": 7.4958,
+      "agujero_mm2": 433.0,
+      "canto_dev": 1.1717,
+      "labio": 1.7618
+     },
+     "osc": 2.1493
+    },
+    "m12h500r": {
+     "f30": {
+      "ang1": 6.9135,
+      "ang2": 9.1062,
+      "ang3": 11.137,
+      "hueco_p50": 5.4491,
+      "hueco_p95": 7.7822,
+      "agujero_mm2": 606.2,
+      "canto_dev": 2.2376,
+      "labio": 2.8723
+     },
+     "f48": {
+      "ang1": 3.5381,
+      "ang2": 8.5529,
+      "ang3": 10.1619,
+      "hueco_p50": 5.629,
+      "hueco_p95": 7.7035,
+      "agujero_mm2": 606.2,
+      "canto_dev": 2.2108,
+      "labio": 2.9605
+     },
+     "f72": {
+      "ang1": 3.5766,
+      "ang2": 8.0342,
+      "ang3": 10.6646,
+      "hueco_p50": 5.6883,
+      "hueco_p95": 7.8536,
+      "agujero_mm2": 606.2,
+      "canto_dev": 2.0211,
+      "labio": 2.1542
+     },
+     "osc": 3.6707
+    }
+   }
+  }
+ },
+ "maquina": {
+  "nproc": 4,
+  "cpu": "AMD EPYC 9V45 96-Core Processor"
+ },
+ "tomada": "2026-10-10T22:40:37+00:00",
+ "encolada": "2026-10-10T19:40:26-03:00",
+ "cerrada": "2026-10-10T22:42:11+00:00",
+ "corrida": "https://github.com/MAGONTEX/prenda3d-lab/actions/runs/38092309760",
+ "t_cola_a_resultado_s": 105
+}

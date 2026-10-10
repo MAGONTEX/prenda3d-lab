@@ -1,0 +1,180 @@
+{
+ "firma": "[ESC·f535]",
+ "tanda": "b7c_parche",
+ "estado": "ok",
+ "quien": "actions 38092309760",
+ "fin_trabajo": "2026-10-10T22:41:57+00:00",
+ "estado_correr": "success",
+ "estado_metricas": "success",
+ "t_blender_s": 46.0,
+ "n_variantes": 4,
+ "faltan": [],
+ "variantes": {
+  "base104": {
+   "estado": "FIN",
+   "t_total": 12.42,
+   "t_sim": 12.39,
+   "s_por_cuadro": 0.172
+  },
+  "base104r": {
+   "estado": "FIN",
+   "t_total": 12.07,
+   "t_sim": 12.05,
+   "s_por_cuadro": 0.167
+  },
+  "p500": {
+   "estado": "FIN",
+   "t_total": 10.08,
+   "t_sim": 10.06,
+   "s_por_cuadro": 0.14
+  },
+  "p500r": {
+   "estado": "FIN",
+   "t_total": 10.04,
+   "t_sim": 10.03,
+   "s_por_cuadro": 0.139
+  }
+ },
+ "metricas": {
+  "b7_b7c_parche.json": {
+   "firma": "[ESC·f535]",
+   "banco": "b7",
+   "salida": "b7c_parche",
+   "variantes": {
+    "base104": {
+     "f30": {
+      "alto_cf": 119.4116,
+      "canto_cf": 119.3878,
+      "quiebre": 0.0238,
+      "abre_cf": 1.8834,
+      "flecha_cf": 1.2271,
+      "alto_medio": 119.5252,
+      "alto_espalda": 119.5255
+     },
+     "f48": {
+      "alto_cf": 119.4129,
+      "canto_cf": 119.3878,
+      "quiebre": 0.0251,
+      "abre_cf": 1.7453,
+      "flecha_cf": 1.1995,
+      "alto_medio": 119.522,
+      "alto_espalda": 119.532
+     },
+     "f72": {
+      "alto_cf": 119.4157,
+      "canto_cf": 119.3916,
+      "quiebre": 0.0241,
+      "abre_cf": 1.861,
+      "flecha_cf": 1.2989,
+      "alto_medio": 119.5285,
+      "alto_espalda": 119.5327
+     },
+     "desp16": 1.9755,
+     "osc": 0.6884
+    },
+    "base104r": {
+     "f30": {
+      "alto_cf": 119.4056,
+      "canto_cf": 119.3807,
+      "quiebre": 0.0249,
+      "abre_cf": 1.8278,
+      "flecha_cf": 1.3074,
+      "alto_medio": 119.5317,
+      "alto_espalda": 119.5358
+     },
+     "f48": {
+      "alto_cf": 119.4123,
+      "canto_cf": 119.386,
+      "quiebre": 0.0263,
+      "abre_cf": 1.7881,
+      "flecha_cf": 1.2629,
+      "alto_medio": 119.5289,
+      "alto_espalda": 119.5391
+     },
+     "f72": {
+      "alto_cf": 119.4042,
+      "canto_cf": 119.3805,
+      "quiebre": 0.0237,
+      "abre_cf": 1.9367,
+      "flecha_cf": 1.3136,
+      "alto_medio": 119.5314,
+      "alto_espalda": 119.5392
+     },
+     "desp16": 1.948,
+     "osc": 0.6886
+    },
+    "p500": {
+     "f30": {
+      "alto_cf": 119.4382,
+      "canto_cf": 119.4004,
+      "quiebre": 0.0379,
+      "abre_cf": 2.4821,
+      "flecha_cf": 0.5183,
+      "alto_medio": 119.5432,
+      "alto_espalda": 119.5529
+     },
+     "f48": {
+      "alto_cf": 119.5692,
+      "canto_cf": 119.4911,
+      "quiebre": 0.0781,
+      "abre_cf": 1.7343,
+      "flecha_cf": 0.64,
+      "alto_medio": 119.5322,
+      "alto_espalda": 119.5357
+     },
+     "f72": {
+      "alto_cf": 119.4448,
+      "canto_cf": 119.4112,
+      "quiebre": 0.0337,
+      "abre_cf": 2.3526,
+      "flecha_cf": 0.7017,
+      "alto_medio": 119.5226,
+      "alto_espalda": 119.5381
+     },
+     "desp16": 2.6475,
+     "osc": 2.1235
+    },
+    "p500r": {
+     "f30": {
+      "alto_cf": 119.4196,
+      "canto_cf": 119.4005,
+      "quiebre": 0.0191,
+      "abre_cf": 2.3035,
+      "flecha_cf": 0.6524,
+      "alto_medio": 119.5568,
+      "alto_espalda": 119.5709
+     },
+     "f48": {
+      "alto_cf": 119.4417,
+      "canto_cf": 119.4247,
+      "quiebre": 0.017,
+      "abre_cf": 2.1406,
+      "flecha_cf": 0.5225,
+      "alto_medio": 119.5446,
+      "alto_espalda": 119.5548
+     },
+     "f72": {
+      "alto_cf": 119.4151,
+      "canto_cf": 119.4051,
+      "quiebre": 0.01,
+      "abre_cf": 1.9858,
+      "flecha_cf": 0.704,
+      "alto_medio": 119.5263,
+      "alto_espalda": 119.5224
+     },
+     "desp16": 5.7899,
+     "osc": 2.5987
+    }
+   }
+  }
+ },
+ "maquina": {
+  "nproc": 4,
+  "cpu": "AMD EPYC 7763 64-Core Processor"
+ },
+ "tomada": "2026-10-10T22:40:37+00:00",
+ "encolada": "2026-10-10T19:40:26-03:00",
+ "cerrada": "2026-10-10T22:42:11+00:00",
+ "corrida": "https://github.com/MAGONTEX/prenda3d-lab/actions/runs/38092309760",
+ "t_cola_a_resultado_s": 105
+}
