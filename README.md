@@ -33,7 +33,11 @@ python scripts/comparar.py out_a out_b 0.1
 La version de Blender debe ser la misma en ambos lados: el simulador lee estado interno del Cloth por offsets de memoria
 (`sim/offsets.py`) y falla fuerte si la version no es la validada (5.1).
 
-## Determinismo
+## Determinismo (medido 2026-10-10)
 
-Ver la seccion de determinismo del informe del proyecto: una corrida en Actions y una en Windows se comparan con
-`scripts/comparar.py`; el umbral fijado de antemano es 0,1 mm de error maximo por vertice.
+- Actions contra Actions: identico bit a bit (0,000000 mm) en 527 archivos, con 1 y con 4 hilos.
+- Windows (laptop) contra Actions: NO coincide. Error maximo 34 mm (banco b2), 102 mm (b1), 191 mm (b3); el umbral era 0,1 mm.
+- La laptop tampoco repite exacto entre corridas en b1 y b3 (hasta 1,9 y 130 mm); b2 si repite.
+- Regla: comparar variantes solo dentro de una misma plataforma. En Actions es seguro; no mezclar con corridas locales.
+
+Comando de comparacion: `python scripts/comparar.py carpeta_a carpeta_b 0.1`.
