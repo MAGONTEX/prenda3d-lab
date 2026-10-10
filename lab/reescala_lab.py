@@ -14,7 +14,11 @@ Exponente de r por parametro (factor = r ** e). Solo se escalan valores > 0 (los
 """
 EXP = {"mass": 2, "air": 2, "bending": -2, "bend_max": -2, "pl_bh": -2, "tension": 1, "compression": 1, "soft": 1, "shear": 1,
        "ent_c": 1, "pl_hc": 1, "sand_k": 3, "sand_kc": 3}
-EXP_CLOTH = {"bending_damping": -2, "pin_stiffness": 3}
+# [ESC·f535] 10-10 CORREGIDA (LEYES "Laboratorio — reescala" R-1..R-3): bending_damping NO se reescala (en Blender la flexion
+# angular es EXPLICITA: con x(h/h')^2 el voladizo de 5 mm no asienta, deriva30 30 mm -> 2 mm sin reescalarlo); quality x(h/h')^2
+# SIEMPRE (en params; a 5 mm q10 inventa un frunce de lambda 32); masa y aire por la cuenta de vertices si la variante trae
+# "nv": [nv_h, nv_h2] (masa TOTAL igual: la tira de 30 mm tiene 16 % menos masa con r^2). Verificada a 5 mm; a 3,3 mm NO.
+EXP_CLOTH = {"pin_stiffness": 3}
 # [ESC·f535] diagnostico por termino: "reescala": {"h": 10, "h2": 5, "sin": ["traccion"]} deja ese grupo SIN reescalar.
 TERMINO = {"masa": ("mass", "air"), "flexion": ("bending", "bend_max", "pl_bh", "bending_damping"),
            "traccion": ("tension", "compression", "soft", "shear", "ent_c", "pl_hc"), "internos": ("sand_k", "sand_kc"), "pin": ("pin_stiffness",),
@@ -39,9 +43,11 @@ def params(P, var):
         return P, []
     Q = dict(P); cambios = []
     fuera = _fuera(var)
+    nv = (var.get("reescala") or {}).get("nv")
     for k, e in EXP.items():
         if k in Q and Q[k] > 0 and k not in fuera:
-            Q[k] = Q[k] * r ** e; cambios.append((k, P[k], Q[k]))
+            f = float(nv[0]) / float(nv[1]) if (nv and k in ("mass", "air")) else r ** e
+            Q[k] = Q[k] * f; cambios.append((k, P[k], Q[k]))
     return Q, cambios
 
 
