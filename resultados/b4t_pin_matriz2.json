@@ -1,0 +1,36 @@
+{
+ "firma": "[ESC·f535]",
+ "tanda": "b4t_pin_matriz2",
+ "estado": "ok",
+ "quien": "actions 38101983958",
+ "fin_trabajo": "2026-10-11T01:31:43+00:00",
+ "estado_correr": "success",
+ "estado_metricas": "success",
+ "t_blender_s": 124.0,
+ "n_variantes": 2,
+ "faltan": [],
+ "variantes": {
+  "c0": {
+   "estado": "FIN",
+   "t_total": 60.88,
+   "t_sim": 60.68,
+   "s_por_cuadro": 0.843
+  },
+  "c0r": {
+   "estado": "FIN",
+   "t_total": 62.88,
+   "t_sim": 62.67,
+   "s_por_cuadro": 0.87
+  }
+ },
+ "metricas": {},
+ "maquina": {
+  "nproc": 4,
+  "cpu": "AMD EPYC 9V45 96-Core Processor"
+ },
+ "tomada": "2026-10-11T01:29:12+00:00",
+ "encolada": "2026-10-10T22:29:02-03:00",
+ "cerrada": "2026-10-11T01:31:53+00:00",
+ "corrida": "https://github.com/MAGONTEX/prenda3d-lab/actions/runs/38101983958",
+ "t_cola_a_resultado_s": 171
+}
