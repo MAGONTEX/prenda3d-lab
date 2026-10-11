@@ -1,0 +1,89 @@
+{
+ "nombre": "b9w_px",
+ "firma": "[ESC·f535]",
+ "nota": "[ESC·f535] PX: banco 9 con geometria y cinematica de la M133 (lab/escena_b9.py pw2): frente del cuello 123 mm, b2 a 19 del escote y b1 a 19 del canto; escote con pines moviles (atras 8 mm f2-f5, arriba 7 mm f8-f36 = relativo al canto en pv0); canto sostenido por el 'aro' (anclado solo en |x| >= 90); gravedad inclinada 30 grados; sin colisionador. w0 = sin movimiento (control negativo), w1 = M133 (control positivo), w1r replica, w2 arriba 12, w1g sin inclinar la gravedad, w1i = w1 + aro atras 4 y abajo 3 entre f32 y f36 (el canto de pv0).",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 0,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 0,
+  "sand_lvl": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0,
+  "sep_h": 4.5
+ },
+ "nf": 72,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  6,
+  8,
+  12,
+  18,
+  24,
+  30,
+  36,
+  42,
+  48,
+  60,
+  72
+ ],
+ "variantes": [
+  {
+   "tag": "w0",
+   "escena": "b9w_w0",
+   "params": {
+    "w_neck": 0.2
+   }
+  },
+  {
+   "tag": "w1",
+   "escena": "b9w_w1",
+   "params": {
+    "w_neck": 0.2
+   }
+  },
+  {
+   "tag": "w1r",
+   "escena": "b9w_w1",
+   "params": {
+    "w_neck": 0.2
+   },
+   "replica": 1
+  },
+  {
+   "tag": "w2",
+   "escena": "b9w_w2",
+   "params": {
+    "w_neck": 0.2
+   }
+  },
+  {
+   "tag": "w1g",
+   "escena": "b9w_w1g",
+   "params": {
+    "w_neck": 0.2
+   }
+  },
+  {
+   "tag": "w1i",
+   "escena": "b9w_w1i",
+   "params": {
+    "w_neck": 0.2
+   }
+  }
+ ],
+ "donde": "actions"
+}
