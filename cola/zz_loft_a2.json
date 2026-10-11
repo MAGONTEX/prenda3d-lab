@@ -1,0 +1,61 @@
+{
+ "firma": "[ESC·f535]",
+ "receta": "lab/zozo/zz_corre.py",
+ "receta_lab": {
+  "motor": "zozo"
+ },
+ "nf": 200,
+ "dumps": [],
+ "donde": "actions",
+ "hilos": 4,
+ "nombre": "zz_loft_a2",
+ "nota": "canal 145: flexion 10 y 150 a p* 1,15 y 3 + replica numerica (dt 0,0095)",
+ "variantes": [
+  {
+   "tag": "a_p115_b10",
+   "escena": "b5_almohadon_h10",
+   "params": {
+    "bend": 10.0,
+    "ps": 1.15
+   },
+   "nota": ""
+  },
+  {
+   "tag": "a_p300_b10",
+   "escena": "b5_almohadon_h10",
+   "params": {
+    "bend": 10.0,
+    "ps": 3.0
+   },
+   "nota": ""
+  },
+  {
+   "tag": "a_p115_b150",
+   "escena": "b5_almohadon_h10",
+   "params": {
+    "bend": 150.0,
+    "ps": 1.15
+   },
+   "nota": ""
+  },
+  {
+   "tag": "a_p300_b150",
+   "escena": "b5_almohadon_h10",
+   "params": {
+    "bend": 150.0,
+    "ps": 3.0
+   },
+   "nota": ""
+  },
+  {
+   "tag": "a_p115_b475r",
+   "escena": "b5_almohadon_h10",
+   "params": {
+    "bend": 47.5,
+    "ps": 1.15,
+    "dt": 0.0095
+   },
+   "nota": "replica: dt 0,0095"
+  }
+ ]
+}

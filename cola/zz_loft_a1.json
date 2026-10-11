@@ -1,0 +1,60 @@
+{
+ "firma": "[ESC·f535]",
+ "receta": "lab/zozo/zz_corre.py",
+ "receta_lab": {
+  "motor": "zozo"
+ },
+ "nf": 200,
+ "dumps": [],
+ "donde": "actions",
+ "hilos": 4,
+ "nombre": "zz_loft_a1",
+ "nota": "loft ZOZO vs Blender, canal 145 (misma malla que zz_canal1): barrido p* con bend 47,5",
+ "variantes": [
+  {
+   "tag": "a_p100_b475",
+   "escena": "b5_almohadon_h10",
+   "params": {
+    "bend": 47.5,
+    "ps": 1.0
+   },
+   "nota": ""
+  },
+  {
+   "tag": "a_p115_b475",
+   "escena": "b5_almohadon_h10",
+   "params": {
+    "bend": 47.5,
+    "ps": 1.15
+   },
+   "nota": ""
+  },
+  {
+   "tag": "a_p150_b475",
+   "escena": "b5_almohadon_h10",
+   "params": {
+    "bend": 47.5,
+    "ps": 1.5
+   },
+   "nota": ""
+  },
+  {
+   "tag": "a_p300_b475",
+   "escena": "b5_almohadon_h10",
+   "params": {
+    "bend": 47.5,
+    "ps": 3.0
+   },
+   "nota": ""
+  },
+  {
+   "tag": "a_p1000_b475",
+   "escena": "b5_almohadon_h10",
+   "params": {
+    "bend": 47.5,
+    "ps": 10.0
+   },
+   "nota": ""
+  }
+ ]
+}

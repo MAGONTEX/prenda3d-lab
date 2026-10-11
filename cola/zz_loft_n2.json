@@ -1,0 +1,65 @@
+{
+ "firma": "[ESC·f535]",
+ "receta": "lab/zozo/zz_corre.py",
+ "receta_lab": {
+  "motor": "zozo"
+ },
+ "nf": 200,
+ "dumps": [],
+ "donde": "actions",
+ "hilos": 4,
+ "nombre": "zz_loft_n2",
+ "nota": "canal angosto 48,3: strain-limit 5/10 % y borde pull(w)",
+ "variantes": [
+  {
+   "tag": "n_p300_sl05",
+   "escena": "zz_angosto_h10",
+   "params": {
+    "bend": 47.5,
+    "ps": 3.0,
+    "strain-limit": 0.05
+   },
+   "nota": ""
+  },
+  {
+   "tag": "n_p300_sl10",
+   "escena": "zz_angosto_h10",
+   "params": {
+    "bend": 47.5,
+    "ps": 3.0,
+    "strain-limit": 0.1
+   },
+   "nota": ""
+  },
+  {
+   "tag": "n_p115_sl10",
+   "escena": "zz_angosto_h10",
+   "params": {
+    "bend": 47.5,
+    "ps": 1.15,
+    "strain-limit": 0.1
+   },
+   "nota": ""
+  },
+  {
+   "tag": "n_p115_pull1",
+   "escena": "zz_angosto_h10",
+   "params": {
+    "bend": 47.5,
+    "ps": 1.15,
+    "pull": 1.0
+   },
+   "nota": ""
+  },
+  {
+   "tag": "n_p300_pull1",
+   "escena": "zz_angosto_h10",
+   "params": {
+    "bend": 47.5,
+    "ps": 3.0,
+    "pull": 1.0
+   },
+   "nota": ""
+  }
+ ]
+}
