@@ -47,3 +47,6 @@ Comando de comparacion: `python scripts/comparar.py carpeta_a carpeta_b 0.1`.
 mueve a `tomadas/`, corre cada tanda en su propio trabajo (hasta 20 en paralelo), calcula las metricas y commitea
 `resultados/<tanda>.json` (resumen chico); los `.npy` quedan como artifact `npy-<tanda>-<run>` 14 dias. Termina en
 `hecho/` o `fallo/`. Validador y pasos: `scripts/cola.py`. Solo bancos sinteticos del laboratorio.
+
+## Prendas enteras [ESC·f535]
+Cola aparte (`cola_prendas/`, workflow `prenda.yml`) para correr prendas enteras con `sim/lanzar.py`. Guia: `prendas/README.md`.

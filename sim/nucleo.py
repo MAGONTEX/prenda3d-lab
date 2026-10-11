@@ -754,6 +754,8 @@ def cloth(ES):
         cs.self_friction = ES.P['sf']
         cs.vertex_group_self_collisions = 'sin_autocol'
         ES.log('autocolision', len(ES.D['autocol']), 'vertices, distancia', ES.P['self_d'])
+    elif ES.P['selfcol'] > 0:   # [ESC·f535] 10-11: M1194 y W2094 corrieron 22 rondas sin autocolision y sin aviso
+        ES.log('AVISO: selfcol', ES.P['selfcol'], 'pero la malla no trae autocol -> SIN autocolision (falta construccion)')
     # e2s DIAGNOSTICO (no es construccion): el cuello (hs bajo la vista + ht) sin colision con el cuerpo
     if ES.P['noobj_neck'] > 0 and ES.D.get('rig_cuello'):
         vno = ES.gar.vertex_groups.new(name='sin_colobj')

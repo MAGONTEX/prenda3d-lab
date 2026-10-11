@@ -1,0 +1,18 @@
+{
+ "prenda": "W2057",
+ "nota": "Datos de simulacion de la W2057 ONYX (tecnico-3d, 2026-10-10). El nucleo los lee como ES.RD. Sin presion (no hay relleno inyectado): piezas_inyectadas vacio. Ecocuero: MISMO material que la M1195 hasta que [x] mida (PEDIDO 9-11 de la W2057 / 10 de la M1195).",
+ "piezas_inyectadas": [],
+ "prefijo_manga": ["ms", "mc", "mb"],
+ "costuras_clave": ["costado R", "costado L", "sisa de espalda - manga de abajo R", "sisa de espalda - manga de abajo L",
+                    "sisa delantera (delantero + canesu) - franja de copa R", "sisa delantera (delantero + canesu) - franja de copa L",
+                    "cierre R", "cierre L", "hombro: canesu delantero - canesu de espalda R", "hombro: canesu delantero - canesu de espalda L",
+                    "escote: cuello exterior - delantero + canesues R", "escote: cuello exterior - delantero + canesues L",
+                    "pliegue de espalda: costura R", "pliegue de espalda: costura L"],
+ "indices_cf": null,
+ "flexion_zonas": {"cuello": 3.0, "tira": 3.0, "vista": 2.0, "ruedo": 2.0, "cuff": 2.0, "bolsillo": 2.0, "pliegue": 3.0},
+ "flexion_zonas_nota": "multiplicador de la flexion base por zona (capas): cuello = 2 hojas + entretela (plancha, x3); tira del cierre = tira + entretela + vista (x3; el cierre mismo va en bend_max); vista delantera de 134 mm = tela + vista con entretela (x2); vista de ruedo 35 mm y de puno 40 mm (x2); bolsillo de pecho de parche 148 x 142 (x2: parche + forro); pliegue = 4 capas en 12 mm a cada lado de la costura (x3). PENDIENTE: franjas de 20 mm por costura (margenes + pespunte).",
+ "material": {"tela": "ecocuero PU 100 % con forro acolchado 60 g sumado (W real sin medir; la M1195 estimo 430-450 g/m2)",
+              "c_mm_hipotesis": 45.0, "bending": 120, "bend_max": 400, "mass": 0.02, "quality": 15, "tension": 200, "compression": 60, "shear": 60,
+              "banco": "Diseño/higgsfield/47-m1195/sim/banco/banco_voladizo.csv (misma tela: no se repite el banco hasta tener la medida de [x])",
+              "regla": "c ~ (bending/mass)^(1/3) (banco M1195: b 80 -> c 40-43, 160 -> 48-50 mm). Cuando [x] mida c real: bending = 120 * (c_real/45)^3 y volver a correr el banco."}
+}
