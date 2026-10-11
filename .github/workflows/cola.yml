@@ -16,6 +16,9 @@ permissions:
 
 env:
   BLENDER_VERSION: "5.1.0"
+  # [ESC·f535] ZOZO (ppf-contact-solver, CPU): tandas con receta_lab.motor = "zozo" (lab/zozo/zz_cola.py)
+  ZOZO_VERSION: "2026-10-01-19-29"
+  ZOZO_SHA256: "3ed5e9978a94bc29f69eedc0eb4ba24dfc950ce7f4215655e9e6cbe5e5696408"
   BLENDER_SHA256: "7f2475990613c8d4c7ac5697803fcf40d09541c1fd8c23936f4b07a169a920c7"
   GIT_AUTHOR_NAME: cola-lab
   GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
@@ -65,7 +68,28 @@ jobs:
       - uses: actions/checkout@v4
         with: { ref: "${{ needs.tomar.outputs.sha }}" }
 
+      - name: Motor de la tanda (blender | zozo)
+        run: echo "MOTOR=$(python3 -c "import json;print(json.load(open('tomadas/$T.json'))['receta_lab'].get('motor','blender'))")" >> "$GITHUB_ENV"
+
+      - name: Cache del ZOZO
+        if: env.MOTOR == 'zozo'
+        uses: actions/cache@v4
+        with:
+          path: ~/zozo-dl
+          key: zozo-${{ env.ZOZO_VERSION }}-linux-x86_64
+
+      - name: Bajar (si el cache esta vacio) y extraer el ZOZO
+        if: env.MOTOR == 'zozo'
+        run: |
+          set -euo pipefail
+          A="ppf-contact-solver-${ZOZO_VERSION}-linux-x86_64.tar.gz"; mkdir -p ~/zozo-dl ~/zozo
+          [ -f ~/zozo-dl/$A ] || curl -fsSL -o ~/zozo-dl/$A "https://github.com/st-tech/ppf-contact-solver/releases/download/${ZOZO_VERSION}/$A"
+          echo "${ZOZO_SHA256}  $HOME/zozo-dl/$A" | sha256sum -c -
+          tar -xzf ~/zozo-dl/$A -C ~/zozo
+          echo "ZZ=$(dirname "$(ls ~/zozo/*/ppf-contact-solver | head -1)")" >> "$GITHUB_ENV"
+
       - name: Cache de Blender
+        if: env.MOTOR != 'zozo'
         id: cache
         uses: actions/cache@v4
         with:
@@ -73,7 +97,7 @@ jobs:
           key: blender-${{ env.BLENDER_VERSION }}-linux-x64
 
       - name: Bajar Blender (solo si el cache esta vacio)
-        if: steps.cache.outputs.cache-hit != 'true'
+        if: env.MOTOR != 'zozo' && steps.cache.outputs.cache-hit != 'true'
         run: |
           set -euo pipefail
           A="blender-${BLENDER_VERSION}-linux-x64.tar.xz"
@@ -82,6 +106,7 @@ jobs:
           tar -xf "$A" -C "$HOME"
 
       - name: Librerias de sistema que Blender enlaza aunque corra en -b
+        if: env.MOTOR != 'zozo'
         run: sudo apt-get update -qq && sudo apt-get install -y -qq libxi6 libxrender1 libxfixes3 libgl1 libegl1 libxkbcommon0 libsm6 libxxf86vm1
 
       - uses: actions/setup-python@v5
@@ -98,7 +123,11 @@ jobs:
           B="$HOME/blender-${BLENDER_VERSION}-linux-x64/blender"
           H=$(python3 -c "import json;print(json.load(open('tomadas/$T.json')).get('hilos',4))")
           mkdir -p out; S0=$SECONDS
-          "$B" -b --factory-startup -t "$H" --python lab/correr.py -- tanda="tomadas/$T.json" salida="out/$T" > "out/$T.log" 2>&1; RC=$?
+          if [ "${MOTOR:-blender}" = zozo ]; then
+            python3 lab/zozo/zz_cola.py "tomadas/$T.json" "out/$T" "$ZZ" > "out/$T.log" 2>&1; RC=$?
+          else
+            "$B" -b --factory-startup -t "$H" --python lab/correr.py -- tanda="tomadas/$T.json" salida="out/$T" > "out/$T.log" 2>&1; RC=$?
+          fi
           echo "$((SECONDS-S0))" > out/t_blender.txt
           echo "| $T | rc $RC | $((SECONDS-S0)) s |" | tee -a "$GITHUB_STEP_SUMMARY"
           tail -3 "out/$T.log"
