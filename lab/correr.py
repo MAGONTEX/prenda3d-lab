@@ -30,7 +30,7 @@ for _p in (SIM, PAQ, AQUI):
 import nucleo                              # noqa: E402
 from prenda3d import receta as RC          # noqa: E402
 
-OCULTAS = ("sa_brd", "tilt", "tiltf")
+OCULTAS = ("sa_brd", "tilt", "tiltf", "relleno", "relleno_h", "relleno_g", "relleno_r", "relleno_min")   # [ESC·f535] b4t: relleno* = struts de lab_reglas (no estan en sim/origen)
 
 
 def args():
