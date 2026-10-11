@@ -1,0 +1,345 @@
+{
+ "firma": "[ESC·f535]",
+ "tanda": "zz_loft_a1",
+ "estado": "ok",
+ "quien": "actions 38110816482",
+ "fin_trabajo": "2026-10-11T04:14:33+00:00",
+ "estado_correr": "success",
+ "estado_metricas": "success",
+ "t_blender_s": 107.0,
+ "n_variantes": 5,
+ "faltan": [],
+ "variantes": {
+  "a_p1000_b475": {
+   "estado": "FIN",
+   "t_total": 20.7,
+   "t_sim": 19.0,
+   "s_por_cuadro": 0.0951
+  },
+  "a_p100_b475": {
+   "estado": "FIN",
+   "t_total": 21.8,
+   "t_sim": 20.0,
+   "s_por_cuadro": 0.1001
+  },
+  "a_p115_b475": {
+   "estado": "FIN",
+   "t_total": 22.8,
+   "t_sim": 21.0,
+   "s_por_cuadro": 0.1051
+  },
+  "a_p150_b475": {
+   "estado": "FIN",
+   "t_total": 20.7,
+   "t_sim": 19.0,
+   "s_por_cuadro": 0.0951
+  },
+  "a_p300_b475": {
+   "estado": "FIN",
+   "t_total": 20.8,
+   "t_sim": 19.0,
+   "s_por_cuadro": 0.0951
+  }
+ },
+ "metricas": {
+  "a_p1000_b475.json": {
+   "loft": 12.151,
+   "z_cresta": 6.96,
+   "z_pared": -5.193,
+   "seccion_mm2": 1232.1,
+   "esp10": 3.578,
+   "esp10_lados": [
+    3.58,
+    3.58
+   ],
+   "gemelo_min": 2.214,
+   "st_p95": 0.78,
+   "st_max": 1.68,
+   "st_p5": -0.0,
+   "asentado_mm": 0.018,
+   "esp_p50": 9.102,
+   "esp_p95": 12.095,
+   "n_int": 446,
+   "tag": "a_p1000_b475",
+   "escena": "b5_almohadon_h10",
+   "ps": 10.0,
+   "params": {
+    "bend": 47.5,
+    "ps": 10.0
+   },
+   "rc": 0,
+   "cruces_max": 0,
+   "cuadros_con_cruce": 0,
+   "cuadros": 201,
+   "s_cuadro": 0.0951,
+   "loft_f": [
+    2.0,
+    12.14,
+    12.15,
+    12.14,
+    12.14,
+    12.15,
+    12.14,
+    12.15,
+    12.11,
+    12.12,
+    12.15
+   ],
+   "f": [
+    0,
+    20,
+    40,
+    60,
+    80,
+    100,
+    120,
+    140,
+    160,
+    180,
+    200
+   ],
+   "salida": "zz_loft_a1"
+  },
+  "a_p100_b475.json": {
+   "loft": 4.068,
+   "z_cresta": 0.526,
+   "z_pared": -5.065,
+   "seccion_mm2": 443.4,
+   "esp10": 2.11,
+   "esp10_lados": [
+    2.12,
+    2.1
+   ],
+   "gemelo_min": 2.012,
+   "st_p95": 0.51,
+   "st_max": 1.41,
+   "st_p5": -0.03,
+   "asentado_mm": 0.003,
+   "esp_p50": 3.197,
+   "esp_p95": 4.074,
+   "n_int": 446,
+   "tag": "a_p100_b475",
+   "escena": "b5_almohadon_h10",
+   "ps": 1.0,
+   "params": {
+    "bend": 47.5,
+    "ps": 1.0
+   },
+   "rc": 0,
+   "cruces_max": 0,
+   "cuadros_con_cruce": 0,
+   "cuadros": 201,
+   "s_cuadro": 0.1001,
+   "loft_f": [
+    2.0,
+    3.84,
+    4.0,
+    4.1,
+    4.07,
+    4.07,
+    4.07,
+    4.07,
+    4.07,
+    4.07,
+    4.07
+   ],
+   "f": [
+    0,
+    20,
+    40,
+    60,
+    80,
+    100,
+    120,
+    140,
+    160,
+    180,
+    200
+   ],
+   "salida": "zz_loft_a1"
+  },
+  "a_p115_b475.json": {
+   "loft": 7.362,
+   "z_cresta": 2.229,
+   "z_pared": -5.079,
+   "seccion_mm2": 710.9,
+   "esp10": 2.43,
+   "esp10_lados": [
+    2.43,
+    2.42
+   ],
+   "gemelo_min": 2.027,
+   "st_p95": 0.52,
+   "st_max": 1.39,
+   "st_p5": -0.02,
+   "asentado_mm": 0.008,
+   "esp_p50": 4.486,
+   "esp_p95": 7.349,
+   "n_int": 446,
+   "tag": "a_p115_b475",
+   "escena": "b5_almohadon_h10",
+   "ps": 1.15,
+   "params": {
+    "bend": 47.5,
+    "ps": 1.15
+   },
+   "rc": 0,
+   "cruces_max": 0,
+   "cuadros_con_cruce": 0,
+   "cuadros": 201,
+   "s_cuadro": 0.1051,
+   "loft_f": [
+    2.0,
+    7.45,
+    7.36,
+    7.36,
+    7.36,
+    7.36,
+    7.36,
+    7.36,
+    7.36,
+    7.36,
+    7.36
+   ],
+   "f": [
+    0,
+    20,
+    40,
+    60,
+    80,
+    100,
+    120,
+    140,
+    160,
+    180,
+    200
+   ],
+   "salida": "zz_loft_a1"
+  },
+  "a_p150_b475.json": {
+   "loft": 9.04,
+   "z_cresta": 3.943,
+   "z_pared": -5.098,
+   "seccion_mm2": 866.2,
+   "esp10": 2.645,
+   "esp10_lados": [
+    2.65,
+    2.64
+   ],
+   "gemelo_min": 2.047,
+   "st_p95": 0.54,
+   "st_max": 1.39,
+   "st_p5": -0.0,
+   "asentado_mm": 0.007,
+   "esp_p50": 5.606,
+   "esp_p95": 8.946,
+   "n_int": 446,
+   "tag": "a_p150_b475",
+   "escena": "b5_almohadon_h10",
+   "ps": 1.5,
+   "params": {
+    "bend": 47.5,
+    "ps": 1.5
+   },
+   "rc": 0,
+   "cruces_max": 0,
+   "cuadros_con_cruce": 0,
+   "cuadros": 201,
+   "s_cuadro": 0.0951,
+   "loft_f": [
+    2.0,
+    9.04,
+    9.05,
+    9.04,
+    9.04,
+    9.04,
+    9.03,
+    9.05,
+    9.04,
+    9.04,
+    9.04
+   ],
+   "f": [
+    0,
+    20,
+    40,
+    60,
+    80,
+    100,
+    120,
+    140,
+    160,
+    180,
+    200
+   ],
+   "salida": "zz_loft_a1"
+  },
+  "a_p300_b475.json": {
+   "loft": 10.438,
+   "z_cresta": 5.309,
+   "z_pared": -5.129,
+   "seccion_mm2": 1021.8,
+   "esp10": 2.96,
+   "esp10_lados": [
+    2.96,
+    2.96
+   ],
+   "gemelo_min": 2.095,
+   "st_p95": 0.63,
+   "st_max": 1.42,
+   "st_p5": -0.0,
+   "asentado_mm": 0.01,
+   "esp_p50": 7.226,
+   "esp_p95": 10.398,
+   "n_int": 446,
+   "tag": "a_p300_b475",
+   "escena": "b5_almohadon_h10",
+   "ps": 3.0,
+   "params": {
+    "bend": 47.5,
+    "ps": 3.0
+   },
+   "rc": 0,
+   "cruces_max": 0,
+   "cuadros_con_cruce": 0,
+   "cuadros": 201,
+   "s_cuadro": 0.0951,
+   "loft_f": [
+    2.0,
+    10.44,
+    10.44,
+    10.43,
+    10.44,
+    10.42,
+    10.44,
+    10.44,
+    10.43,
+    10.44,
+    10.44
+   ],
+   "f": [
+    0,
+    20,
+    40,
+    60,
+    80,
+    100,
+    120,
+    140,
+    160,
+    180,
+    200
+   ],
+   "salida": "zz_loft_a1"
+  }
+ },
+ "maquina": {
+  "nproc": 4,
+  "cpu": "AMD EPYC 7763 64-Core Processor"
+ },
+ "tomada": "2026-10-11T04:12:05+00:00",
+ "encolada": "2026-10-11T01:11:54-03:00",
+ "cerrada": "2026-10-11T04:15:13+00:00",
+ "corrida": "https://github.com/MAGONTEX/prenda3d-lab/actions/runs/38110816482",
+ "t_cola_a_resultado_s": 199
+}
