@@ -1,0 +1,72 @@
+{
+ "nombre": "b4t_diag",
+ "firma": "[ESC·f535]",
+ "nota": "[ESC·f535] b4t diagnostico del corte en f6 (humo 2: canesu 34 mm, tubo -12 %, falla axisimetrica). d1 = h1 control; d2 = h1 sin resortes internos (sand_k 0, sand_kc 0: solo reposo lente); d3 = h1 con el disco entero fijo (b4t_tubo_pin, r_pin 200 > R 190). Volcado cada cuadro.",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 1,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 1,
+  "sand_lvl": 0,
+  "sep_h": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0
+ },
+ "nf": 6,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6
+ ],
+ "variantes": [
+  {
+   "tag": "d1",
+   "escena": "b4t_tubo",
+   "params": {
+    "relleno": 1,
+    "relleno_h": 18,
+    "relleno_r": 45,
+    "relleno_g": 21
+   },
+   "nota": "control = h1"
+  },
+  {
+   "tag": "d2",
+   "escena": "b4t_tubo",
+   "params": {
+    "relleno": 1,
+    "relleno_h": 18,
+    "relleno_r": 45,
+    "relleno_g": 21,
+    "sand_k": 0,
+    "sand_kc": 0
+   },
+   "nota": "solo reposo lente (resortes internos en 0)"
+  },
+  {
+   "tag": "d3",
+   "escena": "b4t_tubo_pin",
+   "params": {
+    "relleno": 1,
+    "relleno_h": 18,
+    "relleno_r": 45,
+    "relleno_g": 21
+   },
+   "nota": "disco entero fijo (r_pin 200)"
+  }
+ ],
+ "donde": "actions"
+}
