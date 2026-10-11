@@ -9,7 +9,10 @@ canal (D['lining']) va en la clave molde_plano a z = -sg x T(d) bajo su cascara 
 T = max(relleno_min, relleno_h (1 - (1 - clip(d / relleno_r))^2)) y d = D['relleno_d'] (mm en el molde a pespuntes, bordes y
 costuras; relleno_r = 0 -> T = relleno_h constante). Resortes internos del Cloth con peso `relleno` en el forro (grupo 'interno'),
 largo max sand_len, desvio 0, chequeo de normal sand_nc, tension 0 -> sand_k, compresion 0 -> sand_kc. Guardia f1 = la de la
-prenda: peso 0 en los vertices del forro a < relleno_g mm (V0) de otra pieza; se levanta en el primer paso del lazo de volumen.
+prenda: peso 0 en los vertices del forro a < relleno_g mm (V0) de otra pieza. [ESC·f535] b4t_humo2: la guardia NO se levanta
+(es permanente). En el lab el lazo no reconstruye el Cloth: levantarla activaba los pares que Blender detecto en f1 en 3D contra
+el disco-canesu, con reposo de metros (humo b4t_humo: STOP f6, canesu abierto 31 mm). Los vertices guardados son las filas junto
+al canesu, fuera de la zona 'lejos' que mide la transferencia.
 Sin `relleno` (o 0) todo queda IDENTICO: los envoltorios solo llaman a la funcion de la M133.
 """
 import os
@@ -93,14 +96,6 @@ def sandwich_resortes_internos(ES):
     s.internal_spring_normal_check = ES.P["sand_nc"] > 0; s.vertex_group_intern = "interno"
     s.internal_tension_stiffness = 0.0; s.internal_compression_stiffness = 0.0
     s.internal_tension_stiffness_max = ES.P["sand_k"]; s.internal_compression_stiffness_max = ES.P["sand_kc"]
-    ES.log(f"[ESC·f535] RELLENO (lab): peso {w} en {len(ok)} v del forro desde f1 | guardia {len(pend)} a < {g * 1000:.0f} mm de otra pieza | "
+    ES.log(f"[ESC·f535] RELLENO (lab): peso {w} en {len(ok)} v del forro desde f1 | guardia permanente {len(pend)} a < {g * 1000:.0f} mm de otra pieza | "
            f"resortes internos: largo {s.internal_spring_max_length:.3f} m, normal_check {s.internal_spring_normal_check}, k {s.internal_tension_stiffness_max} kc {s.internal_compression_stiffness_max}")
 
-
-def simetria_presion(ES):
-    """Paso del lazo de volumen (antes de set_weights): levanta la guardia del relleno una vez. Sin relleno: no hace nada."""
-    pend = getattr(ES, "RELLENO_PEND", None)
-    if pend:
-        ES.gar.vertex_groups["interno"].add(pend, _p(ES, "relleno"), 'REPLACE')
-        ES.log(f"[ESC·f535] RELLENO (lab): guardia levantada en f{ES.f}, {len(pend)} v del forro al peso {_p(ES, 'relleno')}")
-        ES.RELLENO_PEND = []
