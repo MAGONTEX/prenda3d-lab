@@ -1,0 +1,51 @@
+{
+ "firma": "[ESC·f535]",
+ "tanda": "b4t_diag",
+ "estado": "fallo",
+ "quien": "actions 38099513044",
+ "fin_trabajo": "2026-10-11T00:46:40+00:00",
+ "estado_correr": "success",
+ "estado_metricas": "success",
+ "t_blender_s": 22.0,
+ "n_variantes": 3,
+ "faltan": [],
+ "variantes": {
+  "d1": {
+   "estado": "STOP",
+   "t_total": 7.19,
+   "t_sim": 6.91,
+   "s_por_cuadro": 1.152
+  },
+  "d2": {
+   "estado": "FIN",
+   "t_total": 6.47,
+   "t_sim": 6.19,
+   "s_por_cuadro": 1.032
+  },
+  "d3": {
+   "estado": "FIN",
+   "t_total": 6.42,
+   "t_sim": 6.14,
+   "s_por_cuadro": 1.023
+  }
+ },
+ "metricas": {},
+ "maquina": {
+  "nproc": 4,
+  "cpu": "AMD EPYC 9V74 80-Core Processor"
+ },
+ "log_cola": [
+  "LAB d1: STOP en 7.19 s (sim 6.91 s, 1.152 s/cuadro)",
+  "LAB d2: FIN en 6.47 s (sim 6.19 s, 1.032 s/cuadro)",
+  "LAB d3: FIN en 6.42 s (sim 6.14 s, 1.023 s/cuadro)",
+  "LAB FIN 3 variantes",
+  "Blender 5.1.0 (hash adfe2921d5f3 built 2026-03-17 01:31:26)",
+  "",
+  "Blender quit"
+ ],
+ "tomada": "2026-10-11T00:45:38+00:00",
+ "encolada": "2026-10-10T21:45:28-03:00",
+ "cerrada": "2026-10-11T00:46:51+00:00",
+ "corrida": "https://github.com/MAGONTEX/prenda3d-lab/actions/runs/38099513044",
+ "t_cola_a_resultado_s": 83
+}
