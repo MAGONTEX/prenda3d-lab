@@ -14,6 +14,10 @@ alrededor del cuerpo, ruedo LIBRE, peso colgando de los hombros, forro contra el
     lente de los struts); None en el resto.
 
     python lab/escena_b4t.py      -> lab/escenas/b4t_tubo.json
+    python lab/escena_b4t.py pin3 -> lab/escenas/b4t_tubo_pin3.json ([ESC·f535] pin2 + bolsillo en los bordes, autocolision como la
+        espalda M133 y colisionadores marcados `cuerpo` -> friccion tfric y friccion por tiempo del nucleo, como el cuerpo de la M133)
+    python lab/escena_b4t.py pin2 -> lab/escenas/b4t_tubo_pin2.json ([ESC·f535] 10-11: disco fijo r_pin 200, ancho 163 = paso de
+        pespunte de la espalda M133 (lx), y bolsillo en los pinch: sin el, el nucleo no les da el embebido S_body: PK is not None)
 """
 import json
 import math
@@ -29,7 +33,7 @@ from escena_b4 import pieza_canales  # noqa: E402
 from prenda3d.malla_gen import _triangular  # noqa: E402
 
 
-def b4t_tubo(n_canales=3, ancho=160.0, C=1194.0, nombre="b4t_tubo", r_torso=172.0, r_plato=186.0, r_pin=80.0, paso=H):
+def b4t_tubo(n_canales=3, ancho=160.0, C=1194.0, nombre="b4t_tubo", r_torso=172.0, r_plato=186.0, r_pin=80.0, paso=H, pinch_pk=False, borde_pk=False, auto_m133=False, cuerpo=False):
     R = C / (2 * math.pi); alto = ancho * n_canales; cx, cy = alto + 300.0 + R, C / 2.0   # disco lejos del molde del tubo
     P, T = pieza_canales(ancho, C, n_canales, paso=paso); lx = [ancho * k for k in range(1, n_canales)]
 
@@ -66,8 +70,8 @@ def b4t_tubo(n_canales=3, ancho=160.0, C=1194.0, nombre="b4t_tubo", r_torso=172.
     dx = np.min(np.abs(P[:, 0][:, None] - np.array([0.0] + lx + [alto])[None, :]), axis=1); dy = np.minimum(P[:, 1], C - P[:, 1])
     ch = (np.array(lx)[None, :] < P[:, 0][:, None]).sum(1)
     meta = dict(banco="b4t", colisionadores=[
-        dict(tipo="cilindro", r=r_plato / 1000.0, largo=0.02, centro=[cx / 1000.0, cy / 1000.0, -0.012], rot=[0, 0, 0]),
-        dict(tipo="cilindro", r=r_torso / 1000.0, largo=0.62, centro=[cx / 1000.0, cy / 1000.0, -0.012 - 0.01 - 0.31], rot=[0, 0, 0])],
+        dict(tipo="cilindro", r=r_plato / 1000.0, largo=0.02, centro=[cx / 1000.0, cy / 1000.0, -0.012], rot=[0, 0, 0], **({"cuerpo": 1} if cuerpo else {})),
+        dict(tipo="cilindro", r=r_torso / 1000.0, largo=0.62, centro=[cx / 1000.0, cy / 1000.0, -0.012 - 0.01 - 0.31], rot=[0, 0, 0], **({"cuerpo": 1} if cuerpo else {}))],
         datos_reglas=dict(piezas_inyectadas=["cn"]), ancho=ancho, C=C, R=R, alto=alto, n_canales=n_canales, lx=lx, centro=[cx, cy],
         r_torso=r_torso, r_plato=r_plato, r_pin=r_pin, **({"paso": paso} if paso != H else {}))
     D = E.datos(meta); NV = len(D["v"]); nf = len(T)
@@ -75,10 +79,14 @@ def b4t_tubo(n_canales=3, ancho=160.0, C=1194.0, nombre="b4t_tubo", r_torso=172.
     D["lx"] = {"cn": lx}; D["lining"] = {"cn": "cn_f"}
     D["border"] = [a + i for i in borde] + [af + i for i in borde]; D["pinch"] = [a + i for i in linea] + [af + i for i in linea]
     D["pocket"] = [None] * NV
+    sb, sl = set(borde), set(linea)
     for i in range(n):
-        if i not in borde and i not in linea:
+        if (i not in sb and i not in sl) or (pinch_pk and i in sl) or (borde_pk and i in sb):   # borde_pk: canesu, ruedo y cierre (M133 2906/2906)   # pinch_pk: todo pespunte lleva el bolsillo de arriba (M133: 1492/1492)
             D["pocket"][a + i] = D["pocket"][af + i] = f"cn{int(ch[i])}"
     D["pocket_area_m2"] = {f"cn{k}": ancho * C / 1e6 for k in range(n_canales)}
+    if auto_m133:   # [ESC·f535] pin3: autocolision como la espalda M133 (54/5545 = 1 % de la cascara, en un BORDE a <= 12 mm, lejos del
+        # pespunte, en el 44 % central del ancho; forro 0) -> franja del ruedo, arco central opuesto al cierre. Antes: regla del lab (91,5 %).
+        D["autocol"] = sorted(a + i for i in range(n) if P[i, 0] >= alto - 12.0 and abs(P[i, 1] - C / 2) <= 0.11 * C)
     D["relleno_d"] = [None] * NV
     for i in range(n):
         D["relleno_d"][a + i] = round(float(min(dx[i], dy[i])), 3)
@@ -89,4 +97,9 @@ def b4t_tubo(n_canales=3, ancho=160.0, C=1194.0, nombre="b4t_tubo", r_torso=172.
 
 
 if __name__ == "__main__":
-    b4t_tubo()
+    if sys.argv[1:] == ["pin3"]:   # [ESC·f535] 10-11: pin2 + bolsillo en bordes + autocolision M133 + colisionadores = cuerpo (tfric)
+        b4t_tubo(ancho=163.0, nombre="b4t_tubo_pin3", r_pin=200.0, pinch_pk=True, borde_pk=True, auto_m133=True, cuerpo=True)
+    elif sys.argv[1:] == ["pin2"]:
+        b4t_tubo(ancho=163.0, nombre="b4t_tubo_pin2", r_pin=200.0, pinch_pk=True)
+    else:
+        b4t_tubo()

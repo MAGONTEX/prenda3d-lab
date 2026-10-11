@@ -1,0 +1,46 @@
+{
+ "nombre": "b4t_pin3_humo",
+ "firma": "[ESC·f535]",
+ "nota": "[ESC·f535] humo de b4t_tubo_pin3 (pin2 + bolsillo en bordes + autocolision M133 1 %/0 % + cuerpo con tfric 80 hasta f72). Control en el log: 'torso: friccion 80' y 'FRICCION POR TIEMPO'.",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 1,
+  "arm_end": -1,
+  "tfric_f": 72,
+  "sand": 0,
+  "sand_rot": 1,
+  "sand_lvl": 0,
+  "sep_h": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0
+ },
+ "nf": 12,
+ "dumps": [
+  1,
+  2,
+  3,
+  6,
+  12
+ ],
+ "variantes": [
+  {
+   "tag": "h1",
+   "escena": "b4t_tubo_pin3",
+   "params": {
+    "relleno": 1,
+    "relleno_h": 18,
+    "relleno_r": 45,
+    "relleno_g": 21
+   },
+   "nota": "struts h 18 r 45 g 21 sobre disco fijo"
+  }
+ ]
+}

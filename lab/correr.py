@@ -108,6 +108,8 @@ def escena_lab(ES, var, M):
         for u in ob.users_collection:
             u.objects.unlink(ob)
         ES.col.objects.link(ob); ES.MANIQUI.append(ES.collider(ob, th=thc))
+        if c.get("cuerpo") and ES.P["tfric"] >= 0:   # [ESC·f535] b4t pin3: colisionador = cuerpo M133 (nucleo L172-177: tfric + friccion por tiempo)
+            ob.collision.cloth_friction = ES.P["tfric"]; ES.TFOBJ.append(ob); ES.log("torso: friccion", ES.P["tfric"], "(colisionador cuerpo del banco)")
         if c.get("mueve"):                           # [ESC·f535] PW b9: colisionador que avanza d_mm entre f0 y f1 (empuje del cuerpo)
             m_ = c["mueve"]; ob.keyframe_insert("location", frame=int(m_["f0"]))
             ob.location = tuple(np.array(c["centro"], float) + np.array(m_["d_mm"], float) / 1000.0); ob.keyframe_insert("location", frame=int(m_["f1"]))
