@@ -1,0 +1,101 @@
+{
+ "nombre": "b9z_pz",
+ "firma": "[ESC·f535]",
+ "nota": "[ESC·f535] PZ: columna del cierre de la M133 (b9z_a: 10 mm a cada lado del CF, escote -> canto, 500) contra el control b9w_w1 (columna solo fL x<=30 y>=61,5); b = cinta real (flexion 1000 con tapeta 500 y cuello 104 iguales); c = plancha en el cuello (compresion 45 en rig_cuello).",
+ "receta": "datos_m133/receta_e2zzr1.json",
+ "receta_lab": {
+  "fric": 40,
+  "bth": 0.001,
+  "ath": 0.001,
+  "sand_len": 20,
+  "sand_kc": 2,
+  "pres": 0,
+  "arm_end": -1,
+  "tfric_f": 0,
+  "sand": 0,
+  "sand_rot": 0,
+  "sand_lvl": 0,
+  "deltoid": 0,
+  "mano": 0,
+  "renders": 0,
+  "stop_open": 0,
+  "settle_min": 0,
+  "sep_h": 4.5
+ },
+ "nf": 72,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  6,
+  8,
+  12,
+  18,
+  24,
+  30,
+  36,
+  42,
+  48,
+  60,
+  72
+ ],
+ "variantes": [
+  {
+   "tag": "zw1",
+   "escena": "b9w_w1",
+   "params": {}
+  },
+  {
+   "tag": "zw1r",
+   "escena": "b9w_w1",
+   "params": {},
+   "replica": 1
+  },
+  {
+   "tag": "za",
+   "escena": "b9z_a",
+   "params": {}
+  },
+  {
+   "tag": "zar",
+   "escena": "b9z_a",
+   "params": {},
+   "replica": 1
+  },
+  {
+   "tag": "zb",
+   "escena": "b9z_a",
+   "params": {
+    "bend_max": 1000,
+    "w_plk": 0.4975,
+    "w_neck": 0.0995
+   }
+  },
+  {
+   "tag": "zbr",
+   "escena": "b9z_a",
+   "params": {
+    "bend_max": 1000,
+    "w_plk": 0.4975,
+    "w_neck": 0.0995
+   },
+   "replica": 1
+  },
+  {
+   "tag": "zc",
+   "escena": "b9z_a",
+   "params": {
+    "ent_c": 45
+   }
+  },
+  {
+   "tag": "zcr",
+   "escena": "b9z_a",
+   "params": {
+    "ent_c": 45
+   },
+   "replica": 1
+  }
+ ]
+}
