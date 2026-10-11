@@ -1,0 +1,37 @@
+{
+ "firma": "[ESC·f535]",
+ "tanda": "b4t_humo2",
+ "estado": "fallo",
+ "quien": "actions 38098718658",
+ "fin_trabajo": "2026-10-11T00:32:12+00:00",
+ "estado_correr": "success",
+ "estado_metricas": "success",
+ "t_blender_s": 10.0,
+ "n_variantes": 1,
+ "faltan": [],
+ "variantes": {
+  "h1": {
+   "estado": "STOP",
+   "t_total": 8.93,
+   "t_sim": 8.57,
+   "s_por_cuadro": 1.429
+  }
+ },
+ "metricas": {},
+ "maquina": {
+  "nproc": 4,
+  "cpu": "AMD EPYC 7763 64-Core Processor"
+ },
+ "log_cola": [
+  "LAB h1: STOP en 8.93 s (sim 8.57 s, 1.429 s/cuadro)",
+  "LAB FIN 1 variantes",
+  "Blender 5.1.0 (hash adfe2921d5f3 built 2026-03-17 01:31:26)",
+  "",
+  "Blender quit"
+ ],
+ "tomada": "2026-10-11T00:31:33+00:00",
+ "encolada": "2026-10-10T21:31:24-03:00",
+ "cerrada": "2026-10-11T00:32:23+00:00",
+ "corrida": "https://github.com/MAGONTEX/prenda3d-lab/actions/runs/38098718658",
+ "t_cola_a_resultado_s": 59
+}
