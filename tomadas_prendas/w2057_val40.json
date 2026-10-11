@@ -6,8 +6,23 @@
  "script": "sim/lanzar.py",
  "receta": "receta_c1.json",
  "nf": 40,
- "dumps": [6, 12, 24, 36, 40],
+ "dumps": [
+  6,
+  12,
+  24,
+  36,
+  40
+ ],
  "hilos": 4,
  "tmo_min": 120,
- "variantes": [{"tag": "c1", "params": {}}]
+ "variantes": [
+  {
+   "tag": "c1",
+   "params": {}
+  }
+ ],
+ "tomada": {
+  "por": "actions 38184397506",
+  "utc": "2026-10-11T23:28:22Z"
+ }
 }
