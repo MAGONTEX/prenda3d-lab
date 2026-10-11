@@ -1,0 +1,13 @@
+{
+ "firma": "[ESC·f535]",
+ "nombre": "w2057_val40",
+ "prenda": "w2057",
+ "nota": "validacion: W2057 c1 (malla s1, receta c1) cortada a 40 cuadros, -t 4. Referencia: laptop c1 (150 f, -t 6): f36 costura media 0.1 max 2 mm, sin STOP",
+ "script": "sim/lanzar.py",
+ "receta": "receta_c1.json",
+ "nf": 40,
+ "dumps": [6, 12, 24, 36, 40],
+ "hilos": 4,
+ "tmo_min": 120,
+ "variantes": [{"tag": "c1", "params": {}}]
+}
