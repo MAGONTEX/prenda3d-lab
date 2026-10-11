@@ -1,0 +1,113 @@
+{
+ "tanda": "w2057_val40",
+ "prenda": "w2057",
+ "url": "https://github.com/MAGONTEX/prenda3d-lab/actions/runs/38184397506",
+ "estado": "OK",
+ "nota": "validacion: W2057 c1 (malla s1, receta c1) cortada a 40 cuadros, -t 4. Referencia: laptop c1 (150 f, -t 6): f36 costura media 0.1 max 2 mm, sin STOP",
+ "tomada": {
+  "por": "actions 38184397506",
+  "utc": "2026-10-11T23:28:22Z"
+ },
+ "cerrada_utc": "2026-10-11T23:29:42Z",
+ "variantes": {
+  "c1": {
+   "item": "w2057_val40--c1",
+   "tag": "c1",
+   "prenda": "w2057",
+   "rc": 0,
+   "t_pared_s": 47,
+   "estado": "FIN",
+   "cuadros_pedidos": 40,
+   "grupo": null,
+   "cuadros_hechos": 40,
+   "t_sim_s": 46,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 36,
+    "t_s": 41,
+    "media_mm": 0.0,
+    "max_mm": 2.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "pliegue de espalda: costura R",
+     "n": 48,
+     "max_mm": 1.7,
+     "p95_mm": 1.2,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pliegue de espalda: costura L",
+     "n": 48,
+     "max_mm": 1.7,
+     "p95_mm": 1.4,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo L",
+     "n": 21,
+     "max_mm": 1.5,
+     "p95_mm": 1.5,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo R",
+     "n": 21,
+     "max_mm": 0.8,
+     "p95_mm": 0.7,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "pliegue de espalda: canto del ruedo (30 + 30 mm doblados) R",
+     "n": 3,
+     "max_mm": 0.5,
+     "p95_mm": 0.4,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pliegue de espalda: canto del ruedo (30 + 30 mm doblados) L",
+     "n": 3,
+     "max_mm": 0.5,
+     "p95_mm": 0.1,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "pie de la abertura: pinza bajo el remache R",
+     "n": 1,
+     "max_mm": 0.4,
+     "p95_mm": 0.4,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "pie de la abertura: pinza bajo el remache L",
+     "n": 1,
+     "max_mm": 0.4,
+     "p95_mm": 0.4,
+     "media_mm": 0.4
+    }
+   ],
+   "asent": "ASENT f36 (+20) d/6f ruedo CB -2.4 CF +0.6 canto -0.2 puno -0.7/-0.7 mm | max 2.4",
+   "avisos": [
+    "AVISO (except): cuerpo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'",
+    "AVISO (except): reposo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'"
+   ],
+   "error": "",
+   "params": {},
+   "receta_hash": "be5a62bf7426f503aa7672891654497f0febbd0b3bd657b8877c00225f9d302b",
+   "id_corrida": "939cb511c145",
+   "blender": "5.1.0",
+   "hilos": 4,
+   "dumps": [
+    "X_c1_f12.npy",
+    "X_c1_f24.npy",
+    "X_c1_f36.npy",
+    "X_c1_f40.npy",
+    "X_c1_f6.npy"
+   ],
+   "params_variante": {}
+  }
+ },
+ "artifacts": [
+  "prenda-w2057_val40--c1-<run>"
+ ]
+}
