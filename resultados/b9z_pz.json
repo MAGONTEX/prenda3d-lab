@@ -1,0 +1,72 @@
+{
+ "firma": "[ESC·f535]",
+ "tanda": "b9z_pz",
+ "estado": "ok",
+ "quien": "actions 38099105284",
+ "fin_trabajo": "2026-10-11T00:39:15+00:00",
+ "estado_correr": "success",
+ "estado_metricas": "success",
+ "t_blender_s": 19.0,
+ "n_variantes": 8,
+ "faltan": [],
+ "variantes": {
+  "za": {
+   "estado": "FIN",
+   "t_total": 2.33,
+   "t_sim": 2.32,
+   "s_por_cuadro": 0.032
+  },
+  "zar": {
+   "estado": "FIN",
+   "t_total": 2.42,
+   "t_sim": 2.42,
+   "s_por_cuadro": 0.034
+  },
+  "zb": {
+   "estado": "FIN",
+   "t_total": 2.23,
+   "t_sim": 2.22,
+   "s_por_cuadro": 0.031
+  },
+  "zbr": {
+   "estado": "FIN",
+   "t_total": 2.25,
+   "t_sim": 2.24,
+   "s_por_cuadro": 0.031
+  },
+  "zc": {
+   "estado": "FIN",
+   "t_total": 2.2,
+   "t_sim": 2.19,
+   "s_por_cuadro": 0.03
+  },
+  "zcr": {
+   "estado": "FIN",
+   "t_total": 2.24,
+   "t_sim": 2.23,
+   "s_por_cuadro": 0.031
+  },
+  "zw1": {
+   "estado": "FIN",
+   "t_total": 2.23,
+   "t_sim": 2.21,
+   "s_por_cuadro": 0.031
+  },
+  "zw1r": {
+   "estado": "FIN",
+   "t_total": 2.29,
+   "t_sim": 2.28,
+   "s_por_cuadro": 0.032
+  }
+ },
+ "metricas": {},
+ "maquina": {
+  "nproc": 4,
+  "cpu": "AMD EPYC 7763 64-Core Processor"
+ },
+ "tomada": "2026-10-11T00:38:24+00:00",
+ "encolada": "2026-10-10T21:38:15-03:00",
+ "cerrada": "2026-10-11T00:39:27+00:00",
+ "corrida": "https://github.com/MAGONTEX/prenda3d-lab/actions/runs/38099105284",
+ "t_cola_a_resultado_s": 72
+}
