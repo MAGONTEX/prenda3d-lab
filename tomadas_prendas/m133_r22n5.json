@@ -30,7 +30,7 @@
    180
   ]
  },
- "nota": "[ESC\u00b7f535] R22b N=5: zzho (labio del cuello sin plancha, pespunte articulado, con autocol) x5 a 180 f (bi_k 1.000..1.004) + control zzhm k1 (= r21m_k1 bit a bit)",
+ "nota": "[ESC·f535] R22b N=5: zzho (labio del cuello sin plancha, pespunte articulado, con autocol) x5 a 180 f (bi_k 1.000..1.004) + control zzhm k1 (= r21m_k1 bit a bit)",
  "grupos": {
   "o5": {
    "params": {
@@ -90,5 +90,9 @@
     "bi_k": "1.001"
    }
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38223183396",
+  "utc": "2026-10-12T08:22:41Z"
+ }
 }
