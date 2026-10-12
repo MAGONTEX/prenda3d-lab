@@ -1,0 +1,38 @@
+{
+ "firma": "[ESC·f535]",
+ "prenda": "w2094",
+ "cuerpo": "cuerpo_W2094_piel20.npz",
+ "hrest": "sim/reposo_v5e.npz",
+ "rk": "sim/rk_v5e.npz",
+ "hilos": 4,
+ "nombre": "w2094_r7bh",
+ "nf": 10,
+ "tmo_min": 30,
+ "dumps": [
+  1,
+  2,
+  6,
+  10
+ ],
+ "nota": "r7 T2b humo (10 f): malla v8 (= v7 con la franja del canto del cuello al largo del molde: canto CB +0,5 % contra +5,5 %; autocol identica, 14140 v) contra v7, misma receta k0. w7h_k0 = mismo tag, receta y malla que el humo w2094_r7h (X tiene que salir identico). Compuerta: 'autocolision 14140' en los dos logs, sin STOP, X f10 distintos entre w8h y w7h.",
+ "grupos": {
+  "V8": {
+   "malla": "w2094_v0_v8.json"
+  },
+  "V7": {
+   "malla": "w2094_v0_v7.json"
+  }
+ },
+ "variantes": [
+  {
+   "tag": "w8h_k0",
+   "grupo": "V8",
+   "receta": "receta_w6a0_k0.json"
+  },
+  {
+   "tag": "w7h_k0",
+   "grupo": "V7",
+   "receta": "receta_w6a0_k0.json"
+  }
+ ]
+}
