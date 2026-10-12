@@ -1,0 +1,18 @@
+{
+ "firma": "[ESC·f535]",
+ "nombre": "w2057_r8h",
+ "prenda": "w2057",
+ "nota": "r8 humo: friccion de la piel, una palanca: tfric 40 -> 20 (CD_cuerpo_L = torso + brazos; la cabeza sigue con hfric 40). b12 k1 (cuerpo_W2057_b12.npz, receta a12_k0, air 1.001) con arm_f1 150 y stop_open 0, como la tanda r8. Compuertas: (1) log con 'tfric': 20.0 en params y ('CD_cuerpo_L', 20.0, ...) en 'solo colisiona'; (2) t40 = r7 b12_k1 bit a bit en f1-f36 (reencolar no cambia la sim); (3) t20 = t40 en f1 (antes del primer paso) y distinto despues (la tela queda a 4,5 mm de la piel: toca desde f2).",
+ "nf": 36,
+ "hilos": 4,
+ "tmo_min": 30,
+ "dumps": [1, 2, 6, 12, 24, 36],
+ "params": {"arm_f1": 150, "stop_open": 0, "air": 1.001},
+ "grupos": {
+  "B12": {"malla": "w2057_s1c.json", "cuerpo": "cuerpo_W2057_b12.npz", "receta": "receta_w57_a12_k0.json"}
+ },
+ "variantes": [
+  {"tag": "w57h8_b12t40_k1", "grupo": "B12", "params": {"tfric": 40}},
+  {"tag": "w57h8_b12t20_k1", "grupo": "B12", "params": {"tfric": 20}}
+ ]
+}

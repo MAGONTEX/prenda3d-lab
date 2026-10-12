@@ -302,7 +302,7 @@ def cmd_resumir(a):
          "asent": _limpio(next((x.strip() for x in reversed(L) if x.strip().startswith("ASENT")), "")),
          "avisos": [_limpio(x) for x in L if x.startswith("AVISO")][:6],
          "error": _limpio(man.get("error", "")) or (_limpio(next((x for x in reversed(L) if "Error" in x), "")) if a.rc else ""),
-         "params": man.get("params_finales") or {}, "receta_hash": man.get("receta_hash"), "id_corrida": man.get("id"),
+         "params": {**(man.get("params") or {}), **(man.get("params_finales") or {})}, "receta_hash": man.get("receta_hash"), "id_corrida": man.get("id"),
          "blender": (man.get("blender") or {}).get("version"), "hilos": (man.get("hilos") or {}).get("n"),
          "dumps": npy, "params_variante": v.get("params") or {}}
     mp = os.path.join(a.salida, f"metricas_{tag}.json")
