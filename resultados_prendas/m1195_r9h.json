@@ -1,0 +1,218 @@
+{
+ "tanda": "m1195_r9h",
+ "prenda": "m1195",
+ "url": "https://github.com/parka-oss/prenda3d-lab/actions/runs/38196328167",
+ "estado": "OK",
+ "nota": "[ESC·f535] r9 humo de G1: bc3 = bc2 rehecho (cuerpo V20 como c6: bc1/bc2 usaban V8 y rompian la manga; arranque = G0 a1 f150 de Actions; cuello en forma llevado por Kabsch, hrest isometrico al banco) contra bc3c = control de reinicio (mismo arranque, cuello sin tocar). 60 f, air 1.001.",
+ "tomada": {
+  "por": "actions 38196328167",
+  "utc": "2026-10-12T02:34:46Z"
+ },
+ "cerrada_utc": "2026-10-12T02:43:16Z",
+ "variantes": {
+  "m1195_h_bc3": {
+   "item": "m1195_r9h--m1195_h_bc3",
+   "tag": "m1195_h_bc3",
+   "prenda": "m1195",
+   "rc": 0,
+   "t_pared_s": 101,
+   "estado": "FIN",
+   "cuadros_pedidos": 60,
+   "grupo": "H1",
+   "cuadros_hechos": 60,
+   "t_sim_s": 99,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 60,
+    "t_s": 99,
+    "media_mm": 0.0,
+    "max_mm": 2.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "cuello: canto y escote de la hoja de arriba (cuB a cuA)",
+     "n": 103,
+     "max_mm": 1.7,
+     "p95_mm": 0.7,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "cuello de abajo al escote (media vuelta) R",
+     "n": 32,
+     "max_mm": 0.8,
+     "p95_mm": 0.1,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "cuello de abajo al escote (media vuelta) L",
+     "n": 32,
+     "max_mm": 0.8,
+     "p95_mm": 0.3,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "pie de cuello a la hoja de abajo",
+     "n": 41,
+     "max_mm": 0.7,
+     "p95_mm": 0.6,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "sisa, mitad de atras (del hombro natural a la axila) R",
+     "n": 39,
+     "max_mm": 0.5,
+     "p95_mm": 0.1,
+     "media_mm": 0.0
+    },
+    {
+     "costura": "sisa, mitad de atras (del hombro natural a la axila) L",
+     "n": 39,
+     "max_mm": 0.3,
+     "p95_mm": 0.1,
+     "media_mm": 0.0
+    },
+    {
+     "costura": "pie de arriba al escote (pieB a pieA)",
+     "n": 39,
+     "max_mm": 0.2,
+     "p95_mm": 0.2,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "espalda-costado L",
+     "n": 45,
+     "max_mm": 0.2,
+     "p95_mm": 0.0,
+     "media_mm": 0.0
+    }
+   ],
+   "asent": "ASENT f60 (+58) d/6f ruedo CB +1.0 CF +0.0 canto -0.0 puno +0.1/+0.3 mm | max 1.0",
+   "avisos": [
+    "AVISO (except): cuerpo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'",
+    "AVISO (except): reposo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'"
+   ],
+   "error": "",
+   "params": {},
+   "receta_hash": "ad571019913a750da5eb7c5f80c43c79799310ef6fbe78f83b34fd83b2e5b44e",
+   "id_corrida": "4e348201f581",
+   "blender": "5.1.0",
+   "hilos": 4,
+   "dumps": [
+    "X_m1195_h_bc3_f12.npy",
+    "X_m1195_h_bc3_f2.npy",
+    "X_m1195_h_bc3_f24.npy",
+    "X_m1195_h_bc3_f36.npy",
+    "X_m1195_h_bc3_f48.npy",
+    "X_m1195_h_bc3_f6.npy",
+    "X_m1195_h_bc3_f60.npy"
+   ],
+   "params_variante": {
+    "air": 1.001
+   }
+  },
+  "m1195_h_bc3c": {
+   "item": "m1195_r9h--m1195_h_bc3c",
+   "tag": "m1195_h_bc3c",
+   "prenda": "m1195",
+   "rc": 0,
+   "t_pared_s": 107,
+   "estado": "FIN",
+   "cuadros_pedidos": 60,
+   "grupo": "H0",
+   "cuadros_hechos": 60,
+   "t_sim_s": 105,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 60,
+    "t_s": 104,
+    "media_mm": 0.1,
+    "max_mm": 1.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "pie de cuello a la hoja de abajo",
+     "n": 41,
+     "max_mm": 1.1,
+     "p95_mm": 0.7,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "cuello de abajo al escote (media vuelta) L",
+     "n": 32,
+     "max_mm": 1.1,
+     "p95_mm": 0.8,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "cuello: canto y escote de la hoja de arriba (cuB a cuA)",
+     "n": 103,
+     "max_mm": 1.0,
+     "p95_mm": 0.8,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "cuello de abajo al escote (media vuelta) R",
+     "n": 32,
+     "max_mm": 1.0,
+     "p95_mm": 0.8,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pie de arriba al escote (pieB a pieA)",
+     "n": 39,
+     "max_mm": 0.8,
+     "p95_mm": 0.8,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "pie de cuello a la hoja de arriba (pieB a cuB)",
+     "n": 41,
+     "max_mm": 0.7,
+     "p95_mm": 0.6,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "cierre R",
+     "n": 67,
+     "max_mm": 0.7,
+     "p95_mm": 0.0,
+     "media_mm": 0.0
+    },
+    {
+     "costura": "cierre L",
+     "n": 67,
+     "max_mm": 0.6,
+     "p95_mm": 0.0,
+     "media_mm": 0.0
+    }
+   ],
+   "asent": "ASENT f60 (+58) d/6f ruedo CB +0.2 CF -0.0 canto -0.1 puno -0.3/+0.0 mm | max 0.3",
+   "avisos": [
+    "AVISO (except): cuerpo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'",
+    "AVISO (except): reposo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'"
+   ],
+   "error": "",
+   "params": {},
+   "receta_hash": "ad571019913a750da5eb7c5f80c43c79799310ef6fbe78f83b34fd83b2e5b44e",
+   "id_corrida": "400e3faea1d6",
+   "blender": "5.1.0",
+   "hilos": 4,
+   "dumps": [
+    "X_m1195_h_bc3c_f12.npy",
+    "X_m1195_h_bc3c_f2.npy",
+    "X_m1195_h_bc3c_f24.npy",
+    "X_m1195_h_bc3c_f36.npy",
+    "X_m1195_h_bc3c_f48.npy",
+    "X_m1195_h_bc3c_f6.npy",
+    "X_m1195_h_bc3c_f60.npy"
+   ],
+   "params_variante": {
+    "air": 1.001
+   }
+  }
+ },
+ "artifacts": [
+  "prenda-m1195_r9h--m1195_h_bc3-<run>",
+  "prenda-m1195_r9h--m1195_h_bc3c-<run>"
+ ]
+}
