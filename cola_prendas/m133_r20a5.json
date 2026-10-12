@@ -1,0 +1,93 @@
+{
+ "nombre": "m133_r20a5",
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R18.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "tmo_min": 200,
+ "nf": 180,
+ "dumps": [
+  1,
+  2,
+  6,
+  20,
+  40,
+  60,
+  90,
+  120,
+  150,
+  180
+ ],
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   60,
+   120,
+   180
+  ]
+ },
+ "nota": "[ESC\u00b7f535] R20a N=5: labio de la tapeta en 2 columnas (zzhl) x5 a 180 f (bi_k 1.000..1.004, -t 4) + 1 replica del control r18b (k1) para reusar su banda si sale bit a bit",
+ "grupos": {
+  "q5": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5"
+   }
+  },
+  "l5": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "mesh": "m133_e2zzhl.json"
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "r20al_k0",
+   "grupo": "l5",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "r20al_k1",
+   "grupo": "l5",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "r20al_k2",
+   "grupo": "l5",
+   "params": {
+    "bi_k": "1.002"
+   }
+  },
+  {
+   "tag": "r20al_k3",
+   "grupo": "l5",
+   "params": {
+    "bi_k": "1.003"
+   }
+  },
+  {
+   "tag": "r20al_k4",
+   "grupo": "l5",
+   "params": {
+    "bi_k": "1.004"
+   }
+  },
+  {
+   "tag": "r20ac_k1",
+   "grupo": "q5",
+   "params": {
+    "bi_k": "1.001"
+   }
+  }
+ ]
+}
