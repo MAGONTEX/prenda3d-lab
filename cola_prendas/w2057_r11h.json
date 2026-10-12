@@ -1,0 +1,77 @@
+{
+ "firma": "[ESC·f535]",
+ "nombre": "w2057_r11h",
+ "prenda": "w2057",
+ "nota": "r11 humo: costura mas rigida que la tela. Blender 5.1.0: cloth_update_springs (cloth.cc 301/1085) deja lin_stiffness 0 en la costura en cada paso -> la costura usa la traccion BASE (tension), la tela base + peso x |tension_max - tension|. Clave oculta nueva tension_max (nucleo, -1 = como antes). C = r10 b12s0_k1 (tension 200, sew_max 0; debe salir bit a bit); T400 = tension 400 (tela 400, costura 400); M400 = tension 200 + tension_max 400 (tela 400, costura 200). Si la costura usara la maxima, T400 = M400 bit a bit. Todo con sew_max 0 (con k x2 el tope 160 morderia a 3,7 mm).",
+ "nf": 150,
+ "hilos": 4,
+ "tmo_min": 90,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  6,
+  12,
+  24,
+  36,
+  48,
+  66,
+  87,
+  108,
+  115,
+  120,
+  129,
+  138,
+  144,
+  150
+ ],
+ "params": {
+  "arm_f1": 150,
+  "stop_open": 0,
+  "tfric": 40,
+  "sew_max": 0,
+  "air": 1.001
+ },
+ "grupos": {
+  "C": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b12.npz",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {}
+  },
+  "T400": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b12.npz",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {
+    "tension": 400
+   }
+  },
+  "M400": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b12.npz",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {
+    "tension_max": 400
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "w57h11_b12c_k1",
+   "grupo": "C",
+   "params": {}
+  },
+  {
+   "tag": "w57h11_b12t400_k1",
+   "grupo": "T400",
+   "params": {}
+  },
+  {
+   "tag": "w57h11_b12m400_k1",
+   "grupo": "M400",
+   "params": {}
+  }
+ ]
+}

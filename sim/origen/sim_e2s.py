@@ -568,7 +568,7 @@ s.tension_stiffness = P['tension']; s.compression_stiffness = P['compression']; 
 s.use_sewing_springs = True; s.sewing_force_max = P['sew_max']; s.use_dynamic_mesh = True
 s.vertex_group_bending = "rigidez"; s.bending_stiffness_max = P["bend_max"]
 if P["soft"] > 0:
-    s.vertex_group_structural_stiffness = "cascara"; s.tension_stiffness_max = P["tension"]; s.compression_stiffness_max = P["compression"]
+    s.vertex_group_structural_stiffness = "cascara"; s.tension_stiffness_max = P["tension"] if P.get("tension_max", -1.0) <= 0 else P["tension_max"]; s.compression_stiffness_max = P["compression"]
     s.compression_stiffness = P["soft"]
     if P["ent_c"] > P["compression"] and D.get("rig_cuello"):   # e2j: entretela = compresion ent_c en la franja del cuello; cascara sigue en compression
         _cue = sorted(set(D["rig_cuello"])); _ws = (P["compression"] - P["soft"]) / (P["ent_c"] - P["soft"])

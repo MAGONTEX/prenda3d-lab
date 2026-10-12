@@ -654,7 +654,11 @@ def cloth(ES):
     # e2j: entretela = compresion ent_c en la franja del cuello; cascara sigue en compression
     if ES.P['soft'] > 0:
         ES.s.vertex_group_structural_stiffness = 'cascara'
-        ES.s.tension_stiffness_max = ES.P['tension']
+        # [ESC·f535] W2057 r11: tension_max (oculta, -1 = como antes) separa tela y costura. Blender 5.1: cloth_update_springs deja
+        # lin_stiffness 0 en la costura en cada paso -> la costura usa la traccion BASE; la tela usa base + peso x |max - base|
+        ES.s.tension_stiffness_max = ES.P['tension'] if ES.P.get('tension_max', -1.0) <= 0 else ES.P['tension_max']
+        if ES.P.get('tension_max', -1.0) > 0:
+            ES.log('traccion: base (costura)', ES.s.tension_stiffness, '| max (tela con cascara peso 1)', ES.s.tension_stiffness_max)
         ES.s.compression_stiffness_max = ES.P['compression']
         ES.s.compression_stiffness = ES.P['soft']
         if ES.P['ent_c'] > ES.P['compression'] and ES.D.get('rig_cuello'):
