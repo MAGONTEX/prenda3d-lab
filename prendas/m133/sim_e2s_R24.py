@@ -1,3 +1,6 @@
+# [ESC·f535] R20m (2026-10-12): parche R20b portado (_qc_R20m/r20m_port.py): body=<npz> con la clave "brazo" (cuerpo_L_R20c.npz: RE3 + brazos y manos
+#   de la piel MPFB2 talle L) -> esos triangulos van a CD_cuerpo_L_brazos (espesor ath, friccion fric, como los tubos) con las mismas claves angosto/brazos_8
+#   que el torso, y los tubos y deltoides del maniqui NO colisionan. Sin la clave (RE3 y anteriores) = identico a R24 (control: r24n_k1 bit a bit).
 # [ESC·f535] R24 (2026-10-12): copia de _qc_R18/sim_e2s_R18.py (armada por _qc_R24/r24b_mk_sim.py) + rk=<npz con ids> -> RAMPA DE REPOSO POR PIEZA.
 #   Motivo (R24): sin rampa ("rk False") TODA la prenda salta del V0 al molde plano en f2; la tp carga el 78 % de esa energia y, comprimida 5-29 %
 #   en el pivote, pandea. npz = ids (n,) + keys (K, n, 3) m (_qc_R24/r24b_rampa.py): cada clave rk = copia float32 de molde_plano (con sandwich,
@@ -310,6 +313,7 @@ if P["deltoid"] > 0:   # e2n: deltoides (ver cabecera). Malla centrada en su ori
             f" | arranque: vertices a < th+cd ({_mg * 1000:.0f} mm) / adentro: en f1 {_nin(_s0)} | a escala 1 {_nin(1.0)} | tope z {_c[2] + _da[2]:.3f}, afuera x {abs(_c[0]) + _da[0]:.3f}")
 if BODY:   # e2o: cuerpo MPFB2 (torso + cabeza) como colisionador; el torso y la cabeza del maniqui quedan sin colision
     _B = np.load(E2 + BODY); _V20 = _B["V20"]; _V8 = _B["V8"]; _Vn = _B["Vin"]; _T = _B["T"]; _cab = _B["cabeza"].astype(bool)
+    _br = _B["brazo"].astype(bool) if "brazo" in _B.files else np.zeros(len(_T), bool)   # [ESC·f535] R20b/R20m: triangulos de brazo y mano (piel completa); sin la clave = identico
     for _o in ((torso, head) if _cab.any() else (torso,)):   # sin caras de cabeza en el npz (ztop) la cabeza sigue siendo la del maniqui
         for _m in [m for m in _o.modifiers if m.type == 'COLLISION']: _o.modifiers.remove(_m)
         _o.hide_viewport = True; _o.hide_render = True
@@ -319,7 +323,7 @@ if BODY:   # e2o: cuerpo MPFB2 (torso + cabeza) como colisionador; el torso y la
         _hb = _V20[np.unique(_T[_cab])]; MN_PIV = np.array([0.0, 0.5 * (_hb[:, 1].min() + _hb[:, 1].max()), 0.5 * (_hb[:, 2].min() + _hb[:, 2].max())])
         log(f"[ESC·f535] MENTON (MN): {int(_men.sum())} triangulos ({int((_men & _cab).sum())} de cabeza, {int((_men & ~_cab).sum())} del torso) | pivote {np.round(MN_PIV, 4).tolist()} | "
             f"escala {P['mn_s']} en f1-f{int(P['mn_f0'])}, lineal a 1 en f{int(P['mn_f1'])}")
-    _parts = (("CD_cuerpo_L", ~_cab & ~_men), ("CD_cuerpo_L_cabeza", _cab & ~_men))
+    _parts = (("CD_cuerpo_L", ~_cab & ~_men & ~_br), ("CD_cuerpo_L_cabeza", _cab & ~_men & ~_br)) + ((("CD_cuerpo_L_brazos", _br & ~_men),) if _br.any() else ())
     if _men.any(): _parts += (("CD_cuerpo_L_menton", ~_cab & _men), ("CD_cuerpo_L_menton_cabeza", _cab & _men))
     for _nm, _mk in _parts:
         _t = _T[_mk]
@@ -344,8 +348,10 @@ if BODY:   # e2o: cuerpo MPFB2 (torso + cabeza) como colisionador; el torso y la
                 if "angosto" in _fc.data_path:
                     for _k in _fc.keyframe_points: _k.interpolation = 'LINEAR'
         except Exception as _e: log("cuerpo: interpolacion del angosto no lineal", _e)
-        collider(_ob, th=(P["bth"] if P["bth"] >= 0 else None))
-        if _nm.endswith("cabeza") and P["hfric"] >= 0: _ob.collision.cloth_friction = P["hfric"]
+        if _nm == "CD_cuerpo_L_brazos": collider(_ob, th=(P["ath"] if P["ath"] >= 0 else None))   # R20b: espesor y friccion (fric) de los tubos que reemplaza
+        else: collider(_ob, th=(P["bth"] if P["bth"] >= 0 else None))
+        if _nm == "CD_cuerpo_L_brazos": pass
+        elif _nm.endswith("cabeza") and P["hfric"] >= 0: _ob.collision.cloth_friction = P["hfric"]
         elif P["tfric"] >= 0: _ob.collision.cloth_friction = P["tfric"]; TFOBJ.append(_ob)
         MANIQUI.append(_ob); BODYOBJ.append(_ob)
         if _nm.startswith("CD_cuerpo_L_menton"):   # [ESC·f535] MN: origen en el pivote; escala con claves lineales
@@ -370,6 +376,16 @@ if BODY:   # e2o: cuerpo MPFB2 (torso + cabeza) como colisionador; el torso y la
     log(f"cuerpo {BODY}: {len(_V20)} vertices, {len(_T)} triangulos ({int(_cab.sum())} de cabeza, friccion {P['hfric']}) | th {P['bth'] if P['bth'] >= 0 else P['th']} | "
         f"angosto 1 en f1 -> 0 en f{int(P['bgrow'])} | brazos_8 f{int(P['arm_f0'])}->f{int(P['arm_f1'])} | campera -> vertice del cuerpo mas cercano: angosto min {_dmin.min() * 1000:.1f} mm, "
         f"completo min {_d1.min() * 1000:.1f} mm (vertices a < 12 mm del completo: {int((_d1 < 0.012).sum())}) | torso del maniqui SIN colision; cabeza del maniqui {'SIN colision' if _cab.any() else 'CON colision (npz sin cabeza)'}")
+    if _br.any():   # [ESC·f535] R20b/R20m: piel completa con brazos y manos MPFB2 -> los tubos y los deltoides del maniqui dejan de colisionar (como W2057/W2094/M1195)
+        _q = []
+        for _o in list(MANIQUI):
+            if _o.name.startswith("CD_maniqui_brazo_") or _o.name.startswith("CD_maniqui_deltoides_"):
+                for _m in [m for m in _o.modifiers if m.type == 'COLLISION']: _o.modifiers.remove(_m); _q.append(_o.name)
+                _o.hide_viewport = True; _o.hide_render = True
+        _viv = [(o.name, round(o.collision.cloth_friction, 1), round(o.collision.thickness_outer, 4)) for o in MANIQUI if any(m.type == 'COLLISION' for m in o.modifiers)]
+        assert _viv and all(n.startswith("CD_cuerpo") for n, _, _ in _viv), f"colisionadores inesperados: {_viv}"
+        log(f"[ESC·f535] R20b cuerpo: solo colisiona la piel completa {_viv} (friccion, espesor) | maniqui sin colision: {_q} | brazos y manos {int(_br.sum())} triangulos, "
+            f"angosto en f1 hasta {np.linalg.norm(_V20 - _Vn, axis=1).max() * 1000:.0f} mm")
 if P["sand"] > 0 and P["sand_rot"] > 0:   # e2s: tri[0] de cada triangulo tocado = vertice mas cercano al impacto (Blender ata el rayo a tri[0])
     sys.path.insert(0, E2); import sand_e2s as _SE0
     _tm = bpy.data.meshes.new("_tmp_normales"); _tm.from_pydata(V0.tolist(), [], D["f"]); _tm.update()
