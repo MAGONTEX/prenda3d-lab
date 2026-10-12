@@ -1,0 +1,85 @@
+{
+ "nombre": "m1195_r12",
+ "prenda": "m1195",
+ "hilos": 4,
+ "tmo_min": 120,
+ "nota": "[ESC·f535] r12: G4 = bc4s (bc4 con la forma del cuello simetrizada: mitad R espejada a L en v y hrest) x5 contra G4c = control de reinicio bc3c x1 (a1, debe repetir bit a bit r9 G1c a1, r10 G2c a1 y r11 G3c a1). La base de la palanca es r11 G3 = bc4 (mismas air). air 1.001-1.005, 120 f.",
+ "grupos": {
+  "G4": {
+   "malla": "m1195_bc4s.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "hrest": "m1195_bc4s_hrest.npz",
+   "nf": 120,
+   "dumps": [
+    2,
+    6,
+    36,
+    48,
+    72,
+    96,
+    120
+   ]
+  },
+  "G4c": {
+   "malla": "m1195_bc3c.json",
+   "receta": "receta_bc3c.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "nf": 120,
+   "dumps": [
+    2,
+    6,
+    36,
+    48,
+    72,
+    96,
+    120
+   ]
+  }
+ },
+ "params": {},
+ "variantes": [
+  {
+   "tag": "m1195_g4_a1",
+   "grupo": "G4",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "m1195_g4_a2",
+   "grupo": "G4",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "m1195_g4_a3",
+   "grupo": "G4",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "m1195_g4_a4",
+   "grupo": "G4",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "m1195_g4_a5",
+   "grupo": "G4",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "m1195_g4c_a1",
+   "grupo": "G4c",
+   "params": {
+    "air": 1.001
+   }
+  }
+ ]
+}
