@@ -30,7 +30,7 @@
    180
   ]
  },
- "nota": "[ESC\u00b7f535] R21 N=5: zzhm (labio fuera de autocol en el cuello) x5 a 180 f (bi_k 1.000..1.004) + control zzhl k1 (= r20al_k1 bit a bit para reusar la banda de r20a)",
+ "nota": "[ESC·f535] R21 N=5: zzhm (labio fuera de autocol en el cuello) x5 a 180 f (bi_k 1.000..1.004) + control zzhl k1 (= r20al_k1 bit a bit para reusar la banda de r20a)",
  "grupos": {
   "l5": {
    "params": {
@@ -90,5 +90,9 @@
     "bi_k": "1.001"
    }
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38217586076",
+  "utc": "2026-10-12T07:24:53Z"
+ }
 }
