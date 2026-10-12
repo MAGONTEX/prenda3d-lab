@@ -22,7 +22,7 @@
    6
   ]
  },
- "nota": "[ESC\u00b7f535] R21 humo 6 f: labio de la tapeta fuera de autocol en el cuello s<150 (zzhm) vs control zzhl k1 (= r20a k1)",
+ "nota": "[ESC·f535] R21 humo 6 f: labio de la tapeta fuera de autocol en el cuello s<150 (zzhm) vs control zzhl k1 (= r20a k1)",
  "grupos": {
   "l5": {
    "params": {
@@ -54,5 +54,9 @@
     "bi_k": "1.001"
    }
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38217347337",
+  "utc": "2026-10-12T07:22:19Z"
+ }
 }
