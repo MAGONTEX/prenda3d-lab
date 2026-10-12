@@ -31,7 +31,7 @@
    180
   ]
  },
- "nota": "[ESC\u00b7f535] R24b N=5: zzho + RAMPA DE REPOSO tp+zp (rk_r24.npz, 24 claves f2-f25, molde en f26) x5 a 180 f (bi_k 1.000..1.004, pares r22o_k0..k4) + control r24n_c1 (sim R24 sin rk = r22o_k1 bit a bit)",
+ "nota": "[ESC·f535] R24b N=5: zzho + RAMPA DE REPOSO tp+zp (rk_r24.npz, 24 claves f2-f25, molde en f26) x5 a 180 f (bi_k 1.000..1.004, pares r22o_k0..k4) + control r24n_c1 (sim R24 sin rk = r22o_k1 bit a bit)",
  "grupos": {
   "o5": {
    "params": {
@@ -94,5 +94,9 @@
     "bi_k": "1.001"
    }
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38230910407",
+  "utc": "2026-10-12T09:35:56Z"
+ }
 }
