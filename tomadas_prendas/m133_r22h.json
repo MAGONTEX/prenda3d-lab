@@ -25,7 +25,7 @@
    40
   ]
  },
- "nota": "[ESC\u00b7f535] R22b humo 40 f: labio del cuello = cascara sin plancha que choca. zzhn (r0+rm de vuelta en autocol, r0 fuera de placket), zzho (+ r1 fuera de placket: pespunte articulado, sonda R22b) y control zzhm k1 (= r21m_k1 bit a bit)",
+ "nota": "[ESC·f535] R22b humo 40 f: labio del cuello = cascara sin plancha que choca. zzhn (r0+rm de vuelta en autocol, r0 fuera de placket), zzho (+ r1 fuera de placket: pespunte articulado, sonda R22b) y control zzhm k1 (= r21m_k1 bit a bit)",
  "grupos": {
   "m5": {
    "params": {
@@ -71,5 +71,9 @@
     "bi_k": "1.001"
    }
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38222196470",
+  "utc": "2026-10-12T08:12:54Z"
+ }
 }
