@@ -25,7 +25,7 @@
    40
   ]
  },
- "nota": "[ESC\u00b7f535] R26b humo 40 f: VISTA EN AUTOCOLISION, dos brazos con la rampa R24b (grupo r5 de m133_r24n5): Vb zzhp (franja por triangulo 10 mm) y Va zzhq (= Vb + 6 v de la vista separados a >= 2,5 mm de fc/fs en el V0) + control r26b_c1 (= r24n_k1 bit a bit)",
+ "nota": "[ESC·f535] R26b humo 40 f: VISTA EN AUTOCOLISION, dos brazos con la rampa R24b (grupo r5 de m133_r24n5): Vb zzhp (franja por triangulo 10 mm) y Va zzhq (= Vb + 6 v de la vista separados a >= 2,5 mm de fc/fs en el V0) + control r26b_c1 (= r24n_k1 bit a bit)",
  "grupos": {
   "c5": {
    "params": {
@@ -80,5 +80,9 @@
     "bi_k": "1.001"
    }
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38252004990",
+  "utc": "2026-10-12T12:54:28Z"
+ }
 }
