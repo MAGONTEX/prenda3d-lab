@@ -176,6 +176,20 @@
    "sha256_origen": "4d153484432b14c71f6fbceafaf4eb42da3bb78767542d6fdd9e6f3e5a2a7b00",
    "sha256": "4d153484432b14c71f6fbceafaf4eb42da3bb78767542d6fdd9e6f3e5a2a7b00",
    "saneado": false
+  },
+  "m133_e2zzho_r20i.json": {
+   "origen": "m133_e2zzho_r20i.json",
+   "sha256_origen": "891718d57dfc32238eca79f3dcc969d13ad1e97bdfefd61ed9f9807517e5b927",
+   "sha256": "891718d57dfc32238eca79f3dcc969d13ad1e97bdfefd61ed9f9807517e5b927",
+   "saneado": false,
+   "textos_saneados": []
+  },
+  "m133_e2zzho_r20k.json": {
+   "origen": "m133_e2zzho_r20k.json",
+   "sha256_origen": "3d75fc985d08ce55a616ee68b3866c380474399f0a5e10020f76a2459150e914",
+   "sha256": "3d75fc985d08ce55a616ee68b3866c380474399f0a5e10020f76a2459150e914",
+   "saneado": false,
+   "textos_saneados": []
   }
  },
  "publico": "[ESC·f535] paquete --modo argv de scripts/empaquetar_prenda.py: sin DXF, notas privadas ni rutas"

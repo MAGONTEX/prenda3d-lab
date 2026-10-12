@@ -1,0 +1,84 @@
+{
+ "nombre": "m133_r20k",
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "tmo_min": 120,
+ "nf": 60,
+ "dumps": [
+  1,
+  2,
+  6,
+  20,
+  26,
+  40,
+  60
+ ],
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   60
+  ]
+ },
+ "nota": "[ESC·f535] R20k humo 60 f, base zzho + rampa R24b (rk_r24): C = zzho (control: repite r24n_k1 bit a bit en f1-f60), P = zzho_r20i (pico del V0 arreglado), A = P + forro de manga b13 (fm*_f) + vuelta del puño 30 mm (vu*) + elastico al canto de la vuelta, forro y pared sl*_f en autocol",
+ "grupos": {
+  "c": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzho.json"
+   }
+  },
+  "p": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzho_r20i.json"
+   }
+  },
+  "a": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzho_r20k.json"
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "r20k_c1",
+   "grupo": "c",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "r20k_p1",
+   "grupo": "p",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "r20k_a1",
+   "grupo": "a",
+   "params": {
+    "bi_k": "1.001"
+   }
+  }
+ ]
+}
