@@ -26,7 +26,7 @@
    80
   ]
  },
- "nota": "[ESC\u00b7f535] CUP N=5: hood in-plane compression hc_lo 15/5/2 vs bp (45), paired bi_k 1.000-1.004, 80 f. Judge TECmin/ESQmax f80, Mann-Whitney vs bp.",
+ "nota": "[ESC·f535] CUP N=5: hood in-plane compression hc_lo 15/5/2 vs bp (45), paired bi_k 1.000-1.004, 80 f. Judge TECmin/ESQmax f80, Mann-Whitney vs bp.",
  "grupos": {
   "bp": {
    "params": {
@@ -213,5 +213,9 @@
     "bi_k": "1.004"
    }
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38322960445",
+  "utc": "2026-10-12T23:35:54Z"
+ }
 }
