@@ -1,0 +1,684 @@
+{
+ "tanda": "m133_r20ah",
+ "prenda": "m133",
+ "url": "https://github.com/parka-oss/prenda3d-lab/actions/runs/38203701219",
+ "estado": "OK",
+ "nota": "[ESC·f535] R20a humo: labio de la tapeta en 2 columnas (zzhl) y diagnostico solo-autocol (zzhk) contra r18b (zzh1), k1, 6 f",
+ "tomada": {
+  "por": "actions 38203701219",
+  "utc": "2026-10-12T04:25:15Z"
+ },
+ "cerrada_utc": "2026-10-12T04:26:33Z",
+ "variantes": {
+  "r20ah_c_k1": {
+   "item": "m133_r20ah--r20ah_c_k1",
+   "tag": "r20ah_c_k1",
+   "prenda": "m133",
+   "rc": 0,
+   "t_pared_s": 23,
+   "estado": "FIN",
+   "cuadros_pedidos": 6,
+   "grupo": "q5",
+   "cuadros_hechos": 6,
+   "t_sim_s": 17,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 6,
+    "t_s": 16,
+    "media_mm": 0.1,
+    "max_mm": 2.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "forro capucha boca",
+     "n": 38,
+     "max_mm": 2.4,
+     "p95_mm": 2.2,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "vista-cuerpo R",
+     "n": 16,
+     "max_mm": 1.8,
+     "p95_mm": 1.4,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "vista-escote R",
+     "n": 16,
+     "max_mm": 1.6,
+     "p95_mm": 1.4,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "vista-cuerpo L",
+     "n": 16,
+     "max_mm": 1.4,
+     "p95_mm": 1.0,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "vista del. CF R",
+     "n": 65,
+     "max_mm": 1.4,
+     "p95_mm": 0.7,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "forro capucha base ht",
+     "n": 28,
+     "max_mm": 1.4,
+     "p95_mm": 1.2,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "borde forro",
+     "n": 1453,
+     "max_mm": 1.4,
+     "p95_mm": 0.5,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "vista del. escote R",
+     "n": 20,
+     "max_mm": 1.3,
+     "p95_mm": 1.3,
+     "media_mm": 0.4
+    }
+   ],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [
+    "X_r20ah_c_k1_f1.npy",
+    "X_r20ah_c_k1_f2.npy",
+    "X_r20ah_c_k1_f6.npy"
+   ],
+   "params_variante": {
+    "bi_k": "1.001"
+   },
+   "metricas": {
+    "tag": "r20ah_c_k1",
+    "malla": "m133_e2zzh1.json",
+    "cuadros_pedidos": [
+     2,
+     6
+    ],
+    "dumps": [
+     1,
+     2,
+     6
+    ],
+    "huellas": {
+     "f1": "401dd21352b031ce",
+     "f2": "bd6ada04f67aa8b8",
+     "f6": "f27107a8e28c370b"
+    },
+    "log": {
+     "params": {
+      "bi_k": 1.001,
+      "bi_w": 15.0,
+      "relleno": 0.0,
+      "relleno_h": 18.0,
+      "relleno_r": 45.0,
+      "relleno_g": 21.0,
+      "sand_kc": 2.0,
+      "sand_len": 20.0,
+      "pl_bh": 10.0,
+      "pc_w": 10.0,
+      "hf": 1.0,
+      "hf_w": 0.1,
+      "fric": 40.0,
+      "muneca": 0.031,
+      "bth": 0.001,
+      "ath": 0.001,
+      "stop_open": 8.0
+     },
+     "stop": [],
+     "cortada_f": null,
+     "asentada_f": null,
+     "fin": true,
+     "malla_log": "m133_e2zzh1.json"
+    },
+    "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+    "ultimo": 6,
+    "f2": {
+     "rel_flecha": 10.465986421802526,
+     "rel_amp": 0.0660823868431672,
+     "rel_n": 15,
+     "cruces_cosidos": 1321,
+     "cruces_zonas": 469,
+     "cart_cuello_n": 29,
+     "cart_cuello_p95": 1.3317276652945524,
+     "cart_cuello_max": 1.3560722892588097,
+     "cart_cierre_n": 60,
+     "cart_cierre_p95": 2.1701406820190723,
+     "cart_cierre_max": 2.9305002847945647,
+     "cart_ruedo_n": 27,
+     "cart_ruedo_p95": 2.669460290062047,
+     "cart_ruedo_max": 2.881534526696788,
+     "sisaR_n": 1,
+     "sisaR_p95": 0.0012364817266692363,
+     "sisaR_max": 0.0012364817266692363,
+     "sisaR_asoma_n": 39,
+     "sisaR_asoma_max": 5.459412207091175,
+     "sisaR_gap_max": 0.9220525295870116,
+     "sisaL_n": 1,
+     "sisaL_p95": 0.0005837024471717633,
+     "sisaL_max": 0.0005837024471717633,
+     "sisaL_asoma_n": 39,
+     "sisaL_asoma_max": 5.444300128059131,
+     "sisaL_gap_max": 1.0199822816471258,
+     "hb_gap_p95": 0.06551656374925907,
+     "hb_gap_max": 0.2061648198473605,
+     "hbx_n": 3,
+     "hbx_p95": 0.001957645460278569,
+     "hbx_max": 0.002078948081262466,
+     "hb_cruces_todo": 3,
+     "costura_max_mm": 1.6733620406905163,
+     "costura_max": "cierre L",
+     "costuras_gt5_n": 0,
+     "costuras_gt5": {},
+     "aparte_mm": {
+      "broche": 7.137118286514579
+     }
+    },
+    "f6": {
+     "rel_flecha": 16.139529435369344,
+     "rel_amp": 0.10709744877104979,
+     "rel_n": 15,
+     "cruces_cosidos": 1359,
+     "cruces_zonas": 432,
+     "cart_cuello_n": 22,
+     "cart_cuello_p95": 2.370363752782141,
+     "cart_cuello_max": 2.3802025531738202,
+     "cart_cierre_n": 90,
+     "cart_cierre_p95": 1.648190525392703,
+     "cart_cierre_max": 2.9651430349692633,
+     "cart_ruedo_n": 32,
+     "cart_ruedo_p95": 2.0316631835429595,
+     "cart_ruedo_max": 2.418422771276044,
+     "sisaR_n": 1,
+     "sisaR_p95": 0.00041343838861895854,
+     "sisaR_max": 0.00041343838861895854,
+     "sisaR_asoma_n": 35,
+     "sisaR_asoma_max": 6.212200444021796,
+     "sisaR_gap_max": 0.9263021322171119,
+     "sisaL_n": 0,
+     "sisaL_p95": 0.0,
+     "sisaL_max": 0.0,
+     "sisaL_asoma_n": 29,
+     "sisaL_asoma_max": 6.876614694653401,
+     "sisaL_gap_max": 0.40337337008122676,
+     "hb_gap_p95": 0.0525258337851286,
+     "hb_gap_max": 0.20005368271191776,
+     "hbx_n": 10,
+     "hbx_p95": 0.01299989248335259,
+     "hbx_max": 0.016886672560335825,
+     "hb_cruces_todo": 10,
+     "costura_max_mm": 1.7611598762861707,
+     "costura_max": "vista-cuerpo R",
+     "costuras_gt5_n": 0,
+     "costuras_gt5": {},
+     "aparte_mm": {
+      "broche": 7.048555435644687
+     }
+    }
+   }
+  },
+  "r20ah_l_k1": {
+   "item": "m133_r20ah--r20ah_l_k1",
+   "tag": "r20ah_l_k1",
+   "prenda": "m133",
+   "rc": 0,
+   "t_pared_s": 18,
+   "estado": "FIN",
+   "cuadros_pedidos": 6,
+   "grupo": "q5",
+   "cuadros_hechos": 6,
+   "t_sim_s": 14,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 6,
+    "t_s": 13,
+    "media_mm": 0.1,
+    "max_mm": 3.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "tapeta",
+     "n": 80,
+     "max_mm": 2.9,
+     "p95_mm": 2.4,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "vista-escote R",
+     "n": 16,
+     "max_mm": 2.5,
+     "p95_mm": 1.5,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "forro capucha boca",
+     "n": 38,
+     "max_mm": 2.3,
+     "p95_mm": 2.1,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "cuello-capucha",
+     "n": 75,
+     "max_mm": 2.0,
+     "p95_mm": 1.2,
+     "media_mm": 0.5
+    },
+    {
+     "costura": "cierre R",
+     "n": 79,
+     "max_mm": 1.8,
+     "p95_mm": 1.2,
+     "media_mm": 0.5
+    },
+    {
+     "costura": "cierre L",
+     "n": 79,
+     "max_mm": 1.8,
+     "p95_mm": 0.9,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "vista-cuerpo R",
+     "n": 16,
+     "max_mm": 1.7,
+     "p95_mm": 1.3,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "vista-cuerpo L",
+     "n": 16,
+     "max_mm": 1.7,
+     "p95_mm": 1.2,
+     "media_mm": 0.5
+    }
+   ],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [
+    "X_r20ah_l_k1_f1.npy",
+    "X_r20ah_l_k1_f2.npy",
+    "X_r20ah_l_k1_f6.npy"
+   ],
+   "params_variante": {
+    "bi_k": "1.001",
+    "mesh": "m133_e2zzhl.json"
+   },
+   "metricas": {
+    "tag": "r20ah_l_k1",
+    "malla": "m133_e2zzhl.json",
+    "cuadros_pedidos": [
+     2,
+     6
+    ],
+    "dumps": [
+     1,
+     2,
+     6
+    ],
+    "huellas": {
+     "f1": "f4882716cd225cd5",
+     "f2": "4634d805e5578867",
+     "f6": "ceb5bec620678f7f"
+    },
+    "log": {
+     "params": {
+      "bi_k": 1.001,
+      "bi_w": 15.0,
+      "relleno": 0.0,
+      "relleno_h": 18.0,
+      "relleno_r": 45.0,
+      "relleno_g": 21.0,
+      "sand_kc": 2.0,
+      "sand_len": 20.0,
+      "pl_bh": 10.0,
+      "pc_w": 10.0,
+      "hf": 1.0,
+      "hf_w": 0.1,
+      "fric": 40.0,
+      "muneca": 0.031,
+      "bth": 0.001,
+      "ath": 0.001,
+      "stop_open": 8.0
+     },
+     "stop": [],
+     "cortada_f": null,
+     "asentada_f": null,
+     "fin": true,
+     "malla_log": "m133_e2zzhl.json"
+    },
+    "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+    "ultimo": 6,
+    "f2": {
+     "rel_flecha": 10.587450246887334,
+     "rel_amp": 0.06684132623933998,
+     "rel_n": 15,
+     "cruces_cosidos": 1089,
+     "cruces_zonas": 437,
+     "cart_cuello_n": 57,
+     "cart_cuello_p95": 2.3075482497196016,
+     "cart_cuello_max": 3.1621635111246986,
+     "cart_cierre_n": 0,
+     "cart_cierre_p95": 0.0,
+     "cart_cierre_max": 0.0,
+     "cart_ruedo_n": 25,
+     "cart_ruedo_p95": 1.6841073336292567,
+     "cart_ruedo_max": 1.879399866648899,
+     "sisaR_n": 2,
+     "sisaR_p95": 0.002788212815730695,
+     "sisaR_max": 0.0028235972525827435,
+     "sisaR_asoma_n": 40,
+     "sisaR_asoma_max": 5.004933056121666,
+     "sisaR_gap_max": 0.7427879712963954,
+     "sisaL_n": 0,
+     "sisaL_p95": 0.0,
+     "sisaL_max": 0.0,
+     "sisaL_asoma_n": 41,
+     "sisaL_asoma_max": 4.898435091739847,
+     "sisaL_gap_max": 1.1546130025114683,
+     "hb_gap_p95": 0.06836252383197679,
+     "hb_gap_max": 0.1951866982015052,
+     "hbx_n": 5,
+     "hbx_p95": 0.0010519924044982377,
+     "hbx_max": 0.0010519924044982377,
+     "hb_cruces_todo": 5,
+     "costura_max_mm": 3.090512120068426,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 0,
+     "costuras_gt5": {},
+     "aparte_mm": {
+      "broche": 7.123237322575983
+     }
+    },
+    "f6": {
+     "rel_flecha": 16.204783419082936,
+     "rel_amp": 0.10348064472910823,
+     "rel_n": 15,
+     "cruces_cosidos": 1029,
+     "cruces_zonas": 393,
+     "cart_cuello_n": 63,
+     "cart_cuello_p95": 2.9988678673152265,
+     "cart_cuello_max": 3.5628843088151307,
+     "cart_cierre_n": 23,
+     "cart_cierre_p95": 0.9934287059815079,
+     "cart_cierre_max": 1.034150632095549,
+     "cart_ruedo_n": 12,
+     "cart_ruedo_p95": 2.927395127615783,
+     "cart_ruedo_max": 3.201178306732392,
+     "sisaR_n": 0,
+     "sisaR_p95": 0.0,
+     "sisaR_max": 0.0,
+     "sisaR_asoma_n": 26,
+     "sisaR_asoma_max": 5.539681837086587,
+     "sisaR_gap_max": 1.1645842456686935,
+     "sisaL_n": 1,
+     "sisaL_p95": 0.00024439582472691296,
+     "sisaL_max": 0.00024439582472691296,
+     "sisaL_asoma_n": 34,
+     "sisaL_asoma_max": 8.952246672875926,
+     "sisaL_gap_max": 0.3992643659537468,
+     "hb_gap_p95": 0.050476225079934454,
+     "hb_gap_max": 0.2622017144913796,
+     "hbx_n": 7,
+     "hbx_p95": 0.007187239238876783,
+     "hbx_max": 0.009405160816045654,
+     "hb_cruces_todo": 7,
+     "costura_max_mm": 2.9093328398569946,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 0,
+     "costuras_gt5": {},
+     "aparte_mm": {
+      "broche": 6.9048237751376655
+     }
+    }
+   }
+  },
+  "r20ah_k_k1": {
+   "item": "m133_r20ah--r20ah_k_k1",
+   "tag": "r20ah_k_k1",
+   "prenda": "m133",
+   "rc": 0,
+   "t_pared_s": 23,
+   "estado": "FIN",
+   "cuadros_pedidos": 6,
+   "grupo": "q5",
+   "cuadros_hechos": 6,
+   "t_sim_s": 16,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 6,
+    "t_s": 16,
+    "media_mm": 0.1,
+    "max_mm": 2.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "forro capucha boca",
+     "n": 38,
+     "max_mm": 2.4,
+     "p95_mm": 2.2,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "tapeta",
+     "n": 80,
+     "max_mm": 2.3,
+     "p95_mm": 1.2,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "capucha-ht base R",
+     "n": 13,
+     "max_mm": 2.2,
+     "p95_mm": 1.8,
+     "media_mm": 0.5
+    },
+    {
+     "costura": "cierre R",
+     "n": 79,
+     "max_mm": 1.9,
+     "p95_mm": 0.8,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "vista-escote R",
+     "n": 16,
+     "max_mm": 1.7,
+     "p95_mm": 1.1,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "vista-cuerpo R",
+     "n": 16,
+     "max_mm": 1.7,
+     "p95_mm": 1.2,
+     "media_mm": 0.5
+    },
+    {
+     "costura": "cierre L",
+     "n": 79,
+     "max_mm": 1.7,
+     "p95_mm": 0.7,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "vista-escote L",
+     "n": 16,
+     "max_mm": 1.6,
+     "p95_mm": 1.1,
+     "media_mm": 0.4
+    }
+   ],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [
+    "X_r20ah_k_k1_f1.npy",
+    "X_r20ah_k_k1_f2.npy",
+    "X_r20ah_k_k1_f6.npy"
+   ],
+   "params_variante": {
+    "bi_k": "1.001",
+    "mesh": "m133_e2zzhk.json"
+   },
+   "metricas": {
+    "tag": "r20ah_k_k1",
+    "malla": "m133_e2zzhk.json",
+    "cuadros_pedidos": [
+     2,
+     6
+    ],
+    "dumps": [
+     1,
+     2,
+     6
+    ],
+    "huellas": {
+     "f1": "401dd21352b031ce",
+     "f2": "8cbd57f05cc31dd9",
+     "f6": "b6b252070c9fd188"
+    },
+    "log": {
+     "params": {
+      "bi_k": 1.001,
+      "bi_w": 15.0,
+      "relleno": 0.0,
+      "relleno_h": 18.0,
+      "relleno_r": 45.0,
+      "relleno_g": 21.0,
+      "sand_kc": 2.0,
+      "sand_len": 20.0,
+      "pl_bh": 10.0,
+      "pc_w": 10.0,
+      "hf": 1.0,
+      "hf_w": 0.1,
+      "fric": 40.0,
+      "muneca": 0.031,
+      "bth": 0.001,
+      "ath": 0.001,
+      "stop_open": 8.0
+     },
+     "stop": [],
+     "cortada_f": null,
+     "asentada_f": null,
+     "fin": true,
+     "malla_log": "m133_e2zzhk.json"
+    },
+    "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+    "ultimo": 6,
+    "f2": {
+     "rel_flecha": 10.522022522474002,
+     "rel_amp": 0.0664155011261362,
+     "rel_n": 15,
+     "cruces_cosidos": 1393,
+     "cruces_zonas": 412,
+     "cart_cuello_n": 47,
+     "cart_cuello_p95": 2.6399864716034473,
+     "cart_cuello_max": 2.7773717975265946,
+     "cart_cierre_n": 73,
+     "cart_cierre_p95": 1.3694588576771514,
+     "cart_cierre_max": 2.0003911317513894,
+     "cart_ruedo_n": 17,
+     "cart_ruedo_p95": 2.049085678421284,
+     "cart_ruedo_max": 2.2452171472853473,
+     "sisaR_n": 3,
+     "sisaR_p95": 0.002507145032082203,
+     "sisaR_max": 0.0026326953685273935,
+     "sisaR_asoma_n": 36,
+     "sisaR_asoma_max": 5.011511223718257,
+     "sisaR_gap_max": 0.9160983401562113,
+     "sisaL_n": 0,
+     "sisaL_p95": 0.0,
+     "sisaL_max": 0.0,
+     "sisaL_asoma_n": 34,
+     "sisaL_asoma_max": 5.3707987805235495,
+     "sisaL_gap_max": 1.1273562786948987,
+     "hb_gap_p95": 0.06017753174857152,
+     "hb_gap_max": 0.21775555308669298,
+     "hbx_n": 5,
+     "hbx_p95": 0.001793797793350746,
+     "hbx_max": 0.0021878009766378437,
+     "hb_cruces_todo": 5,
+     "costura_max_mm": 2.7255636013579116,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 0,
+     "costuras_gt5": {},
+     "aparte_mm": {
+      "broche": 7.17659370462676
+     }
+    },
+    "f6": {
+     "rel_flecha": 15.947965829846908,
+     "rel_amp": 0.10399232626306161,
+     "rel_n": 15,
+     "cruces_cosidos": 1429,
+     "cruces_zonas": 420,
+     "cart_cuello_n": 25,
+     "cart_cuello_p95": 2.7214530082404718,
+     "cart_cuello_max": 2.886921329761121,
+     "cart_cierre_n": 94,
+     "cart_cierre_p95": 1.7910657454836394,
+     "cart_cierre_max": 2.7607670696529225,
+     "cart_ruedo_n": 31,
+     "cart_ruedo_p95": 2.1710741360905734,
+     "cart_ruedo_max": 2.3423530085790523,
+     "sisaR_n": 0,
+     "sisaR_p95": 0.0,
+     "sisaR_max": 0.0,
+     "sisaR_asoma_n": 27,
+     "sisaR_asoma_max": 5.4825225598099365,
+     "sisaR_gap_max": 1.2739110827781954,
+     "sisaL_n": 1,
+     "sisaL_p95": 0.00014045856609579133,
+     "sisaL_max": 0.00014045856609579133,
+     "sisaL_asoma_n": 32,
+     "sisaL_asoma_max": 6.714137544736467,
+     "sisaL_gap_max": 0.43664260144013073,
+     "hb_gap_p95": 0.04626865114406395,
+     "hb_gap_max": 0.2478392228807332,
+     "hbx_n": 13,
+     "hbx_p95": 0.007768669630822855,
+     "hbx_max": 0.017335701006518045,
+     "hb_cruces_todo": 13,
+     "costura_max_mm": 2.256344897967546,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 0,
+     "costuras_gt5": {},
+     "aparte_mm": {
+      "broche": 6.906913791562692
+     }
+    }
+   }
+  }
+ },
+ "artifacts": [
+  "prenda-m133_r20ah--r20ah_c_k1-<run>",
+  "prenda-m133_r20ah--r20ah_l_k1-<run>",
+  "prenda-m133_r20ah--r20ah_k_k1-<run>"
+ ]
+}
