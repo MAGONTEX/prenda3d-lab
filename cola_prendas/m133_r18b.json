@@ -1,0 +1,79 @@
+{
+ "prenda": "m133",
+ "modo": "argv",
+ "hilos": 4,
+ "tmo_min": 200,
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   60,
+   120,
+   180
+  ]
+ },
+ "nombre": "m133_r18b",
+ "script": "prendas/m133/sim_e2s_R18.py",
+ "nf": 180,
+ "dumps": [
+  1,
+  2,
+  6,
+  20,
+  40,
+  60,
+  90,
+  120,
+  150,
+  180
+ ],
+ "nota": "[ESC·f535] R18b: c1 (HQ + relleno=0) + cq_fin=5 (colision 5 despues de la rampa de brazos) x5 a 180 f; misma forma que c1f180 de R17b (bi_k 1.000..1.004, -t 4)",
+ "grupos": {
+  "q5": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5"
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "r18q5_k0",
+   "grupo": "q5",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "r18q5_k1",
+   "grupo": "q5",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "r18q5_k2",
+   "grupo": "q5",
+   "params": {
+    "bi_k": "1.002"
+   }
+  },
+  {
+   "tag": "r18q5_k3",
+   "grupo": "q5",
+   "params": {
+    "bi_k": "1.003"
+   }
+  },
+  {
+   "tag": "r18q5_k4",
+   "grupo": "q5",
+   "params": {
+    "bi_k": "1.004"
+   }
+  }
+ ]
+}
