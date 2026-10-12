@@ -1,0 +1,62 @@
+{
+ "nombre": "m1195_r10h",
+ "prenda": "m1195",
+ "hilos": 4,
+ "tmo_min": 60,
+ "nota": "[ESC·f535] r10 humo: H1 = bc3g (= bc3 con las gemelas cuB/pieB a la flexion base 20: zona cuello 791 v, solo cuA/pieA a 360) contra H0 = bc3 (gemelas a 360, = H1 de r9h). air 1.001, 60 f; dump f1 (deben ser iguales) y f2/f3 (la flexion entra al armar el Cloth).",
+ "grupos": {
+  "H1": {
+   "malla": "m1195_bc3g.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "hrest": "m1195_bc3_hrest.npz",
+   "nf": 60,
+   "dumps": [
+    1,
+    2,
+    3,
+    6,
+    12,
+    24,
+    36,
+    48,
+    60
+   ]
+  },
+  "H0": {
+   "malla": "m1195_bc3.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "hrest": "m1195_bc3_hrest.npz",
+   "nf": 60,
+   "dumps": [
+    1,
+    2,
+    3,
+    6,
+    12,
+    24,
+    36,
+    48,
+    60
+   ]
+  }
+ },
+ "params": {},
+ "variantes": [
+  {
+   "tag": "m1195_h10_bc3g",
+   "grupo": "H1",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "m1195_h10_bc3",
+   "grupo": "H0",
+   "params": {
+    "air": 1.001
+   }
+  }
+ ]
+}
