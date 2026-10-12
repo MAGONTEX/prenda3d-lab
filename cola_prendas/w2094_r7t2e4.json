@@ -1,0 +1,141 @@
+{
+ "firma": "[ESC·f535]",
+ "prenda": "w2094",
+ "cuerpo": "cuerpo_W2094_piel20.npz",
+ "hrest": "sim/reposo_v5e.npz",
+ "rk": "sim/rk_v5e.npz",
+ "hilos": 4,
+ "nombre": "w2094_r7t2e4",
+ "nf": 150,
+ "tmo_min": 120,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  14,
+  16,
+  18,
+  20,
+  24,
+  30,
+  36,
+  48,
+  60,
+  72,
+  96,
+  120,
+  150
+ ],
+ "nota": "r7 T2e paso 4 tanda x10: rampa de reposo rk_t2e4 (pue/msb/bmb del V0 v8 al molde en f2-f26, rk_df 1; resto = rk_v5e) con replicas NULAS k5-k14 (flexion x1,005-1,014), pareadas con T2d V8 k5-k14 (rk_v5e). w8a0_k5 = control REPETIDO de T2d (bit a bit). 150 f, -t 4. Juicio: cruce del puno por lado (R y L) en pico, f150 y final; Fisher una cola contra T2d V8 (regla escrita en RONDA-ACTIONS T2e paso 4). Compuerta: 24 claves en el log de w8rk, 'autocolision 14140' en todos.",
+ "grupos": {
+  "V8": {
+   "malla": "w2094_v0_v8.json"
+  },
+  "V8R": {
+   "malla": "w2094_v0_v8.json",
+   "rk": "sim/rk_t2e4.npz",
+   "params": {
+    "rk_df": 1
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "w8rk_k5",
+   "grupo": "V8R",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.6
+   }
+  },
+  {
+   "tag": "w8rk_k6",
+   "grupo": "V8R",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.72
+   }
+  },
+  {
+   "tag": "w8rk_k7",
+   "grupo": "V8R",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.84
+   }
+  },
+  {
+   "tag": "w8rk_k8",
+   "grupo": "V8R",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.96
+   }
+  },
+  {
+   "tag": "w8rk_k9",
+   "grupo": "V8R",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.08
+   }
+  },
+  {
+   "tag": "w8rk_k10",
+   "grupo": "V8R",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.2
+   }
+  },
+  {
+   "tag": "w8rk_k11",
+   "grupo": "V8R",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.32
+   }
+  },
+  {
+   "tag": "w8rk_k12",
+   "grupo": "V8R",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.44
+   }
+  },
+  {
+   "tag": "w8rk_k13",
+   "grupo": "V8R",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.56
+   }
+  },
+  {
+   "tag": "w8rk_k14",
+   "grupo": "V8R",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.68
+   }
+  },
+  {
+   "tag": "w8a0_k5",
+   "grupo": "V8",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.6
+   }
+  }
+ ]
+}
