@@ -24,7 +24,7 @@
    40
   ]
  },
- "nota": "[ESC\u00b7f535] R23b humo 40 f: patada del arranque en el cuello. self_d 0.002 -> 0.001 (banda de autocol 4 -> 2 mm) sobre zzho x3 (bi_k 1.000-1.002, pares = r22o_k0..k2) + control zzho k1 (= r22o_k1 bit a bit). Palanca B (labio al ancho de molde) anulada: zzho ya esta al molde",
+ "nota": "[ESC·f535] R23b humo 40 f: patada del arranque en el cuello. self_d 0.002 -> 0.001 (banda de autocol 4 -> 2 mm) sobre zzho x3 (bi_k 1.000-1.002, pares = r22o_k0..k2) + control zzho k1 (= r22o_k1 bit a bit). Palanca B (labio al ancho de molde) anulada: zzho ya esta al molde",
  "grupos": {
   "o5": {
    "params": {
@@ -71,5 +71,9 @@
     "bi_k": "1.002"
    }
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38226985976",
+  "utc": "2026-10-12T08:59:33Z"
+ }
 }
