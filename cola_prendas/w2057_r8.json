@@ -1,0 +1,207 @@
+{
+ "firma": "[ESC·f535]",
+ "nombre": "w2057_r8",
+ "prenda": "w2057",
+ "nota": "r8: friccion de la piel, una palanca: tfric 40 -> 20 (CD_cuerpo_L = torso + brazos; la cabeza sigue con hfric 40). Toda la tanda con bajada lenta arm_f1 150 (r7), nf 240 y la guardia apagada (stop_open 0: no toca la fisica; se juzga la axila del ultimo cuadro y en cuadros de igual pose). B12T20 / B14T20 = recetas k0 de r6 (arm_end 12 / 14) con tfric 20; B12T40 = control (= r7 b12 sin guardia); C5T20 = c5 (piel20) con tfric 20 para ver hombros, cuello y medidas. Replica nula air 1.001..1.005 (k1..k5). Malla s1c, -t 4. Humo w2057_r8h antes de esta tanda.",
+ "nf": 240,
+ "hilos": 4,
+ "tmo_min": 150,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  24,
+  36,
+  48,
+  66,
+  87,
+  108,
+  129,
+  150,
+  162,
+  180,
+  210,
+  240
+ ],
+ "params": {
+  "arm_f1": 150,
+  "stop_open": 0
+ },
+ "grupos": {
+  "B12T40": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b12.npz",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {
+    "tfric": 40
+   }
+  },
+  "B12T20": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b12.npz",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {
+    "tfric": 20
+   }
+  },
+  "B14T20": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b14.npz",
+   "receta": "receta_w57_a14_k0.json",
+   "params": {
+    "tfric": 20
+   }
+  },
+  "C5T20": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_piel20.npz",
+   "receta": "receta_w57_c5_k0.json",
+   "params": {
+    "tfric": 20
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "w57r8_b12t40_k1",
+   "grupo": "B12T40",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "w57r8_b12t40_k2",
+   "grupo": "B12T40",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "w57r8_b12t40_k3",
+   "grupo": "B12T40",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "w57r8_b12t40_k4",
+   "grupo": "B12T40",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "w57r8_b12t40_k5",
+   "grupo": "B12T40",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "w57r8_b12t20_k1",
+   "grupo": "B12T20",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "w57r8_b12t20_k2",
+   "grupo": "B12T20",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "w57r8_b12t20_k3",
+   "grupo": "B12T20",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "w57r8_b12t20_k4",
+   "grupo": "B12T20",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "w57r8_b12t20_k5",
+   "grupo": "B12T20",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "w57r8_b14t20_k1",
+   "grupo": "B14T20",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "w57r8_b14t20_k2",
+   "grupo": "B14T20",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "w57r8_b14t20_k3",
+   "grupo": "B14T20",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "w57r8_b14t20_k4",
+   "grupo": "B14T20",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "w57r8_b14t20_k5",
+   "grupo": "B14T20",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "w57r8_c5t20_k1",
+   "grupo": "C5T20",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "w57r8_c5t20_k2",
+   "grupo": "C5T20",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "w57r8_c5t20_k3",
+   "grupo": "C5T20",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "w57r8_c5t20_k4",
+   "grupo": "C5T20",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "w57r8_c5t20_k5",
+   "grupo": "C5T20",
+   "params": {
+    "air": 1.005
+   }
+  }
+ ]
+}
