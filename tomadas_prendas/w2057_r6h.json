@@ -6,13 +6,37 @@
  "nf": 40,
  "hilos": 4,
  "tmo_min": 30,
- "dumps": [12, 24, 30, 36, 40],
+ "dumps": [
+  12,
+  24,
+  30,
+  36,
+  40
+ ],
  "grupos": {
-  "C": {"malla": "w2057_s1c.json", "cuerpo": "cuerpo_W2057_piel20.npz"},
-  "B10": {"malla": "w2057_s1c.json", "cuerpo": "cuerpo_W2057_b10.npz"}
+  "C": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_piel20.npz"
+  },
+  "B10": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b10.npz"
+  }
  },
  "variantes": [
-  {"tag": "w57h_b10_k0", "grupo": "B10", "receta": "receta_w57_a10_k0.json"},
-  {"tag": "w57h_c5_k0", "grupo": "C", "receta": "receta_w57_c5_k0.json"}
- ]
+  {
+   "tag": "w57h_b10_k0",
+   "grupo": "B10",
+   "receta": "receta_w57_a10_k0.json"
+  },
+  {
+   "tag": "w57h_c5_k0",
+   "grupo": "C",
+   "receta": "receta_w57_c5_k0.json"
+  }
+ ],
+ "tomada": {
+  "por": "actions 38193881064",
+  "utc": "2026-10-12T01:57:19Z"
+ }
 }
