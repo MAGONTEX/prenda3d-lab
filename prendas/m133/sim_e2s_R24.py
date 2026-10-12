@@ -832,6 +832,12 @@ if P["soft"] > 0 and P.get("pl_hc", -1.0) > P["compression"] and P["ent_c"] <= P
     s.compression_stiffness_max = P["pl_hc"]
     log("PLANCHA capucha: compresion", P["pl_hc"], "en", len(HOODSET), "vertices | cascaras peso", round(_ws, 4), "->", P["compression"], "| capa interior", P["soft"], "| traccion", P["tension"], "igual")
 if SEPV and P["soft"] > 0: vcas.add(SEPV, 1.0, 'REPLACE'); log(f"broches con altura: compresion del separador {s.compression_stiffness_max} (peso 1), traccion {s.tension_stiffness_max}")
+if P.get("hc_lo", -1.0) > 0:   # [ESC·f535] CUP: in-plane COMPRESSION of the hood (HOODSET) below the panel max; tension, max and every other weight unchanged
+    assert P["soft"] > 0 and P["hood_soft"] <= 0, "hc_lo needs soft > 0 and hood_soft=0"
+    _cmx = s.compression_stiffness_max; _wl = (P["hc_lo"] - P["soft"]) / (_cmx - P["soft"])
+    assert 0.0 <= _wl <= 1.0, "hc_lo outside [soft, compression max]"
+    vcas.add(sorted(HOODSET), _wl, 'REPLACE')
+    log("[ESC·f535] CUP: compresion capucha", P["hc_lo"], "(peso", round(_wl, 5), ") en", len(HOODSET), "vertices | maximo", _cmx, "| traccion", s.tension_stiffness_max, "igual")
 if ESC_RIG:   # [ESC·f535] PQ: anillo del escote a flexion y compresion maximas (como la columna del cierre); va despues de todos los pesos de 'rigidez' y 'cascara'
     assert P["soft"] > 0, "esc rig requiere soft > 0 (cascara = grupo estructural)"
     def _wg(_g, _i):

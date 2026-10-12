@@ -1,0 +1,67 @@
+{
+ "nombre": "m133_cup_h",
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "tmo_min": 120,
+ "nf": 80,
+ "dumps": [
+  1,
+  2,
+  6,
+  18,
+  40,
+  60,
+  80
+ ],
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   60,
+   80
+  ]
+ },
+ "nota": "[ESC\u00b7f535] CUP smoke: hood in-plane compression hc_lo (HOODSET only) = 2 and 15 on top of bp (r20u5); cup_h0 = bp without hc_lo, must equal r20u5_bp0 bit for bit.",
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "cup_h0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "cup_h2",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "hc_lo": "2"
+   }
+  },
+  {
+   "tag": "cup_h15",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "hc_lo": "15"
+   }
+  }
+ ]
+}
