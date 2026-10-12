@@ -1,0 +1,84 @@
+{
+ "nombre": "m1195_r14",
+ "prenda": "m1195",
+ "hilos": 4,
+ "tmo_min": 120,
+ "nota": "[ESC·f535] r14: G6 = bc5 (hoja del cuello cuA+cuB apoyada sobre los paneles en el V0; sin hrest) x5 contra G6c = control de reinicio bc3c x1 (a1, debe repetir bit a bit r9 G1c a1 y r13 G5c a1). La base de la palanca es r13 G5 = bc4s sin hrest (mismas air). air 1.001-1.005, 120 f.",
+ "grupos": {
+  "G6": {
+   "malla": "m1195_bc5.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "nf": 120,
+   "dumps": [
+    2,
+    6,
+    36,
+    48,
+    72,
+    96,
+    120
+   ]
+  },
+  "G6c": {
+   "malla": "m1195_bc3c.json",
+   "receta": "receta_bc3c.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "nf": 120,
+   "dumps": [
+    2,
+    6,
+    36,
+    48,
+    72,
+    96,
+    120
+   ]
+  }
+ },
+ "params": {},
+ "variantes": [
+  {
+   "tag": "m1195_g6_a1",
+   "grupo": "G6",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "m1195_g6_a2",
+   "grupo": "G6",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "m1195_g6_a3",
+   "grupo": "G6",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "m1195_g6_a4",
+   "grupo": "G6",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "m1195_g6_a5",
+   "grupo": "G6",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "m1195_g6c_a1",
+   "grupo": "G6c",
+   "params": {
+    "air": 1.001
+   }
+  }
+ ]
+}
