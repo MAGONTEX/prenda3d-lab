@@ -5,6 +5,7 @@ El nucleo (`nucleo.py`) llama hooks por los NOMBRES de la M133 con `_regla(ES, "
 `m1195_reglas.py` (mismo proveedor, misma capa unica). Lo que hace cada hook EN ESE PUNTO del nucleo:
   filtrar_costuras_diagnostico  antes de armar la escena   -> exige la construccion de `49-w2094/molderia/arma_malla_v0.py` (strip `zipper`, `cuff`, grupos)
   sandwich_rotar_caras          con el cuerpo cargado      -> solo colisiona la piel completa del npz (sin tubos de brazo ni cabeza del maniqui)
+  broches_con_altura            al armar la tela           -> [ESC·f535] T2e10: broche del puno con altura (sep_h > 0; defecto 0 = identico)
   cuello_flexion_por_capa       con la rigidez cargada     -> flexion por zona (w2094_reglas.json): cuello x3, cintura doblada x2, franja de la vista x2;
                                                               el strip del cierre queda en bend_max (nucleo) y el puno en w_cuff (nucleo, cuff_on=1)
   metricas_definir              antes del bucle            -> indices: ruedo (eje de la cintura), punos, hombro, cuello, strip, tabla; cuerpo y cabeza
@@ -184,3 +185,72 @@ def metricas_por_cuadro(ES):
            f"STRIP ancho med {n['zip_ancho']:.1f} max {n['zip_ancho_max']:.1f} mm (objetivo 18), x ruedo {n['zip_x_ruedo']:+.0f} top {n['zip_x_top']:+.0f} (torsion {n['zip_x_top'] - n['zip_x_ruedo']:+.0f}) | "
            f"TABLA abierta R {tab['R']:.1f} L {tab['L']:.1f} mm")
     ES.log(f"   W2094 FICHA A hombro-hombro (510) {A:.0f} | G CB canesu->eje cintura (molde ~606) {G:.0f} | K hombro->puno R/L (560) {K['R']:.0f}/{K['L']:.0f} mm")
+
+
+def broches_con_altura(ES):
+    """[ESC·f535] W2094 r7 T2e paso 10: broche del puno CON ALTURA en lugar de los 3 resortes de largo 0 'broche puno R/L' por lado.
+    El resorte de largo 0 clava la punta B sobre la A (el V0 v8r las junta en una carpa: A sube ~3 mm, B baja ~2,7) y en la caida (f4-f16) la luz
+    del solape se cierra a 1,3-2,6 mm en los 6 lados (T2e9). Aca el broche cerrado separa las capas sep_h mm durante TODA la sim.
+    Requiere un V0 con el broche ya abierto (`49-w2094/sim/qc_r7/t2e10_v0.py`: a en la superficie de A, b a sep_h mm sobre a): si |b - a| no es
+    sep_h (+-0,5 mm), falla. Por par (b = el mas lejos del centro del puno, punta B; a = punta A): tetraedro rigido con base = copia de una cara de B
+    que contiene b, a sep_eps mm hacia a, y apice EN a (cosido a a; la base cosida a la cara). Reposo (SEP_REST): base = la cara en el molde (uv) y
+    apice en las mismas coordenadas locales que en el V0 (sin pretension). Flexion maxima, fuera de la autocol (ver nucleo.tela).
+    Variante de m133_reglas.broches_con_altura (base del molde + apice perpendicular). sep_h = 0 (defecto) -> identico."""
+    if ES.P['sep_h'] <= 0 or ES.P['snaps'] <= 0:
+        return
+    nom = ES.D['sew_seam']
+    pares = [ES.D['sew'][i] for i, nm in enumerate(nom) if nm.startswith('broche puno')]
+    if not pares:
+        return
+    _kb = [i for i, nm in enumerate(nom) if not nm.startswith('broche puno')]
+    ES.D['sew'] = [ES.D['sew'][i] for i in _kb]
+    ES.D['sew_seam'] = [ES.D['sew_seam'][i] for i in _kb]
+    _h = ES.P['sep_h'] / 1000.0
+    _UVa = np.array(ES.D['uv'], float)
+    F = np.array(ES.D['f'])
+    _nv, _nuv, _nf, _msg = [], [], [], []
+    for p in pares:
+        lado = 'R' if ES.D['groups']['pueR'][0] <= p[0] < ES.D['groups']['pueR'][1] else 'L'
+        g0, g1 = ES.D['groups']['pue' + lado]
+        cen = ES.V0[g0:g1].mean(0)
+        b, a = sorted((int(p[0]), int(p[1])), key=lambda i: -np.linalg.norm(ES.V0[i] - cen))   # b = capa de afuera (punta B)
+        _gap = np.linalg.norm(ES.V0[b] - ES.V0[a])
+        assert abs(_gap - _h) < 0.0005, f'broches_con_altura: |b - a| = {_gap * 1000:.2f} mm en el V0 y sep_h = {ES.P["sep_h"]} (usar el V0 de t2e10_v0.py)'
+        _d = (ES.V0[a] - ES.V0[b]) / _gap                                     # eje del separador: de b hacia a
+        cand = np.where((F == b).any(1))[0]
+        cen_f = ES.V0[F[cand]].mean(1)
+        fi = cand[np.argmin(np.linalg.norm(cen_f - ES.V0[b], axis=1))]
+        _fv = [int(b)] + [int(x) for x in F[fi] if x != b]
+        _B = ES.V0[_fv]
+        _n = np.cross(_B[1] - _B[0], _B[2] - _B[0])
+        _n /= np.linalg.norm(_n)
+        _sg = 1.0 if np.dot(_n, _d) > 0 else -1.0                              # lado de la cara donde esta a
+        _Bs = _B + _sg * (ES.P['sep_eps'] / 1000.0) * _n
+        _ap = ES.V0[a].copy()
+        _abc = np.linalg.solve(np.c_[_Bs[1] - _Bs[0], _Bs[2] - _Bs[0], _n], _ap - _Bs[0])   # apice en coordenadas locales de la base
+        _R = np.c_[_UVa[_fv] / 1000.0, np.zeros(3)]
+        _zr = np.sign(np.cross(_R[1] - _R[0], _R[2] - _R[0])[2])
+        _apr = _R[0] + _abc[0] * (_R[1] - _R[0]) + _abc[1] * (_R[2] - _R[0]) + np.array([0.0, 0.0, _zr * _abc[2]])
+        _i0 = ES.NV0 + len(_nv)
+        b0, b1, b2, ap = (_i0, _i0 + 1, _i0 + 2, _i0 + 3)
+        _nv += [*_Bs.tolist(), _ap.tolist()]
+        _nuv += [(_R[k][:2] * 1000.0).tolist() for k in range(3)] + [(_apr[:2] * 1000.0).tolist()]
+        for k in range(3):
+            ES.SEP_REST[_i0 + k] = tuple(_R[k])
+        ES.SEP_REST[ap] = tuple(_apr)
+        _nf += [[b0, b2, b1], [b0, b1, ap], [b1, b2, ap], [b2, b0, ap]] if _sg > 0 else [[b0, b1, b2], [b1, b0, ap], [b2, b1, ap], [b0, b2, ap]]
+        ES.D['sew'] += [[b0, _fv[0]], [b1, _fv[1]], [b2, _fv[2]], [ap, int(a)]]
+        ES.D['sew_seam'] += ['broche base'] * 3 + ['broche puno ' + lado + ' (apice)']
+        _msg.append(f'{lado} b{b}-a{a}: |b-a| {_gap * 1000:.2f} mm, alto {_sg * _abc[2] * 1000:.2f}, eje vs normal {np.degrees(np.arccos(min(1.0, abs(float(np.dot(_n, _d)))))):.0f} gr')
+    ES.SEPV = list(range(ES.NV0, ES.NV0 + len(_nv)))
+    ES.V0 = np.vstack([ES.V0, np.array(_nv)])
+    ES.D['v'] = list(ES.D['v']) + _nv
+    ES.D['uv'] = list(ES.D['uv']) + _nuv
+    if 'pocket' in ES.D:
+        ES.D['pocket'] = list(ES.D['pocket']) + [None] * len(_nv)
+    ES.F = np.vstack([ES.F, np.array(_nf, int)])
+    ES.D['f'] = ES.F.tolist()
+    ES.D['groups']['snap_sep'] = [ES.NV0, ES.NV0 + len(_nv)]
+    ES.NV = len(ES.V0)
+    ES.log(f"BROCHES CON ALTURA (W2094 T2e10): {len(pares)} separadores de {ES.P['sep_h']} mm | base a {ES.P['sep_eps']} mm | {len(pares)} resortes "
+           f"'broche puno' de largo 0 fuera | +{len(_nv)} vertices, +{len(_nf)} caras | " + ' | '.join(_msg))
