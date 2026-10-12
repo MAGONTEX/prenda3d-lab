@@ -1,0 +1,111 @@
+{
+ "nombre": "m133_r18a",
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R16.py",
+ "hilos": 4,
+ "tmo_min": 200,
+ "nf": 60,
+ "dumps": [
+  1,
+  2,
+  6,
+  20,
+  40,
+  60
+ ],
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   20,
+   60
+  ]
+ },
+ "nota": "[ESC·f535] R18a: base R13c (= r17zw: receta HQ con los 23 componentes de e2zw1, malla zv1, cuerpo e2p2; bi_w 15) x5 a 180 f, misma tanda que R17b (solo cambia nf y dumps/cuadros como c1f180) para comparar con r17c1f180 en el mismo cuadro y plataforma; bi_k 1.000..1.004, -t 4",
+ "grupos": {
+  "zw": {
+   "params": {
+    "relleno": "0",
+    "sand_kc": "100",
+    "sand_len": "10",
+    "body": "cuerpo_L_e2p2.npz",
+    "bth": "-1",
+    "ath": "-1",
+    "dl_x": "0.215",
+    "dl_z": "1.405",
+    "arm_x0": "0.21",
+    "arm_z0": "1.4",
+    "arm_x1": "0.23",
+    "fric": "0.5",
+    "muneca": "0",
+    "mesh": "m133_e2zv1.json",
+    "pl_bh": "90",
+    "pc_w": "0",
+    "hf": "0",
+    "hf_w": "0",
+    "hf_sc": "0",
+    "bi_k": "1",
+    "bi_w": "15"
+   },
+   "nf": 180,
+   "dumps": [
+    1,
+    2,
+    6,
+    20,
+    40,
+    60,
+    90,
+    120,
+    150,
+    180
+   ],
+   "cuadros_medir": [
+    60,
+    120,
+    180
+   ]
+  }
+ },
+ "variantes": [
+  {
+   "tag": "r18zw_k0",
+   "grupo": "zw",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "r18zw_k1",
+   "grupo": "zw",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "r18zw_k2",
+   "grupo": "zw",
+   "params": {
+    "bi_k": "1.002"
+   }
+  },
+  {
+   "tag": "r18zw_k3",
+   "grupo": "zw",
+   "params": {
+    "bi_k": "1.003"
+   }
+  },
+  {
+   "tag": "r18zw_k4",
+   "grupo": "zw",
+   "params": {
+    "bi_k": "1.004"
+   }
+  }
+ ]
+}
