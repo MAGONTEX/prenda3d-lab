@@ -1,0 +1,95 @@
+{
+ "nombre": "m133_r20b5",
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R20b.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "tmo_min": 200,
+ "nf": 180,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  18,
+  20,
+  40,
+  60,
+  90,
+  120,
+  150,
+  180
+ ],
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   60,
+   120,
+   180
+  ]
+ },
+ "nota": "[ESC·f535] R20b N=5: cuerpo con brazos y manos MPFB2 (cuerpo_L_RE3mano.npz; sin tubos ni deltoides) x5 a 180 f (bi_k 1.000..1.004, -t 4) + 1 replica del control r18b k1 con sim_e2s_R20b.py (humo r20bh: bit a bit hasta f20)",
+ "grupos": {
+  "q5": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5"
+   }
+  },
+  "m5": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "body": "cuerpo_L_RE3mano.npz"
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "r20bm_k0",
+   "grupo": "m5",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "r20bm_k1",
+   "grupo": "m5",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "r20bm_k2",
+   "grupo": "m5",
+   "params": {
+    "bi_k": "1.002"
+   }
+  },
+  {
+   "tag": "r20bm_k3",
+   "grupo": "m5",
+   "params": {
+    "bi_k": "1.003"
+   }
+  },
+  {
+   "tag": "r20bm_k4",
+   "grupo": "m5",
+   "params": {
+    "bi_k": "1.004"
+   }
+  },
+  {
+   "tag": "r20bc_k1",
+   "grupo": "q5",
+   "params": {
+    "bi_k": "1.001"
+   }
+  }
+ ]
+}
