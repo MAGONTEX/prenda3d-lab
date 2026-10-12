@@ -102,6 +102,12 @@ def escanear(rutas, pats):
             txt = open(f, encoding="utf-8").read()
         except UnicodeDecodeError:
             continue
+        if f.endswith(".json"):
+            # [ESC·f535] 10-12: los \uXXXX de un json escondian texto en chino al escaneo de lineas: se escanea tambien decodificado
+            try:
+                txt += "\n" + json.dumps(json.loads(txt), ensure_ascii=False, indent=0)
+            except ValueError:
+                pass
         for ln, l in enumerate(txt.splitlines(), 1):
             for s, r in pats + [(False, g) for g in GENERICOS]:
                 m = None if s else r.search(l)
