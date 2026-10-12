@@ -1,0 +1,89 @@
+{
+ "firma": "[ESC·f535]",
+ "prenda": "w2094",
+ "cuerpo": "cuerpo_W2094_piel20.npz",
+ "hrest": "sim/reposo_v5e.npz",
+ "rk": "sim/rk_t2e4.npz",
+ "hilos": 4,
+ "nombre": "w2094_r7t2e7b",
+ "nf": 30,
+ "tmo_min": 90,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "params": {
+  "rk_df": 1
+ },
+ "nota": "r7 T2e paso 7b: PUNTA DE LA ABERTURA del puno (49-w2094/sim/t2e7b_punta.py): remate = costura de atras de la manga baja hasta el fin de los dobleces (DXF capa 8: msb v86,1 + bmb v85,2, 1 par por lado) + bmb >= 5 mm bajo msb a <= 20 mm de la punta (PBD local, largos de molde, piel >= min(V0, 5)); R y L mismo codigo; resto bit a bit; autocol re-armada (14127 v). Z8 = malla v8z, misma rampa rk_t2e4 y reposo_v5e. Replicas nulas k5/k9/k12. s8_k5 = control (v8y k5 del paso 6b, bit a bit). 30 f. Regla escrita antes: 0 de 6 lados Z8 con cruce de abertura -> entra a la base y se encola la x10 a 150 f.",
+ "grupos": {
+  "S8": {
+   "malla": "w2094_v0_v8y.json"
+  },
+  "Z8": {
+   "malla": "w2094_v0_v8z.json"
+  }
+ },
+ "variantes": [
+  {
+   "tag": "s8_k5",
+   "grupo": "S8",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.6
+   }
+  },
+  {
+   "tag": "z8_k5",
+   "grupo": "Z8",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.6
+   }
+  },
+  {
+   "tag": "z8_k9",
+   "grupo": "Z8",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.08
+   }
+  },
+  {
+   "tag": "z8_k12",
+   "grupo": "Z8",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.44
+   }
+  }
+ ]
+}
