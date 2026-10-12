@@ -26,7 +26,7 @@
    80
   ]
  },
- "nota": "[ESC\u00b7f535] CUP smoke: hood in-plane compression hc_lo (HOODSET only) = 2 and 15 on top of bp (r20u5); cup_h0 = bp without hc_lo, must equal r20u5_bp0 bit for bit.",
+ "nota": "[ESC·f535] CUP smoke: hood in-plane compression hc_lo (HOODSET only) = 2 and 15 on top of bp (r20u5); cup_h0 = bp without hc_lo, must equal r20u5_bp0 bit for bit.",
  "grupos": {
   "bp": {
    "params": {
@@ -63,5 +63,9 @@
     "hc_lo": "15"
    }
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38322185441",
+  "utc": "2026-10-12T23:27:08Z"
+ }
 }
