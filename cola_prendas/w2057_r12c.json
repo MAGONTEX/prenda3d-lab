@@ -1,0 +1,63 @@
+{
+ "firma": "[ESC·f535]",
+ "nombre": "w2057_r12c",
+ "prenda": "w2057",
+ "nota": "r12c humo: brazo 586. S = cuerpo_W2057_h179s_b12.npz (MPFB2 m684 sin brazos extra: acromion a muneca 586 mm, coronilla a muneca 890 en la pose b12; torso = h179m; Vin = cuerpo viejo, bgrow 18). H = cuerpo_W2057_h179m_b12.npz (605 mm), control: tiene que salir bit a bit igual a r12b H k1. Regla escrita antes: gana el brazo que deje el puno 10-25 mm bajo la muneca sin empeorar la axila.",
+ "nf": 150,
+ "hilos": 4,
+ "tmo_min": 90,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  6,
+  9,
+  12,
+  15,
+  18,
+  24,
+  36,
+  48,
+  66,
+  87,
+  108,
+  129,
+  150
+ ],
+ "params": {
+  "arm_f1": 150,
+  "stop_open": 0,
+  "tfric": 40,
+  "sew_max": 0,
+  "air": 1.001,
+  "tension": 400,
+  "bgrow": 18
+ },
+ "grupos": {
+  "H": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_h179m_b12.npz",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {}
+  },
+  "S": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_h179s_b12.npz",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {}
+  }
+ },
+ "variantes": [
+  {
+   "tag": "w57h12c_h_k1",
+   "grupo": "H",
+   "params": {}
+  },
+  {
+   "tag": "w57h12c_s_k1",
+   "grupo": "S",
+   "params": {}
+  }
+ ]
+}
