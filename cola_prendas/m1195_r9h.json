@@ -1,0 +1,11 @@
+{"nombre": "m1195_r9h", "prenda": "m1195", "hilos": 4, "tmo_min": 60,
+ "nota": "[ESC·f535] r9 humo de G1: bc3 = bc2 rehecho (cuerpo V20 como c6: bc1/bc2 usaban V8 y rompian la manga; arranque = G0 a1 f150 de Actions; cuello en forma llevado por Kabsch, hrest isometrico al banco) contra bc3c = control de reinicio (mismo arranque, cuello sin tocar). 60 f, air 1.001.",
+ "grupos": {
+  "H1": {"malla": "m1195_bc3.json", "receta": "receta_bc3.json", "cuerpo": "cuerpo_M1195_sim5.npz", "hrest": "m1195_bc3_hrest.npz",
+         "nf": 60, "dumps": [2, 6, 12, 24, 36, 48, 60]},
+  "H0": {"malla": "m1195_bc3c.json", "receta": "receta_bc3c.json", "cuerpo": "cuerpo_M1195_sim5.npz",
+         "nf": 60, "dumps": [2, 6, 12, 24, 36, 48, 60]}},
+ "params": {},
+ "variantes": [
+  {"tag": "m1195_h_bc3", "grupo": "H1", "params": {"air": 1.001}},
+  {"tag": "m1195_h_bc3c", "grupo": "H0", "params": {"air": 1.001}}]}
