@@ -1,0 +1,121 @@
+{
+ "firma": "[ESC·f535]",
+ "prenda": "w2094",
+ "cuerpo": "cuerpo_W2094_piel20.npz",
+ "hrest": "sim/reposo_v5e.npz",
+ "rk": "sim/rk_t2e4.npz",
+ "hilos": 4,
+ "nombre": "w2094_r7t2e5",
+ "nf": 30,
+ "tmo_min": 90,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "params": {
+  "rk_df": 1
+ },
+ "nota": "r7 T2e paso 5: espejo ENTERO de la prenda sobre la rampa rk_t2e4 (sim/t2e5_espejo.py: v x->-x, caras (a,c,b), reposos del molde z->-z; pueR queda en +x). E8R = prenda espejada sobre el cuerpo de siempre; E8C = prenda y cuerpo espejados (mundo entero). Replicas nulas k5/k9/k12 (flexion x1,005/1,009/1,012). w8rk_k5 = control repetido del paso 4 (bit a bit en f1-f30). 30 f. Juicio: lado (por pieza y por mundo) del cruce de la abertura msb x bmb; si sigue a la pieza L = construccion; si queda en el mundo +x = solver o cuerpo.",
+ "grupos": {
+  "V8R": {
+   "malla": "w2094_v0_v8.json"
+  },
+  "E8R": {
+   "malla": "w2094_v0_v8e.json",
+   "rk": "sim/rk_t2e5e.npz",
+   "hrest": "sim/reposo_t2e5e.npz"
+  },
+  "E8C": {
+   "malla": "w2094_v0_v8e.json",
+   "rk": "sim/rk_t2e5e.npz",
+   "hrest": "sim/reposo_t2e5e.npz",
+   "cuerpo": "cuerpo_W2094_piel20e.npz"
+  }
+ },
+ "variantes": [
+  {
+   "tag": "w8rk_k5",
+   "grupo": "V8R",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.6
+   }
+  },
+  {
+   "tag": "e8r_k5",
+   "grupo": "E8R",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.6
+   }
+  },
+  {
+   "tag": "e8r_k9",
+   "grupo": "E8R",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.08
+   }
+  },
+  {
+   "tag": "e8r_k12",
+   "grupo": "E8R",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.44
+   }
+  },
+  {
+   "tag": "e8c_k5",
+   "grupo": "E8C",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.6
+   }
+  },
+  {
+   "tag": "e8c_k9",
+   "grupo": "E8C",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.08
+   }
+  },
+  {
+   "tag": "e8c_k12",
+   "grupo": "E8C",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.44
+   }
+  }
+ ]
+}
