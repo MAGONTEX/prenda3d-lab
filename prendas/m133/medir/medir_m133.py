@@ -99,7 +99,7 @@ def medir(X, M):
     for sd in "RL": zona[zs[sd]] = True
     near = np.zeros(NV, bool); near[np.where(zona)[0]] = True
     kz = cKDTree(Xm[zona]); dz = kz.query(Xm)[0]; near = dz <= 30.0                     # caras a <= 30 mm de alguna zona
-    sel = near[FF].any(1); a, b = cruces_idx(Xm, FF, sel); ga, gb = FG[a], FG[b]
+    sel = near[FF].any(1); a, b = cruces_idx(Xm, FF, sel); ga, gb = FG[a], FG[b]; a_todo, b_todo = a, b
     C0 = M["V0"][FF].mean(1); sv = np.zeros(NV, bool); sv[SW.ravel()] = True; sfc = sv[FF].any(1)
     cosida = sfc[a] & sfc[b] & (np.linalg.norm(C0[a] - C0[b], axis=1) < 0.015)      # contacto de costura (las dos caras tocan vertices cosidos y estaban a < 15 mm en el V0)
     R["cruces_cosidos"] = int(cosida.sum()); a, b = a[~cosida], b[~cosida]; ga, gb = FG[a], FG[b]; prof = profund(Xm, FF, a, b); R["cruces_zonas"] = int(len(a))
@@ -107,6 +107,7 @@ def medir(X, M):
         p = prof[m]; R[pre + "_n"] = int(m.sum()); R[pre + "_p95"] = float(np.percentile(p, 95)) if len(p) else 0.0; R[pre + "_max"] = float(p.max()) if len(p) else 0.0
     for k, v in sec.items():
         vs = np.zeros(NV, bool); vs[v] = True; ta = (ga == "tp") & vs[FF[a]].any(1); tb = (gb == "tp") & vs[FF[b]].any(1); st(ta | tb, "cart_" + k)
+    cartuv(Xm, M, a_todo, b_todo, sec, R)                                           # [ESC·f535] R21: claves nuevas (las de arriba no cambian)
     # sisas
     for sd in "RL":
         vz = np.zeros(NV, bool); vz[zs[sd]] = True; st(vz[FF[a]].any(1) | vz[FF[b]].any(1), "sisa" + sd)
@@ -120,6 +121,62 @@ def medir(X, M):
     R["hb_gap_p95"] = float(np.percentile(gp, 95)); R["hb_gap_max"] = float(gp.max())
     hood = np.isin(ga, ["hc", "hsR", "hsL", "htR", "htL"]) & (gb == "hb") | np.isin(gb, ["hc", "hsR", "hsL", "htR", "htL"]) & (ga == "hb"); st(hood, "hbx")
     R["hb_cruces_todo"] = int(((ga == "hb") | (gb == "hb")).sum())
+    return R
+D_COS_UV = 5.0     # [ESC·f535] R21: franja de la costura en el MOLDE (mm, uv) = tolerancia de costura abierta de las compuertas (<= 5 mm)
+V0_COS = 15.0      # mm: los dos puntos de tela del corte estaban a < 15 mm en el V0 (= regla vieja, aca por punto y no por centro de cara)
+def seg_tri_p(p0, p1, a, b, c, eps=1e-12):
+    """= cruce_np.seg_tri + el punto de corte."""
+    d = p1 - p0; e1 = b - a; e2 = c - a; h = np.cross(d, e2); det = (e1 * h).sum(1); ok = np.abs(det) > eps; inv = 1.0 / np.where(ok, det, 1.0)
+    s = p0 - a; u = (s * h).sum(1) * inv; q = np.cross(s, e1); v = (d * q).sum(1) * inv; t = (e2 * q).sum(1) * inv
+    return ok & (u >= 0) & (v >= 0) & (u + v <= 1) & (t >= 0) & (t <= 1), p0 + t[:, None] * d
+def bari(P, A, B, C):
+    v0, v1, v2 = B - A, C - A, P - A; d00, d01, d11 = (v0 * v0).sum(1), (v0 * v1).sum(1), (v1 * v1).sum(1); d20, d21 = (v2 * v0).sum(1), (v2 * v1).sum(1)
+    den = d00 * d11 - d01 * d01; den = np.where(np.abs(den) > 1e-18, den, 1e-18); v = (d11 * d20 - d01 * d21) / den; w = (d00 * d21 - d01 * d20) / den
+    return np.stack([1 - v - w, v, w], 1)
+def costura_uv(M):
+    """por pieza, la linea de costura EN EL MOLDE (uv, mm): vertices cosidos (sew, broches incluidos) + aristas de la malla con los dos
+    extremos en la misma costura, muestreadas cada 0,5 mm. No depende de cuantas columnas de caras tenga la franja (zzh1 vs zzhl)."""
+    if "kduv" in M: return M["kduv"]
+    SW, SN, F, UV, g = M["SW"], M["SN"], M["F"], M["UV"], M["g"]
+    E = np.unique(np.sort(np.r_[F[:, [0, 1]], F[:, [1, 2]], F[:, [2, 0]]], 1), axis=0); E = E[g[E[:, 0]] == g[E[:, 1]]]
+    seg = np.zeros(len(E), bool)
+    for nm in np.unique(SN):
+        m = np.zeros(M["NV"], bool); m[SW[SN == nm].ravel()] = True; seg |= m[E[:, 0]] & m[E[:, 1]]
+    E = E[seg]; L = np.linalg.norm(UV[E[:, 1]] - UV[E[:, 0]], axis=1); nn = np.maximum(1, np.ceil(L / 0.5).astype(int))
+    rep = np.repeat(np.arange(len(E)), nn + 1); tt = np.concatenate([np.linspace(0, 1, k + 1) for k in nn]) if len(E) else np.zeros(0)
+    P = UV[E[rep, 0]] * (1 - tt[:, None]) + UV[E[rep, 1]] * tt[:, None]; gp = g[E[rep, 0]]
+    sv = np.unique(SW.ravel()); P = np.r_[P, UV[sv]]; gp = np.r_[gp, g[sv]]
+    M["kduv"] = {k: cKDTree(P[gp == k]) for k in np.unique(gp)}; return M["kduv"]
+def corte_uv(Xm, M, a, b):
+    """por par de caras que se cortan: largo del segmento de corte (mm), distancia EN EL MOLDE del punto medio del corte a la costura de
+    cada pieza (mm) y distancia en el V0 entre los dos puntos de tela que hoy coinciden (mm)."""
+    FF, FG, UV, V0 = M["FF"], M["FG"], M["UV"], M["V0"] * 1000; TA, TB = Xm[FF[a]], Xm[FF[b]]; H, P = [], []
+    for (i, j) in ((0, 1), (1, 2), (2, 0)):
+        for T1, T2 in ((TA, TB), (TB, TA)):
+            h, p = seg_tri_p(T1[:, i], T1[:, j], T2[:, 0], T2[:, 1], T2[:, 2]); H.append(h); P.append(p)
+    H = np.stack(H, 1); P = np.stack(P, 1); nh = np.maximum(H.sum(1), 1); Pm = (P * H[:, :, None]).sum(1) / nh[:, None]
+    dd = np.linalg.norm(P[:, :, None] - P[:, None], axis=3); largo = np.where(H[:, :, None] & H[:, None], dd, 0).max((1, 2))
+    kd = costura_uv(M); dist, p0 = [], []
+    for f, T in ((a, TA), (b, TB)):
+        w = bari(Pm, T[:, 0], T[:, 1], T[:, 2]); uv = (w[:, :, None] * UV[FF[f]]).sum(1); p0.append((w[:, :, None] * V0[FF[f]]).sum(1))
+        d = np.full(len(f), np.inf)
+        for k in np.unique(FG[f]):
+            m = FG[f] == k
+            if k in kd: d[m] = kd[k].query(uv[m])[0]
+        dist.append(d)
+    return largo, dist[0], dist[1], np.linalg.norm(p0[0] - p0[1], axis=1)
+def cartuv(Xm, M, a, b, sec, R, D=None):
+    """[ESC·f535] R21: cartera por sector con la regla 'cosida' por DISTANCIA A LA COSTURA EN EL MOLDE: un corte es contacto de costura si el
+    punto medio del corte esta a <= D_COS_UV mm de la linea de costura de su pieza en las DOS caras (uv) y esos dos puntos de tela estaban a
+    < 15 mm en el V0. Claves cartuv_<sector>_n/_p95/_max (profundidad, mm, = cart_) y _mm (largo total de la linea de corte, mm: no crece al
+    refinar la malla, el _n si). Las claves cart_* (regla vieja: 'las dos caras tocan un vertice cosido') no cambian."""
+    D = D_COS_UV if D is None else D; FF, FG, NV = M["FF"], M["FG"], M["NV"]
+    largo, da, db, d0 = corte_uv(Xm, M, a, b); cos = (da <= D) & (db <= D) & (d0 < V0_COS); R["cruces_cosidos_uv"] = int(cos.sum())
+    a, b, largo = a[~cos], b[~cos], largo[~cos]; prof = profund(Xm, FF, a, b)
+    for k, v in sec.items():
+        vs = np.zeros(NV, bool); vs[v] = True; m = ((FG[a] == "tp") & vs[FF[a]].any(1)) | ((FG[b] == "tp") & vs[FF[b]].any(1)); p = prof[m]; pre = "cartuv_" + k
+        R[pre + "_n"] = int(m.sum()); R[pre + "_p95"] = float(np.percentile(p, 95)) if len(p) else 0.0; R[pre + "_max"] = float(p.max()) if len(p) else 0.0
+        R[pre + "_mm"] = float(largo[m].sum())
     return R
 def costuras(X, M):
     """hueco maximo por costura (mm) con los pares cosidos de la malla (= costuras_gap del simulador, en este cuadro)."""
@@ -157,7 +214,8 @@ def main():
     hechos = sorted(int(m.group(1)) for m in (rx.match(f) for f in os.listdir(d)) if m)
     out = {"tag": tag, "malla": os.path.basename(A["malla"]), "cuadros_pedidos": cu, "dumps": hechos,
            "huellas": {f"f{n}": hashlib.sha256(open(os.path.join(d, f"X_{tag}_f{n}.npy"), "rb").read()).hexdigest()[:16] for n in hechos},
-           "log": leer_log(os.path.join(d, f"sim_{tag}.log")), "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)"}
+           "log": leer_log(os.path.join(d, f"sim_{tag}.log")), "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+           "cartuv_regla": "R21: corte = contacto de costura si su punto medio esta a <= %.1f mm de la costura en el molde (uv) en las dos caras y a < %.0f mm en el V0" % (D_COS_UV, V0_COS)}
     pedir = [c for c in cu if c in hechos]
     if hechos and hechos[-1] not in pedir: pedir.append(hechos[-1])   # corrida cortada: tambien su ultimo dump
     out["ultimo"] = hechos[-1] if hechos else None
@@ -168,6 +226,8 @@ def main():
         print("%-14s f%-3d REL %4.1f mm | CART cu %s ci %s ru %s | SISA R %s L %s | HB gap %3.1f/%3.1f x %s | costuras>5 %d (max %.1f %s)" % (
             tag, n, R["rel_flecha"], f("cart_cuello"), f("cart_cierre"), f("cart_ruedo"), f("sisaR"), f("sisaL"), R["hb_gap_p95"], R["hb_gap_max"], f("hbx"),
             R["costuras_gt5_n"], R["costura_max_mm"], R["costura_max"]), flush=True)
+        g = lambda p: "%3d/%4.1f/%5.0fmm" % (R[p + "_n"], R[p + "_max"], R[p + "_mm"])
+        print("%-14s f%-3d CARTUV (costura <= %.0f mm en el molde) cu %s ci %s ru %s" % (tag, n, D_COS_UV, g("cartuv_cuello"), g("cartuv_cierre"), g("cartuv_ruedo")), flush=True)
     json.dump(out, open(A["json"], "w", encoding="utf-8", newline="\n"), indent=1, ensure_ascii=False)
     return 0
 if __name__ == "__main__":
