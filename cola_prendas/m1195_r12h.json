@@ -1,0 +1,62 @@
+{
+ "nombre": "m1195_r12h",
+ "prenda": "m1195",
+ "hilos": 4,
+ "tmo_min": 60,
+ "nota": "[ESC·f535] r12 humo: H1 = bc4s (= bc4 con la forma del cuello SIMETRIZADA: mitad R espejada a L por gemelo de molde, en v y en hrest) contra H0 = bc4 (= H1 de r11h). air 1.001, 60 f. Unica diferencia de entradas: v del cuello (1011 v) y co del hrest (mismos ids).",
+ "grupos": {
+  "H1": {
+   "malla": "m1195_bc4s.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "hrest": "m1195_bc4s_hrest.npz",
+   "nf": 60,
+   "dumps": [
+    1,
+    2,
+    3,
+    6,
+    12,
+    24,
+    36,
+    48,
+    60
+   ]
+  },
+  "H0": {
+   "malla": "m1195_bc4.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "hrest": "m1195_bc4_hrest.npz",
+   "nf": 60,
+   "dumps": [
+    1,
+    2,
+    3,
+    6,
+    12,
+    24,
+    36,
+    48,
+    60
+   ]
+  }
+ },
+ "params": {},
+ "variantes": [
+  {
+   "tag": "m1195_h12_bc4s",
+   "grupo": "H1",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "m1195_h12_bc4",
+   "grupo": "H0",
+   "params": {
+    "air": 1.001
+   }
+  }
+ ]
+}
