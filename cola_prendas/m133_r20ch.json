@@ -1,0 +1,72 @@
+{
+ "nombre": "m133_r20ch",
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R20b.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "tmo_min": 120,
+ "nf": 66,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  18,
+  20,
+  30,
+  40,
+  50,
+  60,
+  66
+ ],
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   60,
+   66
+  ]
+ },
+ "nota": "[ESC·f535] humo R20c: cuerpo_L_R20c.npz (R20b + manos cerradas <= 200 mm, mapa continuo en z, 0 caras dadas vuelta + axila tallada por rayo a 20 mm en z <= 1,25, misma profundidad en V20 y V8; Vin = el de R20b) x2 hasta f66 (R20b rompia f42-f54) + control r18b k1 con sim_e2s_R20b.py (bit a bit)",
+ "grupos": {
+  "q5": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5"
+   }
+  },
+  "c5": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "body": "cuerpo_L_R20c.npz"
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "r20ch_c_k1",
+   "grupo": "q5",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "r20ch_m_k0",
+   "grupo": "c5",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "r20ch_m_k1",
+   "grupo": "c5",
+   "params": {
+    "bi_k": "1.001"
+   }
+  }
+ ]
+}

@@ -157,6 +157,12 @@
    "sha256_origen": "a15ae89edf0917b9e5db2c0b6d69344c81edbcc08a30a5e6d2fcbe742e3bff36",
    "sha256": "48fb2d797bd1ee34b575bff0e0a7ac04da80d240398b318385b47a3613794365",
    "tokens": 83
+  },
+  "cuerpo_L_R20c.npz": {
+   "origen": "cuerpo_L_R20c.npz",
+   "sha256_origen": "3999a07fda3a406cad5f374d0760f6d9991239b4a94051385c1d33572788d9e3",
+   "sha256": "3999a07fda3a406cad5f374d0760f6d9991239b4a94051385c1d33572788d9e3",
+   "saneado": false
   }
  },
  "publico": "[ESC·f535] paquete --modo argv de scripts/empaquetar_prenda.py: sin DXF, notas privadas ni rutas"
