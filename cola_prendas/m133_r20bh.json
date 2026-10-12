@@ -1,0 +1,55 @@
+{
+ "nombre": "m133_r20bh",
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R20b.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "tmo_min": 60,
+ "nf": 24,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  18,
+  20,
+  24
+ ],
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   20,
+   24
+  ]
+ },
+ "nota": "[ESC·f535] humo R20b: cuerpo con brazos y manos MPFB2 (cuerpo_L_RE3mano.npz, sin tubos ni deltoides) vs control r18b k1 corrido con sim_e2s_R20b.py (tiene que salir bit a bit = r18b k1), 24 f",
+ "grupos": {
+  "q5": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5"
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "r20bh_c_k1",
+   "grupo": "q5",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "r20bh_m_k1",
+   "grupo": "q5",
+   "params": {
+    "bi_k": "1.001",
+    "body": "cuerpo_L_RE3mano.npz"
+   }
+  }
+ ]
+}

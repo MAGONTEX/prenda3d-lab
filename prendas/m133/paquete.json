@@ -51,6 +51,13 @@
    "saneado": true,
    "ast_igual": true
   },
+  "sim_e2s_R20b.py": {
+   "origen": "_qc_R20b/sim_e2s_R20b.py",
+   "sha256_origen": "f5b9beb987a2c89fb93444fbacbfa762183bd011ed458f928b0204a9f206eb42",
+   "sha256": "18eacf42144c8ec942adf663b41f3f6948a5ed83a8387823f731fb78f78d3f6d",
+   "saneado": true,
+   "ast_igual": true
+  },
   "m133_e2zzh1.json": {
    "origen": "m133_e2zzh1.json",
    "sha256_origen": "b2ee3acd6ce2500f6a8cdcd1a9af774f1fecd113fb3c8c9555ed83d776378579",
@@ -138,6 +145,12 @@
    "sha256": "003251c6efa99624acf535e137846622eeb760c56602b60c0d7b18fbcaeb81b0",
    "saneado": false,
    "textos_saneados": []
+  },
+  "cuerpo_L_RE3mano.npz": {
+   "origen": "cuerpo_L_RE3mano.npz",
+   "sha256_origen": "bc6502517857e649fedd2f61ec2b5043e502f54ebf031e74e02eb8fb489fd63a",
+   "sha256": "bc6502517857e649fedd2f61ec2b5043e502f54ebf031e74e02eb8fb489fd63a",
+   "saneado": false
   },
   "receta_hq.json": {
    "origen": "_qc_R16/vps/receta_HQ.txt",
