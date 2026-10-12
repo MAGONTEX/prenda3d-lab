@@ -6,13 +6,44 @@
  "nf": 36,
  "hilos": 4,
  "tmo_min": 30,
- "dumps": [1, 2, 6, 12, 24, 36],
- "params": {"arm_f1": 150, "stop_open": 0, "air": 1.001},
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  24,
+  36
+ ],
+ "params": {
+  "arm_f1": 150,
+  "stop_open": 0,
+  "air": 1.001
+ },
  "grupos": {
-  "B12": {"malla": "w2057_s1c.json", "cuerpo": "cuerpo_W2057_b12.npz", "receta": "receta_w57_a12_k0.json"}
+  "B12": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b12.npz",
+   "receta": "receta_w57_a12_k0.json"
+  }
  },
  "variantes": [
-  {"tag": "w57h8_b12t40_k1", "grupo": "B12", "params": {"tfric": 40}},
-  {"tag": "w57h8_b12t20_k1", "grupo": "B12", "params": {"tfric": 20}}
- ]
+  {
+   "tag": "w57h8_b12t40_k1",
+   "grupo": "B12",
+   "params": {
+    "tfric": 40
+   }
+  },
+  {
+   "tag": "w57h8_b12t20_k1",
+   "grupo": "B12",
+   "params": {
+    "tfric": 20
+   }
+  }
+ ],
+ "tomada": {
+  "por": "actions 38199247391",
+  "utc": "2026-10-12T03:18:46Z"
+ }
 }
