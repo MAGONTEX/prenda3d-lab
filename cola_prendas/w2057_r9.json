@@ -1,0 +1,180 @@
+{
+ "firma": "[ESC·f535]",
+ "nombre": "w2057_r9",
+ "prenda": "w2057",
+ "nota": "r9: la costura, una palanca: sew_max 80 -> 160 (sewing_force_max del Cloth, nucleo.py 650). Fuerza del resorte de costura = k*brecha con tope sew_max; k = tension/largo medio = 200/9,28 mm, el tope muerde con brecha > ~3,7 mm (80) y deja tirar hasta ~7,4 mm (160). tfric 40 (vuelve de r8), arm_f1 150, stop_open 0, nf 240, dumps de r8. B12S160 / B14S160 / C5S160 = recetas k0 de r6 (a12 / a14 / c5) con sew_max 160, replica nula air 1.001..1.005 (k1..k5); B12T40 k1 = replica del control r8 b12t40_k1 (debe salir bit a bit: el control r8 sirve de banda). c5 no pasa 2 mm de brecha: se espera = r7 c5 bit a bit.",
+ "nf": 240,
+ "hilos": 4,
+ "tmo_min": 150,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  24,
+  36,
+  48,
+  66,
+  87,
+  108,
+  129,
+  150,
+  162,
+  180,
+  210,
+  240
+ ],
+ "params": {
+  "arm_f1": 150,
+  "stop_open": 0,
+  "tfric": 40
+ },
+ "grupos": {
+  "B12S160": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b12.npz",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {
+    "sew_max": 160
+   }
+  },
+  "B14S160": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b14.npz",
+   "receta": "receta_w57_a14_k0.json",
+   "params": {
+    "sew_max": 160
+   }
+  },
+  "C5S160": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_piel20.npz",
+   "receta": "receta_w57_c5_k0.json",
+   "params": {
+    "sew_max": 160
+   }
+  },
+  "B12T40": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b12.npz",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {
+    "sew_max": 80
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "w57r9_b12s160_k1",
+   "grupo": "B12S160",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "w57r9_b12s160_k2",
+   "grupo": "B12S160",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "w57r9_b12s160_k3",
+   "grupo": "B12S160",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "w57r9_b12s160_k4",
+   "grupo": "B12S160",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "w57r9_b12s160_k5",
+   "grupo": "B12S160",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "w57r9_b14s160_k1",
+   "grupo": "B14S160",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "w57r9_b14s160_k2",
+   "grupo": "B14S160",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "w57r9_b14s160_k3",
+   "grupo": "B14S160",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "w57r9_b14s160_k4",
+   "grupo": "B14S160",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "w57r9_b14s160_k5",
+   "grupo": "B14S160",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "w57r9_c5s160_k1",
+   "grupo": "C5S160",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "w57r9_c5s160_k2",
+   "grupo": "C5S160",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "w57r9_c5s160_k3",
+   "grupo": "C5S160",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "w57r9_c5s160_k4",
+   "grupo": "C5S160",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "w57r9_c5s160_k5",
+   "grupo": "C5S160",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "w57r9_b12t40_k1",
+   "grupo": "B12T40",
+   "params": {
+    "air": 1.001
+   }
+  }
+ ]
+}
