@@ -60,6 +60,9 @@ git add prendas/w2057/<archivos> sim/w2057_reglas.py sim/w2057_reglas.json     #
 - Antes del push: `python scripts/prendas.py validar cola_prendas/<nombre>.json` (debe decir OK).
 - `git add cola_prendas/<nombre>.json && git commit -m "[ESC·f535] prendas: encola <nombre>" && git push` -> el push dispara `prenda.yml`.
   Tambien corre cada 2 h y a mano: `gh workflow run prenda.yml -R MAGONTEX/prenda3d-lab`. Mas de 20 variantes: toma de a 20 y se relanza.
+- Si el push rebota (el workflow ya tomo otra tanda): `git fetch && git -c merge.directoryRenames=false rebase origin/main`, y antes de
+  pushear `git show --stat HEAD` tiene que listar `cola_prendas/<nombre>.json`. Con la deteccion de renombre de carpetas (defecto de git),
+  si el remoto vacio `cola_prendas/` con `git mv`, el rebase muda la tanda nueva a `tomadas_prendas/` y nunca corre (w2094_r6t1, 2026-10-12).
 
 ## 3. Bajar resultados
 
