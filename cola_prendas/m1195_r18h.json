@@ -1,0 +1,56 @@
+{
+ "nombre": "m1195_r18h",
+ "prenda": "m1195",
+ "hilos": 4,
+ "tmo_min": 90,
+ "nota": "[ESC·f535] r18 humo: H7 = bc7 (pliegue de la hoja cuA/cuB abierto al largo del molde por ARAP con placa delgada + hoja >= 2,4 mm sobre los paneles en |x| 70-175; solo v de cuA/cuB) contra H0 = bc5 (debe repetir r14 G6 a1 bit a bit). air 1.001, 120 f.",
+ "params": {},
+ "grupos": {
+  "H7": {
+   "malla": "m1195_bc7.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "nf": 120,
+   "dumps": [
+    1,
+    2,
+    6,
+    26,
+    36,
+    60,
+    120
+   ]
+  },
+  "H0": {
+   "malla": "m1195_bc5.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "nf": 120,
+   "dumps": [
+    1,
+    2,
+    6,
+    26,
+    36,
+    60,
+    120
+   ]
+  }
+ },
+ "variantes": [
+  {
+   "tag": "m1195_h18_bc7",
+   "grupo": "H7",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "m1195_h18_bc5",
+   "grupo": "H0",
+   "params": {
+    "air": 1.001
+   }
+  }
+ ]
+}
