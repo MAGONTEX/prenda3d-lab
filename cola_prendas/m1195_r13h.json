@@ -1,0 +1,61 @@
+{
+ "nombre": "m1195_r13h",
+ "prenda": "m1195",
+ "hilos": 4,
+ "tmo_min": 60,
+ "nota": "[ESC·f535] r13 humo: H1 = bc4s SIN hrest (reposo = molde plano desde f2, como el control) contra H0 = bc4s con hrest (= H1 de r12h). air 1.001, 60 f. Unica diferencia: la clave hrest.",
+ "grupos": {
+  "H1": {
+   "malla": "m1195_bc4s.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "nf": 60,
+   "dumps": [
+    1,
+    2,
+    3,
+    6,
+    12,
+    24,
+    36,
+    48,
+    60
+   ]
+  },
+  "H0": {
+   "malla": "m1195_bc4s.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "hrest": "m1195_bc4s_hrest.npz",
+   "nf": 60,
+   "dumps": [
+    1,
+    2,
+    3,
+    6,
+    12,
+    24,
+    36,
+    48,
+    60
+   ]
+  }
+ },
+ "params": {},
+ "variantes": [
+  {
+   "tag": "m1195_h13_bc4sp",
+   "grupo": "H1",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "m1195_h13_bc4s",
+   "grupo": "H0",
+   "params": {
+    "air": 1.001
+   }
+  }
+ ]
+}
