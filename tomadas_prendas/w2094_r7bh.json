@@ -34,5 +34,9 @@
    "grupo": "V7",
    "receta": "receta_w6a0_k0.json"
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38199377685",
+  "utc": "2026-10-12T03:20:45Z"
+ }
 }
