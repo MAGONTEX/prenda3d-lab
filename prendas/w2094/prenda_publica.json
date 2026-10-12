@@ -3654,31 +3654,24 @@
  ],
  "fuera_de_sim": [
   {
-   "bloque": "W2094-P18AX1",
    "grupo": "portaetiqueta"
   },
   {
-   "bloque": "W2094-P02AX2",
    "grupo": "vista_de_bolsillo"
   },
   {
-   "bloque": "W2094-P01KX2",
    "grupo": "bolsa_de_bolsillo_con_vista"
   },
   {
-   "bloque": "W2094-P04KX2",
    "grupo": "bolsa_de_bolsillo"
   },
   {
-   "bloque": "W2094-P05AX4",
    "grupo": "vivos_de_bolsillo"
   },
   {
-   "bloque": "W2094-P28AX1",
    "grupo": "tira_120x27"
   },
   {
-   "bloque": "W2094-P49AX6",
    "grupo": "tiras_60x20"
   }
  ],

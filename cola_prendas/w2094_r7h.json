@@ -1,0 +1,38 @@
+{
+ "firma": "[ESC·f535]",
+ "prenda": "w2094",
+ "cuerpo": "cuerpo_W2094_piel20.npz",
+ "hrest": "sim/reposo_v5e.npz",
+ "rk": "sim/rk_v5e.npz",
+ "hilos": 4,
+ "nombre": "w2094_r7h",
+ "nf": 10,
+ "tmo_min": 30,
+ "dumps": [
+  1,
+  2,
+  6,
+  10
+ ],
+ "nota": "r7 humo (10 f): malla v7 (V0 sin cruces en cuello y puno + autocol re-armada, 14140 v) contra v6 (G2 de T1), misma receta k0. Compuerta: grep 'autocolision 14140' sim_w7h_k0.log y 'autocolision 13823' sim_w6h_k0.log; X f10 distintos.",
+ "grupos": {
+  "V7": {
+   "malla": "w2094_v0_v7.json"
+  },
+  "G2": {
+   "malla": "w2094_v0_v6.json"
+  }
+ },
+ "variantes": [
+  {
+   "tag": "w7h_k0",
+   "grupo": "V7",
+   "receta": "receta_w6a0_k0.json"
+  },
+  {
+   "tag": "w6h_k0",
+   "grupo": "G2",
+   "receta": "receta_w6a0_k0.json"
+  }
+ ]
+}
