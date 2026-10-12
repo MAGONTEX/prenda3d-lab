@@ -1,0 +1,98 @@
+{
+ "firma": "[ESC·f535]",
+ "nombre": "w2057_r12b",
+ "prenda": "w2057",
+ "nota": "r12b N=5: brazo corregido. H = cuerpo_W2057_h179m_b12.npz (MPFB2 1,79 m, contornos del talle M, acromion a muneca 605 mm; Vin = cuerpo viejo, angosto f1 -> f18 con bgrow 18 explicito) x5 con air 1,001-1,005. C k1 = replica del control: cuerpo b12 viejo, base r11, debe salir bit a bit igual a r11 b12t400_k1 (la banda de C es r11 b12t400 k1-k5). Humo w2057_r12bh paso.",
+ "nf": 240,
+ "hilos": 4,
+ "tmo_min": 150,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  6,
+  9,
+  12,
+  15,
+  18,
+  24,
+  36,
+  48,
+  66,
+  87,
+  108,
+  129,
+  150,
+  162,
+  180,
+  210,
+  240
+ ],
+ "params": {
+  "arm_f1": 150,
+  "stop_open": 0,
+  "tfric": 40,
+  "sew_max": 0,
+  "tension": 400,
+  "bgrow": 18
+ },
+ "grupos": {
+  "C": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b12.npz",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {}
+  },
+  "H": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_h179m_b12.npz",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {}
+  }
+ },
+ "variantes": [
+  {
+   "tag": "w57r12b_h_k1",
+   "grupo": "H",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "w57r12b_h_k2",
+   "grupo": "H",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "w57r12b_h_k3",
+   "grupo": "H",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "w57r12b_h_k4",
+   "grupo": "H",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "w57r12b_h_k5",
+   "grupo": "H",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "w57r12b_c_k1",
+   "grupo": "C",
+   "params": {
+    "air": 1.001
+   }
+  }
+ ]
+}
