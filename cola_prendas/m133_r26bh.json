@@ -1,0 +1,84 @@
+{
+ "nombre": "m133_r26bh",
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "tmo_min": 60,
+ "nf": 40,
+ "dumps": [
+  1,
+  2,
+  6,
+  20,
+  26,
+  40
+ ],
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   20,
+   40
+  ]
+ },
+ "nota": "[ESC\u00b7f535] R26b humo 40 f: VISTA EN AUTOCOLISION, dos brazos con la rampa R24b (grupo r5 de m133_r24n5): Vb zzhp (franja por triangulo 10 mm) y Va zzhq (= Vb + 6 v de la vista separados a >= 2,5 mm de fc/fs en el V0) + control r26b_c1 (= r24n_k1 bit a bit)",
+ "grupos": {
+  "c5": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "mesh": "m133_e2zzho.json",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1"
+   }
+  },
+  "b5": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "mesh": "m133_e2zzhp.json",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1"
+   }
+  },
+  "a5": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "mesh": "m133_e2zzhq.json",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1"
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "r26b_c1",
+   "grupo": "c5",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "r26b_b1",
+   "grupo": "b5",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "r26b_a1",
+   "grupo": "a5",
+   "params": {
+    "bi_k": "1.001"
+   }
+  }
+ ]
+}
