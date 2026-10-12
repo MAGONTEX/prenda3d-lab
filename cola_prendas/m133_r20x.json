@@ -1,0 +1,69 @@
+{
+ "nombre": "m133_r20x",
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "tmo_min": 120,
+ "nf": 80,
+ "dumps": [
+  1,
+  2,
+  6,
+  18,
+  40,
+  60,
+  80
+ ],
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   60,
+   80
+  ]
+ },
+ "nota": "[ESC·f535] HUMO del cruce 2x2 malla x cuerpo: ur = malla r20u + rk_r20u sobre RE3; pr = malla pico + rk_r24 sobre R20P. Separa si la sisa peor de U (N=15, p<0,03) viene del cuerpo o de la malla. Si corre sano, sigue x9 por celda.",
+ "grupos": {
+  "ur": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r20u.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_r20u.json"
+   }
+  },
+  "pr": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json",
+    "body": "cuerpo_L_R20P.npz"
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "r20x_ur0",
+   "grupo": "ur",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "r20x_pr0",
+   "grupo": "pr",
+   "params": {
+    "bi_k": "1.000"
+   }
+  }
+ ]
+}
