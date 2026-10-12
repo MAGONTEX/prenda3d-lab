@@ -1,0 +1,163 @@
+{
+ "firma": "[ESC·f535]",
+ "prenda": "w2094",
+ "cuerpo": "cuerpo_W2094_piel20.npz",
+ "hrest": "sim/reposo_v5e.npz",
+ "rk": "sim/rk_t2e4.npz",
+ "hilos": 4,
+ "nombre": "w2094_r7t2e7c",
+ "nf": 30,
+ "tmo_min": 90,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30
+ ],
+ "params": {
+  "rk_df": 1
+ },
+ "nota": "r7 T2e paso 7c: separa las 3 causas del cruce de la abertura del puno en un humo. C = v8y + rk_t2e4 (control, = S8 del paso 6b y s8_k5 de 7b). R = v8r: remate (costura de atras hasta el fin de los dobleces DXF capa 8) con la luz de la base (3,5 mm; t2e7b_punta.py --luz 3.5), rampa propia rk_t2e7c_r. RL = v8z (remate + luz 5 mm), rampa propia rk_t2e7c_z (t2e4_rampa.py con la malla como argumento). RLv = v8z + rk_t2e4 (= Z8 de 7b, puente). Replicas nulas k5/k9/k12 (bending). 30 f. Regla escrita antes: el remate entra a la base si R no cruza mas lados que C; la luz entra solo si RL cruza 0 de 6; un brazo con 0 de 6 -> x10 + control.",
+ "grupos": {
+  "C": {
+   "malla": "w2094_v0_v8y.json",
+   "rk": "sim/rk_t2e4.npz"
+  },
+  "R": {
+   "malla": "w2094_v0_v8r.json",
+   "rk": "sim/rk_t2e7c_r.npz"
+  },
+  "RL": {
+   "malla": "w2094_v0_v8z.json",
+   "rk": "sim/rk_t2e7c_z.npz"
+  },
+  "RLV": {
+   "malla": "w2094_v0_v8z.json",
+   "rk": "sim/rk_t2e4.npz"
+  }
+ },
+ "variantes": [
+  {
+   "tag": "c7_k5",
+   "grupo": "C",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.6
+   }
+  },
+  {
+   "tag": "c7_k9",
+   "grupo": "C",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.08
+   }
+  },
+  {
+   "tag": "c7_k12",
+   "grupo": "C",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.44
+   }
+  },
+  {
+   "tag": "r7_k5",
+   "grupo": "R",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.6
+   }
+  },
+  {
+   "tag": "r7_k9",
+   "grupo": "R",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.08
+   }
+  },
+  {
+   "tag": "r7_k12",
+   "grupo": "R",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.44
+   }
+  },
+  {
+   "tag": "rl7_k5",
+   "grupo": "RL",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.6
+   }
+  },
+  {
+   "tag": "rl7_k9",
+   "grupo": "RL",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.08
+   }
+  },
+  {
+   "tag": "rl7_k12",
+   "grupo": "RL",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.44
+   }
+  },
+  {
+   "tag": "rv7_k5",
+   "grupo": "RLV",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.6
+   }
+  },
+  {
+   "tag": "rv7_k9",
+   "grupo": "RLV",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.08
+   }
+  },
+  {
+   "tag": "rv7_k12",
+   "grupo": "RLV",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.44
+   }
+  }
+ ]
+}
