@@ -28,7 +28,7 @@ GENERICOS = [re.compile(r"C:.Users", re.I), re.compile(r"/home/[a-z]", re.I), re
              re.compile(r"\.dxf\b", re.I), re.compile("[\\u3400-\\u9fff]")]
 ARRIBA = ("version", "id", "talle", "piezas", "costuras", "avios", "fuera_de_sim", "solo_render", "zonas_rigidez", "tolerancias",
           "pendiente", "materiales", "malla")
-FUERA = re.compile(r"^(nota.*|pendiente|razon|rol|descripcion|bloques|contorno|origen|medida_foto.*|nombre|fuente.*|foto.*|dxf|comentario.*)$")
+FUERA = re.compile(r"^(nota.*|pendiente|razon|rol|descripcion|bloques?|contorno|origen|medida_foto.*|nombre|fuente.*|foto.*|dxf|comentario.*)$")
 
 
 def patrones(ruta):
