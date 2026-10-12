@@ -1,0 +1,90 @@
+{
+ "nombre": "m1195_r16",
+ "prenda": "m1195",
+ "hilos": 4,
+ "tmo_min": 90,
+ "nota": "[ESC·f535] r16: G8 = bc5 + rampa de reposo de cuA+cuB (m1195_r16_rk.npz, 24 claves, rk_df 1, molde en f26) x5 (air 1.001-1.005, replica nula) + G8C = bc5 sin rampa a1 (= r14 G6 a1, debe repetir bit a bit en 2/6/36/48/72/96/120). 120 f.",
+ "params": {},
+ "grupos": {
+  "G8": {
+   "malla": "m1195_bc5.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "nf": 120,
+   "dumps": [
+    2,
+    6,
+    26,
+    36,
+    48,
+    72,
+    96,
+    120
+   ],
+   "rk": "m1195_r16_rk.npz",
+   "params": {
+    "rk_df": 1
+   }
+  },
+  "G8C": {
+   "malla": "m1195_bc5.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "nf": 120,
+   "dumps": [
+    2,
+    6,
+    26,
+    36,
+    48,
+    72,
+    96,
+    120
+   ]
+  }
+ },
+ "variantes": [
+  {
+   "tag": "m1195_g8_a1",
+   "grupo": "G8",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "m1195_g8_a2",
+   "grupo": "G8",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "m1195_g8_a3",
+   "grupo": "G8",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "m1195_g8_a4",
+   "grupo": "G8",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "m1195_g8_a5",
+   "grupo": "G8",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "m1195_g8c_a1",
+   "grupo": "G8C",
+   "params": {
+    "air": 1.001
+   }
+  }
+ ]
+}
