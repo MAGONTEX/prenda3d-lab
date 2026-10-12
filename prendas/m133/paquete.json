@@ -65,6 +65,34 @@
     "$/parche/nota"
    ]
   },
+  "m133_e2zzhl.json": {
+   "origen": "m133_e2zzhl.json",
+   "sha256_origen": "348c79780cf863e9fa4c02eea5188c2634a0e1ae0ae5fde46617402a3224955e",
+   "sha256": "cab963276a17c924faef49b3e4b6fb8d9c8602fc6d697409bc93ea74c97da422",
+   "saneado": true,
+   "textos_saneados": [
+    "$/avios/broches_fuente",
+    "$/avios/e2v/fcc",
+    "$/avios/e2za/cierre",
+    "$/avios/e2zv",
+    "$/avios/e2zz",
+    "$/parche/nota"
+   ]
+  },
+  "m133_e2zzhk.json": {
+   "origen": "m133_e2zzhk.json",
+   "sha256_origen": "2a285c8e41d095e7d8b914eeccebf59513992f5c69101a5ec785e5b7212e28d9",
+   "sha256": "236b548deac404418a24c6a90106eda088ca94d28feba71d813de3e1dc14a5ae",
+   "saneado": true,
+   "textos_saneados": [
+    "$/avios/broches_fuente",
+    "$/avios/e2v/fcc",
+    "$/avios/e2za/cierre",
+    "$/avios/e2zv",
+    "$/avios/e2zz",
+    "$/parche/nota"
+   ]
+  },
   "m133_e2zv1.json": {
    "origen": "m133_e2zv1.json",
    "sha256_origen": "5ca75dd8d01d7ec17cf65ba0d8aa5a1c6ca28be0304193beaa14c20884bbc003",
