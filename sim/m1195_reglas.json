@@ -1,0 +1,51 @@
+{
+ "prenda": "M1195",
+ "nota": "Datos de simulacion de la M1195 (tecnico-3d, 2026-10-09). El nucleo los lee como ES.RD. Sin presion (no hay relleno inyectado): piezas_inyectadas vacio.",
+ "piezas_inyectadas": [],
+ "prefijo_manga": [
+  "ms",
+  "bm"
+ ],
+ "costuras_clave": [
+  "sisa, mitad de atras (del hombro natural a la axila) R",
+  "sisa, mitad de atras (del hombro natural a la axila) L",
+  "sisa, adelante abajo (hasta la axila) R",
+  "sisa, adelante abajo (hasta la axila) L",
+  "cierre R",
+  "cierre L",
+  "centro de espalda",
+  "pie de cuello a la hoja de abajo",
+  "hombro (pasado al frente) R",
+  "hombro (pasado al frente) L"
+ ],
+ "indices_cf": null,
+ "flexion_zonas": {
+  "cuello": 3.0,
+  "vista": 2.0,
+  "ruedo": 2.0,
+  "cuff": 2.0
+ },
+ "flexion_zonas_nota": "multiplicador de la flexion base por zona (capas): cuello = 2 hojas + 2 pies pespunteados (plancha, x3), vista = tela + vista (x2), dobladillos de ruedo y puno 40 mm (x2). PENDIENTE (PEDIDO 8): franjas de 20 mm por costura (margenes + pespunte).",
+ "material": {
+  "tela": "ecocuero PU con forro acolchado 80 g sumado (W real ~430-450 g/m2, sin medir)",
+  "c_mm_hipotesis": 45.0,
+  "bending": 120,
+  "bend_max": 400,
+  "mass": 0.02,
+  "quality": 15,
+  "tension": 200,
+  "compression": 60,
+  "shear": 60,
+  "banco": "Diseño/higgsfield/47-m1195/sim/banco/banco_voladizo.csv (tira 25 mm, l 99/153, 9 mm, W_sim 290 kg/m2)",
+  "regla": "c ~ (bending/mass)^(1/3) (banco: b 80 -> c 40-43, 160 -> 48-50 mm). Cuando [x] mida c real (PEDIDO 10): bending = 120 * (c_real/45)^3 y volver a correr el banco. Tope de estabilidad medido: b ~250-300 a quality 10, ~500 a quality 15 (b 640 ya oscila)."
+ },
+ "cuello_sandwich": {
+  "k": 200.0,
+  "kc": 100.0,
+  "nota": "r6: rigidez maxima de los resortes internos entre las dos hojas del cuello (traccion / compresion; valores de la M133 e2s). d, vuelta, quiebre y pesos van en la malla (D['sandwich'], 47-m1195/sim/arma_cuello2.py)."
+ },
+ "flexion_zonas_abs": {
+  "cuello": 360.0
+ },
+ "flexion_zonas_abs_nota": "r7 (2026-10-10): flexion absoluta por zona, independiente de la base. cuello 360 = lo que tenia con base 120 x3 (2 hojas + 2 pies + entretela, c ~65 mm). vista/ruedo/puno siguen como multiplo de la base (2 capas sueltas)."
+}

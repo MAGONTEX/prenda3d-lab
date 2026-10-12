@@ -1,0 +1,65 @@
+{
+ "firma": "[ESC·f535]",
+ "nombre": "m1195_r9",
+ "prenda": "m1195",
+ "nota": "r9 G0 = c6 x air 1.001..1.005 (base en Actions: banda de D1-D3, sin palanca). 150 f, -t 4, malla s5 + rk s5. G1 (bc2) NO encolado: las corridas bc2/bc2b de la laptop pararon en f6 (STOP arranque roto: costura de adelante de manga L abierta 372 mm; ya 368 mm en el V0 de m1195_bc2.json, R 96 mm). Replica nula: si las 5 salen iguales bit a bit, es no-op (pasar a mass).",
+ "hilos": 4,
+ "tmo_min": 90,
+ "grupos": {
+  "G0": {
+   "malla": "m1195_s5.json",
+   "receta": "receta_c6.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "rk": "m1195_s5_rk.npz",
+   "nf": 150,
+   "dumps": [
+    2,
+    6,
+    36,
+    48,
+    72,
+    96,
+    120,
+    150
+   ]
+  }
+ },
+ "params": {},
+ "variantes": [
+  {
+   "tag": "m1195_g0_a1",
+   "grupo": "G0",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "m1195_g0_a2",
+   "grupo": "G0",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "m1195_g0_a3",
+   "grupo": "G0",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "m1195_g0_a4",
+   "grupo": "G0",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "m1195_g0_a5",
+   "grupo": "G0",
+   "params": {
+    "air": 1.005
+   }
+  }
+ ]
+}
