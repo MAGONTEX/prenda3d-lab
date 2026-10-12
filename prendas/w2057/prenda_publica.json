@@ -3354,99 +3354,75 @@
  ],
  "fuera_de_sim": [
   {
-   "bloque": "W2057-P07AX2",
    "grupo": "vivo_cierre"
   },
   {
-   "bloque": "W2057-P53AX1",
    "grupo": "parche_nuca"
   },
   {
-   "bloque": "W2057-P11KX2",
    "grupo": "bolsillo_pecho"
   },
   {
-   "bloque": "W2057-P65P1X2",
    "grupo": "entretela"
   },
   {
-   "bloque": "W2057-P15P1X2",
    "grupo": "entretela"
   },
   {
-   "bloque": "W2057-P03P1X2",
    "grupo": "entretela"
   },
   {
-   "bloque": "W2057-P02P1X1",
    "grupo": "entretela"
   },
   {
-   "bloque": "W2057-P50AX4",
    "grupo": "bolsillo_bajo"
   },
   {
-   "bloque": "W2057-P51KX4",
    "grupo": "bolsillo_bajo"
   },
   {
-   "bloque": "W2057-P28AX1",
    "grupo": "bolsillo_interior"
   },
   {
-   "bloque": "W2057-P46AX1",
    "grupo": "bolsillo_interior"
   },
   {
-   "bloque": "W2057-P08AX1",
    "grupo": "bolsillo_interior"
   },
   {
-   "bloque": "W2057-P54KX1",
    "grupo": "bolsillo_interior"
   },
   {
-   "bloque": "W2057-P55KX1",
    "grupo": "bolsillo_interior"
   },
   {
-   "bloque": "W2057-P64AX1",
    "grupo": "presillas"
   },
   {
-   "bloque": "W2057-P05AX4",
    "grupo": "tira_puno"
   },
   {
-   "bloque": "W2057-P06AX2",
    "grupo": "sin_identificar"
   },
   {
-   "bloque": "W2057-P13KX6",
    "grupo": "sin_identificar"
   },
   {
-   "bloque": "W2057-P16S1X1",
    "grupo": "plantilla"
   },
   {
-   "bloque": "W2057-P17S1X1",
    "grupo": "plantilla"
   },
   {
-   "bloque": "W2057-P18S1X4",
    "grupo": "plantilla"
   },
   {
-   "bloque": "W2057-P19S1X1",
    "grupo": "plantilla"
   },
   {
-   "bloque": "W2057-P20S1X4",
    "grupo": "plantilla"
   },
   {
-   "bloque": "W2057-P21S1X2",
    "grupo": "plantilla"
   }
  ],

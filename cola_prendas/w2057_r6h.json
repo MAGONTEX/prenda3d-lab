@@ -1,0 +1,18 @@
+{
+ "firma": "[ESC·f535]",
+ "nombre": "w2057_r6h",
+ "prenda": "w2057",
+ "nota": "r6 humo: b10_k0 (cuerpo_W2057_b10.npz: piel V8 = V20 + 5/6 (V8 - V20), arm_end 10) contra c5_k0 (piel20, brazos 20), malla s1c. 40 f y no 10: la rampa de la piel (brazos_8) arranca en arm_f0 = 24, a 10 f serian iguales por construccion. Compuerta: log con el cuerpo nuevo y la piel con colision; b10 = c5 en f12 y f24, distinto en f30-f40.",
+ "nf": 40,
+ "hilos": 4,
+ "tmo_min": 30,
+ "dumps": [12, 24, 30, 36, 40],
+ "grupos": {
+  "C": {"malla": "w2057_s1c.json", "cuerpo": "cuerpo_W2057_piel20.npz"},
+  "B10": {"malla": "w2057_s1c.json", "cuerpo": "cuerpo_W2057_b10.npz"}
+ },
+ "variantes": [
+  {"tag": "w57h_b10_k0", "grupo": "B10", "receta": "receta_w57_a10_k0.json"},
+  {"tag": "w57h_c5_k0", "grupo": "C", "receta": "receta_w57_c5_k0.json"}
+ ]
+}
