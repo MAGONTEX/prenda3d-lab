@@ -1,5 +1,42 @@
 # prenda3d-lab
 
+**Open garment simulation from real sewing patterns.** `prenda3d` builds 3D garments from the flat pattern pieces a
+factory cuts (panels, seams, trims), sews them on a body and simulates the cloth in Blender (5.1, CPU, headless). The
+goal is a garment that behaves like the real one in every state (hood up or down, zipped or open) so it can later be
+animated. Maintained by Parka Supply Co (Magontex S.A., Buenos Aires). The method is being written up so anyone can
+reuse it.
+
+## What lives here
+
+| Path | What it is |
+|---|---|
+| `sim/` | the simulator core (`nucleo.py`, `lanzar.py`) and per-garment rules |
+| `lab/` | synthetic test benches: strips, panels, cylinders, layer sandwiches, quilted channels |
+| `prendas/<code>/` | public garment packages: meshes, bodies, recipes (no factory files, photos or supplier data) |
+| `scripts/` | queue tools, the garment packager (allow-list + leak scan) and result comparison |
+| `resultados/`, `resultados_prendas/` | small metrics JSON per test run (seam gaps, intersections, relief, measurements) |
+
+## How CI is used
+
+Every GitHub Actions run here is a **test of the simulator**: a bench or garment variant is simulated and measured in the
+same job, and only a small metrics JSON is committed back. Runs are started by a push to a queue folder or by hand.
+
+Rules we keep so the project stays a good CI citizen:
+- No scheduled (cron) runs and no jobs that re-trigger themselves.
+- Every job has a hard `timeout-minutes`; the matrix has a `max-parallel` cap.
+- Smoke test first (2 variants), then the wide batch; a batch only runs when it answers a question.
+- No rendering farms: final renders run elsewhere; CI keeps small viewport images as QC evidence only.
+- Heavy outputs (`.npy`) are short-lived artifacts, never committed.
+
+## License
+
+- Code (`sim/`, `lab/`, `scripts/`, workflows): [MIT](LICENSE).
+- Garment data (`prendas/`): [CC BY 4.0](prendas/LICENSE) - credit "Parka Supply Co - prenda3d".
+
+---
+
+## Laboratorio (español)
+
 [ESC·f535] Laboratorio de simulacion de tela (Cloth de Blender 5.1.0, CPU, sin interfaz) para validar el codigo de un simulador de
 prendas. Cada "banco" es una tanda de escenas SINTETICAS minimas (tiras, panel, cilindro, sandwich de capas, canelon) que se
 simulan con el nucleo del simulador y devuelven posiciones de vertices (`.npy`) y metricas.
@@ -21,7 +58,7 @@ Este repo existe para correr esos bancos gratis en GitHub Actions. No contiene m
 
 Actions > banco > Run workflow (o `gh workflow run banco.yml -f tandas="b1_bisagra b2_salto b3_sandwich" -f hilos=4`).
 Baja `blender-5.1.0-linux-x64` de download.blender.org (cache entre corridas, SHA-256 verificado), corre las tandas y sube
-`out/` como artifact (`.npy`, `res_*.json`, `sim_*.log`, `tiempos.txt`). Tambien corre solo cada noche (06:17 UTC).
+`out/` como artifact (`.npy`, `res_*.json`, `sim_*.log`, `tiempos.txt`).
 
 ## Correr en local
 
@@ -43,7 +80,7 @@ La version de Blender debe ser la misma en ambos lados: el simulador lee estado 
 Comando de comparacion: `python scripts/comparar.py carpeta_a carpeta_b 0.1`.
 
 ## Cola autonoma [ESC·f535]
-`cola/<tanda>.json` (mismo formato que `lab/tandas/`) -> el workflow `cola.yml` (push a `cola/`, cada 2 h o a mano) la
+`cola/<tanda>.json` (mismo formato que `lab/tandas/`) -> el workflow `cola.yml` (push a `cola/` o a mano; sin cron) la
 mueve a `tomadas/`, corre cada tanda en su propio trabajo (hasta 20 en paralelo), calcula las metricas y commitea
 `resultados/<tanda>.json` (resumen chico); los `.npy` quedan como artifact `npy-<tanda>-<run>` 14 dias. Termina en
 `hecho/` o `fallo/`. Validador y pasos: `scripts/cola.py`. Solo bancos sinteticos del laboratorio.

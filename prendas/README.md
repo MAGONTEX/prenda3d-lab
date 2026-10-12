@@ -59,7 +59,7 @@ git add prendas/w2057/<archivos> sim/w2057_reglas.py sim/w2057_reglas.json     #
 - `renders` queda en 0 (sin GPU); pedir `"params": {"renders": 1}` solo para probar.
 - Antes del push: `python scripts/prendas.py validar cola_prendas/<nombre>.json` (debe decir OK).
 - `git add cola_prendas/<nombre>.json && git commit -m "[ESC·f535] prendas: encola <nombre>" && git push` -> el push dispara `prenda.yml`.
-  Tambien corre cada 2 h y a mano: `gh workflow run prenda.yml -R MAGONTEX/prenda3d-lab`. Mas de 20 variantes: toma de a 20 y se relanza.
+  Sin cron: se relanza a mano: `gh workflow run prenda.yml -R parka-oss/prenda3d-lab`. Mas de 20 variantes: toma de a 20 y se relanza.
 - Si el push rebota (el workflow ya tomo otra tanda): `git fetch && git -c merge.directoryRenames=false rebase origin/main`, y antes de
   pushear `git show --stat HEAD` tiene que listar `cola_prendas/<nombre>.json`. Con la deteccion de renombre de carpetas (defecto de git),
   si el remoto vacio `cola_prendas/` con `git mv`, el rebase muda la tanda nueva a `tomadas_prendas/` y nunca corre (w2094_r6t1, 2026-10-12).
@@ -68,10 +68,10 @@ git add prendas/w2057/<archivos> sim/w2057_reglas.py sim/w2057_reglas.json     #
 
 - Resumen: `git pull` -> `resultados_prendas/<nombre>.json` (estado OK/FALLO, por variante: estado FIN/STOP/ESTABLE/ERROR, cuadros,
   `t_sim_s`, `stop`, `costura_ultimo_cuadro`, `costuras_peores`, `asent`, `avisos`, `id_corrida`).
-- Logs y `.npy` (14 dias): `gh run download <run_id> -R MAGONTEX/prenda3d-lab -n prenda-<nombre>--<tag>-<run_id> -D <carpeta>`.
+- Logs y `.npy` (14 dias): `gh run download <run_id> -R parka-oss/prenda3d-lab -n prenda-<nombre>--<tag>-<run_id> -D <carpeta>`.
   Adentro: `sim_<tag>.log`, `blender.out`, `cmd.txt`, `receta_<tag>.json`, `corridas/<id>.json` (manifest con sha de todo),
   `X_<tag>_f<N>.npy`, `X_<tag>_final.npy`, `costuras_gap_<tag>.txt`. El run id esta en `url` del resumen.
-- Estado en vivo: `gh run list -R MAGONTEX/prenda3d-lab -w prenda` y `gh run view <run_id> -R MAGONTEX/prenda3d-lab`.
+- Estado en vivo: `gh run list -R parka-oss/prenda3d-lab -w prenda` y `gh run view <run_id> -R parka-oss/prenda3d-lab`.
 
 ## Modo argv: prenda con su propio script de sim (M133, 2026-10-12) [ESC·f535]
 

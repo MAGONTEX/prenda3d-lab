@@ -58,7 +58,7 @@ jobs:
     timeout-minutes: 300
     strategy:
       fail-fast: false
-      max-parallel: 6   # [ESC·f535] 10-12: tope propio de uso razonable (antes 20)
+      max-parallel: 20   # [ESC·f535] 10-12: org parka-oss, cupo propio (Free = 20 trabajos a la vez)
       matrix:
         tanda: ${{ fromJSON(needs.tomar.outputs.tandas) }}
     env:
