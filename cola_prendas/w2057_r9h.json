@@ -1,0 +1,85 @@
+{
+ "firma": "[ESC·f535]",
+ "nombre": "w2057_r9h",
+ "prenda": "w2057",
+ "nota": "r9 humo: la costura, una palanca: sew_max 80 -> 160 (sewing_force_max del Cloth, nucleo.py 650; fijo desde la creacion). El tope solo muerde cuando un resorte de costura tira mas que sew_max: fuerza = k*brecha, k = tension/largo medio = 200/9,28 mm -> umbral ~3,7 mm (80) y ~7,4 mm (160). En el control r8 b12t40 k1 la brecha maxima de todas las costuras es <= 2,1 mm hasta f87, 3,6 en f108 y 9,7 en f129: s160 debe ser = s80 bit a bit hasta ~f100-f114 y distinto despues. b12 k1 (air 1.001), tfric 40, arm_f1 150, stop_open 0, 150 f, dumps densos f96-f120. Compuertas: (1) log con 'sew_max': 160.0 / 80.0; (2) s80 = r8 b12t40_k1 bit a bit en los dumps comunes (1/2/6/12/24/36/48/66/87/108/129/150); (3) s160 = s80 hasta el primer cuadro con brecha > umbral y distinto en 2 o mas dumps despues.",
+ "nf": 150,
+ "hilos": 4,
+ "tmo_min": 90,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  24,
+  36,
+  48,
+  66,
+  78,
+  84,
+  87,
+  90,
+  93,
+  96,
+  97,
+  98,
+  99,
+  100,
+  101,
+  102,
+  103,
+  104,
+  105,
+  106,
+  107,
+  108,
+  109,
+  110,
+  111,
+  112,
+  113,
+  114,
+  115,
+  116,
+  117,
+  118,
+  119,
+  120,
+  123,
+  126,
+  129,
+  132,
+  138,
+  144,
+  150
+ ],
+ "params": {
+  "arm_f1": 150,
+  "stop_open": 0,
+  "tfric": 40,
+  "air": 1.001
+ },
+ "grupos": {
+  "B12": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b12.npz",
+   "receta": "receta_w57_a12_k0.json"
+  }
+ },
+ "variantes": [
+  {
+   "tag": "w57h9_b12s80_k1",
+   "grupo": "B12",
+   "params": {
+    "sew_max": 80
+   }
+  },
+  {
+   "tag": "w57h9_b12s160_k1",
+   "grupo": "B12",
+   "params": {
+    "sew_max": 160
+   }
+  }
+ ]
+}
