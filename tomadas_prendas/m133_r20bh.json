@@ -51,5 +51,9 @@
     "body": "cuerpo_L_RE3mano.npz"
    }
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38217491741",
+  "utc": "2026-10-12T07:23:53Z"
+ }
 }
