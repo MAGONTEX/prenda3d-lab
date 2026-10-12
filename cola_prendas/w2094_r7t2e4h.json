@@ -1,0 +1,69 @@
+{
+ "firma": "[ESC·f535]",
+ "prenda": "w2094",
+ "cuerpo": "cuerpo_W2094_piel20.npz",
+ "hrest": "sim/reposo_v5e.npz",
+ "rk": "sim/rk_v5e.npz",
+ "hilos": 4,
+ "nombre": "w2094_r7t2e4h",
+ "nf": 24,
+ "tmo_min": 60,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  14,
+  16,
+  18,
+  20,
+  24
+ ],
+ "nota": "r7 T2e paso 4 humo: la esquina B del puno gira sobre la costura con msb en f1->f2, el cuadro en que el reposo salta del V0 plegado al molde plano (rk_v5e deja pue/msb/bmb en el molde desde f2). Palanca (construccion del arranque, los dos lados): rampa de reposo rk_t2e4 = pue/msb/bmb del V0 v8 al molde en f2-f26, una clave por cuadro (rk_df 1); el resto de la prenda = rk_v5e cuadro por cuadro. V8 k5 y k9 contra las mismas k de T2d; w8a0_k5 = control REPETIDO (bit a bit con T2d). 24 f, -t 4. Compuerta: log 'RAMPA DE REPOSO (e2ze): sim/rk_t2e4.npz | 24 claves' y pesos suma 1 en w8rk; 'autocolision 14140' en todos.",
+ "grupos": {
+  "V8": {
+   "malla": "w2094_v0_v8.json"
+  },
+  "V8R": {
+   "malla": "w2094_v0_v8.json",
+   "rk": "sim/rk_t2e4.npz",
+   "params": {
+    "rk_df": 1
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "w8rk_k5",
+   "grupo": "V8R",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.6
+   }
+  },
+  {
+   "tag": "w8rk_k9",
+   "grupo": "V8R",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.08
+   }
+  },
+  {
+   "tag": "w8a0_k5",
+   "grupo": "V8",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.6
+   }
+  }
+ ]
+}
