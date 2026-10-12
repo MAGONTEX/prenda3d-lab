@@ -1,0 +1,113 @@
+{
+ "nombre": "m1195_r9g1",
+ "prenda": "m1195",
+ "hilos": 4,
+ "tmo_min": 120,
+ "nota": "[ESC·f535] r9 G1: bc3 (cuello en forma: arranque plegado + hrest isometrico + gemelas a flexion 360; desde G0 a1 f150, cuerpo V20) x5 contra G1c = control de reinicio bc3c x5 (mismo arranque, cuello sin tocar). air 1.001-1.005, 120 f. Humo m1195_r9h paso (run 38196328167).",
+ "grupos": {
+  "G1": {
+   "malla": "m1195_bc3.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "hrest": "m1195_bc3_hrest.npz",
+   "nf": 120,
+   "dumps": [
+    2,
+    6,
+    36,
+    48,
+    72,
+    96,
+    120
+   ]
+  },
+  "G1c": {
+   "malla": "m1195_bc3c.json",
+   "receta": "receta_bc3c.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "nf": 120,
+   "dumps": [
+    2,
+    6,
+    36,
+    48,
+    72,
+    96,
+    120
+   ]
+  }
+ },
+ "params": {},
+ "variantes": [
+  {
+   "tag": "m1195_g1_a1",
+   "grupo": "G1",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "m1195_g1_a2",
+   "grupo": "G1",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "m1195_g1_a3",
+   "grupo": "G1",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "m1195_g1_a4",
+   "grupo": "G1",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "m1195_g1_a5",
+   "grupo": "G1",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "m1195_g1c_a1",
+   "grupo": "G1c",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "m1195_g1c_a2",
+   "grupo": "G1c",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "m1195_g1c_a3",
+   "grupo": "G1c",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "m1195_g1c_a4",
+   "grupo": "G1c",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "m1195_g1c_a5",
+   "grupo": "G1c",
+   "params": {
+    "air": 1.005
+   }
+  }
+ ]
+}
