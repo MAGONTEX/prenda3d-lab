@@ -3,7 +3,7 @@
  "prenda": "m1195",
  "hilos": 4,
  "tmo_min": 60,
- "nota": "[ESC\u00b7f535] r11 humo: H1 = bc4 (= bc3 con la forma del cuello REHECHA sobre el anillo real de G0 a1 f150: colocar.py sobre ese asentado, sin transporte; gemelas 360, hrest = esa forma) contra H0 = bc3 (= H0 de r10h). air 1.001, 60 f. Unica diferencia de entradas: v del cuello (1546 v) y co del hrest (mismos ids).",
+ "nota": "[ESC·f535] r11 humo: H1 = bc4 (= bc3 con la forma del cuello REHECHA sobre el anillo real de G0 a1 f150: colocar.py sobre ese asentado, sin transporte; gemelas 360, hrest = esa forma) contra H0 = bc3 (= H0 de r10h). air 1.001, 60 f. Unica diferencia de entradas: v del cuello (1546 v) y co del hrest (mismos ids).",
  "grupos": {
   "H1": {
    "malla": "m1195_bc4.json",
@@ -58,5 +58,9 @@
     "air": 1.001
    }
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38203527888",
+  "utc": "2026-10-12T04:24:44Z"
+ }
 }
