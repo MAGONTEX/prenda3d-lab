@@ -1,0 +1,179 @@
+{
+ "firma": "[ESC·f535]",
+ "prenda": "w2094",
+ "cuerpo": "cuerpo_W2094_piel20.npz",
+ "hrest": "sim/reposo_v5e.npz",
+ "rk": "sim/rk_v5e.npz",
+ "hilos": 4,
+ "nombre": "w2094_r7t2d",
+ "nf": 150,
+ "tmo_min": 120,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  14,
+  16,
+  18,
+  20,
+  24,
+  30,
+  36,
+  48,
+  60,
+  72,
+  96,
+  120,
+  150
+ ],
+ "nota": "r7 T2d: replicas NULAS para separar sesgo de azar en el cruce del puno (punta B x punta A). V8 = malla v8: w8a0_k0 = replica REPETIDA de T2b + k5-k14 (flexion x1,005-1,014); V7 = malla v7: w7a0_k0 = replica REPETIDA de T2/T2b + k10-k14 (flexion x1,010-1,014). Con T2/T2b: N=15 por grupo, pareadas por k. Dumps densos f1-f24 para fechar. 150 f, -t 4. Compuerta: 'autocolision 14140' en todos; k0 = bit a bit en f1, f2, f6, f12, f24 y f150.",
+ "grupos": {
+  "V8": {
+   "malla": "w2094_v0_v8.json"
+  },
+  "V7": {
+   "malla": "w2094_v0_v7.json"
+  }
+ },
+ "variantes": [
+  {
+   "tag": "w8a0_k0",
+   "grupo": "V8",
+   "receta": "receta_w6a0_k0.json"
+  },
+  {
+   "tag": "w7a0_k0",
+   "grupo": "V7",
+   "receta": "receta_w6a0_k0.json"
+  },
+  {
+   "tag": "w8a0_k5",
+   "grupo": "V8",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.6
+   }
+  },
+  {
+   "tag": "w8a0_k6",
+   "grupo": "V8",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.72
+   }
+  },
+  {
+   "tag": "w8a0_k7",
+   "grupo": "V8",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.84
+   }
+  },
+  {
+   "tag": "w8a0_k8",
+   "grupo": "V8",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.96
+   }
+  },
+  {
+   "tag": "w8a0_k9",
+   "grupo": "V8",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.08
+   }
+  },
+  {
+   "tag": "w8a0_k10",
+   "grupo": "V8",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.2
+   }
+  },
+  {
+   "tag": "w8a0_k11",
+   "grupo": "V8",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.32
+   }
+  },
+  {
+   "tag": "w8a0_k12",
+   "grupo": "V8",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.44
+   }
+  },
+  {
+   "tag": "w8a0_k13",
+   "grupo": "V8",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.56
+   }
+  },
+  {
+   "tag": "w8a0_k14",
+   "grupo": "V8",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.68
+   }
+  },
+  {
+   "tag": "w7a0_k10",
+   "grupo": "V7",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.2
+   }
+  },
+  {
+   "tag": "w7a0_k11",
+   "grupo": "V7",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.32
+   }
+  },
+  {
+   "tag": "w7a0_k12",
+   "grupo": "V7",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.44
+   }
+  },
+  {
+   "tag": "w7a0_k13",
+   "grupo": "V7",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.56
+   }
+  },
+  {
+   "tag": "w7a0_k14",
+   "grupo": "V7",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.68
+   }
+  }
+ ]
+}
