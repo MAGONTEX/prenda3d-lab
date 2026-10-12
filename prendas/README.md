@@ -73,6 +73,19 @@ git add prendas/w2057/<archivos> sim/w2057_reglas.py sim/w2057_reglas.json     #
   `X_<tag>_f<N>.npy`, `X_<tag>_final.npy`, `costuras_gap_<tag>.txt`. El run id esta en `url` del resumen.
 - Estado en vivo: `gh run list -R MAGONTEX/prenda3d-lab -w prenda` y `gh run view <run_id> -R MAGONTEX/prenda3d-lab`.
 
+## Modo argv: prenda con su propio script de sim (M133, 2026-10-12) [ESC·f535]
+
+La M133 no corre con el nucleo generico sino con su script (`prendas/m133/sim_e2s_R16.py`, el de R16 en el VPS, saneado: mismo AST).
+- Empaquetar: `python scripts/empaquetar_prenda.py --modo argv ...` (ver su cabecera): scripts saneados con control de AST, mallas con
+  solo los textos saneados (numeros iguales, verificado), receta en tokens -> `receta_hq.json` (`{"argv": [...]}`), `paquete.json` con
+  el sha256 de cada original. Mismo escaneo que el modo normal.
+- Tanda: `"modo": "argv"`, `"script"`, `"receta"`, `"entorno": {"M133_E2": "{salida}/"}`, `params` como texto (`{"relleno": "0"}`),
+  `dumps`, y `"medir": {"script": "prendas/m133/medir/medir_m133.py", "cuadros": [20, 60]}`. `validar` rechaza una clave que el
+  script no lee. Ejemplo: `hecho_prendas/m133_r17.json` (cuando cierre).
+- En el trabajo: `preparar` enlaza `prendas/m133/*` en `out/<item>/` (el script lee y escribe ahi); despues de la sim se sacan los
+  enlaces y el `.blend`; `medir` corre con Python 3.11 + `scripts/requisitos-medir.txt` y su json entra en el resumen como `metricas`
+  (`resultados_prendas/<tanda>.json`). Medidor validado igual a `_qc_R16/medir_R16.py` en 5 cuadros de R16 (32/32 claves iguales).
+
 ## Validacion (2026-10-11)
 
 Ver `resultados_prendas/w2057_val40.json`: W2057 c1 (malla s1, receta c1) a 40 cuadros con `-t 4` contra la corrida c1 de la laptop.

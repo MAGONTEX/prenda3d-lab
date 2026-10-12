@@ -1,0 +1,115 @@
+{
+ "modo": "argv",
+ "codigo": "m133",
+ "archivos": {
+  "sim_e2s_R16.py": {
+   "origen": "_qc_R16/vps/sim_e2s_R16.py",
+   "sha256_origen": "a22c774c3b02f7d01a6b26f10f3e4a30f3cc0c457f26576f012f2ac48a8c1f9d",
+   "sha256": "a2b2cf9a230aaea08e6092f1093348416f1e0052c9059d3b5e00224f2a144dc0",
+   "saneado": true,
+   "ast_igual": true
+  },
+  "sand_e2s.py": {
+   "origen": "sand_e2s.py",
+   "sha256_origen": "c0a69432383bdb298a59e015d9edacff933a9ffa7315958b9dcd2ddfcc2e9a79",
+   "sha256": "c0a69432383bdb298a59e015d9edacff933a9ffa7315958b9dcd2ddfcc2e9a79",
+   "saneado": false,
+   "ast_igual": true
+  },
+  "_qc_PT/puente_PT.py": {
+   "origen": "_qc_PT/puente_PT.py",
+   "sha256_origen": "a7d4ed585984bcc9aeec39ad12c43e4141767debd50a8c10b7be8ce9c4ed4bc0",
+   "sha256": "86ea8439ca2a772dcdacbb7c338394bef673b9f328ef19d06f93d22308fa3154",
+   "saneado": false,
+   "ast_igual": true
+  },
+  "_qc_RJ/lente.py": {
+   "origen": "_qc_RJ/lente.py",
+   "sha256_origen": "b7d26c0fb96b4d23d3af934a24c2d4dd71357aa81f80aa9539531076a9a4dae0",
+   "sha256": "b7d26c0fb96b4d23d3af934a24c2d4dd71357aa81f80aa9539531076a9a4dae0",
+   "saneado": false,
+   "ast_igual": true
+  },
+  "medir/medir_m133.py": {
+   "origen": "_qc_R17/medir_m133.py",
+   "sha256_origen": "33a584ebbe45789e8427b1203f4f52bb72d245ef362c6b3e27e82c2d8cf3d93c",
+   "sha256": "33a584ebbe45789e8427b1203f4f52bb72d245ef362c6b3e27e82c2d8cf3d93c",
+   "saneado": false,
+   "ast_igual": true
+  },
+  "medir/cruce_np.py": {
+   "origen": "_qc_e2y/cruce_np.py",
+   "sha256_origen": "5a8ff9d1ac174bfc8fcfe76cf52a1c9ef4870ec43ffb32fafff13d36aa1e2815",
+   "sha256": "e87bcce13094f1141dff8d9643b81d93f5721c254fb80c4c410a3abbdda8779c",
+   "saneado": true,
+   "ast_igual": true
+  },
+  "m133_e2zzh1.json": {
+   "origen": "m133_e2zzh1.json",
+   "sha256_origen": "b2ee3acd6ce2500f6a8cdcd1a9af774f1fecd113fb3c8c9555ed83d776378579",
+   "sha256": "6756b12a69bb83f850aa41662e24605334248e2a0beee7dc8dd6ef8ed2908951",
+   "saneado": true,
+   "textos_saneados": [
+    "$/avios/broches_fuente",
+    "$/avios/e2v/fcc",
+    "$/avios/e2za/cierre",
+    "$/avios/e2zv",
+    "$/avios/e2zz",
+    "$/parche/nota"
+   ]
+  },
+  "m133_e2zv1.json": {
+   "origen": "m133_e2zv1.json",
+   "sha256_origen": "5ca75dd8d01d7ec17cf65ba0d8aa5a1c6ca28be0304193beaa14c20884bbc003",
+   "sha256": "1ef63440287d416ad2f722f152f9c337ce0d9feaa106712c3d5d167708068210",
+   "saneado": true,
+   "textos_saneados": [
+    "$/avios/broches_fuente",
+    "$/avios/e2v/fcc",
+    "$/avios/e2za/cierre",
+    "$/avios/e2zv",
+    "$/parche/nota"
+   ]
+  },
+  "cuerpo_L_RE3.npz": {
+   "origen": "cuerpo_L_RE3.npz",
+   "sha256_origen": "7268c2d401a479e875153a841489fd9b9fa852b2a59b17a58cee6f5d59ca3096",
+   "sha256": "7268c2d401a479e875153a841489fd9b9fa852b2a59b17a58cee6f5d59ca3096",
+   "saneado": false
+  },
+  "cuerpo_L_e2p2.npz": {
+   "origen": "cuerpo_L_e2p2.npz",
+   "sha256_origen": "e70fce09ec702977239208f76b4533100656bcf1828b287f37dd9781a2bc2eee",
+   "sha256": "e70fce09ec702977239208f76b4533100656bcf1828b287f37dd9781a2bc2eee",
+   "saneado": false
+  },
+  "cfidx_e2e3.json": {
+   "origen": "cfidx_e2e3.json",
+   "sha256_origen": "1eb6e0c36d5551f17a68232c9149b7fe4fb47407f5544678468b3f8460391e8d",
+   "sha256": "1eb6e0c36d5551f17a68232c9149b7fe4fb47407f5544678468b3f8460391e8d",
+   "saneado": false,
+   "textos_saneados": []
+  },
+  "_qc_HP/forro_HP.json": {
+   "origen": "_qc_HP/forro_HP.json",
+   "sha256_origen": "ee22d1dd8d3a45173486aadb453162278a90d8abd56362df5cee542addbbe59b",
+   "sha256": "ee22d1dd8d3a45173486aadb453162278a90d8abd56362df5cee542addbbe59b",
+   "saneado": false,
+   "textos_saneados": []
+  },
+  "medir/m133_medir.json": {
+   "origen": "_qc_R17/m133_medir.json",
+   "sha256_origen": "003251c6efa99624acf535e137846622eeb760c56602b60c0d7b18fbcaeb81b0",
+   "sha256": "003251c6efa99624acf535e137846622eeb760c56602b60c0d7b18fbcaeb81b0",
+   "saneado": false,
+   "textos_saneados": []
+  },
+  "receta_hq.json": {
+   "origen": "_qc_R16/vps/receta_HQ.txt",
+   "sha256_origen": "a15ae89edf0917b9e5db2c0b6d69344c81edbcc08a30a5e6d2fcbe742e3bff36",
+   "sha256": "48fb2d797bd1ee34b575bff0e0a7ac04da80d240398b318385b47a3613794365",
+   "tokens": 83
+  }
+ },
+ "publico": "[ESC·f535] paquete --modo argv de scripts/empaquetar_prenda.py: sin DXF, notas privadas ni rutas"
+}

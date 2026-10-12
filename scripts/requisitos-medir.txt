@@ -1,0 +1,4 @@
+# [ESC·f535] dependencias de los medidores de prendas (prendas/<codigo>/medir/*.py) en prenda.yml, fijas (= la laptop donde se validaron)
+numpy==2.4.6
+scipy==1.17.1
+matplotlib==3.10.9

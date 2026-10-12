@@ -1,0 +1,111 @@
+{
+ "nombre": "m133_r17",
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R16.py",
+ "hilos": 4,
+ "tmo_min": 90,
+ "nf": 60,
+ "dumps": [
+  1,
+  2,
+  6,
+  20,
+  40,
+  60
+ ],
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   20,
+   60
+  ]
+ },
+ "nota": "[ESC·f535] R17: receta HQ de R16 (malla zzh1, cuerpo RE3, forro de capucha) contra HQ + relleno=0 (c1); N=5 por bi_k 1.000..1.004 (bi_w 15 de la receta); 60 f, -t 4",
+ "grupos": {
+  "hq": {
+   "params": {}
+  },
+  "c1": {
+   "params": {
+    "relleno": "0"
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "r17hq_k0",
+   "grupo": "hq",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "r17hq_k1",
+   "grupo": "hq",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "r17hq_k2",
+   "grupo": "hq",
+   "params": {
+    "bi_k": "1.002"
+   }
+  },
+  {
+   "tag": "r17hq_k3",
+   "grupo": "hq",
+   "params": {
+    "bi_k": "1.003"
+   }
+  },
+  {
+   "tag": "r17hq_k4",
+   "grupo": "hq",
+   "params": {
+    "bi_k": "1.004"
+   }
+  },
+  {
+   "tag": "r17c1_k0",
+   "grupo": "c1",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "r17c1_k1",
+   "grupo": "c1",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "r17c1_k2",
+   "grupo": "c1",
+   "params": {
+    "bi_k": "1.002"
+   }
+  },
+  {
+   "tag": "r17c1_k3",
+   "grupo": "c1",
+   "params": {
+    "bi_k": "1.003"
+   }
+  },
+  {
+   "tag": "r17c1_k4",
+   "grupo": "c1",
+   "params": {
+    "bi_k": "1.004"
+   }
+  }
+ ]
+}

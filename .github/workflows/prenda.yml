@@ -90,15 +90,34 @@ jobs:
           set -uo pipefail
           B="$HOME/blender-${BLENDER_VERSION}-linux-x64/blender"
           O="$PWD/out/$IT"; mkdir -p "$O"
-          mapfile -t C < <(python3 scripts/prendas.py preparar "$IT" "$O")   # script, hilos, tope en minutos
+          mapfile -t C < <(python3 scripts/prendas.py preparar "$IT" "$O")   # script, hilos, tope en minutos, modo (nucleo|argv), medir (0|1)
           mapfile -t A < "$O/args.txt"
-          echo "CMD blender -b --factory-startup -t ${C[1]} --python-exit-code 1 --python ${C[0]} -- ${A[*]}" | sed "s|$PWD/||g" > "$O/cmd.txt"
+          EV=(); if [ -s "$O/entorno.txt" ]; then mapfile -t EV < "$O/entorno.txt"; fi   # [ESC·f535] modo argv: variables del script propio
+          echo "medir=${C[4]:-0}" >> "$GITHUB_OUTPUT"
+          echo "CMD ${EV[*]} blender -b --factory-startup -t ${C[1]} --python-exit-code 1 --python ${C[0]} -- ${A[*]}" | sed "s|$PWD/||g" > "$O/cmd.txt"
           S0=$SECONDS
-          timeout -k 60 "$((C[2] * 60))" "$B" -b --factory-startup -t "${C[1]}" --python-exit-code 1 --python "${C[0]}" -- "${A[@]}" > "$O/blender.out" 2>&1; RC=$?
+          env "${EV[@]}" timeout -k 60 "$((C[2] * 60))" "$B" -b --factory-startup -t "${C[1]}" --python-exit-code 1 --python "${C[0]}" -- "${A[@]}" > "$O/blender.out" 2>&1; RC=$?
           T=$((SECONDS - S0)); echo "$RC" > out/rc.txt; echo "$T" > out/t.txt
+          if [ "${C[3]:-nucleo}" = argv ]; then   # [ESC·f535] los enlaces a las entradas y el .blend no van al artifact
+            find "$O" -maxdepth 1 -type l -delete; mkdir -p "$RUNNER_TEMP/blend"; mv -f "$O"/*.blend "$RUNNER_TEMP/blend/" 2>/dev/null || true
+          fi
           echo "| $IT | rc $RC | $T s |" | tee -a "$GITHUB_STEP_SUMMARY"
           tail -5 "$O/blender.out"
           exit $RC
+
+      # [ESC·f535] medicion dentro del trabajo (solo tandas con `medir`): metricas_<tag>.json -> resumen -> resultados_prendas/
+      - uses: actions/setup-python@v5
+        if: always() && steps.correr.outputs.medir == '1'
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requisitos-medir.txt
+
+      - name: Medir
+        if: always() && steps.correr.outputs.medir == '1'
+        run: |
+          pip install -q -r scripts/requisitos-medir.txt
+          python scripts/prendas.py medir "$IT" "out/$IT"
 
       - name: Resumen chico
         if: always()

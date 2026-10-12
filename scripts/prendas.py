@@ -6,6 +6,13 @@ Tanda = cola_prendas/<nombre>.json (ver prendas/README.md). Cada variante es UN 
     python3 scripts/prendas.py preparar <item> <salida>                 receta combinada + args de lanzar.py (uno por linea) en <salida>/
     python3 scripts/prendas.py resumir <item> <salida> --rc N --t S     resumen chico (json) de una variante, leido del log del nucleo
     python3 scripts/prendas.py cerrar --resumenes <dir> --items '[...]' --url U   resultados_prendas/<t>.json + mueve a hecho_/fallo_prendas
+    python3 scripts/prendas.py medir <item> <salida>                    corre el medidor de la tanda (`medir`) sobre los dumps -> metricas_<tag>.json
+
+[ESC·f535] Tanda `"modo": "argv"` (M133, 2026-10-12): la prenda corre SU script de sim (`script`), no lanzar.py + nucleo. La receta es
+{"argv": ["k=v", ...]} (orden de la corrida original; gana el ultimo); `params` de tanda -> grupo -> variante se agregan al final como k=v;
+`dumps` -> dumps=a,b,c. Antes de correr, cada entrada de prendas/<prenda>/ se enlaza en <salida>/ (el script lee y escribe ahi: E2 por
+`entorno`, con {salida}); despues de la sim el workflow saca los enlaces y el .blend. Una clave de `params` que el script no lee es ERROR
+(palanca inexistente). `medir`: {"script": ruta, "cuadros": [..]} corre en el mismo trabajo y su json entra en el resumen (`metricas`).
 """
 import argparse
 import glob
@@ -55,10 +62,13 @@ def validar(T, ruta=""):
     if not p or not os.path.isdir(d):
         e.append(f"prenda {p!r}: no existe prendas/{p}/")
         return e
-    if not os.path.isfile(os.path.join(d, "prenda_publica.json")):
+    argv = T.get("modo") == "argv"
+    if not argv and not os.path.isfile(os.path.join(d, "prenda_publica.json")):
         e.append(f"falta prendas/{p}/prenda_publica.json")
     if not os.path.isfile(os.path.join(REPO, T.get("script", "sim/lanzar.py"))):
         e.append(f"script {T.get('script')!r} no existe")
+    elif argv:
+        e += validar_argv(T, d)
     V = T.get("variantes") or []
     if not V:
         e.append("sin variantes")
@@ -82,6 +92,54 @@ def validar(T, ruta=""):
     h = T.get("hilos", 4)
     if not isinstance(h, int) or not 1 <= h <= 4:
         e.append("hilos: 1..4 (el runner tiene 4 vCPU)")
+    return e
+
+
+ESPECIALES_ARGV = ("mesh", "esc", "body", "rk", "hrest", "wini", "pramp", "pfit", "bi_cos", "dumps")
+
+
+def claves_script(ruta):
+    """parametros que el script de sim LEE: P["k"], P.get("k") y los especiales (`if k == "mesh"`)."""
+    t = open(ruta, encoding="utf-8").read()
+    return (set(re.findall(r'P\[["\'](\w+)["\']\]', t)) | set(re.findall(r'P\.get\(["\'](\w+)', t))
+            | set(re.findall(r'if k == ["\'](\w+)["\']', t)))
+
+
+def tokens_params(*dicts):
+    out = []
+    for dd in dicts:
+        for k, x in (dd or {}).items():
+            out.append(f"{k}={x}")
+    return out
+
+
+def validar_argv(T, d):
+    e = []
+    sc = os.path.join(REPO, T["script"]); K = claves_script(sc)
+    for v in T.get("variantes") or []:
+        g = (T.get("grupos") or {}).get(v.get("grupo"), {}) if v.get("grupo") else {}
+        rec = campo(T, v, "receta")
+        try:
+            R = leer(os.path.join(d, rec)) if rec else {}
+        except Exception as ex:
+            e.append(f"{v.get('tag')}: receta ilegible: {ex}"); continue
+        if not isinstance(R.get("argv"), list) or not all(isinstance(x, str) and "=" in x for x in R["argv"]):
+            e.append(f"{v.get('tag')}: la receta de modo argv es {{\"argv\": [\"k=v\", ...]}}")
+        for t in tokens_params(T.get("params"), g.get("params"), v.get("params")):
+            k, _, x = t.partition("=")
+            if k not in K:
+                e.append(f"{v.get('tag')}: el script no lee {k!r} (palanca inexistente)")
+            if not re.match(r"^[\w.,+-]+$", x):
+                e.append(f"{v.get('tag')}: valor raro {t!r}")
+        for k, x in (campo(T, v, "entorno") or {}).items():
+            if not re.match(r"^[A-Z][A-Z0-9_]*$", k) or not isinstance(x, str):
+                e.append(f"{v.get('tag')}: entorno {k!r}")
+    M = T.get("medir")
+    if M is not None:
+        if not os.path.isfile(os.path.join(REPO, M.get("script", ""))):
+            e.append(f"medir: script {M.get('script')!r} no existe")
+        if not all(isinstance(c, int) for c in M.get("cuadros", [])):
+            e.append("medir: cuadros enteros")
     return e
 
 
@@ -128,8 +186,38 @@ def _tanda_de(item):
     return T, v, tag
 
 
+def preparar_argv(T, v, tag, a):
+    """modo argv: args = NF TAG receta... params...; enlaces a prendas/<prenda>/* en <salida>/; entorno.txt (K=V por linea)."""
+    d = os.path.join("prendas", T["prenda"])
+    g = (T.get("grupos") or {}).get(v.get("grupo"), {}) if v.get("grupo") else {}
+    nf = int(campo(T, v, "nf"))
+    tok = list(leer(os.path.join(REPO, d, campo(T, v, "receta")))["argv"])
+    tok += tokens_params(T.get("params"), g.get("params"), v.get("params"))
+    dumps = campo(T, v, "dumps")
+    if dumps:
+        tok.append("dumps=" + ",".join(str(x) for x in sorted({int(x) for x in dumps if int(x) <= nf} | {nf})))
+    os.makedirs(a.salida, exist_ok=True)
+    sal = os.path.abspath(a.salida)
+    for n in sorted(os.listdir(os.path.join(REPO, d))):
+        if n in ("medir", "paquete.json") or n.startswith("receta") or n == "__pycache__":
+            continue
+        dst = os.path.join(sal, n)
+        if not os.path.lexists(dst):
+            os.symlink(os.path.join(REPO, d, n), dst)
+    ent = {k: x.replace("{salida}", sal) for k, x in (campo(T, v, "entorno") or {}).items()}
+    open(os.path.join(a.salida, "entorno.txt"), "w", encoding="utf-8", newline="\n").write("".join(f"{k}={x}\n" for k, x in ent.items()))
+    json.dump({"nombre": f"{T['nombre']}_{tag}", "modo": "argv", "script": T["script"], "nf": nf, "tag": tag, "argv": tok,
+               "extra": tok[len(leer(os.path.join(REPO, d, campo(T, v, "receta")))["argv"]):]},
+              open(os.path.join(a.salida, f"receta_{tag}.json"), "w", encoding="utf-8", newline="\n"), indent=1)
+    open(os.path.join(a.salida, "args.txt"), "w", encoding="utf-8", newline="\n").write("\n".join([str(nf), tag] + tok) + "\n")
+    print(T["script"]); print(T.get("hilos", 4)); print(int(T.get("tmo_min", 330))); print("argv"); print(1 if T.get("medir") else 0)
+    return 0
+
+
 def cmd_preparar(a):
     T, v, tag = _tanda_de(a.item)
+    if T.get("modo") == "argv":
+        return preparar_argv(T, v, tag, a)
     d = os.path.join("prendas", T["prenda"])
     R = leer(os.path.join(REPO, d, campo(T, v, "receta")))
     R.setdefault("params", {})
@@ -154,7 +242,25 @@ def cmd_preparar(a):
     print(T.get("script", "sim/lanzar.py"))
     print(T.get("hilos", 4))
     print(int(T.get("tmo_min", 330)))
+    print("nucleo")
+    print(1 if T.get("medir") else 0)
     return 0
+
+
+def cmd_medir(a):
+    """corre el medidor de la tanda (si tiene `medir`) con este python: metricas_<tag>.json en <salida>/."""
+    T, v, tag = _tanda_de(a.item); M = T.get("medir")
+    if not M:
+        print("sin medir"); return 0
+    tok = open(os.path.join(a.salida, "args.txt"), encoding="utf-8").read().split()
+    malla = [x.split("=", 1)[1] for x in tok if x.startswith("mesh=")]
+    if not malla:
+        print("medir: sin mesh= en args.txt"); return 1
+    cu = ",".join(str(c) for c in (campo(T, v, "cuadros_medir") or M.get("cuadros", [])))
+    cmd = [sys.executable, os.path.join(REPO, M["script"]), f"malla={os.path.join(REPO, 'prendas', T['prenda'], malla[-1])}",
+           f"dir={a.salida}", f"tag={tag}", f"cuadros={cu}", f"json={os.path.join(a.salida, f'metricas_{tag}.json')}"]
+    r = subprocess.run(cmd, timeout=int(M.get("tmo_s", 1800)))
+    return r.returncode
 
 
 RX_F = re.compile(r"^f(\d+) t=(\d+)s .*costura media ([\d.]+) max ([\d.]+) mm")
@@ -181,8 +287,13 @@ def cmd_resumir(a):
         except Exception:
             pass
     npy = sorted(os.path.basename(x) for x in glob.glob(os.path.join(a.salida, f"X_{tag}_*.npy")))
+    estado = man.get("estado") or ("SIN_MANIFEST" if a.rc == 0 else "ERROR")
+    if T.get("modo") == "argv":   # el script propio no escribe manifest: el estado sale del log (fin / STOP / asentamiento)
+        fin = any(x.startswith("fin ") for x in L)
+        estado = ("ERROR" if a.rc or not fin else "STOP" if any(x.startswith("corrida cortada") for x in L)
+                  else "ESTABLE" if any(x.startswith("asentamiento cumplido") for x in L) else "FIN")
     R = {"item": a.item, "tag": tag, "prenda": T["prenda"], "rc": a.rc, "t_pared_s": a.t,
-         "estado": man.get("estado") or ("SIN_MANIFEST" if a.rc == 0 else "ERROR"), "cuadros_pedidos": int(campo(T, v, "nf")), "grupo": v.get("grupo"),
+         "estado": estado, "cuadros_pedidos": int(campo(T, v, "nf")), "grupo": v.get("grupo"),
          "cuadros_hechos": man.get("cuadros_hechos", int(f[-1].group(1)) if f else 0),
          "t_sim_s": int(tsim[-1].split()[-1]) if tsim else None,
          "stop": [_limpio(x) for x in L if x.startswith("STOP")],
@@ -194,6 +305,14 @@ def cmd_resumir(a):
          "params": man.get("params_finales") or {}, "receta_hash": man.get("receta_hash"), "id_corrida": man.get("id"),
          "blender": (man.get("blender") or {}).get("version"), "hilos": (man.get("hilos") or {}).get("n"),
          "dumps": npy, "params_variante": v.get("params") or {}}
+    mp = os.path.join(a.salida, f"metricas_{tag}.json")
+    if os.path.isfile(mp):   # [ESC·f535] medicion dentro del trabajo (tandas con `medir`): entra en resultados_prendas/<tanda>.json
+        try:
+            R["metricas"] = leer(mp)
+        except Exception as ex:
+            R["metricas"] = {"error": _limpio(str(ex))}
+    elif T.get("medir"):
+        R["metricas"] = {"error": "sin metricas (el medidor no corrio o fallo: ver el log del trabajo)"}
     print(json.dumps(R, indent=1, ensure_ascii=False))
     return 0
 
@@ -231,8 +350,10 @@ def main():
     x = s.add_parser("preparar"); x.add_argument("item"); x.add_argument("salida")
     x = s.add_parser("resumir"); x.add_argument("item"); x.add_argument("salida"); x.add_argument("--rc", type=int, default=0); x.add_argument("--t", type=int, default=0)
     x = s.add_parser("cerrar"); x.add_argument("--resumenes", required=True); x.add_argument("--items", required=True); x.add_argument("--url", default="")
+    x = s.add_parser("medir"); x.add_argument("item"); x.add_argument("salida")
     a = ap.parse_args()
-    return {"validar": cmd_validar, "tomar": cmd_tomar, "preparar": cmd_preparar, "resumir": cmd_resumir, "cerrar": cmd_cerrar}[a.c](a)
+    return {"validar": cmd_validar, "tomar": cmd_tomar, "preparar": cmd_preparar, "resumir": cmd_resumir, "cerrar": cmd_cerrar,
+            "medir": cmd_medir}[a.c](a)
 
 
 if __name__ == "__main__":
