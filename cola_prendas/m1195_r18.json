@@ -1,0 +1,82 @@
+{
+ "nombre": "m1195_r18",
+ "prenda": "m1195",
+ "hilos": 4,
+ "tmo_min": 90,
+ "nota": "[ESC·f535] r18 N=5: G9 = bc7 (pliegue de la hoja cuA/cuB abierto al molde + hoja >= 2,4 mm sobre los paneles) x5, air 1.001-1.005; G9C = bc5 a1 (debe repetir r14 G6 a1 bit a bit). Humo r18h (run 38251401594) paso: H0 = r14 G6 a1 en f2/f6/f36/f120, costura f2 2,06. 120 f.",
+ "params": {},
+ "grupos": {
+  "G9": {
+   "malla": "m1195_bc7.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "nf": 120,
+   "dumps": [
+    2,
+    6,
+    26,
+    36,
+    72,
+    120
+   ]
+  },
+  "G9C": {
+   "malla": "m1195_bc5.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "nf": 120,
+   "dumps": [
+    2,
+    6,
+    26,
+    36,
+    72,
+    120
+   ]
+  }
+ },
+ "variantes": [
+  {
+   "tag": "m1195_g9_a1",
+   "grupo": "G9",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "m1195_g9_a2",
+   "grupo": "G9",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "m1195_g9_a3",
+   "grupo": "G9",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "m1195_g9_a4",
+   "grupo": "G9",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "m1195_g9_a5",
+   "grupo": "G9",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "m1195_g9c_a1",
+   "grupo": "G9C",
+   "params": {
+    "air": 1.001
+   }
+  }
+ ]
+}
