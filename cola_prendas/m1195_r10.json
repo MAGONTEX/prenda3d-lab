@@ -1,0 +1,113 @@
+{
+ "nombre": "m1195_r10",
+ "prenda": "m1195",
+ "hilos": 4,
+ "tmo_min": 120,
+ "nota": "[ESC·f535] r10: G2 = bc3g (bc3 con las gemelas cuB/pieB a la flexion base 20; cuA/pieA siguen a 360) x5 contra G2c = control de reinicio bc3c x5 (= G1c de r9). air 1.001-1.005, 120 f. Humo m1195_r10h.",
+ "grupos": {
+  "G2": {
+   "malla": "m1195_bc3g.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "hrest": "m1195_bc3_hrest.npz",
+   "nf": 120,
+   "dumps": [
+    2,
+    6,
+    36,
+    48,
+    72,
+    96,
+    120
+   ]
+  },
+  "G2c": {
+   "malla": "m1195_bc3c.json",
+   "receta": "receta_bc3c.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "nf": 120,
+   "dumps": [
+    2,
+    6,
+    36,
+    48,
+    72,
+    96,
+    120
+   ]
+  }
+ },
+ "params": {},
+ "variantes": [
+  {
+   "tag": "m1195_g2_a1",
+   "grupo": "G2",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "m1195_g2_a2",
+   "grupo": "G2",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "m1195_g2_a3",
+   "grupo": "G2",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "m1195_g2_a4",
+   "grupo": "G2",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "m1195_g2_a5",
+   "grupo": "G2",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "m1195_g2c_a1",
+   "grupo": "G2c",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "m1195_g2c_a2",
+   "grupo": "G2c",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "m1195_g2c_a3",
+   "grupo": "G2c",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "m1195_g2c_a4",
+   "grupo": "G2c",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "m1195_g2c_a5",
+   "grupo": "G2c",
+   "params": {
+    "air": 1.005
+   }
+  }
+ ]
+}
