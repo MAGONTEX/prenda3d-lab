@@ -1,0 +1,222 @@
+{
+ "firma": "[ESC·f535]",
+ "nombre": "w2057_r11",
+ "prenda": "w2057",
+ "nota": "r11: costura contra tela. Blender 5.1.0: la costura usa la traccion BASE (cloth_update_springs deja lin_stiffness 0 en cada paso); la tela usa base + peso x |tension_max - base| (cascara peso 1 en toda la W2057). B12T400 = tension 400 (tela 400, costura 400); B12M400 = tension 200 + tension_max 400 (tela 400, costura 200): T400 contra M400 aisla la costura x2 a tela fija. B14T400 y C5T400: efecto en los cuerpos que ya cierran y en medidas. Todo con sew_max 0 (marco de r10; con k x2 el tope 160 morderia a 3,7 mm), tfric 40, arm_f1 150, stop_open 0, nf 240, dumps de r10, replica nula air 1.001..1.005 (k1..k5). B12S0 k1 = replica de r10 b12s0_k1 (debe salir bit a bit: el parche no cambia la corrida por defecto y r10 sirve de control). Humo w2057_r11h: ver RONDA-ACTIONS r11.",
+ "nf": 240,
+ "hilos": 4,
+ "tmo_min": 150,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  24,
+  36,
+  48,
+  66,
+  87,
+  108,
+  129,
+  150,
+  162,
+  180,
+  210,
+  240
+ ],
+ "params": {
+  "arm_f1": 150,
+  "stop_open": 0,
+  "tfric": 40,
+  "sew_max": 0
+ },
+ "grupos": {
+  "B12T400": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b12.npz",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {
+    "tension": 400
+   }
+  },
+  "B12M400": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b12.npz",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {
+    "tension_max": 400
+   }
+  },
+  "B14T400": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b14.npz",
+   "receta": "receta_w57_a14_k0.json",
+   "params": {
+    "tension": 400
+   }
+  },
+  "C5T400": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_piel20.npz",
+   "receta": "receta_w57_c5_k0.json",
+   "params": {
+    "tension": 400
+   }
+  },
+  "B12S0": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b12.npz",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {}
+  }
+ },
+ "variantes": [
+  {
+   "tag": "w57r11_b12t400_k1",
+   "grupo": "B12T400",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "w57r11_b12t400_k2",
+   "grupo": "B12T400",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "w57r11_b12t400_k3",
+   "grupo": "B12T400",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "w57r11_b12t400_k4",
+   "grupo": "B12T400",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "w57r11_b12t400_k5",
+   "grupo": "B12T400",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "w57r11_b12m400_k1",
+   "grupo": "B12M400",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "w57r11_b12m400_k2",
+   "grupo": "B12M400",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "w57r11_b12m400_k3",
+   "grupo": "B12M400",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "w57r11_b12m400_k4",
+   "grupo": "B12M400",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "w57r11_b12m400_k5",
+   "grupo": "B12M400",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "w57r11_b14t400_k1",
+   "grupo": "B14T400",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "w57r11_b14t400_k2",
+   "grupo": "B14T400",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "w57r11_b14t400_k3",
+   "grupo": "B14T400",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "w57r11_b14t400_k4",
+   "grupo": "B14T400",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "w57r11_b14t400_k5",
+   "grupo": "B14T400",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "w57r11_c5t400_k1",
+   "grupo": "C5T400",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "w57r11_c5t400_k2",
+   "grupo": "C5T400",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "w57r11_c5t400_k3",
+   "grupo": "C5T400",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "w57r11_c5t400_k4",
+   "grupo": "C5T400",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "w57r11_c5t400_k5",
+   "grupo": "C5T400",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "w57r11_b12s0_k1",
+   "grupo": "B12S0",
+   "params": {
+    "air": 1.001
+   }
+  }
+ ]
+}
