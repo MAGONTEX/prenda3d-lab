@@ -30,7 +30,7 @@
    180
   ]
  },
- "nota": "[ESC\u00b7f535] R20a N=5: labio de la tapeta en 2 columnas (zzhl) x5 a 180 f (bi_k 1.000..1.004, -t 4) + 1 replica del control r18b (k1) para reusar su banda si sale bit a bit",
+ "nota": "[ESC·f535] R20a N=5: labio de la tapeta en 2 columnas (zzhl) x5 a 180 f (bi_k 1.000..1.004, -t 4) + 1 replica del control r18b (k1) para reusar su banda si sale bit a bit",
  "grupos": {
   "q5": {
    "params": {
@@ -89,5 +89,9 @@
     "bi_k": "1.001"
    }
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38203926275",
+  "utc": "2026-10-12T04:28:37Z"
+ }
 }
