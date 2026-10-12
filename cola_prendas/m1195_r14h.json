@@ -1,0 +1,60 @@
+{
+ "nombre": "m1195_r14h",
+ "prenda": "m1195",
+ "hilos": 4,
+ "tmo_min": 60,
+ "nota": "[ESC·f535] r14 humo: H1 = bc5 (hoja del cuello cuA+cuB apoyada sobre los paneles en el V0; solo cambia v de cuA/cuB, max 8,9 mm) contra H0 = bc4s sin hrest (= H1 de r13h, debe repetir bit a bit). air 1.001, 60 f.",
+ "params": {},
+ "grupos": {
+  "H1": {
+   "malla": "m1195_bc5.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "nf": 60,
+   "dumps": [
+    1,
+    2,
+    3,
+    6,
+    12,
+    24,
+    36,
+    48,
+    60
+   ]
+  },
+  "H0": {
+   "malla": "m1195_bc4s.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "nf": 60,
+   "dumps": [
+    1,
+    2,
+    3,
+    6,
+    12,
+    24,
+    36,
+    48,
+    60
+   ]
+  }
+ },
+ "variantes": [
+  {
+   "tag": "m1195_h14_bc5",
+   "grupo": "H1",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "m1195_h14_bc4sp",
+   "grupo": "H0",
+   "params": {
+    "air": 1.001
+   }
+  }
+ ]
+}
