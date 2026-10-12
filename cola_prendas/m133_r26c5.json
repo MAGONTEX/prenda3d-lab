@@ -1,0 +1,101 @@
+{
+ "nombre": "m133_r26c5",
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "tmo_min": 200,
+ "nf": 180,
+ "dumps": [
+  1,
+  2,
+  6,
+  20,
+  26,
+  40,
+  60,
+  90,
+  120,
+  150,
+  180
+ ],
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   60,
+   120,
+   180
+  ]
+ },
+ "nota": "[ESC·f535] R26c N=5 a 180 f: Vb zzhp (vista faR/faL en autocolision, franja por triangulo 10 mm; humo r26bh: tunel de f2 cerrado, f40 faR x tp 8) x5 con la rampa R24b (grupo r5 de m133_r24n5), bi_k 1.000-1.004, pares de r24n_k0..k4 + control r26c_c1 = r24n_k1 bit a bit. Vb5 (franja 5 mm) NO se encola: las caras de la vista de los 8 cortes de f40 tocan la costura del escote y ninguna franja por triangulo las activa",
+ "grupos": {
+  "b5": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp.json"
+   }
+  },
+  "c5": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzho.json"
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "r26c_b0",
+   "grupo": "b5",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "r26c_b1",
+   "grupo": "b5",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "r26c_b2",
+   "grupo": "b5",
+   "params": {
+    "bi_k": "1.002"
+   }
+  },
+  {
+   "tag": "r26c_b3",
+   "grupo": "b5",
+   "params": {
+    "bi_k": "1.003"
+   }
+  },
+  {
+   "tag": "r26c_b4",
+   "grupo": "b5",
+   "params": {
+    "bi_k": "1.004"
+   }
+  },
+  {
+   "tag": "r26c_c1",
+   "grupo": "c5",
+   "params": {
+    "bi_k": "1.001"
+   }
+  }
+ ]
+}
