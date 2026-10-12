@@ -1,0 +1,66 @@
+{
+ "nombre": "m1195_r16h",
+ "prenda": "m1195",
+ "hilos": 4,
+ "tmo_min": 60,
+ "nota": "[ESC·f535] r16 humo: H1 = bc5 + RAMPA DE REPOSO de cuA+cuB (m1195_r16_rk.npz, 24 claves f2-f25, rk_df 1, molde_plano en f26; resto = molde_plano bit a bit) contra H0 = bc5 sin rampa (= r14h H1 y r14 G6 a1, debe repetir bit a bit). air 1.001, 60 f.",
+ "params": {},
+ "grupos": {
+  "H1": {
+   "malla": "m1195_bc5.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "nf": 60,
+   "dumps": [
+    1,
+    2,
+    3,
+    6,
+    12,
+    24,
+    26,
+    36,
+    48,
+    60
+   ],
+   "rk": "m1195_r16_rk.npz",
+   "params": {
+    "rk_df": 1
+   }
+  },
+  "H0": {
+   "malla": "m1195_bc5.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "nf": 60,
+   "dumps": [
+    1,
+    2,
+    3,
+    6,
+    12,
+    24,
+    26,
+    36,
+    48,
+    60
+   ]
+  }
+ },
+ "variantes": [
+  {
+   "tag": "m1195_h16_rk",
+   "grupo": "H1",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "m1195_h16_bc5",
+   "grupo": "H0",
+   "params": {
+    "air": 1.001
+   }
+  }
+ ]
+}
