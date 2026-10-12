@@ -1,0 +1,92 @@
+{
+ "firma": "[ESC·f535]",
+ "prenda": "w2094",
+ "cuerpo": "cuerpo_W2094_piel20.npz",
+ "hrest": "sim/reposo_v5e.npz",
+ "rk": "sim/rk_v5e.npz",
+ "hilos": 4,
+ "nombre": "w2094_r7t2b",
+ "nf": 150,
+ "tmo_min": 120,
+ "nota": "r7 T2b: V8 = malla v8 (V0 v7 con la franja del canto del cuello a <= 30 mm de molde al largo del molde; canto CB +0,5 % contra +5,5 %; solo se mueve cue; autocol identica a v7) k0-k4 (recetas de T1/T2, flexion x1,000-1,004); V7 = malla v7: w7a0_k0 = replica REPETIDA de T2 (misma receta, malla y tag: X tiene que salir identico) + control k5-k9 (flexion x1,005-1,009). 150 f, -t 4. Compuerta: 'autocolision 14140' en todos.",
+ "grupos": {
+  "V8": {
+   "malla": "w2094_v0_v8.json"
+  },
+  "V7": {
+   "malla": "w2094_v0_v7.json"
+  }
+ },
+ "variantes": [
+  {
+   "tag": "w8a0_k0",
+   "grupo": "V8",
+   "receta": "receta_w6a0_k0.json"
+  },
+  {
+   "tag": "w8a0_k1",
+   "grupo": "V8",
+   "receta": "receta_w6a0_k1.json"
+  },
+  {
+   "tag": "w8a0_k2",
+   "grupo": "V8",
+   "receta": "receta_w6a0_k2.json"
+  },
+  {
+   "tag": "w8a0_k3",
+   "grupo": "V8",
+   "receta": "receta_w6a0_k3.json"
+  },
+  {
+   "tag": "w8a0_k4",
+   "grupo": "V8",
+   "receta": "receta_w6a0_k4.json"
+  },
+  {
+   "tag": "w7a0_k0",
+   "grupo": "V7",
+   "receta": "receta_w6a0_k0.json"
+  },
+  {
+   "tag": "w7a0_k5",
+   "grupo": "V7",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.6
+   }
+  },
+  {
+   "tag": "w7a0_k6",
+   "grupo": "V7",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.72
+   }
+  },
+  {
+   "tag": "w7a0_k7",
+   "grupo": "V7",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.84
+   }
+  },
+  {
+   "tag": "w7a0_k8",
+   "grupo": "V7",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.96
+   }
+  },
+  {
+   "tag": "w7a0_k9",
+   "grupo": "V7",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.08
+   }
+  }
+ ]
+}
