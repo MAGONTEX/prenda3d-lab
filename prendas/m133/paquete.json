@@ -9,6 +9,13 @@
    "saneado": true,
    "ast_igual": true
   },
+  "sim_e2s_R18.py": {
+   "origen": "_qc_R18/sim_e2s_R18.py",
+   "sha256_origen": "e48c93836c7c1f06b654ab900fd3f17b688a00750d0c895a8f1b66d6c19427ea",
+   "sha256": "93f4ee677a14c8a97074388887ccbcb19935cf5afd428129a7442e88f7c7c615",
+   "saneado": true,
+   "ast_igual": true
+  },
   "sand_e2s.py": {
    "origen": "sand_e2s.py",
    "sha256_origen": "c0a69432383bdb298a59e015d9edacff933a9ffa7315958b9dcd2ddfcc2e9a79",

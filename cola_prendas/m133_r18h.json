@@ -1,0 +1,70 @@
+{
+ "prenda": "m133",
+ "modo": "argv",
+ "hilos": 4,
+ "tmo_min": 200,
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   60,
+   90,
+   120
+  ]
+ },
+ "nombre": "m133_r18h",
+ "script": "prendas/m133/sim_e2s_R18.py",
+ "nf": 120,
+ "dumps": [
+  1,
+  2,
+  6,
+  60,
+  72,
+  78,
+  81,
+  84,
+  87,
+  90,
+  96,
+  102,
+  108,
+  120
+ ],
+ "nota": "[ESC·f535] R18 humo: c1 (HQ + relleno=0) control k0 (sin cq_fin: debe repetir r17c1f180_k0 bit a bit) + cq_fin=5 (colision 5 despues de la rampa, k0 y k3); dumps densos f72-f90 para fechar M-07 contra la bajada de colision 5->3 en f78-f84",
+ "grupos": {
+  "c1": {
+   "params": {
+    "relleno": "0"
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "r18h_c0",
+   "grupo": "c1",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "r18h_q5k0",
+   "grupo": "c1",
+   "params": {
+    "bi_k": "1.000",
+    "cq_fin": "5"
+   }
+  },
+  {
+   "tag": "r18h_q5k3",
+   "grupo": "c1",
+   "params": {
+    "bi_k": "1.003",
+    "cq_fin": "5"
+   }
+  }
+ ]
+}
