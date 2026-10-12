@@ -68,5 +68,9 @@
    "grupo": "G2",
    "receta": "receta_w6a0_k4.json"
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38192172324",
+  "utc": "2026-10-12T01:30:50Z"
+ }
 }
