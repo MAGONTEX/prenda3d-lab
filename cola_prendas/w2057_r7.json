@@ -1,0 +1,166 @@
+{
+ "firma": "[ESC·f535]",
+ "nombre": "w2057_r7",
+ "prenda": "w2057",
+ "nota": "r7: bajada lenta del brazo, una palanca: arm_f1 60 -> 150 (rampa de la piel f24-f150), nf 240 (90 f quietos despues de la rampa, como f60-f150 en r6). Separa velocidad (arrastre del fondo de la sisa) de pose final (traba). B14/B12 = cuerpos y recetas k0 de r6 (arm_end 14/12), C = c5 control (piel20; arm_f1 no hace nada). Replica nula air 1.001..1.005 (k1..k5). Malla s1c, -t 4. Humo w2057_r7h antes de esta tanda.",
+ "nf": 240,
+ "hilos": 4,
+ "tmo_min": 150,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  24,
+  36,
+  48,
+  66,
+  87,
+  108,
+  129,
+  150,
+  162,
+  180,
+  210,
+  240
+ ],
+ "params": {
+  "arm_f1": 150
+ },
+ "grupos": {
+  "C": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_piel20.npz"
+  },
+  "B14": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b14.npz"
+  },
+  "B12": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b12.npz"
+  }
+ },
+ "variantes": [
+  {
+   "tag": "w57r7_c5_k1",
+   "grupo": "C",
+   "receta": "receta_w57_c5_k0.json",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "w57r7_c5_k2",
+   "grupo": "C",
+   "receta": "receta_w57_c5_k0.json",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "w57r7_c5_k3",
+   "grupo": "C",
+   "receta": "receta_w57_c5_k0.json",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "w57r7_c5_k4",
+   "grupo": "C",
+   "receta": "receta_w57_c5_k0.json",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "w57r7_c5_k5",
+   "grupo": "C",
+   "receta": "receta_w57_c5_k0.json",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "w57r7_b14_k1",
+   "grupo": "B14",
+   "receta": "receta_w57_a14_k0.json",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "w57r7_b14_k2",
+   "grupo": "B14",
+   "receta": "receta_w57_a14_k0.json",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "w57r7_b14_k3",
+   "grupo": "B14",
+   "receta": "receta_w57_a14_k0.json",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "w57r7_b14_k4",
+   "grupo": "B14",
+   "receta": "receta_w57_a14_k0.json",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "w57r7_b14_k5",
+   "grupo": "B14",
+   "receta": "receta_w57_a14_k0.json",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "w57r7_b12_k1",
+   "grupo": "B12",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "w57r7_b12_k2",
+   "grupo": "B12",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "w57r7_b12_k3",
+   "grupo": "B12",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "w57r7_b12_k4",
+   "grupo": "B12",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "w57r7_b12_k5",
+   "grupo": "B12",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {
+    "air": 1.005
+   }
+  }
+ ]
+}
