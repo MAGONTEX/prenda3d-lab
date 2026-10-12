@@ -36,5 +36,9 @@
    "grupo": "C",
    "receta": "receta_w57_c5_k0.json"
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38195700088",
+  "utc": "2026-10-12T02:31:44Z"
+ }
 }
