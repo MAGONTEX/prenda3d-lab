@@ -1,0 +1,73 @@
+{
+ "prenda": "W2094",
+ "nota": "Datos de simulacion de la W2094 (tecnico-3d, 2026-10-10). El nucleo los lee como ES.RD. Sin presion (ecocuero con forro sumado): piezas_inyectadas vacio.",
+ "piezas_inyectadas": [],
+ "prefijo_manga": [
+  "msa",
+  "msb",
+  "bma",
+  "bmb"
+ ],
+ "costuras_clave": [
+  "hombro R",
+  "hombro L",
+  "sisa, frente (copa con delantero) R",
+  "sisa, frente (copa con delantero) L",
+  "borde delantero con el cierre R",
+  "borde delantero con el cierre L",
+  "canesu con espalda R",
+  "canesu con espalda L",
+  "tabla del puno (pliegue de la cascara) R",
+  "tabla del puno (pliegue de la cascara) L"
+ ],
+ "indices_cf": null,
+ "flexion_zonas": {
+  "cuello": 1.0,
+  "cintura": 2.0,
+  "vista": 2.0
+ },
+ "flexion_zonas_nota": "multiplicador de la flexion base por zona: cuello = hoja exterior + pie de ecocuero con el rib pespunteado detras (plancha, x3); cintura doblada al medio (2 capas, x2; el elastico va aparte); franja de la vista (128,4 mm del borde delantero: tela + vista, x2). El puno (2 caras) va por w_cuff del nucleo (clave cuff de la malla) y el strip del cierre en bend_max.",
+ "flexion_zonas_r6": "[ESC·f535] 2026-10-11 r6: cuello 3.0 -> 1.0 POR DEFECTO. La base vigente es c6 (cuello x1) y ese x1 solo entraba por flexion_zonas_por_tag con el tag c6/c7/c8: cualquier tag nuevo (Actions, replicas) volvia a x3 sin aviso. Las entradas por tag quedan como historia.",
+ "vista_franja_mm": 128.4,
+ "eje_cintura_v": {
+  "cin": 1969.8,
+  "citR": 1997.0,
+  "citL": 1997.0
+ },
+ "elastico_cintura": {
+  "pieza": "cin",
+  "factor_reposo_u": 0.8,
+  "tension": 20,
+  "tension_nota": "ronda 4 (c3): traccion propia del elastico (la tela va en 200); null = como c2",
+  "humo_1": 1.0,
+  "nota": "palanca 2: shape key de reposo con el uv de cin escalado 0,706 en u, rampa f12-f36",
+  "nota_r5": "ronda 5: 0,80 = largo de USO sobre este cuerpo (cadera 960-981 mm a z 867-900 + 12 mm de separacion de colision = 1045-1056): con 0,706 (ficha D1, relajada sobre la mesa) la banda queda 11 % estirada, trepa a la cintura natural y se da vuelta (c2-c4). D1 de la ficha se controla sobre el molde, no puesta.",
+  "tension_por_tag": {
+   "c8": 80
+  },
+  "tension_por_tag_nota": "ronda 5 (c8): con traccion 20 el canto de cin queda en 896 mm (0,884 del molde; reposo 0,80): el elastico no llega a fruncir el ruedo de la cascara (compresion 60). 80 = fruncir hasta el contorno del cuerpo; como el reposo ya es el largo de uso, no deberia trepar"
+ },
+ "material": {
+  "tela": "ecocuero PU con forro acolchado 60 g sumado (W real ~430 g/m2, sin medir); mismos valores de partida que la M1195 (banco_voladizo de la M1195: c 45 mm = flexion 120)",
+  "c_mm_hipotesis": 45.0,
+  "bending": 120,
+  "bend_max": 400,
+  "mass": 0.02,
+  "quality": 15,
+  "tension": 200,
+  "compression": 60,
+  "shear": 60
+ },
+ "flexion_zonas_por_tag": {
+  "c6": {
+   "cuello": 1.0
+  },
+  "c7": {
+   "cuello": 1.0
+  },
+  "c8": {
+   "cuello": 1.0
+  }
+ },
+ "flexion_zonas_por_tag_nota": "ronda 5: c6/c7 = cuello sin quiebre inventado (bisagras = costura del escote y costura pie-hoja, reposo plano, cierre hasta la base): hoja de ecocuero + rib blanda, x1"
+}

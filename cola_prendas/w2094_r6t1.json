@@ -1,0 +1,72 @@
+{
+ "firma": "[ESC·f535]",
+ "nombre": "w2094_r6t1",
+ "prenda": "w2094",
+ "nota": "r6 T1: G1 = c6 tal cual (control, malla v5), G2 = c6 + malla v6 con autocol (construccion). Replica nula k0..k4 = flexion x1.000..1.004 (receta propia por tag). 150 f, -t 4, hrest/rk v5e en los dos grupos. Compuerta: grep -c 'autocolision 13823' sim_w6a0_k*.log = 1 en cada uno (0 = la malla no llego).",
+ "cuerpo": "cuerpo_W2094_piel20.npz",
+ "hrest": "sim/reposo_v5e.npz",
+ "rk": "sim/rk_v5e.npz",
+ "nf": 150,
+ "hilos": 4,
+ "tmo_min": 120,
+ "grupos": {
+  "G1": {
+   "malla": "w2094_v0_v5.json"
+  },
+  "G2": {
+   "malla": "w2094_v0_v6.json"
+  }
+ },
+ "variantes": [
+  {
+   "tag": "w6c6_k0",
+   "grupo": "G1",
+   "receta": "receta_w6c6_k0.json"
+  },
+  {
+   "tag": "w6c6_k1",
+   "grupo": "G1",
+   "receta": "receta_w6c6_k1.json"
+  },
+  {
+   "tag": "w6c6_k2",
+   "grupo": "G1",
+   "receta": "receta_w6c6_k2.json"
+  },
+  {
+   "tag": "w6c6_k3",
+   "grupo": "G1",
+   "receta": "receta_w6c6_k3.json"
+  },
+  {
+   "tag": "w6c6_k4",
+   "grupo": "G1",
+   "receta": "receta_w6c6_k4.json"
+  },
+  {
+   "tag": "w6a0_k0",
+   "grupo": "G2",
+   "receta": "receta_w6a0_k0.json"
+  },
+  {
+   "tag": "w6a0_k1",
+   "grupo": "G2",
+   "receta": "receta_w6a0_k1.json"
+  },
+  {
+   "tag": "w6a0_k2",
+   "grupo": "G2",
+   "receta": "receta_w6a0_k2.json"
+  },
+  {
+   "tag": "w6a0_k3",
+   "grupo": "G2",
+   "receta": "receta_w6a0_k3.json"
+  },
+  {
+   "tag": "w6a0_k4",
+   "grupo": "G2",
+   "receta": "receta_w6a0_k4.json"
+  }
+ ]
+}

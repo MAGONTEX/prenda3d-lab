@@ -1,0 +1,3782 @@
+{
+ "version": 1,
+ "id": "W2094",
+ "talle": "M",
+ "piezas": [
+  {
+   "id": "delR",
+   "lado": "R",
+   "capa": "cascara",
+   "material": "mat5"
+  },
+  {
+   "id": "delL",
+   "lado": "L",
+   "capa": "cascara",
+   "material": "mat5"
+  },
+  {
+   "id": "esp",
+   "lado": "C",
+   "capa": "cascara",
+   "material": "mat5"
+  },
+  {
+   "id": "can",
+   "lado": "C",
+   "capa": "cascara",
+   "material": "mat5"
+  },
+  {
+   "id": "msaR",
+   "lado": "R",
+   "capa": "cascara",
+   "material": "mat5"
+  },
+  {
+   "id": "msaL",
+   "lado": "L",
+   "capa": "cascara",
+   "material": "mat5"
+  },
+  {
+   "id": "msbR",
+   "lado": "R",
+   "capa": "cascara",
+   "material": "mat5"
+  },
+  {
+   "id": "msbL",
+   "lado": "L",
+   "capa": "cascara",
+   "material": "mat5"
+  },
+  {
+   "id": "bmaR",
+   "lado": "R",
+   "capa": "cascara",
+   "material": "mat5"
+  },
+  {
+   "id": "bmaL",
+   "lado": "L",
+   "capa": "cascara",
+   "material": "mat5"
+  },
+  {
+   "id": "bmbR",
+   "lado": "R",
+   "capa": "cascara",
+   "material": "mat5"
+  },
+  {
+   "id": "bmbL",
+   "lado": "L",
+   "capa": "cascara",
+   "material": "mat5"
+  },
+  {
+   "id": "pueR",
+   "lado": "R",
+   "capa": "plancha",
+   "material": "mat5"
+  },
+  {
+   "id": "pueL",
+   "lado": "L",
+   "capa": "plancha",
+   "material": "mat5"
+  },
+  {
+   "id": "puiR",
+   "lado": "R",
+   "capa": "plancha",
+   "material": "mat5",
+   "en_malla": false
+  },
+  {
+   "id": "puiL",
+   "lado": "L",
+   "capa": "plancha",
+   "material": "mat5",
+   "en_malla": false
+  },
+  {
+   "id": "cue",
+   "lado": "C",
+   "capa": "plancha",
+   "material": "mat5"
+  },
+  {
+   "id": "pie",
+   "lado": "C",
+   "capa": "plancha",
+   "material": "mat5"
+  },
+  {
+   "id": "cur",
+   "lado": "C",
+   "capa": "vista",
+   "material": "mat3",
+   "en_malla": false
+  },
+  {
+   "id": "cuvR",
+   "lado": "R",
+   "capa": "vista",
+   "material": "mat5",
+   "en_malla": false
+  },
+  {
+   "id": "cuvL",
+   "lado": "L",
+   "capa": "vista",
+   "material": "mat5",
+   "en_malla": false
+  },
+  {
+   "id": "cin",
+   "lado": "C",
+   "capa": "cascara",
+   "material": "mat5"
+  },
+  {
+   "id": "citR",
+   "lado": "R",
+   "capa": "plancha",
+   "material": "mat5"
+  },
+  {
+   "id": "citL",
+   "lado": "L",
+   "capa": "plancha",
+   "material": "mat5"
+  },
+  {
+   "id": "visR",
+   "lado": "R",
+   "capa": "vista",
+   "material": "mat5",
+   "en_malla": false
+  },
+  {
+   "id": "visL",
+   "lado": "L",
+   "capa": "vista",
+   "material": "mat5",
+   "en_malla": false
+  },
+  {
+   "id": "vivR",
+   "lado": "R",
+   "capa": "avio",
+   "material": "mat5",
+   "en_malla": false
+  },
+  {
+   "id": "vivL",
+   "lado": "L",
+   "capa": "avio",
+   "material": "mat5",
+   "en_malla": false
+  },
+  {
+   "id": "fesp",
+   "lado": "C",
+   "capa": "forro",
+   "material": "mat1",
+   "en_malla": false
+  },
+  {
+   "id": "fdelR",
+   "lado": "R",
+   "capa": "forro",
+   "material": "mat1",
+   "en_malla": false
+  },
+  {
+   "id": "fdelL",
+   "lado": "L",
+   "capa": "forro",
+   "material": "mat1",
+   "en_malla": false
+  },
+  {
+   "id": "fmsR",
+   "lado": "R",
+   "capa": "forro",
+   "material": "mat1",
+   "en_malla": false
+  },
+  {
+   "id": "fmsL",
+   "lado": "L",
+   "capa": "forro",
+   "material": "mat1",
+   "en_malla": false
+  },
+  {
+   "id": "fbmR",
+   "lado": "R",
+   "capa": "forro",
+   "material": "mat1",
+   "en_malla": false
+  },
+  {
+   "id": "fbmL",
+   "lado": "L",
+   "capa": "forro",
+   "material": "mat1",
+   "en_malla": false
+  },
+  {
+   "id": "cierre",
+   "lado": "C",
+   "capa": "avio",
+   "material": "mat2",
+   "en_malla": true
+  }
+ ],
+ "costuras": [
+  {
+   "id": "hombro R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "delR",
+      "de": 518.85,
+      "a": 700.4,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "can",
+      "de": 964.83,
+      "a": 780.74,
+      "sentido": -1
+     },
+     "pares": 21
+    }
+   ],
+   "codigo": "C01"
+  },
+  {
+   "id": "hombro L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "delL",
+      "de": 518.85,
+      "a": 700.4,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "can",
+      "de": 391.15,
+      "a": 575.25,
+      "sentido": 1
+     },
+     "pares": 21
+    }
+   ],
+   "codigo": "C01"
+  },
+  {
+   "id": "costado R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "delR",
+      "de": 0.0,
+      "a": 254.17,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "esp",
+      "de": 254.2,
+      "a": 0.0,
+      "sentido": -1
+     },
+     "pares": 29
+    }
+   ],
+   "codigo": "C02"
+  },
+  {
+   "id": "costado L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "delL",
+      "de": 0.0,
+      "a": 254.17,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "esp",
+      "de": 872.4,
+      "a": 1126.6,
+      "sentido": 1
+     },
+     "pares": 29
+    }
+   ],
+   "codigo": "C02"
+  },
+  {
+   "id": "canesu con espalda R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "can",
+      "de": 1109.84,
+      "a": 1159.84,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "esp",
+      "de": 1775.57,
+      "a": 1724.97,
+      "sentido": -1
+     },
+     "pares": 7
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "can",
+      "de": 1159.84,
+      "a": 0.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "esp",
+      "de": 1724.97,
+      "a": 1530.3,
+      "sentido": -1
+     },
+     "pares": 22
+    }
+   ],
+   "codigo": "C03"
+  },
+  {
+   "id": "canesu con espalda L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "can",
+      "de": 246.14,
+      "a": 196.14,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "esp",
+      "de": 1284.49,
+      "a": 1335.09,
+      "sentido": 1
+     },
+     "pares": 7
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "can",
+      "de": 196.14,
+      "a": 0.0,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "esp",
+      "de": 1335.09,
+      "a": 1530.3,
+      "sentido": 1
+     },
+     "pares": 22
+    }
+   ],
+   "codigo": "C03"
+  },
+  {
+   "id": "sisa, frente (copa con delantero) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msaR",
+      "de": 732.38,
+      "a": 612.38,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "delR",
+      "de": 254.17,
+      "a": 374.17,
+      "sentido": 1
+     },
+     "pares": 14
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msaR",
+      "de": 612.38,
+      "a": 469.52,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "delR",
+      "de": 374.17,
+      "a": 518.85,
+      "sentido": 1
+     },
+     "pares": 16
+    }
+   ],
+   "codigo": "C04"
+  },
+  {
+   "id": "sisa, frente (copa con delantero) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msaL",
+      "de": 732.38,
+      "a": 612.38,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "delL",
+      "de": 254.17,
+      "a": 374.17,
+      "sentido": 1
+     },
+     "pares": 14
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msaL",
+      "de": 612.38,
+      "a": 469.52,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "delL",
+      "de": 374.17,
+      "a": 518.85,
+      "sentido": 1
+     },
+     "pares": 16
+    }
+   ],
+   "codigo": "C04"
+  },
+  {
+   "id": "sisa, canesu (copa con canesu) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msaR",
+      "de": 469.52,
+      "a": 326.41,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "can",
+      "de": 964.83,
+      "a": 1109.84,
+      "sentido": 1
+     },
+     "pares": 17
+    }
+   ],
+   "codigo": "C05"
+  },
+  {
+   "id": "sisa, canesu (copa con canesu) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msaL",
+      "de": 469.52,
+      "a": 326.41,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "can",
+      "de": 391.15,
+      "a": 246.14,
+      "sentido": -1
+     },
+     "pares": 17
+    }
+   ],
+   "codigo": "C05"
+  },
+  {
+   "id": "sisa, espalda baja (bajo manga con espalda) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "bmaR",
+      "de": 221.84,
+      "a": 379.41,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "esp",
+      "de": 0.0,
+      "a": 1775.57,
+      "sentido": -1
+     },
+     "pares": 19
+    }
+   ],
+   "codigo": "C06"
+  },
+  {
+   "id": "sisa, espalda baja (bajo manga con espalda) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "bmaL",
+      "de": 221.84,
+      "a": 379.41,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "esp",
+      "de": 1126.6,
+      "a": 1284.49,
+      "sentido": 1
+     },
+     "pares": 19
+    }
+   ],
+   "codigo": "C06"
+  },
+  {
+   "id": "manga, costura de atras (sobre el corte) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msaR",
+      "de": 0.0,
+      "a": 326.41,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "bmaR",
+      "de": 706.06,
+      "a": 379.41,
+      "sentido": -1
+     },
+     "pares": 37
+    }
+   ],
+   "codigo": "C07"
+  },
+  {
+   "id": "manga, costura de atras (sobre el corte) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msaL",
+      "de": 0.0,
+      "a": 326.41,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "bmaL",
+      "de": 706.06,
+      "a": 379.41,
+      "sentido": -1
+     },
+     "pares": 37
+    }
+   ],
+   "codigo": "C07"
+  },
+  {
+   "id": "manga, costura de adelante (sobre el corte) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msaR",
+      "de": 732.38,
+      "a": 954.26,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "bmaR",
+      "de": 221.84,
+      "a": 0.0,
+      "sentido": -1
+     },
+     "pares": 26
+    }
+   ],
+   "codigo": "C08"
+  },
+  {
+   "id": "manga, costura de adelante (sobre el corte) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msaL",
+      "de": 732.38,
+      "a": 954.26,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "bmaL",
+      "de": 221.84,
+      "a": 0.0,
+      "sentido": -1
+     },
+     "pares": 26
+    }
+   ],
+   "codigo": "C08"
+  },
+  {
+   "id": "corte de la manga, arriba R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msaR",
+      "de": 0.0,
+      "a": 1192.14,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "msbR",
+      "de": 153.51,
+      "a": 203.51,
+      "sentido": 1
+     },
+     "pares": 7
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msaR",
+      "de": 1192.14,
+      "a": 954.26,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "msbR",
+      "de": 203.51,
+      "a": 441.34,
+      "sentido": 1
+     },
+     "pares": 26
+    }
+   ],
+   "codigo": "C09"
+  },
+  {
+   "id": "corte de la manga, arriba L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msaL",
+      "de": 0.0,
+      "a": 1192.14,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "msbL",
+      "de": 153.51,
+      "a": 203.51,
+      "sentido": 1
+     },
+     "pares": 7
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msaL",
+      "de": 1192.14,
+      "a": 954.26,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "msbL",
+      "de": 203.51,
+      "a": 441.34,
+      "sentido": 1
+     },
+     "pares": 26
+    }
+   ],
+   "codigo": "C09"
+  },
+  {
+   "id": "corte de la manga, abajo R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "bmaR",
+      "de": 706.06,
+      "a": 726.06,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "bmbR",
+      "de": 335.6,
+      "a": 315.6,
+      "sentido": -1
+     },
+     "pares": 3
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "bmaR",
+      "de": 726.06,
+      "a": 0.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "bmbR",
+      "de": 315.6,
+      "a": 230.28,
+      "sentido": -1
+     },
+     "pares": 9
+    }
+   ],
+   "codigo": "C10"
+  },
+  {
+   "id": "corte de la manga, abajo L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "bmaL",
+      "de": 706.06,
+      "a": 726.06,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "bmbL",
+      "de": 335.6,
+      "a": 315.6,
+      "sentido": -1
+     },
+     "pares": 3
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "bmaL",
+      "de": 726.06,
+      "a": 0.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "bmbL",
+      "de": 315.6,
+      "a": 230.28,
+      "sentido": -1
+     },
+     "pares": 9
+    }
+   ],
+   "codigo": "C10"
+  },
+  {
+   "id": "manga baja, costura de adelante R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msbR",
+      "de": 441.34,
+      "a": 583.27,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "bmbR",
+      "de": 230.28,
+      "a": 87.94,
+      "sentido": -1
+     },
+     "pares": 17
+    }
+   ],
+   "codigo": "C11"
+  },
+  {
+   "id": "manga baja, costura de adelante L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msbL",
+      "de": 441.34,
+      "a": 583.27,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "bmbL",
+      "de": 230.28,
+      "a": 87.94,
+      "sentido": -1
+     },
+     "pares": 17
+    }
+   ],
+   "codigo": "C11"
+  },
+  {
+   "id": "manga baja, costura de atras sobre la abertura R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msbR",
+      "de": 153.51,
+      "a": 101.18,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "bmbR",
+      "de": 335.6,
+      "a": 387.73,
+      "sentido": 1
+     },
+     "pares": 7
+    }
+   ],
+   "codigo": "C12"
+  },
+  {
+   "id": "manga baja, costura de atras sobre la abertura L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msbL",
+      "de": 153.51,
+      "a": 101.18,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "bmbL",
+      "de": 335.6,
+      "a": 387.73,
+      "sentido": 1
+     },
+     "pares": 7
+    }
+   ],
+   "codigo": "C12"
+  },
+  {
+   "id": "abertura del puno: canto de la manga de arriba (cascara con forro) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msbR",
+      "de": 91.18,
+      "a": 0.0,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "fmsR",
+      "de": 91.19,
+      "a": 0.0,
+      "sentido": -1
+     },
+     "pares": 10
+    }
+   ],
+   "codigo": "C13"
+  },
+  {
+   "id": "abertura del puno: canto de la manga de arriba (cascara con forro) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msbL",
+      "de": 91.18,
+      "a": 0.0,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "fmsL",
+      "de": 91.19,
+      "a": 0.0,
+      "sentido": -1
+     },
+     "pares": 10
+    }
+   ],
+   "codigo": "C13"
+  },
+  {
+   "id": "abertura del puno: canto del bajo manga (cascara con forro) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "bmbR",
+      "de": 397.73,
+      "a": 488.22,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fbmR",
+      "de": 1045.45,
+      "a": 1135.76,
+      "sentido": 1
+     },
+     "pares": 10
+    }
+   ],
+   "codigo": "C14"
+  },
+  {
+   "id": "abertura del puno: canto del bajo manga (cascara con forro) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "bmbL",
+      "de": 397.73,
+      "a": 488.22,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fbmL",
+      "de": 1045.45,
+      "a": 1135.76,
+      "sentido": 1
+     },
+     "pares": 10
+    }
+   ],
+   "codigo": "C14"
+  },
+  {
+   "id": "tabla del puno (pliegue de la cascara) R",
+   "tipo": "dobladillo",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msbR",
+      "de": 773.24,
+      "a": 750.81,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "msbR",
+      "de": 773.24,
+      "a": 796.32,
+      "sentido": 1
+     },
+     "pares": 3
+    }
+   ],
+   "codigo": "C15"
+  },
+  {
+   "id": "tabla del puno (pliegue de la cascara) L",
+   "tipo": "dobladillo",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "msbL",
+      "de": 773.24,
+      "a": 750.81,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "msbL",
+      "de": 773.24,
+      "a": 796.32,
+      "sentido": 1
+     },
+     "pares": 3
+    }
+   ],
+   "codigo": "C15"
+  },
+  {
+   "id": "puno exterior con la manga R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "pueR",
+      "de": 60.0,
+      "a": 98.13,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "msbR",
+      "de": 834.54,
+      "a": 796.32,
+      "sentido": -1
+     },
+     "pares": 5
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "pueR",
+      "de": 98.13,
+      "a": 265.29,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "msbR",
+      "de": 750.81,
+      "a": 583.27,
+      "sentido": -1
+     },
+     "pares": 20
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "pueR",
+      "de": 265.29,
+      "a": 353.02,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "bmbR",
+      "de": 87.94,
+      "a": 498.22,
+      "sentido": -1
+     },
+     "pares": 11
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "pueR",
+      "de": 353.02,
+      "a": 363.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "bmbR",
+      "de": 498.22,
+      "a": 488.22,
+      "sentido": -1
+     },
+     "pares": 1
+    }
+   ],
+   "codigo": "C16"
+  },
+  {
+   "id": "puno exterior con la manga L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "pueL",
+      "de": 60.0,
+      "a": 98.13,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "msbL",
+      "de": 834.54,
+      "a": 796.32,
+      "sentido": -1
+     },
+     "pares": 5
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "pueL",
+      "de": 98.13,
+      "a": 265.29,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "msbL",
+      "de": 750.81,
+      "a": 583.27,
+      "sentido": -1
+     },
+     "pares": 20
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "pueL",
+      "de": 265.29,
+      "a": 353.02,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "bmbL",
+      "de": 87.94,
+      "a": 498.22,
+      "sentido": -1
+     },
+     "pares": 11
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "pueL",
+      "de": 353.02,
+      "a": 363.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "bmbL",
+      "de": 498.22,
+      "a": 488.22,
+      "sentido": -1
+     },
+     "pares": 1
+    }
+   ],
+   "codigo": "C16"
+  },
+  {
+   "id": "puno: canto (cara exterior con cara interior) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "pueR",
+      "de": 363.0,
+      "a": 60.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "puiR",
+      "de": 363.0,
+      "a": 60.0,
+      "sentido": 1
+     },
+     "pares": 43
+    }
+   ],
+   "codigo": "C17"
+  },
+  {
+   "id": "puno: canto (cara exterior con cara interior) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "pueL",
+      "de": 363.0,
+      "a": 60.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "puiL",
+      "de": 363.0,
+      "a": 60.0,
+      "sentido": 1
+     },
+     "pares": 43
+    }
+   ],
+   "codigo": "C17"
+  },
+  {
+   "id": "pie de cuello con la hoja exterior R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cue",
+      "de": 0.0,
+      "a": 30.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "pie",
+      "de": 398.66,
+      "a": 368.56,
+      "sentido": -1
+     },
+     "pares": 4
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cue",
+      "de": 30.0,
+      "a": 84.3,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "pie",
+      "de": 368.56,
+      "a": 314.26,
+      "sentido": -1
+     },
+     "pares": 6
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cue",
+      "de": 84.3,
+      "a": 134.29,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "pie",
+      "de": 314.26,
+      "a": 264.29,
+      "sentido": -1
+     },
+     "pares": 6
+    }
+   ],
+   "codigo": "C18"
+  },
+  {
+   "id": "pie de cuello con la hoja exterior L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cue",
+      "de": 268.66,
+      "a": 238.66,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "pie",
+      "de": 130.0,
+      "a": 160.1,
+      "sentido": 1
+     },
+     "pares": 4
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cue",
+      "de": 238.66,
+      "a": 184.36,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "pie",
+      "de": 160.1,
+      "a": 214.4,
+      "sentido": 1
+     },
+     "pares": 6
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cue",
+      "de": 184.36,
+      "a": 134.29,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "pie",
+      "de": 214.4,
+      "a": 264.29,
+      "sentido": 1
+     },
+     "pares": 6
+    }
+   ],
+   "codigo": "C18"
+  },
+  {
+   "id": "cuello exterior al escote R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cue",
+      "de": 1111.08,
+      "a": 0.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "delR",
+      "de": 823.7,
+      "a": 727.68,
+      "sentido": -1
+     },
+     "pares": 12
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "pie",
+      "de": 398.66,
+      "a": 425.95,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "delR",
+      "de": 727.68,
+      "a": 700.4,
+      "sentido": -1
+     },
+     "pares": 4
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "pie",
+      "de": 425.95,
+      "a": 0.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "can",
+      "de": 780.74,
+      "a": 677.99,
+      "sentido": -1
+     },
+     "pares": 12
+    }
+   ],
+   "codigo": "C19"
+  },
+  {
+   "id": "cuello exterior al escote L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cue",
+      "de": 364.65,
+      "a": 268.66,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "delL",
+      "de": 823.7,
+      "a": 727.69,
+      "sentido": -1
+     },
+     "pares": 12
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "pie",
+      "de": 130.0,
+      "a": 102.72,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "delL",
+      "de": 727.69,
+      "a": 700.4,
+      "sentido": -1
+     },
+     "pares": 4
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "pie",
+      "de": 102.72,
+      "a": 0.0,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "can",
+      "de": 575.25,
+      "a": 677.99,
+      "sentido": 1
+     },
+     "pares": 12
+    }
+   ],
+   "codigo": "C19"
+  },
+  {
+   "id": "cuello: canto de arriba (exterior con interior) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cue",
+      "de": 980.25,
+      "a": 960.41,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "cuvR",
+      "de": 151.8,
+      "a": 131.79,
+      "sentido": -1
+     },
+     "pares": 3
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cue",
+      "de": 960.41,
+      "a": 737.86,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "cur",
+      "de": 788.95,
+      "a": 564.5,
+      "sentido": -1
+     },
+     "pares": 23
+    }
+   ],
+   "codigo": "C20"
+  },
+  {
+   "id": "cuello: canto de arriba (exterior con interior) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cue",
+      "de": 495.47,
+      "a": 515.31,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "cuvL",
+      "de": 151.8,
+      "a": 131.79,
+      "sentido": -1
+     },
+     "pares": 3
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cue",
+      "de": 515.31,
+      "a": 737.86,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "cur",
+      "de": 340.06,
+      "a": 564.5,
+      "sentido": 1
+     },
+     "pares": 23
+    }
+   ],
+   "codigo": "C20"
+  },
+  {
+   "id": "vista de cuello con el rib R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cuvR",
+      "de": 0.0,
+      "a": 131.79,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "cur",
+      "de": 922.98,
+      "a": 788.95,
+      "sentido": -1
+     },
+     "pares": 14
+    }
+   ],
+   "codigo": "C21"
+  },
+  {
+   "id": "vista de cuello con el rib L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cuvL",
+      "de": 0.0,
+      "a": 131.79,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "cur",
+      "de": 206.03,
+      "a": 340.06,
+      "sentido": 1
+     },
+     "pares": 14
+    }
+   ],
+   "codigo": "C21"
+  },
+  {
+   "id": "cuello interior al escote interior (vista y forro) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cuvR",
+      "de": 282.62,
+      "a": 0.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "visR",
+      "de": 726.37,
+      "a": 706.33,
+      "sentido": -1
+     },
+     "pares": 3
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cur",
+      "de": 922.98,
+      "a": 1026.26,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "visR",
+      "de": 706.33,
+      "a": 603.05,
+      "sentido": -1
+     },
+     "pares": 11
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cur",
+      "de": 1026.26,
+      "a": 0.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fesp",
+      "de": 1294.51,
+      "a": 1191.76,
+      "sentido": -1
+     },
+     "pares": 11
+    }
+   ],
+   "codigo": "C22"
+  },
+  {
+   "id": "cuello interior al escote interior (vista y forro) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cuvL",
+      "de": 282.62,
+      "a": 0.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "visL",
+      "de": 726.37,
+      "a": 706.33,
+      "sentido": -1
+     },
+     "pares": 3
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cur",
+      "de": 206.03,
+      "a": 102.74,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "visL",
+      "de": 706.33,
+      "a": 603.05,
+      "sentido": -1
+     },
+     "pares": 11
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cur",
+      "de": 102.74,
+      "a": 0.0,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "fesp",
+      "de": 1089.02,
+      "a": 1191.76,
+      "sentido": 1
+     },
+     "pares": 11
+    }
+   ],
+   "codigo": "C22"
+  },
+  {
+   "id": "borde delantero con el vivo del cierre (cintura + frente + cuello) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citR",
+      "de": 0.0,
+      "a": 360.38,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "vivR",
+      "de": 0.0,
+      "a": 45.0,
+      "sentido": 1
+     },
+     "pares": 6
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "delR",
+      "de": 1317.03,
+      "a": 823.7,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "vivR",
+      "de": 45.0,
+      "a": 538.36,
+      "sentido": 1
+     },
+     "pares": 50
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cue",
+      "de": 1111.08,
+      "a": 980.25,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "vivR",
+      "de": 538.36,
+      "a": 669.2,
+      "sentido": 1
+     },
+     "pares": 14
+    }
+   ],
+   "codigo": "C23"
+  },
+  {
+   "id": "borde delantero con el vivo del cierre (cintura + frente + cuello) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citL",
+      "de": 0.0,
+      "a": 360.38,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "vivL",
+      "de": 0.0,
+      "a": 45.0,
+      "sentido": 1
+     },
+     "pares": 6
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "delL",
+      "de": 1317.03,
+      "a": 823.7,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "vivL",
+      "de": 45.0,
+      "a": 538.37,
+      "sentido": 1
+     },
+     "pares": 50
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cue",
+      "de": 364.65,
+      "a": 495.47,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "vivL",
+      "de": 538.37,
+      "a": 669.2,
+      "sentido": 1
+     },
+     "pares": 14
+    }
+   ],
+   "codigo": "C23"
+  },
+  {
+   "id": "vista con el vivo del cierre (cintura + vista + cuello, por dentro) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citR",
+      "de": 0.0,
+      "a": 45.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "vivR",
+      "de": 1349.4,
+      "a": 1304.39,
+      "sentido": -1
+     },
+     "pares": 6
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "visR",
+      "de": 1219.6,
+      "a": 726.37,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "vivR",
+      "de": 1304.39,
+      "a": 811.05,
+      "sentido": -1
+     },
+     "pares": 50
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cuvR",
+      "de": 282.62,
+      "a": 151.8,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "vivR",
+      "de": 811.05,
+      "a": 680.2,
+      "sentido": -1
+     },
+     "pares": 14
+    }
+   ],
+   "codigo": "C24"
+  },
+  {
+   "id": "vista con el vivo del cierre (cintura + vista + cuello, por dentro) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citL",
+      "de": 0.0,
+      "a": 45.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "vivL",
+      "de": 1349.4,
+      "a": 1304.39,
+      "sentido": -1
+     },
+     "pares": 6
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "visL",
+      "de": 1219.6,
+      "a": 726.37,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "vivL",
+      "de": 1304.39,
+      "a": 811.05,
+      "sentido": -1
+     },
+     "pares": 50
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cuvL",
+      "de": 282.62,
+      "a": 151.8,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "vivL",
+      "de": 811.05,
+      "a": 680.2,
+      "sentido": -1
+     },
+     "pares": 14
+    }
+   ],
+   "codigo": "C24"
+  },
+  {
+   "id": "cintura: tab plano con el tramo elastico R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citR",
+      "de": 157.69,
+      "a": 247.69,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "cin",
+      "de": 45.0,
+      "a": 2158.72,
+      "sentido": -1
+     },
+     "pares": 11
+    }
+   ],
+   "codigo": "C25"
+  },
+  {
+   "id": "cintura: tab plano con el tramo elastico L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citL",
+      "de": 157.69,
+      "a": 247.69,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "cin",
+      "de": 1056.86,
+      "a": 1146.86,
+      "sentido": 1
+     },
+     "pares": 11
+    }
+   ],
+   "codigo": "C25"
+  },
+  {
+   "id": "cintura con el ruedo de la cascara R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citR",
+      "de": 360.38,
+      "a": 327.38,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "delR",
+      "de": 1317.03,
+      "a": 1350.03,
+      "sentido": 1
+     },
+     "pares": 5
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citR",
+      "de": 327.38,
+      "a": 247.69,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "delR",
+      "de": 1350.03,
+      "a": 1429.73,
+      "sentido": 1
+     },
+     "pares": 9
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cin",
+      "de": 2158.72,
+      "a": 1961.85,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "delR",
+      "de": 1429.73,
+      "a": 0.0,
+      "sentido": 1
+     },
+     "pares": 23
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cin",
+      "de": 1961.85,
+      "a": 1652.79,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "esp",
+      "de": 254.2,
+      "a": 563.3,
+      "sentido": 1
+     },
+     "pares": 35
+    }
+   ],
+   "codigo": "C26"
+  },
+  {
+   "id": "cintura con el ruedo de la cascara L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citL",
+      "de": 360.38,
+      "a": 327.38,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "delL",
+      "de": 1317.03,
+      "a": 1350.03,
+      "sentido": 1
+     },
+     "pares": 5
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citL",
+      "de": 327.38,
+      "a": 247.69,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "delL",
+      "de": 1350.03,
+      "a": 1429.73,
+      "sentido": 1
+     },
+     "pares": 9
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cin",
+      "de": 1146.86,
+      "a": 1343.73,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "delL",
+      "de": 1429.73,
+      "a": 0.0,
+      "sentido": 1
+     },
+     "pares": 23
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cin",
+      "de": 1343.73,
+      "a": 1652.79,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "esp",
+      "de": 872.4,
+      "a": 563.3,
+      "sentido": -1
+     },
+     "pares": 35
+    }
+   ],
+   "codigo": "C26"
+  },
+  {
+   "id": "cintura con el ruedo del forro (por dentro) (1 de 4) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citR",
+      "de": 45.0,
+      "a": 108.86,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "visR",
+      "de": 1219.6,
+      "a": 0.0,
+      "sentido": 1
+     },
+     "pares": 8
+    }
+   ],
+   "codigo": "C27",
+   "holgura_mm": 1.2
+  },
+  {
+   "id": "cintura con el ruedo del forro (por dentro) (2 de 4) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citR",
+      "de": 108.86,
+      "a": 157.69,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fdelR",
+      "de": 1258.79,
+      "a": 1308.55,
+      "sentido": 1
+     },
+     "pares": 6
+    }
+   ],
+   "codigo": "C27",
+   "holgura_mm": 0.9
+  },
+  {
+   "id": "cintura con el ruedo del forro (por dentro) (3 de 4) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cin",
+      "de": 45.0,
+      "a": 241.71,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fdelR",
+      "de": 1308.55,
+      "a": 0.0,
+      "sentido": 1
+     },
+     "pares": 21
+    }
+   ],
+   "codigo": "C27",
+   "holgura_mm": 3.7
+  },
+  {
+   "id": "cintura con el ruedo del forro (por dentro) (4 de 4) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cin",
+      "de": 241.71,
+      "a": 550.93,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fesp",
+      "de": 2068.42,
+      "a": 0.0,
+      "sentido": 1
+     },
+     "pares": 33
+    }
+   ],
+   "codigo": "C27",
+   "holgura_mm": 5.9
+  },
+  {
+   "id": "cintura con el ruedo del forro (por dentro) (1 de 4) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citL",
+      "de": 45.0,
+      "a": 108.86,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "visL",
+      "de": 1219.6,
+      "a": 0.0,
+      "sentido": 1
+     },
+     "pares": 8
+    }
+   ],
+   "codigo": "C27",
+   "holgura_mm": 1.2
+  },
+  {
+   "id": "cintura con el ruedo del forro (por dentro) (2 de 4) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citL",
+      "de": 108.86,
+      "a": 157.69,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fdelL",
+      "de": 1258.79,
+      "a": 1308.55,
+      "sentido": 1
+     },
+     "pares": 6
+    }
+   ],
+   "codigo": "C27",
+   "holgura_mm": 0.9
+  },
+  {
+   "id": "cintura con el ruedo del forro (por dentro) (3 de 4) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cin",
+      "de": 1056.86,
+      "a": 860.15,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "fdelL",
+      "de": 1308.55,
+      "a": 0.0,
+      "sentido": 1
+     },
+     "pares": 21
+    }
+   ],
+   "codigo": "C27",
+   "holgura_mm": 3.7
+  },
+  {
+   "id": "cintura con el ruedo del forro (por dentro) (4 de 4) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cin",
+      "de": 860.15,
+      "a": 550.93,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "fesp",
+      "de": 315.1,
+      "a": 0.0,
+      "sentido": -1
+     },
+     "pares": 33
+    }
+   ],
+   "codigo": "C27",
+   "holgura_mm": 5.9
+  },
+  {
+   "id": "vista con forro delantero (1 de 2) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "visR",
+      "de": 0.0,
+      "a": 281.53,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fdelR",
+      "de": 1258.79,
+      "a": 972.26,
+      "sentido": -1
+     },
+     "pares": 30
+    }
+   ],
+   "codigo": "C28",
+   "holgura_mm": 5.0
+  },
+  {
+   "id": "vista con forro delantero (2 de 2) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "visR",
+      "de": 281.53,
+      "a": 563.05,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fdelR",
+      "de": 972.26,
+      "a": 685.74,
+      "sentido": -1
+     },
+     "pares": 30
+    }
+   ],
+   "codigo": "C28",
+   "holgura_mm": 5.0
+  },
+  {
+   "id": "vista con forro delantero (1 de 2) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "visL",
+      "de": 0.0,
+      "a": 281.53,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fdelL",
+      "de": 1258.79,
+      "a": 972.26,
+      "sentido": -1
+     },
+     "pares": 30
+    }
+   ],
+   "codigo": "C28",
+   "holgura_mm": 5.0
+  },
+  {
+   "id": "vista con forro delantero (2 de 2) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "visL",
+      "de": 281.53,
+      "a": 563.05,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fdelL",
+      "de": 972.26,
+      "a": 685.74,
+      "sentido": -1
+     },
+     "pares": 30
+    }
+   ],
+   "codigo": "C28",
+   "holgura_mm": 5.0
+  },
+  {
+   "id": "punta de la vista con el hombro del forro de espalda R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "visR",
+      "de": 563.05,
+      "a": 603.05,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fesp",
+      "de": 1334.5,
+      "a": 1294.51,
+      "sentido": -1
+     },
+     "pares": 5
+    }
+   ],
+   "codigo": "C29"
+  },
+  {
+   "id": "punta de la vista con el hombro del forro de espalda L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "visL",
+      "de": 563.05,
+      "a": 603.05,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fesp",
+      "de": 1049.02,
+      "a": 1089.02,
+      "sentido": 1
+     },
+     "pares": 5
+    }
+   ],
+   "codigo": "C29"
+  },
+  {
+   "id": "hombro del forro R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fdelR",
+      "de": 538.85,
+      "a": 685.74,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fesp",
+      "de": 1488.53,
+      "a": 1334.5,
+      "sentido": -1
+     },
+     "pares": 16
+    }
+   ],
+   "codigo": "C30",
+   "holgura_mm": 7.1
+  },
+  {
+   "id": "hombro del forro L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fdelL",
+      "de": 538.85,
+      "a": 685.74,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fesp",
+      "de": 894.99,
+      "a": 1049.02,
+      "sentido": 1
+     },
+     "pares": 16
+    }
+   ],
+   "codigo": "C30",
+   "holgura_mm": 7.1
+  },
+  {
+   "id": "costado del forro R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fdelR",
+      "de": 0.0,
+      "a": 150.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fesp",
+      "de": 2068.42,
+      "a": 1918.42,
+      "sentido": -1
+     },
+     "pares": 16
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fdelR",
+      "de": 150.0,
+      "a": 274.17,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fesp",
+      "de": 1918.42,
+      "a": 1794.22,
+      "sentido": -1
+     },
+     "pares": 13
+    }
+   ],
+   "codigo": "C31"
+  },
+  {
+   "id": "costado del forro L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fdelL",
+      "de": 0.0,
+      "a": 150.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fesp",
+      "de": 315.1,
+      "a": 465.1,
+      "sentido": 1
+     },
+     "pares": 16
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fdelL",
+      "de": 150.0,
+      "a": 274.17,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fesp",
+      "de": 465.1,
+      "a": 589.3,
+      "sentido": 1
+     },
+     "pares": 13
+    }
+   ],
+   "codigo": "C31"
+  },
+  {
+   "id": "sisa del forro, frente R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fmsR",
+      "de": 899.98,
+      "a": 799.98,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "fdelR",
+      "de": 274.17,
+      "a": 374.17,
+      "sentido": 1
+     },
+     "pares": 11
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fmsR",
+      "de": 799.98,
+      "a": 637.11,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "fdelR",
+      "de": 374.17,
+      "a": 538.85,
+      "sentido": 1
+     },
+     "pares": 17
+    }
+   ],
+   "codigo": "C32"
+  },
+  {
+   "id": "sisa del forro, frente L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fmsL",
+      "de": 899.98,
+      "a": 799.98,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "fdelL",
+      "de": 274.17,
+      "a": 374.17,
+      "sentido": 1
+     },
+     "pares": 11
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fmsL",
+      "de": 799.98,
+      "a": 637.11,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "fdelL",
+      "de": 374.17,
+      "a": 538.85,
+      "sentido": 1
+     },
+     "pares": 17
+    }
+   ],
+   "codigo": "C32"
+  },
+  {
+   "id": "sisa del forro, espalda alta R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fmsR",
+      "de": 637.11,
+      "a": 491.18,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "fesp",
+      "de": 1488.53,
+      "a": 1636.42,
+      "sentido": 1
+     },
+     "pares": 16
+    }
+   ],
+   "codigo": "C33"
+  },
+  {
+   "id": "sisa del forro, espalda alta L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fmsL",
+      "de": 637.11,
+      "a": 491.18,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "fesp",
+      "de": 894.99,
+      "a": 747.11,
+      "sentido": -1
+     },
+     "pares": 16
+    }
+   ],
+   "codigo": "C33"
+  },
+  {
+   "id": "sisa del forro, espalda baja R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fbmR",
+      "de": 485.23,
+      "a": 643.7,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fesp",
+      "de": 1794.22,
+      "a": 1636.42,
+      "sentido": -1
+     },
+     "pares": 17
+    }
+   ],
+   "codigo": "C34"
+  },
+  {
+   "id": "sisa del forro, espalda baja L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fbmL",
+      "de": 485.23,
+      "a": 643.7,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fesp",
+      "de": 589.3,
+      "a": 747.11,
+      "sentido": 1
+     },
+     "pares": 17
+    }
+   ],
+   "codigo": "C34"
+  },
+  {
+   "id": "manga de forro, atras R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fmsR",
+      "de": 91.19,
+      "a": 491.18,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fbmR",
+      "de": 1045.45,
+      "a": 643.7,
+      "sentido": -1
+     },
+     "pares": 41
+    }
+   ],
+   "codigo": "C35"
+  },
+  {
+   "id": "manga de forro, atras L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fmsL",
+      "de": 91.19,
+      "a": 491.18,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fbmL",
+      "de": 1045.45,
+      "a": 643.7,
+      "sentido": -1
+     },
+     "pares": 41
+    }
+   ],
+   "codigo": "C35"
+  },
+  {
+   "id": "manga de forro, adelante R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fmsR",
+      "de": 899.98,
+      "a": 1293.83,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fbmR",
+      "de": 485.23,
+      "a": 90.89,
+      "sentido": -1
+     },
+     "pares": 40
+    }
+   ],
+   "codigo": "C36"
+  },
+  {
+   "id": "manga de forro, adelante L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fmsL",
+      "de": 899.98,
+      "a": 1293.83,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fbmL",
+      "de": 485.23,
+      "a": 90.89,
+      "sentido": -1
+     },
+     "pares": 40
+    }
+   ],
+   "codigo": "C36"
+  },
+  {
+   "id": "tabla del puno en el forro R",
+   "tipo": "dobladillo",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fmsR",
+      "de": 1488.8,
+      "a": 1466.38,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "fmsR",
+      "de": 1488.8,
+      "a": 1511.88,
+      "sentido": 1
+     },
+     "pares": 3
+    }
+   ],
+   "codigo": "C37"
+  },
+  {
+   "id": "tabla del puno en el forro L",
+   "tipo": "dobladillo",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "fmsL",
+      "de": 1488.8,
+      "a": 1466.38,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "fmsL",
+      "de": 1488.8,
+      "a": 1511.88,
+      "sentido": 1
+     },
+     "pares": 3
+    }
+   ],
+   "codigo": "C37"
+  },
+  {
+   "id": "puno interior con el pie de la solapa y el forro de manga (1 de 5) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "puiR",
+      "de": 60.0,
+      "a": 69.83,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "msbR",
+      "de": 834.54,
+      "a": 0.0,
+      "sentido": 1
+     },
+     "pares": 2
+    }
+   ],
+   "codigo": "C38",
+   "holgura_mm": 0.3
+  },
+  {
+   "id": "puno interior con el pie de la solapa y el forro de manga (2 de 5) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "puiR",
+      "de": 69.83,
+      "a": 97.16,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fmsR",
+      "de": 0.0,
+      "a": 1511.88,
+      "sentido": -1
+     },
+     "pares": 4
+    }
+   ],
+   "codigo": "C38",
+   "holgura_mm": 0.8
+  },
+  {
+   "id": "puno interior con el pie de la solapa y el forro de manga (3 de 5) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "puiR",
+      "de": 97.16,
+      "a": 264.91,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fmsR",
+      "de": 1466.38,
+      "a": 1293.83,
+      "sentido": -1
+     },
+     "pares": 18
+    }
+   ],
+   "codigo": "C38",
+   "holgura_mm": 4.8
+  },
+  {
+   "id": "puno interior con el pie de la solapa y el forro de manga (4 de 5) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "puiR",
+      "de": 264.91,
+      "a": 353.28,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fbmR",
+      "de": 90.89,
+      "a": 1145.76,
+      "sentido": -1
+     },
+     "pares": 10
+    }
+   ],
+   "codigo": "C38",
+   "holgura_mm": 2.5
+  },
+  {
+   "id": "puno interior con el pie de la solapa y el forro de manga (5 de 5) R",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "puiR",
+      "de": 353.28,
+      "a": 363.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fbmR",
+      "de": 1145.76,
+      "a": 1135.76,
+      "sentido": -1
+     },
+     "pares": 2
+    }
+   ],
+   "codigo": "C38",
+   "holgura_mm": 0.3
+  },
+  {
+   "id": "puno interior con el pie de la solapa y el forro de manga (1 de 5) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "puiL",
+      "de": 60.0,
+      "a": 69.83,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "msbL",
+      "de": 834.54,
+      "a": 0.0,
+      "sentido": 1
+     },
+     "pares": 2
+    }
+   ],
+   "codigo": "C38",
+   "holgura_mm": 0.3
+  },
+  {
+   "id": "puno interior con el pie de la solapa y el forro de manga (2 de 5) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "puiL",
+      "de": 69.83,
+      "a": 97.16,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fmsL",
+      "de": 0.0,
+      "a": 1511.88,
+      "sentido": -1
+     },
+     "pares": 4
+    }
+   ],
+   "codigo": "C38",
+   "holgura_mm": 0.8
+  },
+  {
+   "id": "puno interior con el pie de la solapa y el forro de manga (3 de 5) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "puiL",
+      "de": 97.16,
+      "a": 264.91,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fmsL",
+      "de": 1466.38,
+      "a": 1293.83,
+      "sentido": -1
+     },
+     "pares": 18
+    }
+   ],
+   "codigo": "C38",
+   "holgura_mm": 4.8
+  },
+  {
+   "id": "puno interior con el pie de la solapa y el forro de manga (4 de 5) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "puiL",
+      "de": 264.91,
+      "a": 353.28,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fbmL",
+      "de": 90.89,
+      "a": 1145.76,
+      "sentido": -1
+     },
+     "pares": 10
+    }
+   ],
+   "codigo": "C38",
+   "holgura_mm": 2.5
+  },
+  {
+   "id": "puno interior con el pie de la solapa y el forro de manga (5 de 5) L",
+   "tipo": "costura",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "puiL",
+      "de": 353.28,
+      "a": 363.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "fbmL",
+      "de": 1145.76,
+      "a": 1135.76,
+      "sentido": -1
+     },
+     "pares": 2
+    }
+   ],
+   "codigo": "C38",
+   "holgura_mm": 0.3
+  },
+  {
+   "id": "vivo del cierre doblado al medio R",
+   "tipo": "dobladillo",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "vivR",
+      "de": 0.0,
+      "a": 45.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "vivR",
+      "de": 1349.4,
+      "a": 1304.4,
+      "sentido": -1
+     },
+     "pares": 5
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "vivR",
+      "de": 45.0,
+      "a": 538.3,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "vivR",
+      "de": 1304.4,
+      "a": 811.1,
+      "sentido": -1
+     },
+     "pares": 50
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "vivR",
+      "de": 538.3,
+      "a": 669.2,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "vivR",
+      "de": 811.1,
+      "a": 680.2,
+      "sentido": -1
+     },
+     "pares": 14
+    }
+   ],
+   "codigo": "C40"
+  },
+  {
+   "id": "vivo del cierre doblado al medio L",
+   "tipo": "dobladillo",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "vivL",
+      "de": 0.0,
+      "a": 45.0,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "vivL",
+      "de": 1349.4,
+      "a": 1304.4,
+      "sentido": -1
+     },
+     "pares": 5
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "vivL",
+      "de": 45.0,
+      "a": 538.3,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "vivL",
+      "de": 1304.4,
+      "a": 811.1,
+      "sentido": -1
+     },
+     "pares": 50
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "vivL",
+      "de": 538.3,
+      "a": 669.2,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "vivL",
+      "de": 811.1,
+      "a": 680.2,
+      "sentido": -1
+     },
+     "pares": 14
+    }
+   ],
+   "codigo": "C40"
+  },
+  {
+   "id": "cintura doblada al medio (tab) R",
+   "tipo": "dobladillo",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citR",
+      "de": 360.38,
+      "a": 327.38,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "citR",
+      "de": 45.0,
+      "a": 78.0,
+      "sentido": 1
+     },
+     "pares": 5
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citR",
+      "de": 327.38,
+      "a": 247.69,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "citR",
+      "de": 78.0,
+      "a": 157.69,
+      "sentido": 1
+     },
+     "pares": 9
+    }
+   ],
+   "codigo": "C41"
+  },
+  {
+   "id": "cintura doblada al medio (tab) L",
+   "tipo": "dobladillo",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citL",
+      "de": 360.38,
+      "a": 327.38,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "citL",
+      "de": 45.0,
+      "a": 78.0,
+      "sentido": 1
+     },
+     "pares": 5
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citL",
+      "de": 327.38,
+      "a": 247.69,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "citL",
+      "de": 78.0,
+      "a": 157.69,
+      "sentido": 1
+     },
+     "pares": 9
+    }
+   ],
+   "codigo": "C41"
+  },
+  {
+   "id": "cintura doblada al medio (tramo elastico) R",
+   "tipo": "dobladillo",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cin",
+      "de": 2158.72,
+      "a": 1961.92,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "cin",
+      "de": 45.0,
+      "a": 241.8,
+      "sentido": 1
+     },
+     "pares": 23
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cin",
+      "de": 1961.92,
+      "a": 1652.79,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "cin",
+      "de": 241.8,
+      "a": 550.93,
+      "sentido": 1
+     },
+     "pares": 34
+    }
+   ],
+   "codigo": "C42"
+  },
+  {
+   "id": "cintura doblada al medio (tramo elastico) L",
+   "tipo": "dobladillo",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cin",
+      "de": 1146.86,
+      "a": 1343.66,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "cin",
+      "de": 1056.86,
+      "a": 860.06,
+      "sentido": -1
+     },
+     "pares": 23
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cin",
+      "de": 1343.66,
+      "a": 1652.79,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "cin",
+      "de": 860.06,
+      "a": 550.93,
+      "sentido": -1
+     },
+     "pares": 34
+    }
+   ],
+   "codigo": "C42"
+  },
+  {
+   "id": "abertura del puno (boca) R",
+   "tipo": "boca_abierta",
+   "codigo": "C39",
+   "tramos": [
+    {
+     "modo": "interior",
+     "a": {
+      "pieza": "msbR"
+     },
+     "b": {
+      "pieza": "bmbR"
+     },
+     "pares": 10
+    }
+   ]
+  },
+  {
+   "id": "abertura del puno (boca) L",
+   "tipo": "boca_abierta",
+   "codigo": "C39",
+   "tramos": [
+    {
+     "modo": "interior",
+     "a": {
+      "pieza": "msbL"
+     },
+     "b": {
+      "pieza": "bmbL"
+     },
+     "pares": 10
+    }
+   ]
+  },
+  {
+   "id": "borde delantero con el cierre R",
+   "tipo": "costura",
+   "codigo": "C43",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citR",
+      "de": 0.0,
+      "a": 360.38,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "cierre",
+      "de": 0.0,
+      "a": 45.0,
+      "sentido": 1
+     },
+     "pares": 6
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "delR",
+      "de": 1317.03,
+      "a": 823.7,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "cierre",
+      "de": 45.0,
+      "a": 538.36,
+      "sentido": 1
+     },
+     "pares": 56
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cue",
+      "de": 1111.08,
+      "a": 1051.08,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "cierre",
+      "de": 538.36,
+      "a": 598.36,
+      "sentido": 1
+     },
+     "pares": 7
+    }
+   ]
+  },
+  {
+   "id": "borde delantero con el cierre L",
+   "tipo": "costura",
+   "codigo": "C43",
+   "tramos": [
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "citL",
+      "de": 0.0,
+      "a": 360.38,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "cierre",
+      "de": 1199.32,
+      "a": 1154.32,
+      "sentido": -1
+     },
+     "pares": 6
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "delL",
+      "de": 1317.03,
+      "a": 823.7,
+      "sentido": -1
+     },
+     "b": {
+      "pieza": "cierre",
+      "de": 1154.32,
+      "a": 660.95,
+      "sentido": -1
+     },
+     "pares": 56
+    },
+    {
+     "modo": "borde",
+     "a": {
+      "pieza": "cue",
+      "de": 364.65,
+      "a": 424.65,
+      "sentido": 1
+     },
+     "b": {
+      "pieza": "cierre",
+      "de": 660.95,
+      "a": 600.95,
+      "sentido": -1
+     },
+     "pares": 7
+    }
+   ]
+  },
+  {
+   "id": "broche puno R",
+   "tipo": "costura",
+   "codigo": "C44",
+   "tramos": [
+    {
+     "modo": "interior",
+     "a": {
+      "pieza": "pueR"
+     },
+     "b": {
+      "pieza": "pueR"
+     },
+     "pares": 3
+    }
+   ]
+  },
+  {
+   "id": "broche puno L",
+   "tipo": "costura",
+   "codigo": "C44",
+   "tramos": [
+    {
+     "modo": "interior",
+     "a": {
+      "pieza": "pueL"
+     },
+     "b": {
+      "pieza": "pueL"
+     },
+     "pares": 3
+    }
+   ]
+  }
+ ],
+ "avios": [
+  {
+   "id": "cierre_central",
+   "tipo": "cierre",
+   "pieza": "vivR",
+   "largo_mm": 650.0,
+   "posicion": {
+    "medida": "ficha"
+   }
+  },
+  {
+   "id": "cierre_bolsillo",
+   "tipo": "cierre",
+   "pieza": "delR",
+   "largo_mm": 173.0,
+   "posicion": {
+    "medida": "ficha",
+    "lista": [
+     {
+      "pieza": "delR",
+      "u_mm": 5092.628,
+      "v_mm": 2180.14
+     },
+     {
+      "pieza": "delR",
+      "u_mm": 5102.797,
+      "v_mm": 2352.841
+     },
+     {
+      "pieza": "delR",
+      "u_mm": 5107.602,
+      "v_mm": 2179.258
+     },
+     {
+      "pieza": "delR",
+      "u_mm": 5117.771,
+      "v_mm": 2351.959
+     }
+    ]
+   }
+  },
+  {
+   "id": "broches_puno",
+   "tipo": "broche",
+   "pieza": "pueR",
+   "diametro_mm": 15.0,
+   "posicion": {
+    "medida": "dxf_capa13",
+    "lista": [
+     {
+      "pieza": "pueR",
+      "u_mm": 3805.544,
+      "v_mm": 1955.724
+     },
+     {
+      "pieza": "pueR",
+      "u_mm": 4035.544,
+      "v_mm": 1955.724
+     },
+     {
+      "pieza": "pueR",
+      "u_mm": 4075.544,
+      "v_mm": 1955.724
+     }
+    ]
+   }
+  },
+  {
+   "id": "elastico_cintura",
+   "tipo": "elastico",
+   "pieza": "cin",
+   "largo_mm": 714.6,
+   "posicion": {
+    "medida": "ficha"
+   }
+  },
+  {
+   "id": "chapita_espalda",
+   "tipo": "chapa",
+   "pieza": "can",
+   "posicion": {
+    "medida": "pendiente"
+   }
+  },
+  {
+   "id": "portaetiqueta",
+   "tipo": "parche",
+   "pieza": "fesp",
+   "posicion": {
+    "medida": "ficha"
+   }
+  }
+ ],
+ "fuera_de_sim": [
+  {
+   "bloque": "W2094-P18AX1",
+   "grupo": "portaetiqueta"
+  },
+  {
+   "bloque": "W2094-P02AX2",
+   "grupo": "vista_de_bolsillo"
+  },
+  {
+   "bloque": "W2094-P01KX2",
+   "grupo": "bolsa_de_bolsillo_con_vista"
+  },
+  {
+   "bloque": "W2094-P04KX2",
+   "grupo": "bolsa_de_bolsillo"
+  },
+  {
+   "bloque": "W2094-P05AX4",
+   "grupo": "vivos_de_bolsillo"
+  },
+  {
+   "bloque": "W2094-P28AX1",
+   "grupo": "tira_120x27"
+  },
+  {
+   "bloque": "W2094-P49AX6",
+   "grupo": "tiras_60x20"
+  }
+ ],
+ "solo_render": [
+  {
+   "id": "broches_puno"
+  },
+  {
+   "id": "chapita_espalda"
+  },
+  {
+   "id": "cierres_bolsillo"
+  },
+  {
+   "id": "tiradores_y_dientes"
+  },
+  {
+   "id": "pespuntes"
+  }
+ ],
+ "tolerancias": {
+  "largo_par_mm": 5.0,
+  "piquete_mm": 3.0,
+  "arranque_mm": 10.0
+ },
+ "pendiente": [
+  {
+   "campo": "piezas.P14"
+  },
+  {
+   "campo": "piezas.P27"
+  },
+  {
+   "campo": "piezas.P28"
+  },
+  {
+   "campo": "piezas.P49"
+  },
+  {
+   "campo": "costuras.C13"
+  },
+  {
+   "campo": "costuras.C14"
+  },
+  {
+   "campo": "costuras.C15"
+  },
+  {
+   "campo": "costuras.C27"
+  },
+  {
+   "campo": "costuras.C38"
+  },
+  {
+   "campo": "avios.cierre_central"
+  },
+  {
+   "campo": "avios.broches_puno"
+  },
+  {
+   "campo": "avios.elastico_cintura"
+  },
+  {
+   "campo": "avios.chapita_espalda"
+  },
+  {
+   "campo": "materiales"
+  },
+  {
+   "campo": "malla.cuerpo"
+  },
+  {
+   "campo": "control_ficha.D2"
+  },
+  {
+   "campo": "avios.pespuntes"
+  }
+ ],
+ "materiales": {
+  "mat5": {
+   "rol": "cascara"
+  },
+  "mat1": {
+   "rol": "forro"
+  },
+  "mat4": {
+   "rol": "forro"
+  },
+  "mat3": {
+   "rol": "vista"
+  },
+  "mat2": {
+   "rol": "avio"
+  }
+ },
+ "malla": {
+  "archivo": "w2094_v0_v6.json",
+  "colisionador": "cuerpo_W2094_piel20.npz"
+ },
+ "publico": "[ESC·f535] version publica para simular (lista blanca de scripts/empaquetar_prenda.py): sin DXF, notas ni nombres"
+}
