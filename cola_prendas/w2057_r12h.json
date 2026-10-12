@@ -1,0 +1,60 @@
+{
+ "firma": "[ESC·f535]",
+ "nombre": "w2057_r12h",
+ "prenda": "w2057",
+ "nota": "r12 humo: cuerpo a la altura de la modelo. H = cuerpo_W2057_h179_b12.npz (MPFB2 1,79 m, contornos del talle M, brazo largo m684a2; alineado al cuerpo viejo en el torso alto; Vin = cuerpo viejo: la clave angosto lo lleva al nuevo entre f1 y f18). C = cuerpo b12 viejo con la base r11 (tension 400, sew_max 0): debe salir bit a bit igual a r11 b12t400_k1.",
+ "nf": 150,
+ "hilos": 4,
+ "tmo_min": 90,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  6,
+  12,
+  18,
+  24,
+  36,
+  48,
+  66,
+  87,
+  108,
+  129,
+  150
+ ],
+ "params": {
+  "arm_f1": 150,
+  "stop_open": 0,
+  "tfric": 40,
+  "sew_max": 0,
+  "air": 1.001,
+  "tension": 400
+ },
+ "grupos": {
+  "C": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b12.npz",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {}
+  },
+  "H": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_h179_b12.npz",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {}
+  }
+ },
+ "variantes": [
+  {
+   "tag": "w57h12_c_k1",
+   "grupo": "C",
+   "params": {}
+  },
+  {
+   "tag": "w57h12_h_k1",
+   "grupo": "H",
+   "params": {}
+  }
+ ]
+}
