@@ -30,7 +30,7 @@
    6
   ]
  },
- "nota": "[ESC\u00b7f535] R20a humo: labio de la tapeta en 2 columnas (zzhl) y diagnostico solo-autocol (zzhk) contra r18b (zzh1), k1, 6 f",
+ "nota": "[ESC·f535] R20a humo: labio de la tapeta en 2 columnas (zzhl) y diagnostico solo-autocol (zzhk) contra r18b (zzh1), k1, 6 f",
  "variantes": [
   {
    "tag": "r20ah_c_k1",
@@ -55,5 +55,9 @@
     "mesh": "m133_e2zzhk.json"
    }
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38203701219",
+  "utc": "2026-10-12T04:25:15Z"
+ }
 }
