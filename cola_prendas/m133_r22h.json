@@ -1,0 +1,75 @@
+{
+ "nombre": "m133_r22h",
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R18.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "tmo_min": 60,
+ "nf": 40,
+ "dumps": [
+  1,
+  2,
+  6,
+  20,
+  30,
+  40
+ ],
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   20,
+   40
+  ]
+ },
+ "nota": "[ESC\u00b7f535] R22b humo 40 f: labio del cuello = cascara sin plancha que choca. zzhn (r0+rm de vuelta en autocol, r0 fuera de placket), zzho (+ r1 fuera de placket: pespunte articulado, sonda R22b) y control zzhm k1 (= r21m_k1 bit a bit)",
+ "grupos": {
+  "m5": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "mesh": "m133_e2zzhm.json"
+   }
+  },
+  "n5": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "mesh": "m133_e2zzhn.json"
+   }
+  },
+  "o5": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "mesh": "m133_e2zzho.json"
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "r22n_k1",
+   "grupo": "n5",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "r22o_k1",
+   "grupo": "o5",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "r22c_k1",
+   "grupo": "m5",
+   "params": {
+    "bi_k": "1.001"
+   }
+  }
+ ]
+}
