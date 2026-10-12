@@ -1,0 +1,1658 @@
+{
+ "tanda": "w2057_r7",
+ "prenda": "w2057",
+ "url": "https://github.com/parka-oss/prenda3d-lab/actions/runs/38196507530",
+ "estado": "OK",
+ "nota": "r7: bajada lenta del brazo, una palanca: arm_f1 60 -> 150 (rampa de la piel f24-f150), nf 240 (90 f quietos despues de la rampa, como f60-f150 en r6). Separa velocidad (arrastre del fondo de la sisa) de pose final (traba). B14/B12 = cuerpos y recetas k0 de r6 (arm_end 14/12), C = c5 control (piel20; arm_f1 no hace nada). Replica nula air 1.001..1.005 (k1..k5). Malla s1c, -t 4. Humo w2057_r7h antes de esta tanda.",
+ "tomada": {
+  "por": "actions 38196507530",
+  "utc": "2026-10-12T02:43:26Z"
+ },
+ "cerrada_utc": "2026-10-12T03:02:46Z",
+ "variantes": {
+  "w57r7_c5_k1": {
+   "item": "w2057_r7--w57r7_c5_k1",
+   "tag": "w57r7_c5_k1",
+   "prenda": "w2057",
+   "rc": 0,
+   "t_pared_s": 262,
+   "estado": "FIN",
+   "cuadros_pedidos": 240,
+   "grupo": "C",
+   "cuadros_hechos": 240,
+   "t_sim_s": 261,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 240,
+    "t_s": 261,
+    "media_mm": 0.0,
+    "max_mm": 2.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "pliegue de espalda: costura R",
+     "n": 48,
+     "max_mm": 2.0,
+     "p95_mm": 1.2,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo L",
+     "n": 21,
+     "max_mm": 1.7,
+     "p95_mm": 1.6,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo R",
+     "n": 21,
+     "max_mm": 1.4,
+     "p95_mm": 1.1,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pliegue de espalda: costura L",
+     "n": 48,
+     "max_mm": 1.3,
+     "p95_mm": 0.9,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pliegue de espalda: canto del ruedo (30 + 30 mm doblados) R",
+     "n": 3,
+     "max_mm": 0.5,
+     "p95_mm": 0.3,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pie de la abertura: pinza bajo el remache R",
+     "n": 1,
+     "max_mm": 0.4,
+     "p95_mm": 0.4,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "pie de la abertura: pinza bajo el remache L",
+     "n": 1,
+     "max_mm": 0.4,
+     "p95_mm": 0.4,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "ABERTURA DEL PUNO (cerrada: solapado + tira con broche) R",
+     "n": 14,
+     "max_mm": 0.4,
+     "p95_mm": 0.4,
+     "media_mm": 0.1
+    }
+   ],
+   "asent": "ASENT f240 (+224) d/6f ruedo CB -0.0 CF -0.1 canto -0.2 puno -0.2/-0.0 mm | max 0.2",
+   "avisos": [
+    "AVISO (except): cuerpo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'",
+    "AVISO (except): reposo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'"
+   ],
+   "error": "",
+   "params": {},
+   "receta_hash": "18cc33ad2bb7d32e7bf7c8c7177262dff73aa39192e40197982bf8b068286835",
+   "id_corrida": "1fe21d2ca4d4",
+   "blender": "5.1.0",
+   "hilos": 4,
+   "dumps": [
+    "X_w57r7_c5_k1_f1.npy",
+    "X_w57r7_c5_k1_f108.npy",
+    "X_w57r7_c5_k1_f12.npy",
+    "X_w57r7_c5_k1_f129.npy",
+    "X_w57r7_c5_k1_f150.npy",
+    "X_w57r7_c5_k1_f162.npy",
+    "X_w57r7_c5_k1_f180.npy",
+    "X_w57r7_c5_k1_f2.npy",
+    "X_w57r7_c5_k1_f210.npy",
+    "X_w57r7_c5_k1_f24.npy",
+    "X_w57r7_c5_k1_f240.npy",
+    "X_w57r7_c5_k1_f36.npy",
+    "X_w57r7_c5_k1_f48.npy",
+    "X_w57r7_c5_k1_f6.npy",
+    "X_w57r7_c5_k1_f66.npy",
+    "X_w57r7_c5_k1_f87.npy"
+   ],
+   "params_variante": {
+    "air": 1.001
+   }
+  },
+  "w57r7_c5_k2": {
+   "item": "w2057_r7--w57r7_c5_k2",
+   "tag": "w57r7_c5_k2",
+   "prenda": "w2057",
+   "rc": 0,
+   "t_pared_s": 308,
+   "estado": "FIN",
+   "cuadros_pedidos": 240,
+   "grupo": "C",
+   "cuadros_hechos": 240,
+   "t_sim_s": 307,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 240,
+    "t_s": 307,
+    "media_mm": 0.0,
+    "max_mm": 2.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "pliegue de espalda: costura R",
+     "n": 48,
+     "max_mm": 1.9,
+     "p95_mm": 0.7,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo L",
+     "n": 21,
+     "max_mm": 1.8,
+     "p95_mm": 1.7,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo R",
+     "n": 21,
+     "max_mm": 1.4,
+     "p95_mm": 1.0,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pliegue de espalda: costura L",
+     "n": 48,
+     "max_mm": 1.4,
+     "p95_mm": 1.0,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pliegue de espalda: canto del ruedo (30 + 30 mm doblados) R",
+     "n": 3,
+     "max_mm": 0.5,
+     "p95_mm": 0.3,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pie de la abertura: pinza bajo el remache R",
+     "n": 1,
+     "max_mm": 0.4,
+     "p95_mm": 0.4,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "pie de la abertura: pinza bajo el remache L",
+     "n": 1,
+     "max_mm": 0.4,
+     "p95_mm": 0.4,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "ABERTURA DEL PUNO (cerrada: solapado + tira con broche) R",
+     "n": 14,
+     "max_mm": 0.4,
+     "p95_mm": 0.3,
+     "media_mm": 0.1
+    }
+   ],
+   "asent": "ASENT f240 (+224) d/6f ruedo CB -0.3 CF +0.1 canto +0.1 puno -0.0/-0.0 mm | max 0.3",
+   "avisos": [
+    "AVISO (except): cuerpo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'",
+    "AVISO (except): reposo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'"
+   ],
+   "error": "",
+   "params": {},
+   "receta_hash": "0dd941480b5629e13c789ef18917029bcd7fcf3889492843ec0a7d3ab4ef10c4",
+   "id_corrida": "69a761b12f5b",
+   "blender": "5.1.0",
+   "hilos": 4,
+   "dumps": [
+    "X_w57r7_c5_k2_f1.npy",
+    "X_w57r7_c5_k2_f108.npy",
+    "X_w57r7_c5_k2_f12.npy",
+    "X_w57r7_c5_k2_f129.npy",
+    "X_w57r7_c5_k2_f150.npy",
+    "X_w57r7_c5_k2_f162.npy",
+    "X_w57r7_c5_k2_f180.npy",
+    "X_w57r7_c5_k2_f2.npy",
+    "X_w57r7_c5_k2_f210.npy",
+    "X_w57r7_c5_k2_f24.npy",
+    "X_w57r7_c5_k2_f240.npy",
+    "X_w57r7_c5_k2_f36.npy",
+    "X_w57r7_c5_k2_f48.npy",
+    "X_w57r7_c5_k2_f6.npy",
+    "X_w57r7_c5_k2_f66.npy",
+    "X_w57r7_c5_k2_f87.npy"
+   ],
+   "params_variante": {
+    "air": 1.002
+   }
+  },
+  "w57r7_c5_k3": {
+   "item": "w2057_r7--w57r7_c5_k3",
+   "tag": "w57r7_c5_k3",
+   "prenda": "w2057",
+   "rc": 0,
+   "t_pared_s": 292,
+   "estado": "FIN",
+   "cuadros_pedidos": 240,
+   "grupo": "C",
+   "cuadros_hechos": 240,
+   "t_sim_s": 291,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 240,
+    "t_s": 290,
+    "media_mm": 0.1,
+    "max_mm": 2.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "pliegue de espalda: costura R",
+     "n": 48,
+     "max_mm": 1.9,
+     "p95_mm": 0.8,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo L",
+     "n": 21,
+     "max_mm": 1.7,
+     "p95_mm": 1.6,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pliegue de espalda: costura L",
+     "n": 48,
+     "max_mm": 1.7,
+     "p95_mm": 1.3,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo R",
+     "n": 21,
+     "max_mm": 1.3,
+     "p95_mm": 0.8,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "pliegue de espalda: canto del ruedo (30 + 30 mm doblados) R",
+     "n": 3,
+     "max_mm": 0.5,
+     "p95_mm": 0.3,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pie de la abertura: pinza bajo el remache R",
+     "n": 1,
+     "max_mm": 0.4,
+     "p95_mm": 0.4,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "pie de la abertura: pinza bajo el remache L",
+     "n": 1,
+     "max_mm": 0.4,
+     "p95_mm": 0.4,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "ABERTURA DEL PUNO (cerrada: solapado + tira con broche) R",
+     "n": 14,
+     "max_mm": 0.4,
+     "p95_mm": 0.4,
+     "media_mm": 0.1
+    }
+   ],
+   "asent": "ASENT f240 (+224) d/6f ruedo CB -0.1 CF -0.0 canto +0.0 puno +0.0/-0.0 mm | max 0.1",
+   "avisos": [
+    "AVISO (except): cuerpo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'",
+    "AVISO (except): reposo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'"
+   ],
+   "error": "",
+   "params": {},
+   "receta_hash": "e5a28a1a07f2842bc8d600da9c633628d9816077e48c2595c147da1f92c1f5fc",
+   "id_corrida": "31a3c9f9b3c0",
+   "blender": "5.1.0",
+   "hilos": 4,
+   "dumps": [
+    "X_w57r7_c5_k3_f1.npy",
+    "X_w57r7_c5_k3_f108.npy",
+    "X_w57r7_c5_k3_f12.npy",
+    "X_w57r7_c5_k3_f129.npy",
+    "X_w57r7_c5_k3_f150.npy",
+    "X_w57r7_c5_k3_f162.npy",
+    "X_w57r7_c5_k3_f180.npy",
+    "X_w57r7_c5_k3_f2.npy",
+    "X_w57r7_c5_k3_f210.npy",
+    "X_w57r7_c5_k3_f24.npy",
+    "X_w57r7_c5_k3_f240.npy",
+    "X_w57r7_c5_k3_f36.npy",
+    "X_w57r7_c5_k3_f48.npy",
+    "X_w57r7_c5_k3_f6.npy",
+    "X_w57r7_c5_k3_f66.npy",
+    "X_w57r7_c5_k3_f87.npy"
+   ],
+   "params_variante": {
+    "air": 1.003
+   }
+  },
+  "w57r7_c5_k4": {
+   "item": "w2057_r7--w57r7_c5_k4",
+   "tag": "w57r7_c5_k4",
+   "prenda": "w2057",
+   "rc": 0,
+   "t_pared_s": 238,
+   "estado": "FIN",
+   "cuadros_pedidos": 240,
+   "grupo": "C",
+   "cuadros_hechos": 240,
+   "t_sim_s": 236,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 240,
+    "t_s": 236,
+    "media_mm": 0.1,
+    "max_mm": 2.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "sisa de espalda - manga de abajo L",
+     "n": 21,
+     "max_mm": 1.9,
+     "p95_mm": 1.6,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pliegue de espalda: costura R",
+     "n": 48,
+     "max_mm": 1.9,
+     "p95_mm": 0.8,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pliegue de espalda: costura L",
+     "n": 48,
+     "max_mm": 1.6,
+     "p95_mm": 1.2,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo R",
+     "n": 21,
+     "max_mm": 1.4,
+     "p95_mm": 0.9,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pliegue de espalda: canto del ruedo (30 + 30 mm doblados) R",
+     "n": 3,
+     "max_mm": 0.5,
+     "p95_mm": 0.3,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pliegue de espalda: canto del ruedo (30 + 30 mm doblados) L",
+     "n": 3,
+     "max_mm": 0.5,
+     "p95_mm": 0.2,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pie de la abertura: pinza bajo el remache R",
+     "n": 1,
+     "max_mm": 0.4,
+     "p95_mm": 0.4,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "pie de la abertura: pinza bajo el remache L",
+     "n": 1,
+     "max_mm": 0.4,
+     "p95_mm": 0.4,
+     "media_mm": 0.4
+    }
+   ],
+   "asent": "ASENT f240 (+224) d/6f ruedo CB +0.0 CF -0.0 canto -0.0 puno -0.0/-0.0 mm | max 0.0",
+   "avisos": [
+    "AVISO (except): cuerpo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'",
+    "AVISO (except): reposo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'"
+   ],
+   "error": "",
+   "params": {},
+   "receta_hash": "7ed49b6d92235313414a9a37b0ba1d016f2af69ad1dbcdad6f9147dc9492d615",
+   "id_corrida": "ee4e502cc5b8",
+   "blender": "5.1.0",
+   "hilos": 4,
+   "dumps": [
+    "X_w57r7_c5_k4_f1.npy",
+    "X_w57r7_c5_k4_f108.npy",
+    "X_w57r7_c5_k4_f12.npy",
+    "X_w57r7_c5_k4_f129.npy",
+    "X_w57r7_c5_k4_f150.npy",
+    "X_w57r7_c5_k4_f162.npy",
+    "X_w57r7_c5_k4_f180.npy",
+    "X_w57r7_c5_k4_f2.npy",
+    "X_w57r7_c5_k4_f210.npy",
+    "X_w57r7_c5_k4_f24.npy",
+    "X_w57r7_c5_k4_f240.npy",
+    "X_w57r7_c5_k4_f36.npy",
+    "X_w57r7_c5_k4_f48.npy",
+    "X_w57r7_c5_k4_f6.npy",
+    "X_w57r7_c5_k4_f66.npy",
+    "X_w57r7_c5_k4_f87.npy"
+   ],
+   "params_variante": {
+    "air": 1.004
+   }
+  },
+  "w57r7_c5_k5": {
+   "item": "w2057_r7--w57r7_c5_k5",
+   "tag": "w57r7_c5_k5",
+   "prenda": "w2057",
+   "rc": 0,
+   "t_pared_s": 305,
+   "estado": "FIN",
+   "cuadros_pedidos": 240,
+   "grupo": "C",
+   "cuadros_hechos": 240,
+   "t_sim_s": 304,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 240,
+    "t_s": 304,
+    "media_mm": 0.1,
+    "max_mm": 2.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "pliegue de espalda: costura R",
+     "n": 48,
+     "max_mm": 2.2,
+     "p95_mm": 0.8,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo L",
+     "n": 21,
+     "max_mm": 1.7,
+     "p95_mm": 1.7,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pliegue de espalda: costura L",
+     "n": 48,
+     "max_mm": 1.7,
+     "p95_mm": 1.4,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo R",
+     "n": 21,
+     "max_mm": 1.0,
+     "p95_mm": 1.0,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pliegue de espalda: canto del ruedo (30 + 30 mm doblados) R",
+     "n": 3,
+     "max_mm": 0.5,
+     "p95_mm": 0.4,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pliegue de espalda: canto del ruedo (30 + 30 mm doblados) L",
+     "n": 3,
+     "max_mm": 0.4,
+     "p95_mm": 0.3,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pie de la abertura: pinza bajo el remache R",
+     "n": 1,
+     "max_mm": 0.4,
+     "p95_mm": 0.4,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "pie de la abertura: pinza bajo el remache L",
+     "n": 1,
+     "max_mm": 0.4,
+     "p95_mm": 0.4,
+     "media_mm": 0.4
+    }
+   ],
+   "asent": "ASENT f240 (+224) d/6f ruedo CB +0.1 CF +0.0 canto +0.0 puno +0.1/-0.1 mm | max 0.1",
+   "avisos": [
+    "AVISO (except): cuerpo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'",
+    "AVISO (except): reposo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'"
+   ],
+   "error": "",
+   "params": {},
+   "receta_hash": "9bcac1e4aafa883d86efb32cb3d8b2178283f97815e2ff1bc1a1f61b9013456e",
+   "id_corrida": "a07226fd5ebd",
+   "blender": "5.1.0",
+   "hilos": 4,
+   "dumps": [
+    "X_w57r7_c5_k5_f1.npy",
+    "X_w57r7_c5_k5_f108.npy",
+    "X_w57r7_c5_k5_f12.npy",
+    "X_w57r7_c5_k5_f129.npy",
+    "X_w57r7_c5_k5_f150.npy",
+    "X_w57r7_c5_k5_f162.npy",
+    "X_w57r7_c5_k5_f180.npy",
+    "X_w57r7_c5_k5_f2.npy",
+    "X_w57r7_c5_k5_f210.npy",
+    "X_w57r7_c5_k5_f24.npy",
+    "X_w57r7_c5_k5_f240.npy",
+    "X_w57r7_c5_k5_f36.npy",
+    "X_w57r7_c5_k5_f48.npy",
+    "X_w57r7_c5_k5_f6.npy",
+    "X_w57r7_c5_k5_f66.npy",
+    "X_w57r7_c5_k5_f87.npy"
+   ],
+   "params_variante": {
+    "air": 1.005
+   }
+  },
+  "w57r7_b14_k1": {
+   "item": "w2057_r7--w57r7_b14_k1",
+   "tag": "w57r7_b14_k1",
+   "prenda": "w2057",
+   "rc": 0,
+   "t_pared_s": 308,
+   "estado": "FIN",
+   "cuadros_pedidos": 240,
+   "grupo": "B14",
+   "cuadros_hechos": 240,
+   "t_sim_s": 307,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 240,
+    "t_s": 307,
+    "media_mm": 0.1,
+    "max_mm": 4.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "sisa delantera (delantero + canesu) - franja de copa R",
+     "n": 31,
+     "max_mm": 4.4,
+     "p95_mm": 2.8,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo L",
+     "n": 21,
+     "max_mm": 2.5,
+     "p95_mm": 1.9,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "manga: costura de abajo (sigue al costado) R",
+     "n": 52,
+     "max_mm": 2.5,
+     "p95_mm": 0.5,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo R",
+     "n": 21,
+     "max_mm": 2.1,
+     "p95_mm": 1.8,
+     "media_mm": 0.5
+    },
+    {
+     "costura": "pliegue de espalda: costura L",
+     "n": 48,
+     "max_mm": 1.7,
+     "p95_mm": 1.4,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "pliegue de espalda: costura R",
+     "n": 48,
+     "max_mm": 1.1,
+     "p95_mm": 0.8,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "manga: costura de atras (\"middle sleeve cutout\") L",
+     "n": 51,
+     "max_mm": 1.1,
+     "p95_mm": 0.2,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "costado R",
+     "n": 31,
+     "max_mm": 0.7,
+     "p95_mm": 0.3,
+     "media_mm": 0.1
+    }
+   ],
+   "asent": "ASENT f240 (+90) d/6f ruedo CB +3.7 CF +0.1 canto -0.1 puno +0.2/-0.0 mm | max 3.7",
+   "avisos": [
+    "AVISO (except): cuerpo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'",
+    "AVISO (except): reposo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'"
+   ],
+   "error": "",
+   "params": {},
+   "receta_hash": "4d97bd34a1f9f90314ba1391b43b12cf27e291e2766e12e0a67475f35b10a571",
+   "id_corrida": "f6d1fc905486",
+   "blender": "5.1.0",
+   "hilos": 4,
+   "dumps": [
+    "X_w57r7_b14_k1_f1.npy",
+    "X_w57r7_b14_k1_f108.npy",
+    "X_w57r7_b14_k1_f12.npy",
+    "X_w57r7_b14_k1_f129.npy",
+    "X_w57r7_b14_k1_f150.npy",
+    "X_w57r7_b14_k1_f162.npy",
+    "X_w57r7_b14_k1_f180.npy",
+    "X_w57r7_b14_k1_f2.npy",
+    "X_w57r7_b14_k1_f210.npy",
+    "X_w57r7_b14_k1_f24.npy",
+    "X_w57r7_b14_k1_f240.npy",
+    "X_w57r7_b14_k1_f36.npy",
+    "X_w57r7_b14_k1_f48.npy",
+    "X_w57r7_b14_k1_f6.npy",
+    "X_w57r7_b14_k1_f66.npy",
+    "X_w57r7_b14_k1_f87.npy"
+   ],
+   "params_variante": {
+    "air": 1.001
+   }
+  },
+  "w57r7_b14_k2": {
+   "item": "w2057_r7--w57r7_b14_k2",
+   "tag": "w57r7_b14_k2",
+   "prenda": "w2057",
+   "rc": 0,
+   "t_pared_s": 223,
+   "estado": "STOP",
+   "cuadros_pedidos": 240,
+   "grupo": "B14",
+   "cuadros_hechos": 204,
+   "t_sim_s": 222,
+   "stop": [
+    "STOP: sisa de espalda - manga de abajo L abrio +13.6 mm en 3 grados (> 8.0)"
+   ],
+   "costura_ultimo_cuadro": {
+    "f": 204,
+    "t_s": 222,
+    "media_mm": 0.1,
+    "max_mm": 18.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "sisa de espalda - manga de abajo L",
+     "n": 21,
+     "max_mm": 17.5,
+     "p95_mm": 6.8,
+     "media_mm": 1.8
+    },
+    {
+     "costura": "sisa delantera (delantero + canesu) - franja de copa L",
+     "n": 31,
+     "max_mm": 6.0,
+     "p95_mm": 1.7,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo R",
+     "n": 21,
+     "max_mm": 3.0,
+     "p95_mm": 2.6,
+     "media_mm": 0.8
+    },
+    {
+     "costura": "manga: costura de abajo (sigue al costado) R",
+     "n": 52,
+     "max_mm": 2.4,
+     "p95_mm": 0.8,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "manga: costura de abajo (sigue al costado) L",
+     "n": 52,
+     "max_mm": 1.4,
+     "p95_mm": 0.4,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "costado L",
+     "n": 31,
+     "max_mm": 1.2,
+     "p95_mm": 0.6,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "pliegue de espalda: costura R",
+     "n": 48,
+     "max_mm": 1.0,
+     "p95_mm": 0.4,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "pliegue de espalda: costura L",
+     "n": 48,
+     "max_mm": 0.9,
+     "p95_mm": 0.5,
+     "media_mm": 0.2
+    }
+   ],
+   "asent": "ASENT f204 (+54) d/6f ruedo CB -0.1 CF +0.5 canto +0.0 puno -0.1/+0.0 mm | max 0.5",
+   "avisos": [
+    "AVISO (except): cuerpo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'",
+    "AVISO (except): reposo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'"
+   ],
+   "error": "",
+   "params": {},
+   "receta_hash": "69250c4294cdb3e3f337414cdcaa116d679bd837d3e9823a6c1971bbb7450746",
+   "id_corrida": "c27e94598026",
+   "blender": "5.1.0",
+   "hilos": 4,
+   "dumps": [
+    "X_w57r7_b14_k2_f1.npy",
+    "X_w57r7_b14_k2_f108.npy",
+    "X_w57r7_b14_k2_f12.npy",
+    "X_w57r7_b14_k2_f129.npy",
+    "X_w57r7_b14_k2_f150.npy",
+    "X_w57r7_b14_k2_f162.npy",
+    "X_w57r7_b14_k2_f180.npy",
+    "X_w57r7_b14_k2_f2.npy",
+    "X_w57r7_b14_k2_f24.npy",
+    "X_w57r7_b14_k2_f36.npy",
+    "X_w57r7_b14_k2_f48.npy",
+    "X_w57r7_b14_k2_f6.npy",
+    "X_w57r7_b14_k2_f66.npy",
+    "X_w57r7_b14_k2_f87.npy"
+   ],
+   "params_variante": {
+    "air": 1.002
+   }
+  },
+  "w57r7_b14_k3": {
+   "item": "w2057_r7--w57r7_b14_k3",
+   "tag": "w57r7_b14_k3",
+   "prenda": "w2057",
+   "rc": 0,
+   "t_pared_s": 308,
+   "estado": "FIN",
+   "cuadros_pedidos": 240,
+   "grupo": "B14",
+   "cuadros_hechos": 240,
+   "t_sim_s": 306,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 240,
+    "t_s": 306,
+    "media_mm": 0.1,
+    "max_mm": 3.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "sisa de espalda - manga de abajo L",
+     "n": 21,
+     "max_mm": 2.6,
+     "p95_mm": 1.9,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "sisa delantera (delantero + canesu) - franja de copa L",
+     "n": 31,
+     "max_mm": 2.2,
+     "p95_mm": 0.9,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo R",
+     "n": 21,
+     "max_mm": 1.9,
+     "p95_mm": 1.5,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "manga: costura de abajo (sigue al costado) R",
+     "n": 52,
+     "max_mm": 1.9,
+     "p95_mm": 0.1,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "pliegue de espalda: costura R",
+     "n": 48,
+     "max_mm": 1.6,
+     "p95_mm": 0.7,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pliegue de espalda: costura L",
+     "n": 48,
+     "max_mm": 1.6,
+     "p95_mm": 1.0,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "manga: costura de abajo (sigue al costado) L",
+     "n": 52,
+     "max_mm": 1.5,
+     "p95_mm": 0.7,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "pliegue de espalda: canto del ruedo (30 + 30 mm doblados) R",
+     "n": 3,
+     "max_mm": 1.4,
+     "p95_mm": 0.8,
+     "media_mm": 0.7
+    }
+   ],
+   "asent": "ASENT f240 (+90) d/6f ruedo CB -0.4 CF +0.5 canto -0.1 puno -0.1/+0.1 mm | max 0.5",
+   "avisos": [
+    "AVISO (except): cuerpo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'",
+    "AVISO (except): reposo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'"
+   ],
+   "error": "",
+   "params": {},
+   "receta_hash": "bcae4d1f2edbe7c5e22b107707d63a8864dcc9e3800b73669c323573f41fa32f",
+   "id_corrida": "fd853d0246af",
+   "blender": "5.1.0",
+   "hilos": 4,
+   "dumps": [
+    "X_w57r7_b14_k3_f1.npy",
+    "X_w57r7_b14_k3_f108.npy",
+    "X_w57r7_b14_k3_f12.npy",
+    "X_w57r7_b14_k3_f129.npy",
+    "X_w57r7_b14_k3_f150.npy",
+    "X_w57r7_b14_k3_f162.npy",
+    "X_w57r7_b14_k3_f180.npy",
+    "X_w57r7_b14_k3_f2.npy",
+    "X_w57r7_b14_k3_f210.npy",
+    "X_w57r7_b14_k3_f24.npy",
+    "X_w57r7_b14_k3_f240.npy",
+    "X_w57r7_b14_k3_f36.npy",
+    "X_w57r7_b14_k3_f48.npy",
+    "X_w57r7_b14_k3_f6.npy",
+    "X_w57r7_b14_k3_f66.npy",
+    "X_w57r7_b14_k3_f87.npy"
+   ],
+   "params_variante": {
+    "air": 1.003
+   }
+  },
+  "w57r7_b14_k4": {
+   "item": "w2057_r7--w57r7_b14_k4",
+   "tag": "w57r7_b14_k4",
+   "prenda": "w2057",
+   "rc": 0,
+   "t_pared_s": 244,
+   "estado": "FIN",
+   "cuadros_pedidos": 240,
+   "grupo": "B14",
+   "cuadros_hechos": 240,
+   "t_sim_s": 243,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 240,
+    "t_s": 243,
+    "media_mm": 0.1,
+    "max_mm": 3.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "sisa de espalda - manga de abajo L",
+     "n": 21,
+     "max_mm": 3.0,
+     "p95_mm": 2.6,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo R",
+     "n": 21,
+     "max_mm": 2.6,
+     "p95_mm": 2.1,
+     "media_mm": 0.5
+    },
+    {
+     "costura": "sisa delantera (delantero + canesu) - franja de copa R",
+     "n": 31,
+     "max_mm": 2.2,
+     "p95_mm": 1.4,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "sisa delantera (delantero + canesu) - franja de copa L",
+     "n": 31,
+     "max_mm": 1.7,
+     "p95_mm": 1.4,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "pliegue de espalda: costura L",
+     "n": 48,
+     "max_mm": 1.7,
+     "p95_mm": 1.3,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "pliegue de espalda: costura R",
+     "n": 48,
+     "max_mm": 1.6,
+     "p95_mm": 0.8,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pliegue de espalda: canto del ruedo (30 + 30 mm doblados) R",
+     "n": 3,
+     "max_mm": 1.0,
+     "p95_mm": 0.4,
+     "media_mm": 0.5
+    },
+    {
+     "costura": "manga: costura de abajo (sigue al costado) R",
+     "n": 52,
+     "max_mm": 0.9,
+     "p95_mm": 0.4,
+     "media_mm": 0.1
+    }
+   ],
+   "asent": "ASENT f240 (+90) d/6f ruedo CB -0.2 CF -0.0 canto -0.1 puno +0.1/-0.2 mm | max 0.2",
+   "avisos": [
+    "AVISO (except): cuerpo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'",
+    "AVISO (except): reposo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'"
+   ],
+   "error": "",
+   "params": {},
+   "receta_hash": "425635d626955590b798211bd3791894cf3c79ae296d0f64c9fa9ce50ebf34cb",
+   "id_corrida": "3b4b4b499ebf",
+   "blender": "5.1.0",
+   "hilos": 4,
+   "dumps": [
+    "X_w57r7_b14_k4_f1.npy",
+    "X_w57r7_b14_k4_f108.npy",
+    "X_w57r7_b14_k4_f12.npy",
+    "X_w57r7_b14_k4_f129.npy",
+    "X_w57r7_b14_k4_f150.npy",
+    "X_w57r7_b14_k4_f162.npy",
+    "X_w57r7_b14_k4_f180.npy",
+    "X_w57r7_b14_k4_f2.npy",
+    "X_w57r7_b14_k4_f210.npy",
+    "X_w57r7_b14_k4_f24.npy",
+    "X_w57r7_b14_k4_f240.npy",
+    "X_w57r7_b14_k4_f36.npy",
+    "X_w57r7_b14_k4_f48.npy",
+    "X_w57r7_b14_k4_f6.npy",
+    "X_w57r7_b14_k4_f66.npy",
+    "X_w57r7_b14_k4_f87.npy"
+   ],
+   "params_variante": {
+    "air": 1.004
+   }
+  },
+  "w57r7_b14_k5": {
+   "item": "w2057_r7--w57r7_b14_k5",
+   "tag": "w57r7_b14_k5",
+   "prenda": "w2057",
+   "rc": 0,
+   "t_pared_s": 309,
+   "estado": "FIN",
+   "cuadros_pedidos": 240,
+   "grupo": "B14",
+   "cuadros_hechos": 240,
+   "t_sim_s": 308,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 240,
+    "t_s": 308,
+    "media_mm": 0.1,
+    "max_mm": 4.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "manga: costura de abajo (sigue al costado) L",
+     "n": 52,
+     "max_mm": 3.5,
+     "p95_mm": 0.1,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "sisa delantera (delantero + canesu) - franja de copa L",
+     "n": 31,
+     "max_mm": 3.0,
+     "p95_mm": 2.6,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo L",
+     "n": 21,
+     "max_mm": 2.5,
+     "p95_mm": 2.1,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo R",
+     "n": 21,
+     "max_mm": 2.3,
+     "p95_mm": 2.0,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "pliegue de espalda: costura R",
+     "n": 48,
+     "max_mm": 1.6,
+     "p95_mm": 1.4,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "pliegue de espalda: canto del ruedo (30 + 30 mm doblados) R",
+     "n": 3,
+     "max_mm": 1.6,
+     "p95_mm": 1.1,
+     "media_mm": 0.9
+    },
+    {
+     "costura": "pliegue de espalda: costura L",
+     "n": 48,
+     "max_mm": 1.5,
+     "p95_mm": 1.0,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "manga: costura de abajo (sigue al costado) R",
+     "n": 52,
+     "max_mm": 1.4,
+     "p95_mm": 0.2,
+     "media_mm": 0.1
+    }
+   ],
+   "asent": "ASENT f240 (+90) d/6f ruedo CB -0.0 CF +0.0 canto -0.0 puno -0.1/-0.0 mm | max 0.1",
+   "avisos": [
+    "AVISO (except): cuerpo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'",
+    "AVISO (except): reposo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'"
+   ],
+   "error": "",
+   "params": {},
+   "receta_hash": "a4329b8c0c77cfe5d8ab7258c9c641ad4104e8cd6a11dad9fd6533ef812e2922",
+   "id_corrida": "0c790359a4a0",
+   "blender": "5.1.0",
+   "hilos": 4,
+   "dumps": [
+    "X_w57r7_b14_k5_f1.npy",
+    "X_w57r7_b14_k5_f108.npy",
+    "X_w57r7_b14_k5_f12.npy",
+    "X_w57r7_b14_k5_f129.npy",
+    "X_w57r7_b14_k5_f150.npy",
+    "X_w57r7_b14_k5_f162.npy",
+    "X_w57r7_b14_k5_f180.npy",
+    "X_w57r7_b14_k5_f2.npy",
+    "X_w57r7_b14_k5_f210.npy",
+    "X_w57r7_b14_k5_f24.npy",
+    "X_w57r7_b14_k5_f240.npy",
+    "X_w57r7_b14_k5_f36.npy",
+    "X_w57r7_b14_k5_f48.npy",
+    "X_w57r7_b14_k5_f6.npy",
+    "X_w57r7_b14_k5_f66.npy",
+    "X_w57r7_b14_k5_f87.npy"
+   ],
+   "params_variante": {
+    "air": 1.005
+   }
+  },
+  "w57r7_b12_k1": {
+   "item": "w2057_r7--w57r7_b12_k1",
+   "tag": "w57r7_b12_k1",
+   "prenda": "w2057",
+   "rc": 0,
+   "t_pared_s": 324,
+   "estado": "FIN",
+   "cuadros_pedidos": 240,
+   "grupo": "B12",
+   "cuadros_hechos": 240,
+   "t_sim_s": 323,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 240,
+    "t_s": 323,
+    "media_mm": 0.1,
+    "max_mm": 4.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "sisa de espalda - manga de abajo R",
+     "n": 21,
+     "max_mm": 4.4,
+     "p95_mm": 3.5,
+     "media_mm": 0.9
+    },
+    {
+     "costura": "sisa delantera (delantero + canesu) - franja de copa R",
+     "n": 31,
+     "max_mm": 3.0,
+     "p95_mm": 2.1,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "manga: costura de abajo (sigue al costado) L",
+     "n": 52,
+     "max_mm": 2.7,
+     "p95_mm": 1.5,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "sisa delantera (delantero + canesu) - franja de copa L",
+     "n": 31,
+     "max_mm": 2.4,
+     "p95_mm": 1.6,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "manga: costura de abajo (sigue al costado) R",
+     "n": 52,
+     "max_mm": 2.2,
+     "p95_mm": 1.0,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo L",
+     "n": 21,
+     "max_mm": 2.1,
+     "p95_mm": 2.0,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "pliegue de espalda: costura L",
+     "n": 48,
+     "max_mm": 1.9,
+     "p95_mm": 1.5,
+     "media_mm": 0.5
+    },
+    {
+     "costura": "costado L",
+     "n": 31,
+     "max_mm": 1.8,
+     "p95_mm": 0.7,
+     "media_mm": 0.2
+    }
+   ],
+   "asent": "ASENT f240 (+90) d/6f ruedo CB +1.9 CF +0.1 canto -0.1 puno +0.3/+0.0 mm | max 1.9",
+   "avisos": [
+    "AVISO (except): cuerpo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'",
+    "AVISO (except): reposo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'"
+   ],
+   "error": "",
+   "params": {},
+   "receta_hash": "a47eed620feff34c843a49a4866848a0bed5e8d6cc0d9ddee18ed7593cd28ffa",
+   "id_corrida": "77a8d9131136",
+   "blender": "5.1.0",
+   "hilos": 4,
+   "dumps": [
+    "X_w57r7_b12_k1_f1.npy",
+    "X_w57r7_b12_k1_f108.npy",
+    "X_w57r7_b12_k1_f12.npy",
+    "X_w57r7_b12_k1_f129.npy",
+    "X_w57r7_b12_k1_f150.npy",
+    "X_w57r7_b12_k1_f162.npy",
+    "X_w57r7_b12_k1_f180.npy",
+    "X_w57r7_b12_k1_f2.npy",
+    "X_w57r7_b12_k1_f210.npy",
+    "X_w57r7_b12_k1_f24.npy",
+    "X_w57r7_b12_k1_f240.npy",
+    "X_w57r7_b12_k1_f36.npy",
+    "X_w57r7_b12_k1_f48.npy",
+    "X_w57r7_b12_k1_f6.npy",
+    "X_w57r7_b12_k1_f66.npy",
+    "X_w57r7_b12_k1_f87.npy"
+   ],
+   "params_variante": {
+    "air": 1.001
+   }
+  },
+  "w57r7_b12_k2": {
+   "item": "w2057_r7--w57r7_b12_k2",
+   "tag": "w57r7_b12_k2",
+   "prenda": "w2057",
+   "rc": 0,
+   "t_pared_s": 121,
+   "estado": "STOP",
+   "cuadros_pedidos": 240,
+   "grupo": "B12",
+   "cuadros_hechos": 144,
+   "t_sim_s": 120,
+   "stop": [
+    "STOP: sisa de espalda - manga de abajo L abrio +13.2 mm en 3 grados (> 8.0)"
+   ],
+   "costura_ultimo_cuadro": {
+    "f": 144,
+    "t_s": 119,
+    "media_mm": 0.2,
+    "max_mm": 16.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "sisa de espalda - manga de abajo L",
+     "n": 21,
+     "max_mm": 16.3,
+     "p95_mm": 15.7,
+     "media_mm": 2.5
+    },
+    {
+     "costura": "manga: costura de abajo (sigue al costado) L",
+     "n": 52,
+     "max_mm": 7.8,
+     "p95_mm": 1.0,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "sisa delantera (delantero + canesu) - franja de copa L",
+     "n": 31,
+     "max_mm": 6.4,
+     "p95_mm": 3.7,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "manga: costura de abajo (sigue al costado) R",
+     "n": 52,
+     "max_mm": 3.7,
+     "p95_mm": 1.2,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo R",
+     "n": 21,
+     "max_mm": 3.3,
+     "p95_mm": 3.1,
+     "media_mm": 0.8
+    },
+    {
+     "costura": "sisa delantera (delantero + canesu) - franja de copa R",
+     "n": 31,
+     "max_mm": 2.6,
+     "p95_mm": 1.0,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "pliegue de espalda: costura R",
+     "n": 48,
+     "max_mm": 1.5,
+     "p95_mm": 0.9,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "pliegue de espalda: costura L",
+     "n": 48,
+     "max_mm": 1.4,
+     "p95_mm": 1.0,
+     "media_mm": 0.3
+    }
+   ],
+   "asent": "",
+   "avisos": [
+    "AVISO (except): cuerpo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'",
+    "AVISO (except): reposo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'"
+   ],
+   "error": "",
+   "params": {},
+   "receta_hash": "d314b010ec859e5e00d2a43cd2473d1b99a067bff0f887cb76f59725ba55a682",
+   "id_corrida": "eded8e207c4f",
+   "blender": "5.1.0",
+   "hilos": 4,
+   "dumps": [
+    "X_w57r7_b12_k2_f1.npy",
+    "X_w57r7_b12_k2_f108.npy",
+    "X_w57r7_b12_k2_f12.npy",
+    "X_w57r7_b12_k2_f129.npy",
+    "X_w57r7_b12_k2_f2.npy",
+    "X_w57r7_b12_k2_f24.npy",
+    "X_w57r7_b12_k2_f36.npy",
+    "X_w57r7_b12_k2_f48.npy",
+    "X_w57r7_b12_k2_f6.npy",
+    "X_w57r7_b12_k2_f66.npy",
+    "X_w57r7_b12_k2_f87.npy"
+   ],
+   "params_variante": {
+    "air": 1.002
+   }
+  },
+  "w57r7_b12_k3": {
+   "item": "w2057_r7--w57r7_b12_k3",
+   "tag": "w57r7_b12_k3",
+   "prenda": "w2057",
+   "rc": 0,
+   "t_pared_s": 138,
+   "estado": "STOP",
+   "cuadros_pedidos": 240,
+   "grupo": "B12",
+   "cuadros_hechos": 159,
+   "t_sim_s": 138,
+   "stop": [
+    "STOP: sisa de espalda - manga de abajo L abrio +10.4 mm en 3 grados (> 8.0)"
+   ],
+   "costura_ultimo_cuadro": {
+    "f": 156,
+    "t_s": 135,
+    "media_mm": 0.1,
+    "max_mm": 25.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "sisa de espalda - manga de abajo L",
+     "n": 21,
+     "max_mm": 26.1,
+     "p95_mm": 22.6,
+     "media_mm": 3.5
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo R",
+     "n": 21,
+     "max_mm": 4.0,
+     "p95_mm": 2.9,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "manga: costura de abajo (sigue al costado) L",
+     "n": 52,
+     "max_mm": 2.5,
+     "p95_mm": 1.5,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "manga: costura de abajo (sigue al costado) R",
+     "n": 52,
+     "max_mm": 2.0,
+     "p95_mm": 0.5,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "pliegue de espalda: costura R",
+     "n": 48,
+     "max_mm": 1.6,
+     "p95_mm": 0.7,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "sisa delantera (delantero + canesu) - franja de copa R",
+     "n": 31,
+     "max_mm": 1.5,
+     "p95_mm": 0.8,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "sisa delantera (delantero + canesu) - franja de copa L",
+     "n": 31,
+     "max_mm": 1.4,
+     "p95_mm": 1.1,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "pliegue de espalda: costura L",
+     "n": 48,
+     "max_mm": 1.2,
+     "p95_mm": 0.8,
+     "media_mm": 0.2
+    }
+   ],
+   "asent": "ASENT f156 (+6) d/6f ruedo CB -0.4 CF +0.8 canto +0.2 puno -0.5/+0.8 mm | max 0.8",
+   "avisos": [
+    "AVISO (except): cuerpo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'",
+    "AVISO (except): reposo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'"
+   ],
+   "error": "",
+   "params": {},
+   "receta_hash": "70f39d14f9c247ccb2b9d3fdd86af2efebcfa2f190677c98c480802901a9803b",
+   "id_corrida": "8611c5c748d5",
+   "blender": "5.1.0",
+   "hilos": 4,
+   "dumps": [
+    "X_w57r7_b12_k3_f1.npy",
+    "X_w57r7_b12_k3_f108.npy",
+    "X_w57r7_b12_k3_f12.npy",
+    "X_w57r7_b12_k3_f129.npy",
+    "X_w57r7_b12_k3_f150.npy",
+    "X_w57r7_b12_k3_f2.npy",
+    "X_w57r7_b12_k3_f24.npy",
+    "X_w57r7_b12_k3_f36.npy",
+    "X_w57r7_b12_k3_f48.npy",
+    "X_w57r7_b12_k3_f6.npy",
+    "X_w57r7_b12_k3_f66.npy",
+    "X_w57r7_b12_k3_f87.npy"
+   ],
+   "params_variante": {
+    "air": 1.003
+   }
+  },
+  "w57r7_b12_k4": {
+   "item": "w2057_r7--w57r7_b12_k4",
+   "tag": "w57r7_b12_k4",
+   "prenda": "w2057",
+   "rc": 0,
+   "t_pared_s": 307,
+   "estado": "FIN",
+   "cuadros_pedidos": 240,
+   "grupo": "B12",
+   "cuadros_hechos": 240,
+   "t_sim_s": 306,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 240,
+    "t_s": 306,
+    "media_mm": 0.1,
+    "max_mm": 6.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "sisa delantera (delantero + canesu) - franja de copa R",
+     "n": 31,
+     "max_mm": 6.1,
+     "p95_mm": 3.5,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "sisa delantera (delantero + canesu) - franja de copa L",
+     "n": 31,
+     "max_mm": 5.7,
+     "p95_mm": 2.6,
+     "media_mm": 0.8
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo R",
+     "n": 21,
+     "max_mm": 4.1,
+     "p95_mm": 3.1,
+     "media_mm": 0.8
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo L",
+     "n": 21,
+     "max_mm": 2.6,
+     "p95_mm": 2.1,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "pliegue de espalda: costura L",
+     "n": 48,
+     "max_mm": 1.5,
+     "p95_mm": 1.0,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "costado L",
+     "n": 31,
+     "max_mm": 1.5,
+     "p95_mm": 0.9,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "pliegue de espalda: costura R",
+     "n": 48,
+     "max_mm": 1.3,
+     "p95_mm": 0.9,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "manga: costura de abajo (sigue al costado) R",
+     "n": 52,
+     "max_mm": 1.3,
+     "p95_mm": 0.8,
+     "media_mm": 0.1
+    }
+   ],
+   "asent": "ASENT f240 (+90) d/6f ruedo CB -0.0 CF -0.1 canto +0.1 puno +0.1/+0.5 mm | max 0.5",
+   "avisos": [
+    "AVISO (except): cuerpo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'",
+    "AVISO (except): reposo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'"
+   ],
+   "error": "",
+   "params": {},
+   "receta_hash": "f1fb214878f456458a331f00a15133101d12c9e010ef106df92abf39b73c990b",
+   "id_corrida": "ea639ce95761",
+   "blender": "5.1.0",
+   "hilos": 4,
+   "dumps": [
+    "X_w57r7_b12_k4_f1.npy",
+    "X_w57r7_b12_k4_f108.npy",
+    "X_w57r7_b12_k4_f12.npy",
+    "X_w57r7_b12_k4_f129.npy",
+    "X_w57r7_b12_k4_f150.npy",
+    "X_w57r7_b12_k4_f162.npy",
+    "X_w57r7_b12_k4_f180.npy",
+    "X_w57r7_b12_k4_f2.npy",
+    "X_w57r7_b12_k4_f210.npy",
+    "X_w57r7_b12_k4_f24.npy",
+    "X_w57r7_b12_k4_f240.npy",
+    "X_w57r7_b12_k4_f36.npy",
+    "X_w57r7_b12_k4_f48.npy",
+    "X_w57r7_b12_k4_f6.npy",
+    "X_w57r7_b12_k4_f66.npy",
+    "X_w57r7_b12_k4_f87.npy"
+   ],
+   "params_variante": {
+    "air": 1.004
+   }
+  },
+  "w57r7_b12_k5": {
+   "item": "w2057_r7--w57r7_b12_k5",
+   "tag": "w57r7_b12_k5",
+   "prenda": "w2057",
+   "rc": 0,
+   "t_pared_s": 179,
+   "estado": "STOP",
+   "cuadros_pedidos": 240,
+   "grupo": "B12",
+   "cuadros_hechos": 144,
+   "t_sim_s": 178,
+   "stop": [
+    "STOP: sisa de espalda - manga de abajo L abrio +10.4 mm en 3 grados (> 8.0)"
+   ],
+   "costura_ultimo_cuadro": {
+    "f": 144,
+    "t_s": 177,
+    "media_mm": 0.1,
+    "max_mm": 15.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "sisa de espalda - manga de abajo L",
+     "n": 21,
+     "max_mm": 14.9,
+     "p95_mm": 12.6,
+     "media_mm": 2.0
+    },
+    {
+     "costura": "manga: costura de abajo (sigue al costado) L",
+     "n": 52,
+     "max_mm": 8.1,
+     "p95_mm": 1.2,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "sisa de espalda - manga de abajo R",
+     "n": 21,
+     "max_mm": 4.8,
+     "p95_mm": 2.6,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "sisa delantera (delantero + canesu) - franja de copa R",
+     "n": 31,
+     "max_mm": 3.5,
+     "p95_mm": 2.5,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "sisa delantera (delantero + canesu) - franja de copa L",
+     "n": 31,
+     "max_mm": 3.5,
+     "p95_mm": 2.8,
+     "media_mm": 0.5
+    },
+    {
+     "costura": "manga: costura de abajo (sigue al costado) R",
+     "n": 52,
+     "max_mm": 2.9,
+     "p95_mm": 1.0,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "pliegue de espalda: costura R",
+     "n": 48,
+     "max_mm": 1.6,
+     "p95_mm": 1.4,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "pliegue de espalda: canto del ruedo (30 + 30 mm doblados) R",
+     "n": 3,
+     "max_mm": 1.5,
+     "p95_mm": 1.0,
+     "media_mm": 0.8
+    }
+   ],
+   "asent": "",
+   "avisos": [
+    "AVISO (except): cuerpo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'",
+    "AVISO (except): reposo: Action.fcurves no disponible, se leen las capas de la accion | AttributeError 'Action' object has no attribute 'fcurves'"
+   ],
+   "error": "",
+   "params": {},
+   "receta_hash": "177ec93bd004c2497fe0b2d253d639578254e46e5cee499f5adc290ec986056c",
+   "id_corrida": "5bfc2e92c0f5",
+   "blender": "5.1.0",
+   "hilos": 4,
+   "dumps": [
+    "X_w57r7_b12_k5_f1.npy",
+    "X_w57r7_b12_k5_f108.npy",
+    "X_w57r7_b12_k5_f12.npy",
+    "X_w57r7_b12_k5_f129.npy",
+    "X_w57r7_b12_k5_f2.npy",
+    "X_w57r7_b12_k5_f24.npy",
+    "X_w57r7_b12_k5_f36.npy",
+    "X_w57r7_b12_k5_f48.npy",
+    "X_w57r7_b12_k5_f6.npy",
+    "X_w57r7_b12_k5_f66.npy",
+    "X_w57r7_b12_k5_f87.npy"
+   ],
+   "params_variante": {
+    "air": 1.005
+   }
+  }
+ },
+ "artifacts": [
+  "prenda-w2057_r7--w57r7_c5_k1-<run>",
+  "prenda-w2057_r7--w57r7_c5_k2-<run>",
+  "prenda-w2057_r7--w57r7_c5_k3-<run>",
+  "prenda-w2057_r7--w57r7_c5_k4-<run>",
+  "prenda-w2057_r7--w57r7_c5_k5-<run>",
+  "prenda-w2057_r7--w57r7_b14_k1-<run>",
+  "prenda-w2057_r7--w57r7_b14_k2-<run>",
+  "prenda-w2057_r7--w57r7_b14_k3-<run>",
+  "prenda-w2057_r7--w57r7_b14_k4-<run>",
+  "prenda-w2057_r7--w57r7_b14_k5-<run>",
+  "prenda-w2057_r7--w57r7_b12_k1-<run>",
+  "prenda-w2057_r7--w57r7_b12_k2-<run>",
+  "prenda-w2057_r7--w57r7_b12_k3-<run>",
+  "prenda-w2057_r7--w57r7_b12_k4-<run>",
+  "prenda-w2057_r7--w57r7_b12_k5-<run>"
+ ]
+}
