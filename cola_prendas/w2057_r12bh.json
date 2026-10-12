@@ -1,0 +1,63 @@
+{
+ "firma": "[ESC·f535]",
+ "nombre": "w2057_r12bh",
+ "prenda": "w2057",
+ "nota": "r12b humo: brazo corregido. H = cuerpo_W2057_h179m_b12.npz (MPFB2 1,79 m, contornos del talle M = m684, upperarm 0,42 / lowerarm 0,55: acromion a muneca 605 mm, antes 666; Vin = cuerpo viejo). bgrow 18 explicito: la clave angosto lleva el cuerpo viejo al nuevo entre f1 y f18 (la receta a12 trae bgrow 2). C = cuerpo b12 viejo con la base r11: Vin = V20 en b12, el angosto no mueve nada y C debe salir bit a bit igual a r11 b12t400_k1.",
+ "nf": 150,
+ "hilos": 4,
+ "tmo_min": 90,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  6,
+  9,
+  12,
+  15,
+  18,
+  24,
+  36,
+  48,
+  66,
+  87,
+  108,
+  129,
+  150
+ ],
+ "params": {
+  "arm_f1": 150,
+  "stop_open": 0,
+  "tfric": 40,
+  "sew_max": 0,
+  "air": 1.001,
+  "tension": 400,
+  "bgrow": 18
+ },
+ "grupos": {
+  "C": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b12.npz",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {}
+  },
+  "H": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_h179m_b12.npz",
+   "receta": "receta_w57_a12_k0.json",
+   "params": {}
+  }
+ },
+ "variantes": [
+  {
+   "tag": "w57h12b_c_k1",
+   "grupo": "C",
+   "params": {}
+  },
+  {
+   "tag": "w57h12b_h_k1",
+   "grupo": "H",
+   "params": {}
+  }
+ ]
+}
