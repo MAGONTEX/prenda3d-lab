@@ -1,0 +1,40 @@
+{
+ "firma": "[ESC·f535]",
+ "nombre": "w2057_r7h",
+ "prenda": "w2057",
+ "nota": "r7 humo: bajada lenta del brazo, una palanca: arm_f1 60 -> 150 (rampa de la piel brazos_8 entre f24 y f150 en vez de f24-f60). b14_k0 (cuerpo_W2057_b14.npz, arm_end 14) y c5_k0 (piel20, brazos 20: en c5 arm_f1 no hace nada por construccion), mismas recetas k0 que r6. Compuerta: log con brazos_8 f24->f150; c5 humo = c5 r6 bit a bit en f12-f48; b14 humo = b14 r6 y = c5 en f24, distinto en f36 y f48 (y mas cerca de c5 que b14 r6).",
+ "nf": 48,
+ "hilos": 4,
+ "tmo_min": 30,
+ "dumps": [
+  12,
+  24,
+  36,
+  48
+ ],
+ "params": {
+  "arm_f1": 150
+ },
+ "grupos": {
+  "C": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_piel20.npz"
+  },
+  "B14": {
+   "malla": "w2057_s1c.json",
+   "cuerpo": "cuerpo_W2057_b14.npz"
+  }
+ },
+ "variantes": [
+  {
+   "tag": "w57h7_b14_k0",
+   "grupo": "B14",
+   "receta": "receta_w57_a14_k0.json"
+  },
+  {
+   "tag": "w57h7_c5_k0",
+   "grupo": "C",
+   "receta": "receta_w57_c5_k0.json"
+  }
+ ]
+}
