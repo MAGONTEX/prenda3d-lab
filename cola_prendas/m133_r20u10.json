@@ -1,0 +1,125 @@
+{
+ "nombre": "m133_r20u10",
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "tmo_min": 120,
+ "nf": 80,
+ "dumps": [
+  1,
+  2,
+  6,
+  18,
+  40,
+  60,
+  80
+ ],
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   60,
+   80
+  ]
+ },
+ "nota": "[ESC·f535] R20u N=15: replicas bi_k 1.005-1.009 de Bp y U (el VPS corre 1.010-1.014 con -t 4). Confirma o descarta sisaL_n peor (p 0,018 con N=5).",
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  },
+  "u": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r20u.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_r20u.json",
+    "body": "cuerpo_L_R20P.npz"
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "r20u10_bp5",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.005"
+   }
+  },
+  {
+   "tag": "r20u10_bp6",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.006"
+   }
+  },
+  {
+   "tag": "r20u10_bp7",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.007"
+   }
+  },
+  {
+   "tag": "r20u10_bp8",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.008"
+   }
+  },
+  {
+   "tag": "r20u10_bp9",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.009"
+   }
+  },
+  {
+   "tag": "r20u10_u5",
+   "grupo": "u",
+   "params": {
+    "bi_k": "1.005"
+   }
+  },
+  {
+   "tag": "r20u10_u6",
+   "grupo": "u",
+   "params": {
+    "bi_k": "1.006"
+   }
+  },
+  {
+   "tag": "r20u10_u7",
+   "grupo": "u",
+   "params": {
+    "bi_k": "1.007"
+   }
+  },
+  {
+   "tag": "r20u10_u8",
+   "grupo": "u",
+   "params": {
+    "bi_k": "1.008"
+   }
+  },
+  {
+   "tag": "r20u10_u9",
+   "grupo": "u",
+   "params": {
+    "bi_k": "1.009"
+   }
+  }
+ ]
+}
