@@ -1,0 +1,294 @@
+{
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  20,
+  40,
+  60,
+  80
+ ],
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  }
+ },
+ "nombre": "m133_sep7",
+ "tmo_min": 120,
+ "nf": 80,
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   80
+  ]
+ },
+ "nota": "[ESC f535] SEP7: how often does tp_sep=4.5 lift the R hem at the CF, and does the facing lever avoid it. SEP5: 2 of 7 sep45 replicas lifted it (sep45_3 zR 816 vs zL 798; sep45_4 zR 835, 24 placket x fcR cuts), sep45fa N=3 did not. sep45fa_3..12 = bi_k 1.003-1.012 (N=13 with m133_sep5 sep45fa_0..2); sep45_7..15 = bi_k 1.007-1.015 (N=16 with sep45_0..6 of m133_sep/m133_sep5). Identity: sep45id_1 (bi_k 1.004) must equal m133_sep5--sep45_4 bit for bit. Group bp, base bvp_w=10 ruedo_vivo=30 ruedo_vivo_relleno=0 tp_sep=4.5, nf 80. No new lever.",
+ "variantes": [
+  {
+   "tag": "sep45fa_3",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.003",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "sep45fa_4",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.004",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "sep45fa_5",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.005",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "sep45fa_6",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.006",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "sep45fa_7",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.007",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "sep45fa_8",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.008",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "sep45fa_9",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.009",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "sep45fa_10",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.010",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "sep45fa_11",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.011",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "sep45fa_12",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.012",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "sep45_7",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.007",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  },
+  {
+   "tag": "sep45_8",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.008",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  },
+  {
+   "tag": "sep45_9",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.009",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  },
+  {
+   "tag": "sep45_10",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.010",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  },
+  {
+   "tag": "sep45_11",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.011",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  },
+  {
+   "tag": "sep45_12",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.012",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  },
+  {
+   "tag": "sep45_13",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.013",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  },
+  {
+   "tag": "sep45_14",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.014",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  },
+  {
+   "tag": "sep45_15",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.015",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  },
+  {
+   "tag": "sep45id_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.004",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  }
+ ]
+}
