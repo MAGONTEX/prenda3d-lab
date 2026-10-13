@@ -1,0 +1,159 @@
+{
+ "firma": "[ESC·f535]",
+ "prenda": "w2094",
+ "cuerpo": "cuerpo_W2094_piel20.npz",
+ "hrest": "sim/reposo_v5e.npz",
+ "rk": "sim/rk_t2e4.npz",
+ "hilos": 4,
+ "nf": 150,
+ "tmo_min": 120,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  14,
+  16,
+  18,
+  20,
+  24,
+  30,
+  36,
+  48,
+  60,
+  72,
+  96,
+  120,
+  150
+ ],
+ "params": {
+  "rk_df": 1
+ },
+ "nombre": "w2094_qc1",
+ "nota": "W2094 primer QC del critico: base S (v8t10 + broches_con_altura sep_h 4 sep_eps 0.3 + rk_t2e10_s) a largo completo, 150 f, N=5 replicas nulas bending k13-k17 PAREADAS con w2094_r7t2e10x (run 38257810511): f1-f30 deben dar los mismos bits. C (v8r + rk_t2e7c_r) mismas k13-k17 a 150 f: control pareado del puno en el cuadro final. I = w8rk_k5 de w2094_r7t2e4 (run 38222400246) repetida: identidad bit a bit en los 25 dumps (sep_h 0 = identico a 150 f).",
+ "grupos": {
+  "S": {
+   "malla": "w2094_v0_v8t10.json",
+   "rk": "sim/rk_t2e10_s.npz"
+  },
+  "C": {
+   "malla": "w2094_v0_v8r.json",
+   "rk": "sim/rk_t2e7c_r.npz"
+  },
+  "I": {
+   "malla": "w2094_v0_v8.json",
+   "rk": "sim/rk_t2e4.npz",
+   "params": {
+    "rk_df": 1
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "s150_k13",
+   "grupo": "S",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.56,
+    "sep_h": 4.0,
+    "sep_eps": 0.3
+   }
+  },
+  {
+   "tag": "s150_k14",
+   "grupo": "S",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.68,
+    "sep_h": 4.0,
+    "sep_eps": 0.3
+   }
+  },
+  {
+   "tag": "s150_k15",
+   "grupo": "S",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.8,
+    "sep_h": 4.0,
+    "sep_eps": 0.3
+   }
+  },
+  {
+   "tag": "s150_k16",
+   "grupo": "S",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.92,
+    "sep_h": 4.0,
+    "sep_eps": 0.3
+   }
+  },
+  {
+   "tag": "s150_k17",
+   "grupo": "S",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 122.04,
+    "sep_h": 4.0,
+    "sep_eps": 0.3
+   }
+  },
+  {
+   "tag": "c150_k13",
+   "grupo": "C",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.56
+   }
+  },
+  {
+   "tag": "c150_k14",
+   "grupo": "C",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.68
+   }
+  },
+  {
+   "tag": "c150_k15",
+   "grupo": "C",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.8
+   }
+  },
+  {
+   "tag": "c150_k16",
+   "grupo": "C",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 121.92
+   }
+  },
+  {
+   "tag": "c150_k17",
+   "grupo": "C",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 122.04
+   }
+  },
+  {
+   "tag": "w8rk_k5",
+   "grupo": "I",
+   "receta": "receta_w6a0_k0.json",
+   "params": {
+    "bending": 120.6
+   }
+  }
+ ]
+}
