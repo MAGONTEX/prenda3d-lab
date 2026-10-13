@@ -1,3 +1,6 @@
+# [ESC·f535] JJ3 (2026-10-13): w_bv=<peso> (rigidez del marco del bolsillo: bvR/bvL + franja del grupo zipper de fc/fs y gemelos _f a <= 12 mm de molde de vivo-fc/vivo-fs)
+#   y bvp_w=<mm> [bvp_off=4.5] (PUENTE C01c/m10p sobre las 4 costuras vivo-fc/vivo-fs: margen de fc/fs que sigue su plano por debajo del marco y se cose en su canto
+#   al bv; misma maquinaria PTV/PT-R que pc_w, contiguo a su margen). Sin las claves = identico.
 # [ESC·f535] TOR3 (2026-10-13): tp_nohs=1 (costura 'tapeta' sin los pares a hsR) y tp_acw=<mm> (franja de la tapeta junto a su costura fuera de autocol). Sin las claves = identico.
 # [ESC·f535] R20m (2026-10-12): parche R20b portado (_qc_R20m/r20m_port.py): body=<npz> con la clave "brazo" (cuerpo_L_R20c.npz: RE3 + brazos y manos
 #   de la piel MPFB2 talle L) -> esos triangulos van a CD_cuerpo_L_brazos (espesor ath, friccion fric, como los tubos) con las mismas claves angosto/brazos_8
@@ -471,6 +474,22 @@ if P["pc_w"] > 0:   # [ESC·f535] HB: margen-puente de hc sobre las costuras cop
     D["sew"] += [[int(a_), int(b_)] for a_, b_ in _ss]; D["sew_seam"] += ["puente canto"] * len(_ss)
     PTV = list(range(_p0, _p0 + _nm)); PT_PAR = _pa; NV = len(V0)
     log(f"[ESC·f535] PUENTE COPA (HB): +{_nm} v, +{len(_fs)} caras, +{len(_ss)} resortes 'puente canto' | NV {NV} || " + " || ".join(_ms))
+if P.get("bvp_w", 0.0) > 0:   # [ESC·f535] JJ3: PUENTE sobre las costuras del marco del bolsillo (ver cabecera). Va contiguo al margen de la copa (reposo PT-R y dumps XP en un bloque)
+    assert P["pt_w"] <= 0 and not ANCV, "bvp_w con pt_w o esc= no probado"
+    sys.path.insert(0, E2 + "_qc_PT"); import puente_PT as _PT
+    _PT.COLLAR = ("fcR", "fcL", "fsR", "fsL"); _PT.BODY = ("bvR", "bvL")
+    _p0 = len(V0); assert not PTV or PTV[-1] + 1 == _p0, ("bvp: el margen tiene que quedar contiguo al de la copa", PTV[-1] if PTV else None, _p0)
+    _vs, _uvs, _fs, _ss, _pa, _ms = [], [], [], [], [], []
+    for _sn in ("vivo-fc R", "vivo-fs R", "vivo-fc L", "vivo-fs L"):
+        _r = _PT.margen(D, V0, P["bvp_w"], P.get("bvp_off", 4.5), seam=_sn); _k0 = len(_vs)   # margen() numera lo nuevo desde len(V0): correr por lo ya agregado
+        _fs += [[(x_ if x_ < _p0 else x_ + _k0) for x_ in f_] for f_ in _r["f"]]; _ss += [(m_ + _k0, d_) for m_, d_ in _r["sew"]]
+        _vs += _r["v"]; _uvs += _r["uv"]; _pa += [int(a_) for a_ in _r["par"]]; _ms.append(_sn + ": " + _r["msg"])
+    _nm = len(_vs); assert _nm > 0 and len(D["uv"]) == _p0, ("bvp", _nm, len(D["uv"]), _p0)
+    V0 = np.vstack([V0, np.array(_vs, float)]); D["v"] = D["v"] + _vs; D["uv"] = D["uv"] + _uvs; D["pocket"] = list(D["pocket"]) + [None] * _nm
+    F = np.vstack([F, np.array(_fs, int)]); D["f"] = F.tolist()
+    D["sew"] += [[int(a_), int(b_)] for a_, b_ in _ss]; D["sew_seam"] += ["puente canto"] * len(_ss)
+    PTV = PTV + list(range(_p0, _p0 + _nm)); PT_PAR = PT_PAR + _pa; NV = len(V0); D["groups"]["puente"] = [PTV[0], PTV[-1] + 1]
+    log(f"[ESC·f535] JJ3 PUENTE MARCO (bvp): +{_nm} v, +{len(_fs)} caras, +{len(_ss)} resortes 'puente canto' | PTV {len(PTV)} | NV {NV} || " + " || ".join(_ms))
 if P["hf"] > 0:   # [ESC·f535] HP: forro de capucha (ver cabecera)
     _fj = json.load(open(E2 + __import__("os").environ.get("M133_FORRO", "_qc_HP/forro_HP.json"))); _p0 = len(V0); _nm = len(_fj["v"]); assert len(D["uv"]) == _p0, ("hf", len(D["uv"]), _p0)
     _dv = max(float(np.abs(V0[i] - np.array(D["v"][i])).max()) for i in _fj["pocket_shell"][:50]) * 1000
@@ -541,7 +560,7 @@ if HREST:   # RG (2026-10-09, CP78): hrest=<npz> (ids, co en m; _qc_RG/mk_hrest.
     for _i, _c in zip(_hi, _hco): kc.data[int(_i)].co = (float(_c[0]), float(_c[1]), float(_c[2]))
     _gn = sorted(set(_n for _n, (_a, _b) in D["groups"].items() for _i in (int(_hi.min()), int(_hi.max())) if _a <= _i < _b))
     log(f"REPOSO EN FORMA (RG): {HREST} | {len(_hi)} vertices de {_gn} | z del reposo {1000 * _hco[:, 2].min():.0f}..{1000 * _hco[:, 2].max():.0f} mm (molde plano: {1000 * _mp[:, 2].min():.0f}..{1000 * _mp[:, 2].max():.0f})")
-if P["pc_w"] > 0:   # [ESC·f535] HB: reposo del margen = reposo de su vertice de hc + molde (PT-R; despues de relleno, sandwich y hrest)
+if P["pc_w"] > 0 or P.get("bvp_w", 0.0) > 0:   # [ESC·f535] HB: reposo del margen = reposo de su vertice de hc + molde (PT-R; despues de relleno, sandwich y hrest). JJ3: incluye el de bvp
     assert not HREST and (not RK or "ids" in np.load(E2 + RK).files), "pc_w con hrest/rk no probado (R24: rk con ids si)"
     log(f"[ESC·f535] PUENTE COPA (HB) reposo: {_PT.reposo(kc, PTV[0], PT_PAR, D['uv'])}")
 FMP = int(P["fmp"])   # e2zf: fmp=N -> el reposo queda FIJO en V0 (Basis) hasta fN (control: separar arranque fuera de equilibrio de cambio de reposo); 2 = identico
@@ -669,6 +688,16 @@ if FHV and P["hf_w"] > 0:   # [ESC·f535] HP: presion cascara-forro de la capuch
     vpres.add(FHS + FHV, float(P["hf_w"]), 'REPLACE'); log(f"[ESC·f535] PRESION CAPUCHA (HP): peso {P['hf_w']} en {len(FHS)} v de cascara + {len(FHV)} v de forro (p0 {P['p0']})")
 vrig = gar.vertex_groups.new(name="rigidez")
 vrig.add(D["zipper"], 1.0, 'REPLACE'); vrig.add(D["placket"], P["w_plk"], 'REPLACE')
+if P.get("w_bv", -1.0) >= 0:   # [ESC·f535] JJ3 (2026-10-13): marco del bolsillo = plancha (rango TP 4-160x, central ~18x), no flexion maxima (ver cabecera). Sin la clave = identico
+    _Gb = D["groups"]; _UVb = np.array(D["uv"], float); _zsb = set(D["zipper"]); _bvw = [i for n in ("bvR", "bvL") for i in range(*_Gb[n])]; _inf = {}
+    for _nb in ("fcR", "fcL", "fsR", "fsL"):
+        a_, b_ = _Gb[_nb]; _sv = sorted(set(x for (p_, q_), s_ in zip(D["sew"], D["sew_seam"]) if s_ in ("vivo-fc R", "vivo-fs R", "vivo-fc L", "vivo-fs L") for x in (p_, q_) if a_ <= x < b_))
+        _ids = np.arange(a_, b_); _dm = np.min(np.linalg.norm(_UVb[_ids][:, None, :] - _UVb[_sv][None, :, :], axis=2), axis=1)
+        _sel = [int(i) for i in _ids[_dm <= 12.0] if int(i) in _zsb]; _bvw += _sel; _inf[_nb] = len(_sel)
+        if _nb + "_f" in _Gb:
+            fa_ = _Gb[_nb + "_f"][0]; _t = [i - a_ + fa_ for i in _sel if (i - a_ + fa_) in _zsb]; _bvw += _t; _inf[_nb + "_f"] = len(_t)
+    _bvw = sorted(set(_bvw)); vrig.add(_bvw, P["w_bv"], 'REPLACE')
+    log(f"[ESC·f535] JJ3 MARCO DEL BOLSILLO: w_bv {P['w_bv']} -> flexion {P['bending'] + (P['bend_max'] - P['bending']) * P['w_bv']:.1f} (cierre {P['bend_max']}) en {len(_bvw)} vertices: bv {sum(_Gb[n][1] - _Gb[n][0] for n in ('bvR', 'bvL'))} + {_inf}")
 if P["w_plk"] != 1.0: log("tapeta: peso de rigidez", P["w_plk"], "(1 = flexion max, como el cierre)")
 if P["cuff_on"] > 0: vrig.add(D["cuff"], P["w_cuff"], 'REPLACE')   # e2m: bug de e2k arreglado (el puno quedaba dentro del if de w_plk); cuff_on=0 reproduce e2k..e2m3
 log("RIGIDEZ tapeta w_plk", P["w_plk"], "-> flexion", round(P["bending"] + (P["bend_max"] - P["bending"]) * P["w_plk"], 1), "| puno:", ("w_cuff %s" % P["w_cuff"]) if P["cuff_on"] > 0 else "SIN peso (flexion base, como e2k-e2m3)")
