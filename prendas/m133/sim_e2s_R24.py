@@ -546,7 +546,26 @@ if P["ruedo_vivo"] > 0:
     D["sew"] += [[int(a_), int(b_)] for a_, b_ in RV["sew"]]; D["sew_seam"] += ["pespunte ruedo"] * len(RV["sew"])
     for _ln in RV["log"]: log("[ESC·f535] VIVO RUEDO (HEM2):", _ln)
     log(f"[ESC·f535] VIVO RUEDO (HEM2): {P['ruedo_vivo']} mm | +{len(RV['sew'])} resortes 'pespunte ruedo' | franja {len(RV['band'])} v de cascara + {len(RV['band_f'])} de capa interior | relleno {int(P['ruedo_vivo_relleno'])}")
-me = bpy.data.meshes.new("CD_campera"); me.from_pydata(V0.tolist(), D["sew"], D["f"])
+QUADS = None   # [ESC·f535] QUAD (2026-10-13): quads=1 (hood shell hsR/hsL/hc/hb + hood lining hcl/hlR/hlL) | quads=2 (every fabric piece, quads_m133.TELA):
+# pairs of triangles become quads ONLY in the Blender mesh, so the Cloth builds its shear springs (cloth.cc: only on faces with more than 3 sides).
+# D["f"] and F stay triangles (all numpy code); vertex indices do not change (dumps and meters stay valid). Rule in quads_m133.py. Never joined:
+# added structures (not inside one listed piece), faces with a vertex within sand_len + 8 mm of the neck facing ht (sandwich rays keep normals and
+# tri[0]), triangles hit by a ht ray (_hits/_hm), the hem band (ruedo_vivo). Without the key = identical.
+if P.get("quads", 0.0) > 0:
+    sys.path.insert(0, E2); import quads_m133 as _QM
+    _qn = _QM.HOOD if P["quads"] < 1.5 else _QM.TELA; _qp = _QM.face_piece(F, D["groups"], _qn)
+    _qht = [i for n in ("htR", "htL") if n in D["groups"] for i in range(*D["groups"][n])]; _qhs = set(_qht)
+    _qex = _QM.near_mask(V0, _qht, (P["sand_len"] + 8.0) / 1000.0)[F].any(1); _qz = int((_qex & (_qp >= 0)).sum()); _qhit = 0
+    for _h in list(globals().get("_hits") or []) + list(globals().get("_hm") or []):
+        if _h[0] in _qhs or int(F[_h[1]][0]) in _qhs:
+            _qhit += int(not _qex[_h[1]]); _qex[_h[1]] = True
+    if RV is not None:
+        _qbv = np.zeros(len(V0), bool); _qbv[[int(i) for k in ("band", "band_f", "band_all", "band_all_f") for i in RV.get(k, [])]] = True; _qex |= _qbv[F].any(1)
+    QUADS = _QM.join(F, D["uv"], D["sew"], _qp, V=V0, excl=_qex)
+    for _n, _s in _QM.summary(QUADS, _qp, _qn).items(): log(f"[ESC·f535] QUAD {_n}: {_s}")
+    log(f"[ESC·f535] QUAD quads={int(P['quads'])}: {len(QUADS['pairs'])} quads, {len(QUADS['faces'])} faces in the Blender mesh (were {len(F)} triangles) | "
+        f"sandwich zone {_qz} triangles, ht-hit triangles outside it {_qhit}, excluded total {int((_qex & (_qp >= 0)).sum())} | rejected {QUADS['reasons']}")
+me = bpy.data.meshes.new("CD_campera"); me.from_pydata(V0.tolist(), D["sew"], D["f"] if QUADS is None else QUADS["faces"])
 gar = bpy.data.objects.new("CD_campera", me); col.objects.link(gar)
 for name, (a, b) in D["groups"].items():
     vg = gar.vertex_groups.new(name=name); vg.add(list(range(a, b)), 1.0, 'REPLACE')
