@@ -50,7 +50,7 @@
    20
   ]
  },
- "nota": "[ESC\u00b7f535] TOR humo: atribucion de la deriva del CF a L (bp = r20u5_bp0). c control; s0 sin broches (snaps=0); np sin tapeta (notp=1, diagnostico); g12 gravedad 0 hasta f10, 1 en f12 (g0=10 g1=12). N=2 (bi_k 1.000/1.001), 20 f, dumps 1-20.",
+ "nota": "[ESC·f535] TOR humo: atribucion de la deriva del CF a L (bp = r20u5_bp0). c control; s0 sin broches (snaps=0); np sin tapeta (notp=1, diagnostico); g12 gravedad 0 hasta f10, 1 en f12 (g0=10 g1=12). N=2 (bi_k 1.000/1.001), 20 f, dumps 1-20.",
  "variantes": [
   {
    "tag": "tor_c_0",
@@ -116,5 +116,9 @@
     "g1": "12"
    }
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38340697199",
+  "utc": "2026-10-13T03:13:56Z"
+ }
 }
