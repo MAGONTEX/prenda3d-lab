@@ -166,5 +166,9 @@
     "ruedo_vivo_relleno": "0"
    }
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38389419233",
+  "utc": "2026-10-13T11:19:34Z"
+ }
 }
