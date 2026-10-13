@@ -1,0 +1,519 @@
+{
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  20,
+  40,
+  60,
+  80
+ ],
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  }
+ },
+ "nombre": "m133_cap2b",
+ "tmo_min": 120,
+ "nf": 80,
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   80
+  ]
+ },
+ "nota": "[ESC f535] CAP2b: same 6 hood cells as m133_cap2 (bp, h0, pl, plh0, k15, plk), 5 more paired replicas bi_k 1.005-1.009, pack 2 (-t 2). Pooled with cap2 gives N=10 per cell, each cell 5 at -t4 + 5 at -t2.",
+ "variantes": [
+  {
+   "tag": "cap2b_bp_5",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.005"
+   }
+  },
+  {
+   "tag": "cap2b_bp_6",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.006"
+   }
+  },
+  {
+   "tag": "cap2b_bp_7",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.007"
+   }
+  },
+  {
+   "tag": "cap2b_bp_8",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.008"
+   }
+  },
+  {
+   "tag": "cap2b_bp_9",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.009"
+   }
+  },
+  {
+   "tag": "cap2b_h0_5",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.005",
+    "hf_w": "0"
+   }
+  },
+  {
+   "tag": "cap2b_h0_6",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.006",
+    "hf_w": "0"
+   }
+  },
+  {
+   "tag": "cap2b_h0_7",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.007",
+    "hf_w": "0"
+   }
+  },
+  {
+   "tag": "cap2b_h0_8",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.008",
+    "hf_w": "0"
+   }
+  },
+  {
+   "tag": "cap2b_h0_9",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.009",
+    "hf_w": "0"
+   }
+  },
+  {
+   "tag": "cap2b_pl_5",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.005",
+    "pl_bh": "50",
+    "hc_lo": "15"
+   }
+  },
+  {
+   "tag": "cap2b_pl_6",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.006",
+    "pl_bh": "50",
+    "hc_lo": "15"
+   }
+  },
+  {
+   "tag": "cap2b_pl_7",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.007",
+    "pl_bh": "50",
+    "hc_lo": "15"
+   }
+  },
+  {
+   "tag": "cap2b_pl_8",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.008",
+    "pl_bh": "50",
+    "hc_lo": "15"
+   }
+  },
+  {
+   "tag": "cap2b_pl_9",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.009",
+    "pl_bh": "50",
+    "hc_lo": "15"
+   }
+  },
+  {
+   "tag": "cap2b_plh0_5",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.005",
+    "pl_bh": "50",
+    "hc_lo": "15",
+    "hf_w": "0"
+   }
+  },
+  {
+   "tag": "cap2b_plh0_6",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.006",
+    "pl_bh": "50",
+    "hc_lo": "15",
+    "hf_w": "0"
+   }
+  },
+  {
+   "tag": "cap2b_plh0_7",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.007",
+    "pl_bh": "50",
+    "hc_lo": "15",
+    "hf_w": "0"
+   }
+  },
+  {
+   "tag": "cap2b_plh0_8",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.008",
+    "pl_bh": "50",
+    "hc_lo": "15",
+    "hf_w": "0"
+   }
+  },
+  {
+   "tag": "cap2b_plh0_9",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.009",
+    "pl_bh": "50",
+    "hc_lo": "15",
+    "hf_w": "0"
+   }
+  },
+  {
+   "tag": "cap2b_k15_5",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.005",
+    "cinch": "0.15"
+   }
+  },
+  {
+   "tag": "cap2b_k15_6",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.006",
+    "cinch": "0.15"
+   }
+  },
+  {
+   "tag": "cap2b_k15_7",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.007",
+    "cinch": "0.15"
+   }
+  },
+  {
+   "tag": "cap2b_k15_8",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.008",
+    "cinch": "0.15"
+   }
+  },
+  {
+   "tag": "cap2b_k15_9",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.009",
+    "cinch": "0.15"
+   }
+  },
+  {
+   "tag": "cap2b_plk_5",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.005",
+    "pl_bh": "50",
+    "hc_lo": "15",
+    "cinch": "0.15"
+   }
+  },
+  {
+   "tag": "cap2b_plk_6",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.006",
+    "pl_bh": "50",
+    "hc_lo": "15",
+    "cinch": "0.15"
+   }
+  },
+  {
+   "tag": "cap2b_plk_7",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.007",
+    "pl_bh": "50",
+    "hc_lo": "15",
+    "cinch": "0.15"
+   }
+  },
+  {
+   "tag": "cap2b_plk_8",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.008",
+    "pl_bh": "50",
+    "hc_lo": "15",
+    "cinch": "0.15"
+   }
+  },
+  {
+   "tag": "cap2b_plk_9",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.009",
+    "pl_bh": "50",
+    "hc_lo": "15",
+    "cinch": "0.15"
+   }
+  }
+ ],
+ "tomada": {
+  "por": "actions 38422503003",
+  "utc": "2026-10-13T15:29:35Z"
+ },
+ "pack": 2
+}
