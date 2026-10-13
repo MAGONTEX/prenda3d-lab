@@ -1,0 +1,152 @@
+{
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  20,
+  40,
+  60,
+  80
+ ],
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  }
+ },
+ "nombre": "m133_sep5",
+ "tmo_min": 120,
+ "nf": 80,
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   80
+  ]
+ },
+ "nota": "[ESC f535] SEP5: confirm tp_sep=4.5 (placket seam with real thickness, 80 rigid spacers) before calling it a result. m133_sep gave N=2: drift f80 -0.8 mm (base -32.5), L-R CF -3.8 / side +4.2, 0 placket cuts. sep45_2..6 = 5 NEW replicas bi_k 1.002-1.006 (N=7 with sep45_0/1 of m133_sep). sep45fa_0..2 = sep45 + TOR7 facing lever (fa_acb=20 cf 18.5-32), bi_k 1.000-1.002. Identity: sep45id_0 must equal m133_sep--sep45_0 bit for bit. Group bp, base bvp_w=10 ruedo_vivo=30 ruedo_vivo_relleno=0, nf 80.",
+ "variantes": [
+  {
+   "tag": "sep45_2",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.002",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  },
+  {
+   "tag": "sep45_3",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.003",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  },
+  {
+   "tag": "sep45_4",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.004",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  },
+  {
+   "tag": "sep45_5",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.005",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  },
+  {
+   "tag": "sep45_6",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.006",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  },
+  {
+   "tag": "sep45fa_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "sep45fa_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "sep45fa_2",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.002",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "sep45id_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  }
+ ]
+}
