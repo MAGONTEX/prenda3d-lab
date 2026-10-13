@@ -49,7 +49,7 @@
    80
   ]
  },
- "nota": "[ESC\u00b7f535] INF N=5: inflado vs reposo en el escote CB. c = bp de r20u5 (bi_k 1.000-1.004); p20 = presion 0->p0 en f2-f20; r20 = reposo V0 hasta f20 (rk_f0=20); pd = presion 0 hasta f40, p0 en f60. 80 f, dumps densos.",
+ "nota": "[ESC·f535] INF N=5: inflado vs reposo en el escote CB. c = bp de r20u5 (bi_k 1.000-1.004); p20 = presion 0->p0 en f2-f20; r20 = reposo V0 hasta f20 (rk_f0=20); pd = presion 0 hasta f40, p0 en f60. 80 f, dumps densos.",
  "grupos": {
   "bp": {
    "params": {
@@ -218,5 +218,9 @@
     "pramp": "pramp_inf40.json"
    }
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38339170260",
+  "utc": "2026-10-13T02:55:08Z"
+ }
 }
