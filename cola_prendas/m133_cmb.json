@@ -1,0 +1,211 @@
+{
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  20,
+  40,
+  60,
+  80
+ ],
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  }
+ },
+ "nombre": "m133_cmb",
+ "tmo_min": 120,
+ "nf": 80,
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   80
+  ]
+ },
+ "nota": "[ESC f535] CMB N=5 f80 fresh replicas bi_k 1.005-1.009: control / bvp_w=10 (bridge) / tp_acw=8 (placket seam band out of self-collision) / both; plus control bi_k 1.000 identity check vs tor3n_c_0. Old N=5 (bi_k 1.000-1.004) = tor3n_c, tor4_acw8, jj3(n5)_pte, jj3(n5)_ptea8. Group bp.",
+ "variantes": [
+  {
+   "tag": "cmb_c_id",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "cmb_c_5",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.005"
+   }
+  },
+  {
+   "tag": "cmb_pte_5",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.005",
+    "bvp_w": "10"
+   }
+  },
+  {
+   "tag": "cmb_a8_5",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.005",
+    "tp_acw": "8"
+   }
+  },
+  {
+   "tag": "cmb_ptea8_5",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.005",
+    "bvp_w": "10",
+    "tp_acw": "8"
+   }
+  },
+  {
+   "tag": "cmb_c_6",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.006"
+   }
+  },
+  {
+   "tag": "cmb_pte_6",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.006",
+    "bvp_w": "10"
+   }
+  },
+  {
+   "tag": "cmb_a8_6",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.006",
+    "tp_acw": "8"
+   }
+  },
+  {
+   "tag": "cmb_ptea8_6",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.006",
+    "bvp_w": "10",
+    "tp_acw": "8"
+   }
+  },
+  {
+   "tag": "cmb_c_7",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.007"
+   }
+  },
+  {
+   "tag": "cmb_pte_7",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.007",
+    "bvp_w": "10"
+   }
+  },
+  {
+   "tag": "cmb_a8_7",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.007",
+    "tp_acw": "8"
+   }
+  },
+  {
+   "tag": "cmb_ptea8_7",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.007",
+    "bvp_w": "10",
+    "tp_acw": "8"
+   }
+  },
+  {
+   "tag": "cmb_c_8",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.008"
+   }
+  },
+  {
+   "tag": "cmb_pte_8",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.008",
+    "bvp_w": "10"
+   }
+  },
+  {
+   "tag": "cmb_a8_8",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.008",
+    "tp_acw": "8"
+   }
+  },
+  {
+   "tag": "cmb_ptea8_8",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.008",
+    "bvp_w": "10",
+    "tp_acw": "8"
+   }
+  },
+  {
+   "tag": "cmb_c_9",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.009"
+   }
+  },
+  {
+   "tag": "cmb_pte_9",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.009",
+    "bvp_w": "10"
+   }
+  },
+  {
+   "tag": "cmb_a8_9",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.009",
+    "tp_acw": "8"
+   }
+  },
+  {
+   "tag": "cmb_ptea8_9",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.009",
+    "bvp_w": "10",
+    "tp_acw": "8"
+   }
+  }
+ ]
+}
