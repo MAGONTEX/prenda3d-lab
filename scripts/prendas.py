@@ -2,7 +2,8 @@
 
 Tanda = cola_prendas/<nombre>.json (ver prendas/README.md). Cada variante es UN trabajo de Actions (4 vCPU, hasta 20 a la vez, 6 h).
     python3 scripts/prendas.py validar cola_prendas/<t>.json            revisa una tanda sin tomarla (usar antes de encolar)
-    python3 scripts/prendas.py tomar --max 20                           git mv cola_prendas -> tomadas_prendas; imprime la matriz ["t--tag", ...]
+    python3 scripts/prendas.py tomar --max 20                           git mv cola_prendas -> tomadas_prendas; imprime los items ["t--tag", ...]
+    python3 scripts/prendas.py trabajos '["t--a", ...]'                 matriz de prenda.yml: items agrupados por `pack` ("t--a+t--b")
     python3 scripts/prendas.py preparar <item> <salida>                 receta combinada + args de lanzar.py (uno por linea) en <salida>/
     python3 scripts/prendas.py resumir <item> <salida> --rc N --t S     resumen chico (json) de una variante, leido del log del nucleo
     python3 scripts/prendas.py cerrar --resumenes <dir> --items '[...]' --url U   resultados_prendas/<t>.json + mueve a hecho_/fallo_prendas
@@ -13,6 +14,10 @@ Tanda = cola_prendas/<nombre>.json (ver prendas/README.md). Cada variante es UN 
 `dumps` -> dumps=a,b,c. Antes de correr, cada entrada de prendas/<prenda>/ se enlaza en <salida>/ (el script lee y escribe ahi: E2 por
 `entorno`, con {salida}); despues de la sim el workflow saca los enlaces y el .blend. Una clave de `params` que el script no lee es ERROR
 (palanca inexistente). `medir`: {"script": ruta, "cuadros": [..]} corre en el mismo trabajo y su json entra en el resumen (`metricas`).
+
+[ESC·f535] `"pack": 2` (2026-10-13, defecto 1): dos variantes por trabajo de Actions, cada una con su Blender en paralelo con -t 2
+(se ignora `hilos`), su carpeta, su tope y su rc; artifacts y resumen por variante, igual que con pack 1. `--max` de `tomar` cuenta
+trabajos, no variantes. Impar: el ultimo trabajo lleva una sola variante (tambien con -t 2).
 """
 import argparse
 import glob
@@ -47,6 +52,20 @@ def campo(T, v, k, d=None):
         if src.get(k) not in (None, "", []):
             return src[k]
     return d
+
+
+def paquete(T):
+    """[ESC·f535] variantes por trabajo de Actions (`pack`, defecto 1)."""
+    return T.get("pack", 1)
+
+
+def hilos(T):
+    """hilos de Blender por variante: con pack > 1 se ignora `hilos` (4 vCPU / pack)."""
+    return 4 // paquete(T) if paquete(T) > 1 else T.get("hilos", 4)
+
+
+def n_trabajos(T):
+    return -(-len(T.get("variantes") or []) // paquete(T))
 
 
 def validar(T, ruta=""):
@@ -92,6 +111,9 @@ def validar(T, ruta=""):
     h = T.get("hilos", 4)
     if not isinstance(h, int) or not 1 <= h <= 4:
         e.append("hilos: 1..4 (el runner tiene 4 vCPU)")
+    pk = T.get("pack", 1)
+    if isinstance(pk, bool) or pk not in (1, 2):
+        e.append("pack: 1 o 2 (2 = dos variantes por trabajo, cada una con -t 2)")
     return e
 
 
@@ -146,11 +168,13 @@ def validar_argv(T, d):
 def cmd_validar(a):
     T = leer(a.tanda); e = validar(T, a.tanda)
     print("OK: " + ", ".join(f"{T['nombre']}{SEP}{v['tag']}" for v in T["variantes"]) if not e else "\n".join("ERROR " + x for x in e))
+    if not e and paquete(T) > 1:
+        print(f"pack {paquete(T)}: {n_trabajos(T)} trabajos, cada Blender con -t {hilos(T)} (`hilos` {T.get('hilos', 4)} ignorado)")
     return 1 if e else 0
 
 
 def cmd_tomar(a):
-    items = []
+    items, nj = [], 0   # nj: trabajos de Actions tomados (con pack 2 son la mitad de las variantes)
     for ruta in sorted(glob.glob(os.path.join(REPO, COLA, "*.json"))):
         t = os.path.splitext(os.path.basename(ruta))[0]
         try:
@@ -165,8 +189,8 @@ def cmd_tomar(a):
             _git("add", os.path.join(FALLO, t + ".json"))
             print(f"tanda {t} invalida: {e}", file=sys.stderr)
             continue
-        n = len(T["variantes"])
-        if items and len(items) + n > a.max:
+        n = n_trabajos(T)
+        if items and nj + n > a.max:
             break   # queda para la proxima corrida (prenda.yml se relanza si queda algo en la cola)
         T["tomada"] = {"por": a.quien, "utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
         os.makedirs(os.path.join(REPO, TOMADAS), exist_ok=True)
@@ -175,7 +199,21 @@ def cmd_tomar(a):
         json.dump(T, open(dst, "w", encoding="utf-8", newline="\n"), indent=1, ensure_ascii=False)
         _git("add", os.path.join(TOMADAS, t + ".json"))
         items += [f"{t}{SEP}{v['tag']}" for v in T["variantes"]]
+        nj += n
     print(json.dumps(items))
+    return 0
+
+
+def cmd_trabajos(a):
+    """[ESC·f535] matriz de prenda.yml: los items de `tomar` agrupados de a `pack` dentro de su tanda (pack 1: los mismos items)."""
+    por = {}
+    for it in json.loads(a.items):
+        por.setdefault(it.split(SEP, 1)[0], []).append(it)
+    out = []
+    for t, its in por.items():
+        k = paquete(leer(os.path.join(REPO, TOMADAS, t + ".json")))
+        out += ["+".join(its[i:i + k]) for i in range(0, len(its), k)]
+    print(json.dumps(out))
     return 0
 
 
@@ -210,8 +248,14 @@ def preparar_argv(T, v, tag, a):
                "extra": tok[len(leer(os.path.join(REPO, d, campo(T, v, "receta")))["argv"]):]},
               open(os.path.join(a.salida, f"receta_{tag}.json"), "w", encoding="utf-8", newline="\n"), indent=1)
     open(os.path.join(a.salida, "args.txt"), "w", encoding="utf-8", newline="\n").write("\n".join([str(nf), tag] + tok) + "\n")
-    print(T["script"]); print(T.get("hilos", 4)); print(int(T.get("tmo_min", 330))); print("argv"); print(1 if T.get("medir") else 0)
+    _avisar_pack(T)
+    print(T["script"]); print(hilos(T)); print(int(T.get("tmo_min", 330))); print("argv"); print(1 if T.get("medir") else 0)
     return 0
+
+
+def _avisar_pack(T):
+    if paquete(T) > 1:
+        print(f"pack {paquete(T)}: Blender con -t {hilos(T)}; `hilos` {T.get('hilos', 4)} ignorado", file=sys.stderr)
 
 
 def cmd_preparar(a):
@@ -239,8 +283,9 @@ def cmd_preparar(a):
     args = [f"prenda={d}/prenda_publica.json", f"receta={rr}", f"entradas={d}", f"salida={a.salida}", f"tag={tag}", f"nf={nf}"]
     args += [f"{k}={campo(T, v, k)}" for k in ("malla", "cuerpo", "rk", "wini", "pramp", "pfit", "hrest", "base") if campo(T, v, k)]
     open(os.path.join(a.salida, "args.txt"), "w", encoding="utf-8", newline="\n").write("\n".join(args) + "\n")
+    _avisar_pack(T)
     print(T.get("script", "sim/lanzar.py"))
-    print(T.get("hilos", 4))
+    print(hilos(T))
     print(int(T.get("tmo_min", 330)))
     print("nucleo")
     print(1 if T.get("medir") else 0)
@@ -305,6 +350,8 @@ def cmd_resumir(a):
          "params": {**(man.get("params") or {}), **(man.get("params_finales") or {})}, "receta_hash": man.get("receta_hash"), "id_corrida": man.get("id"),
          "blender": (man.get("blender") or {}).get("version"), "hilos": (man.get("hilos") or {}).get("n"),
          "dumps": npy, "params_variante": v.get("params") or {}}
+    if paquete(T) > 1:   # [ESC·f535] corrio de a dos por trabajo con -t 2: no comparar bit a bit con corridas de otro pack/hilos
+        R["pack"] = paquete(T)
     mp = os.path.join(a.salida, f"metricas_{tag}.json")
     if os.path.isfile(mp):   # [ESC·f535] medicion dentro del trabajo (tandas con `medir`): entra en resultados_prendas/<tanda>.json
         try:
@@ -351,9 +398,10 @@ def main():
     x = s.add_parser("resumir"); x.add_argument("item"); x.add_argument("salida"); x.add_argument("--rc", type=int, default=0); x.add_argument("--t", type=int, default=0)
     x = s.add_parser("cerrar"); x.add_argument("--resumenes", required=True); x.add_argument("--items", required=True); x.add_argument("--url", default="")
     x = s.add_parser("medir"); x.add_argument("item"); x.add_argument("salida")
+    x = s.add_parser("trabajos"); x.add_argument("items")
     a = ap.parse_args()
     return {"validar": cmd_validar, "tomar": cmd_tomar, "preparar": cmd_preparar, "resumir": cmd_resumir, "cerrar": cmd_cerrar,
-            "medir": cmd_medir}[a.c](a)
+            "medir": cmd_medir, "trabajos": cmd_trabajos}[a.c](a)
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 # Prendas enteras en GitHub Actions [ESC·f535]
 
 El workflow `prenda.yml` corre simulaciones de prendas ENTERAS (Blender 5.1.0, CPU, `sim/lanzar.py` + `sim/nucleo.py` +
-`sim/<codigo>_reglas.py`). Cada variante es un trabajo: 4 vCPU, hasta 20 a la vez, tope 6 h. Es la misma mecanica que `cola.yml`
+`sim/<codigo>_reglas.py`). Cada variante es un trabajo (con `"pack": 2`, dos por trabajo): 4 vCPU, hasta 20 a la vez, tope 6 h. Es la misma mecanica que `cola.yml`
 (tomar con git mv + push como candado, matriz, cerrar), en carpetas propias para no mezclarse con los bancos ni con el worker del VPS.
 
 Regla de plataforma (CPU-GRATIS.md §3): las variantes que se comparan entre si van TODAS en Actions. Actions repite bit a bit;
@@ -54,7 +54,16 @@ git add prendas/w2057/<archivos> sim/w2057_reglas.py sim/w2057_reglas.json     #
                {"tag": "m1195_g1_a1", "grupo": "G1", "params": {"air": 1.001}}]}
 ```
 - Campos: `receta` `malla` `cuerpo` `nf` `dumps` `params` `rk` `wini` `pramp` `pfit` `hrest` `base` (archivos: relativos a `prendas/<prenda>/`),
-  `script` (defecto `sim/lanzar.py`), `hilos` (1..4, defecto 4), `tmo_min` (defecto 330).
+  `script` (defecto `sim/lanzar.py`), `hilos` (1..4, defecto 4), `tmo_min` (defecto 330), `pack` (1 o 2, defecto 1; solo de tanda).
+- `"pack": 2` [ESC·f535 10-13]: dos variantes por trabajo de Actions, dos Blender en paralelo, cada uno con `-t 2`, su carpeta, su
+  `tmo_min` y su rc. `hilos` se ignora (lo dice `validar` y el log del trabajo). Con 20 trabajos a la vez corren 40 variantes.
+  Impar: el ultimo trabajo lleva una sola, tambien con `-t 2`. Nada cambia hacia afuera: un artifact `prenda-<nombre>--<tag>-<run>`
+  y un resumen por variante, y `resultados_prendas/<nombre>.json` las lista todas (cada una con `"pack": 2`). El trabajo se llama
+  `prenda <nombre>--<a>+<nombre>--<b>`. `--max 20` de la toma cuenta trabajos, no variantes. El pico de memoria (RSS) de cada
+  Blender queda en el resumen del paso "Correr la prenda".
+- **Regla de comparacion:** los hilos cambian los bits; con hilos fijos la corrida repite. Los controles y las palancas de UNA
+  comparacion van con el mismo `pack` y los mismos `hilos`. Una corrida con pack 2 (`-t 2`) es comparable bit a bit con una de
+  `"hilos": 2`, nunca con una de 4 hilos. Para comparar con una tanda vieja de 4 hilos, re-correr tambien el control con pack 2.
 - `params` se suman sobre la receta: tanda -> grupo -> variante (gana el ultimo). Clave desconocida = error del lanzador.
 - `renders` queda en 0 (sin GPU); pedir `"params": {"renders": 1}` solo para probar.
 - Antes del push: `python scripts/prendas.py validar cola_prendas/<nombre>.json` (debe decir OK).

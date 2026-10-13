@@ -1,6 +1,8 @@
 # [ESC·f535] Cola de PRENDAS ENTERAS: toma tandas de cola_prendas/, corre cada variante en su propio trabajo (4 vCPU, hasta 20 a la vez,
 # tope 6 h) con sim/lanzar.py + el nucleo + las reglas de la prenda (prendas/<codigo>/), sube logs y .npy como artifact y commitea
 # resultados_prendas/<tanda>.json (resumen chico). Misma mecanica que cola.yml. Guia: prendas/README.md.
+# [ESC·f535] 10-13: tanda con "pack": 2 -> el trabajo lleva dos variantes ("t--a+t--b"), dos Blender en paralelo con -t 2 cada uno,
+# cada uno con su carpeta, tope y rc; artifacts y resumen por variante con los mismos nombres de siempre. Sin pack: como antes.
 name: prenda
 
 on:
@@ -28,6 +30,7 @@ jobs:
     timeout-minutes: 10
     outputs:
       items: ${{ steps.t.outputs.items }}
+      trabajos: ${{ steps.t.outputs.trabajos }}
       sha: ${{ steps.t.outputs.sha }}
     steps:
       - uses: actions/checkout@v4
@@ -46,6 +49,9 @@ jobs:
           done
           echo "tomadas: $L" | tee -a "$GITHUB_STEP_SUMMARY"
           echo "items=$L" >> "$GITHUB_OUTPUT"
+          J=$(python3 scripts/prendas.py trabajos "$L") || J="$L"   # [ESC·f535] pack 2: pares "t--a+t--b" por trabajo; pack 1: los items
+          echo "trabajos: $J" | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "trabajos=$J" >> "$GITHUB_OUTPUT"
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
   correr:
@@ -58,10 +64,16 @@ jobs:
       fail-fast: false
       max-parallel: 20   # [ESC·f535] 10-12: org parka-oss, cupo propio (Free = 20 trabajos a la vez)
       matrix:
-        item: ${{ fromJSON(needs.tomar.outputs.items) }}
+        item: ${{ fromJSON(needs.tomar.outputs.trabajos) }}
     env:
-      IT: ${{ matrix.item }}
+      IT: ${{ matrix.item }}   # una variante "t--tag", o dos "t--a+t--b" (pack 2)
     steps:
+      - name: Variantes del trabajo
+        id: v
+        run: |
+          IFS='+' read -ra V <<< "$IT"
+          echo "a=${V[0]}" >> "$GITHUB_OUTPUT"; echo "b=${V[1]:-}" >> "$GITHUB_OUTPUT"; echo "variantes: ${V[*]}"
+
       - uses: actions/checkout@v4
         with: { ref: "${{ needs.tomar.outputs.sha }}" }
 
@@ -89,21 +101,34 @@ jobs:
         run: |
           set -uo pipefail
           B="$HOME/blender-${BLENDER_VERSION}-linux-x64/blender"
-          O="$PWD/out/$IT"; mkdir -p "$O"
-          mapfile -t C < <(python3 scripts/prendas.py preparar "$IT" "$O")   # script, hilos, tope en minutos, modo (nucleo|argv), medir (0|1)
-          mapfile -t A < "$O/args.txt"
-          EV=(); if [ -s "$O/entorno.txt" ]; then mapfile -t EV < "$O/entorno.txt"; fi   # [ESC·f535] modo argv: variables del script propio
-          echo "medir=${C[4]:-0}" >> "$GITHUB_OUTPUT"
-          echo "CMD ${EV[*]} blender -b --factory-startup -t ${C[1]} --python-exit-code 1 --python ${C[0]} -- ${A[*]}" | sed "s|$PWD/||g" > "$O/cmd.txt"
-          S0=$SECONDS
-          env "${EV[@]}" timeout -k 60 "$((C[2] * 60))" "$B" -b --factory-startup -t "${C[1]}" --python-exit-code 1 --python "${C[0]}" -- "${A[@]}" > "$O/blender.out" 2>&1; RC=$?
-          T=$((SECONDS - S0)); echo "$RC" > out/rc.txt; echo "$T" > out/t.txt
-          if [ "${C[3]:-nucleo}" = argv ]; then   # [ESC·f535] los enlaces a las entradas y el .blend no van al artifact
-            find "$O" -maxdepth 1 -type l -delete; mkdir -p "$RUNNER_TEMP/blend"; mv -f "$O"/*.blend "$RUNNER_TEMP/blend/" 2>/dev/null || true
-          fi
-          echo "| $IT | rc $RC | $T s |" | tee -a "$GITHUB_STEP_SUMMARY"
-          tail -5 "$O/blender.out"
-          exit $RC
+          IFS='+' read -ra ITS <<< "$IT"   # [ESC·f535] pack 2: cada variante con su Blender en paralelo, su carpeta, su tope y su rc
+          declare -A MO
+          for it in "${ITS[@]}"; do
+            O="$PWD/out/$it"; mkdir -p "$O"
+            mapfile -t C < <(python3 scripts/prendas.py preparar "$it" "$O")   # script, hilos, tope en minutos, modo (nucleo|argv), medir (0|1)
+            if [ "${#C[@]}" -lt 5 ] || [ ! -s "$O/args.txt" ]; then echo "preparar fallo: $it"; echo 99 > "out/rc_$it.txt"; echo 0 > "out/t_$it.txt"; continue; fi
+            mapfile -t A < "$O/args.txt"
+            EV=(); if [ -s "$O/entorno.txt" ]; then mapfile -t EV < "$O/entorno.txt"; fi   # [ESC·f535] modo argv: variables del script propio
+            echo "medir=${C[4]:-0}" >> "$GITHUB_OUTPUT"; MO[$it]="${C[3]:-nucleo}"
+            echo "CMD ${EV[*]} blender -b --factory-startup -t ${C[1]} --python-exit-code 1 --python ${C[0]} -- ${A[*]}" | sed "s|$PWD/||g" > "$O/cmd.txt"
+            TV=(); if [ -x /usr/bin/time ]; then TV=(/usr/bin/time -v -o "out/time_$it.txt"); fi   # pico de memoria (RSS) del proceso
+            ( S0=$SECONDS; RC=0   # el shell del paso corre con -e: el || guarda el rc real en vez de cortar el subshell
+              env "${EV[@]}" "${TV[@]}" timeout -k 60 "$((C[2] * 60))" "$B" -b --factory-startup -t "${C[1]}" --python-exit-code 1 --python "${C[0]}" -- "${A[@]}" > "$O/blender.out" 2>&1 || RC=$?
+              echo "$RC" > "out/rc_$it.txt"; echo "$((SECONDS - S0))" > "out/t_$it.txt" ) &
+          done
+          wait
+          RF=0
+          for it in "${ITS[@]}"; do
+            O="$PWD/out/$it"; RC=$(cat "out/rc_$it.txt" 2>/dev/null || echo 99); T=$(cat "out/t_$it.txt" 2>/dev/null || echo 0)
+            if [ "${MO[$it]:-}" = argv ]; then   # [ESC·f535] los enlaces a las entradas y el .blend no van al artifact
+              find "$O" -maxdepth 1 -type l -delete; mkdir -p "$RUNNER_TEMP/blend/$it"; mv -f "$O"/*.blend "$RUNNER_TEMP/blend/$it/" 2>/dev/null || true
+            fi
+            RSS=$(awk -F': ' '/Maximum resident set size/ {printf "%d MB", $2 / 1024}' "out/time_$it.txt" 2>/dev/null || true)
+            echo "| $it | rc $RC | $T s | RSS max ${RSS:-?} |" | tee -a "$GITHUB_STEP_SUMMARY"
+            tail -5 "$O/blender.out" || true
+            if [ "$RC" != 0 ] && [ "$RF" = 0 ]; then RF=$RC; fi
+          done
+          exit $RF
 
       # [ESC·f535] medicion dentro del trabajo (solo tandas con `medir`): metricas_<tag>.json -> resumen -> resultados_prendas/
       - uses: actions/setup-python@v5
@@ -117,27 +142,48 @@ jobs:
         if: always() && steps.correr.outputs.medir == '1'
         run: |
           pip install -q -r scripts/requisitos-medir.txt
-          python scripts/prendas.py medir "$IT" "out/$IT"
+          IFS='+' read -ra ITS <<< "$IT"; R=0
+          for it in "${ITS[@]}"; do python scripts/prendas.py medir "$it" "out/$it" || R=$?; done
+          exit $R
 
       - name: Resumen chico
         if: always()
         run: |
-          mkdir -p resumen
-          python3 scripts/prendas.py resumir "$IT" "out/$IT" --rc "$(cat out/rc.txt 2>/dev/null || echo 99)" --t "$(cat out/t.txt 2>/dev/null || echo 0)" > "resumen/$IT.json"
-          head -c 1200 "resumen/$IT.json"
+          mkdir -p resumen; R=0
+          IFS='+' read -ra ITS <<< "$IT"
+          for it in "${ITS[@]}"; do
+            python3 scripts/prendas.py resumir "$it" "out/$it" --rc "$(cat "out/rc_$it.txt" 2>/dev/null || echo 99)" --t "$(cat "out/t_$it.txt" 2>/dev/null || echo 0)" > "resumen/$it.json" || R=1
+            head -c 1200 "resumen/$it.json"
+          done
+          exit $R
 
+      # [ESC·f535] un resumen y un artifact POR VARIANTE (a = primera; b = segunda, solo con pack 2): mismos nombres que con pack 1
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: resumen-${{ matrix.item }}
-          path: resumen/${{ matrix.item }}.json
+          name: resumen-${{ steps.v.outputs.a || matrix.item }}
+          path: resumen/${{ steps.v.outputs.a || matrix.item }}.json
           retention-days: 3
 
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: prenda-${{ matrix.item }}-${{ github.run_id }}
-          path: out/${{ matrix.item }}/
+          name: prenda-${{ steps.v.outputs.a || matrix.item }}-${{ github.run_id }}
+          path: out/${{ steps.v.outputs.a || matrix.item }}/
+          retention-days: 14
+
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.v.outputs.b != ''
+        with:
+          name: resumen-${{ steps.v.outputs.b }}
+          path: resumen/${{ steps.v.outputs.b }}.json
+          retention-days: 3
+
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.v.outputs.b != ''
+        with:
+          name: prenda-${{ steps.v.outputs.b }}-${{ github.run_id }}
+          path: out/${{ steps.v.outputs.b }}/
           retention-days: 14
 
   cerrar:

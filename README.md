@@ -73,6 +73,9 @@ La version de Blender debe ser la misma en ambos lados: el simulador lee estado 
 ## Determinismo (medido 2026-10-10)
 
 - Actions contra Actions: identico bit a bit (0,000000 mm) en 527 archivos, con 1 y con 4 hilos.
+- Prendas enteras (`prenda.yml`, M133, 2026-10-13): con los mismos hilos repite bit a bit; con otro numero de hilos NO
+  (1, 2 y 4 hilos dan bits distintos). Los controles y las palancas de una misma comparacion van con el mismo `pack` y los
+  mismos `hilos`: una corrida con `"pack": 2` (`-t 2`) no es identica bit a bit a una de 4 hilos. Ver `prendas/README.md`.
 - Windows (laptop) contra Actions: NO coincide. Error maximo 34 mm (banco b2), 102 mm (b1), 191 mm (b3); el umbral era 0,1 mm.
 - La laptop tampoco repite exacto entre corridas en b1 y b3 (hasta 1,9 y 130 mm); b2 si repite.
 - Regla: comparar variantes solo dentro de una misma plataforma. En Actions es seguro; no mezclar con corridas locales.
