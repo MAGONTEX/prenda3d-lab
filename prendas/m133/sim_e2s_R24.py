@@ -8,6 +8,9 @@
 # [ESC·f535] TOR3 (2026-10-13): tp_nohs=1 (costura 'tapeta' sin los pares a hsR) y tp_acw=<mm> (franja de la tapeta junto a su costura fuera de autocol). Sin las claves = identico.
 # [ESC·f535] TOR6 (2026-10-13): tp_acw_pl=<mm> (requiere tp_acw) -> la PUNTA LIBRE de la tapeta (ultimos <mm> de su costura, molde, desde el extremo bajo) sigue en autocol. Sin la clave = identico.
 # [ESC·f535] TOR7 (2026-10-13): fa_acb=<mm> [fa_acb_cf=<mm>] -> zona baja de la vista faR (<= mm sobre su borde bajo, z V0) EN autocol, salvo su fila cosida al CF. Sin la clave = identico.
+# [ESC·f535] SEP (2026-10-13): tp_sep=<mm> (requiere sep_h > 0; excluye tp_nohs/tp_acw) -> la costura 'tapeta' (80 pares tp-fcR/hsR de largo ~0) pasa a tener ESPESOR:
+#   por par un separador rigido como el del broche e2zd (tetraedro: base = la cara del anillo de q mas alineada con su normal de vertice, a sep_eps mm; apice SOBRE q a
+#   <mm> por la +normal del winding = afuera, cosido a t). Contiguo a los del broche (mismo grupo snap_sep / SEPV: reposo, flexion, compresion, fuera del final). Sin la clave = identico.
 # [ESC·f535] TOR5 (2026-10-13): tp_acw_fc=1 (requiere tp_acw) -> la franja fuera de autocol SOLO donde la costura de la tapeta va al fcR; la del cuello (al hsR) sigue en autocol. Sin la clave = identico.
 # [ESC·f535] R20m (2026-10-12): parche R20b portado (_qc_R20m/r20m_port.py): body=<npz> con la clave "brazo" (cuerpo_L_R20c.npz: RE3 + brazos y manos
 #   de la piel MPFB2 talle L) -> esos triangulos van a CD_cuerpo_L_brazos (espesor ath, friccion fric, como los tubos) con las mismas claves angosto/brazos_8
@@ -441,6 +444,33 @@ if P["sep_h"] > 0 and D.get("snap_sep") and P["snaps"] > 0 and not TPV:   # e2zd
     D["pocket"] = list(D["pocket"]) + [None] * len(_nv); F = np.vstack([F, np.array(_nf, int)]); D["f"] = F.tolist(); D["groups"]["snap_sep"] = [NV0, NV0 + len(_nv)]
     NV = len(V0)
     log(f"BROCHES CON ALTURA (e2zd): {len(D['snap_sep']['items'])} separadores de {P['sep_h']} mm | base a {P['sep_eps']} mm de la cara (e2zu; 0 = coincidente) | {_nold} resortes 'broche' viejos fuera | +{len(_nv)} vertices, +{len(_nf)} caras | " + " ".join(_msg))
+if P.get("tp_sep", 0.0) > 0:   # [ESC·f535] SEP (2026-10-13): costura de la tapeta CON ESPESOR (ver cabecera). Sin la clave = identico
+    assert SEPV and P.get("tp_nohs", 0.0) <= 0 and P.get("tp_acw", 0.0) <= 0, "tp_sep requiere los broches e2zd (sep_h > 0) y excluye tp_nohs/tp_acw"
+    _tqs = set(range(*D["groups"]["tp"])); _ksp = [i for i, nm in enumerate(D["sew_seam"]) if nm == "tapeta"]; _kot = [i for i, nm in enumerate(D["sew_seam"]) if nm != "tapeta"]
+    _prs = [D["sew"][i] for i in _ksp]; D["sew"] = [D["sew"][i] for i in _kot]; D["sew_seam"] = [D["sew_seam"][i] for i in _kot]
+    _h = P["tp_sep"] / 1000.0; _e = P["sep_eps"] / 1000.0; _UVa = np.array(D["uv"], float); _i00 = NV; _nv = []; _nuv = []; _nf = []; _cnt = {}; _out = 0; _ang = []
+    for a_, b_ in _prs:
+        _t, _q = (a_, b_) if a_ in _tqs else (b_, a_); assert _t in _tqs and _q not in _tqs, ("tp_sep: par sin tp", a_, b_)
+        _pq = next(n for n in ("fcR", "hsR") if D["groups"][n][0] <= _q < D["groups"][n][1]); _lo, _hi = D["groups"][_pq]; _cnt[_pq] = _cnt.get(_pq, 0) + 1
+        _ring = F[(F == _q).any(1) & (F >= _lo).all(1) & (F < _hi).all(1)]   # anillo de q dentro de su pieza
+        _nr = np.cross(V0[_ring[:, 1]] - V0[_ring[:, 0]], V0[_ring[:, 2]] - V0[_ring[:, 0]]); _nq = _nr.sum(0); _nq /= np.linalg.norm(_nq); _nr /= np.linalg.norm(_nr, axis=1, keepdims=True)
+        _kf = int(np.argmax(_nr @ _nq)); _fv = [int(x) for x in _ring[_kf]]; _n = _nr[_kf]; _ang.append(float(np.degrees(np.arccos(np.clip(_n @ _nq, -1.0, 1.0)))))
+        _bc = np.array([1.0 if v_ == _q else 0.0 for v_ in _fv]); _B = V0[_fv]; _out += int(np.dot(V0[_t] - V0[_q], _n) > 0)   # apice SOBRE q (one-hot), por +normal (winding = afuera)
+        _ap = _bc @ _B + _h * _n; _Bs = _B + _e * _n
+        _R = np.c_[_UVa[_fv] / 1000.0, np.zeros(3)]; _zr = np.sign(np.cross(_R[1] - _R[0], _R[2] - _R[0])[2]); assert _zr != 0, ("tp_sep: cara de molde degenerada", _fv)
+        _apr = _bc @ _R + np.array([0.0, 0.0, _zr * _h])
+        _i0 = _i00 + len(_nv); b0, b1, b2, ap = _i0, _i0 + 1, _i0 + 2, _i0 + 3
+        _nv += [*_Bs.tolist(), _ap.tolist()]; _nuv += [(_R[k][:2] * 1000.0).tolist() for k in range(3)] + [(_apr[:2] * 1000.0).tolist()]
+        for k in range(3): SEP_REST[_i0 + k] = tuple(_R[k])
+        SEP_REST[ap] = tuple(_apr)
+        _nf += [[b0, b2, b1], [b0, b1, ap], [b1, b2, ap], [b2, b0, ap]]
+        D["sew"] += [[b0, _fv[0]], [b1, _fv[1]], [b2, _fv[2]], [ap, _t]]; D["sew_seam"] += ["tapeta sep base"] * 3 + ["tapeta sep"]
+    assert D["groups"]["snap_sep"][1] == _i00 == len(V0), ("tp_sep: separadores no contiguos a los del broche", D["groups"]["snap_sep"], _i00, len(V0))
+    SEPV += list(range(_i00, _i00 + len(_nv))); V0 = np.vstack([V0, np.array(_nv)]); D["v"] = D["v"] + _nv; D["uv"] = D["uv"] + _nuv
+    D["pocket"] = list(D["pocket"]) + [None] * len(_nv); F = np.vstack([F, np.array(_nf, int)]); D["f"] = F.tolist(); D["groups"]["snap_sep"] = [D["groups"]["snap_sep"][0], _i00 + len(_nv)]
+    NV = len(V0)
+    log(f"[ESC·f535] SEP tp_sep: {len(_prs)} separadores de {P['tp_sep']} mm ({', '.join(f'{k_} {v_}' for k_, v_ in _cnt.items())}) | {len(_prs)} pares 'tapeta' de largo 0 fuera | "
+        f"t del lado de afuera en V0 {_out}/{len(_prs)} | cara vs normal de vertice max {max(_ang):.1f} grados | +{len(_nv)} v (masa +{100.0 * len(_nv) / (D['groups']['tp'][1] - D['groups']['tp'][0]):.0f} % de la tp)")
 ANCV = []; ANC_REST = {}; ANC_CO1 = None; ESC_RIG = []; ANC_PEND = {}; ESC_W0 = {}   # [ESC·f535] PQ: anclas del escote (ver cabecera de argumentos)
 if ESC:
     _ez = np.load(E2 + ESC); ESC_RIG = [int(i) for i in _ez["rig"]] if "rig" in _ez.files else []
