@@ -1,0 +1,73 @@
+{
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  20,
+  40,
+  60,
+  80
+ ],
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  }
+ },
+ "nombre": "m133_pk",
+ "tmo_min": 120,
+ "nf": 80,
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   80
+  ]
+ },
+ "nota": "[ESC f535] PACK smoke: m133_t2 thr2_c0/c1 (same params, bi_k 1.000/1.001) as pk_c0/pk_c1 with pack 2 (two Blender per job, -t 2 each; hilos 4 set on purpose: pack must override it). Pass = both FIN and md5 X/XF/XP equal to run 38419132900 thr2_c0/c1.",
+ "variantes": [
+  {
+   "tag": "pk_c0",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "pk_c1",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.001"
+   }
+  }
+ ],
+ "pack": 2
+}

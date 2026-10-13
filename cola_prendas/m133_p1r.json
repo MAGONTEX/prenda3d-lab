@@ -1,0 +1,58 @@
+{
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 2,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  20,
+  40,
+  60,
+  80
+ ],
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  }
+ },
+ "nombre": "m133_p1r",
+ "tmo_min": 120,
+ "nf": 80,
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   80
+  ]
+ },
+ "nota": "[ESC f535] PACK regression: pack absent, hilos 2, thr2_c0 params as p1_c0. Pass = md5 X/XF/XP equal to run 38419132900 thr2_c0 (pack 1 path unchanged by the pack change).",
+ "variantes": [
+  {
+   "tag": "p1_c0",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.000"
+   }
+  }
+ ]
+}
