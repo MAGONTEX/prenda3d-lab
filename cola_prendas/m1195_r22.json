@@ -1,0 +1,124 @@
+{
+ "nombre": "m1195_r22",
+ "prenda": "m1195",
+ "hilos": 4,
+ "tmo_min": 90,
+ "nota": "[ESC·f535] r22 N=5 pareada: G11 = bc11 (sandwich coherente del cuello: cuB a 4 mm de cuA en V0 y reposo, d_mm 4, rayo 5 mm, self_d 2 mm) x5 contra GC = bc5 x5, air 1.001-1.005, 120 f. Identidad: GC a1..a5 = r14 G6 a1..a5 bit a bit; G11 a1 = corrida VPS v11bc11 (-t 4) bit a bit. Regla de decision escrita antes de los datos: 47-m1195/progreso_bc12.txt.",
+ "params": {},
+ "grupos": {
+  "G11": {
+   "malla": "m1195_bc11.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "nf": 120,
+   "dumps": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    12,
+    26,
+    36,
+    48,
+    60,
+    72,
+    96,
+    120
+   ]
+  },
+  "GC": {
+   "malla": "m1195_bc5.json",
+   "receta": "receta_bc3.json",
+   "cuerpo": "cuerpo_M1195_sim5.npz",
+   "nf": 120,
+   "dumps": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    12,
+    26,
+    36,
+    48,
+    60,
+    72,
+    96,
+    120
+   ]
+  }
+ },
+ "variantes": [
+  {
+   "tag": "m1195_g11_a1",
+   "grupo": "G11",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "m1195_g11_a2",
+   "grupo": "G11",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "m1195_g11_a3",
+   "grupo": "G11",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "m1195_g11_a4",
+   "grupo": "G11",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "m1195_g11_a5",
+   "grupo": "G11",
+   "params": {
+    "air": 1.005
+   }
+  },
+  {
+   "tag": "m1195_gc_a1",
+   "grupo": "GC",
+   "params": {
+    "air": 1.001
+   }
+  },
+  {
+   "tag": "m1195_gc_a2",
+   "grupo": "GC",
+   "params": {
+    "air": 1.002
+   }
+  },
+  {
+   "tag": "m1195_gc_a3",
+   "grupo": "GC",
+   "params": {
+    "air": 1.003
+   }
+  },
+  {
+   "tag": "m1195_gc_a4",
+   "grupo": "GC",
+   "params": {
+    "air": 1.004
+   }
+  },
+  {
+   "tag": "m1195_gc_a5",
+   "grupo": "GC",
+   "params": {
+    "air": 1.005
+   }
+  }
+ ]
+}
