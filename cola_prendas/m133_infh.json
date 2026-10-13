@@ -1,0 +1,87 @@
+{
+ "nombre": "m133_infh",
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "tmo_min": 120,
+ "nf": 20,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   20
+  ]
+ },
+ "nota": "[ESC\u00b7f535] INF humo: control bp (= r20u5_bp0) + pramp 0->1 en f2-f20 + rk_f0=20 + pramp 0 hasta f40; 20 f, dumps 1-20.",
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "infh_c_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "infh_p20_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "pramp": "pramp_inf20.json"
+   }
+  },
+  {
+   "tag": "infh_r20_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "rk_f0": "20"
+   }
+  },
+  {
+   "tag": "infh_pd_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "pramp": "pramp_inf40.json"
+   }
+  }
+ ]
+}
