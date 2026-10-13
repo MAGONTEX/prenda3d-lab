@@ -6,7 +6,7 @@
  "entorno": {
   "M133_E2": "{salida}/"
  },
- "hilos": 2,
+ "hilos": 1,
  "dumps": [
   1,
   2,
@@ -29,7 +29,7 @@
    }
   }
  },
- "nombre": "m133_t2",
+ "nombre": "m133_t1",
  "tmo_min": 120,
  "nf": 80,
  "medir": {
@@ -38,10 +38,10 @@
    80
   ]
  },
- "nota": "[ESC f535] THR: does the M133 sim use the 4 vCPU? Same variants as m133_sep5--sep45fa_0/1 (hilos 4, sim step ~273-296 s) with hilos=2. Read: md5 X/XF/XP vs sep45fa_0/1 (bit identity across thread counts) and the 'Correr la prenda' step time. If 1 thread is about as fast and bit-identical, pack several variants per runner.",
+ "nota": "[ESC f535] THR: does the M133 sim use the 4 vCPU? Same variants as m133_sep5--sep45fa_0/1 (hilos 4, sim step ~273-296 s) with hilos=1. Read: md5 X/XF/XP vs sep45fa_0/1 (bit identity across thread counts) and the 'Correr la prenda' step time. If 1 thread is about as fast and bit-identical, pack several variants per runner.",
  "variantes": [
   {
-   "tag": "thr2_c0",
+   "tag": "thr1_c0",
    "grupo": "bp",
    "params": {
     "bvp_w": "10",
@@ -55,7 +55,7 @@
    }
   },
   {
-   "tag": "thr2_c1",
+   "tag": "thr1_c1",
    "grupo": "bp",
    "params": {
     "bvp_w": "10",
@@ -68,5 +68,9 @@
     "bi_k": "1.001"
    }
   }
- ]
+ ],
+ "tomada": {
+  "por": "actions 38419132900",
+  "utc": "2026-10-13T15:06:19Z"
+ }
 }
