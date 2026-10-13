@@ -1,0 +1,3524 @@
+{
+ "tanda": "m133_quad",
+ "prenda": "m133",
+ "url": "https://github.com/parka-oss/prenda3d-lab/actions/runs/38416793753",
+ "estado": "OK",
+ "nota": "[ESC f535] QUAD: does the all-triangle mesh lock fabric shear? quads=1 joins hood shell+lining triangles into quads in the Blender mesh (Cloth builds shear springs only on faces with >3 sides), quads=2 every fabric piece, q1s = quads=1 shear=50 (dose). Base sep45fa (bvp_w=10 ruedo_vivo=30 ruedo_vivo_relleno=0 tp_sep=4.5 fa_acb=20 fa_acb_cf=18.5 fa_acb_cf1=32), bi_k 1.000-1.004 paired with m133_sep5--sep45fa_0..2 and m133_sep7--sep45fa_3..4. Identity: quad_c0 must equal m133_sep5--sep45fa_0 bit for bit.",
+ "tomada": {
+  "por": "actions 38416793753",
+  "utc": "2026-10-13T14:50:20Z"
+ },
+ "cerrada_utc": "2026-10-13T15:01:34Z",
+ "variantes": {
+  "quad_c0": {
+   "item": "m133_quad--quad_c0",
+   "tag": "quad_c0",
+   "prenda": "m133",
+   "rc": 0,
+   "t_pared_s": 280,
+   "estado": "FIN",
+   "cuadros_pedidos": 80,
+   "grupo": "bp",
+   "cuadros_hechos": 78,
+   "t_sim_s": 275,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 78,
+    "t_s": 269,
+    "media_mm": 0.1,
+    "max_mm": 4.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "forro capucha boca",
+     "n": 38,
+     "max_mm": 4.0,
+     "p95_mm": 3.2,
+     "media_mm": 1.0
+    },
+    {
+     "costura": "cierre R",
+     "n": 79,
+     "max_mm": 2.9,
+     "p95_mm": 1.6,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "forro capucha copa L",
+     "n": 44,
+     "max_mm": 2.3,
+     "p95_mm": 1.3,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "vista-cuerpo R",
+     "n": 16,
+     "max_mm": 2.2,
+     "p95_mm": 1.6,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "cierre L",
+     "n": 79,
+     "max_mm": 2.2,
+     "p95_mm": 1.5,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "capucha-ht base L",
+     "n": 13,
+     "max_mm": 2.1,
+     "p95_mm": 2.1,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "vista-cuerpo L",
+     "n": 16,
+     "max_mm": 2.0,
+     "p95_mm": 1.6,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "sisa espalda R",
+     "n": 35,
+     "max_mm": 2.0,
+     "p95_mm": 1.7,
+     "media_mm": 0.4
+    }
+   ],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [
+    "X_quad_c0_f1.npy",
+    "X_quad_c0_f12.npy",
+    "X_quad_c0_f2.npy",
+    "X_quad_c0_f20.npy",
+    "X_quad_c0_f40.npy",
+    "X_quad_c0_f6.npy",
+    "X_quad_c0_f60.npy",
+    "X_quad_c0_f80.npy"
+   ],
+   "params_variante": {
+    "bi_k": "1.000",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   },
+   "metricas": {
+    "tag": "quad_c0",
+    "malla": "m133_e2zzhp_pico.json",
+    "cuadros_pedidos": [
+     80
+    ],
+    "dumps": [
+     1,
+     2,
+     6,
+     12,
+     20,
+     40,
+     60,
+     80
+    ],
+    "huellas": {
+     "f1": "70f646c872a4dda4",
+     "f2": "e350e7f3a4b3eda6",
+     "f6": "a791ce42c05d4d0e",
+     "f12": "9e1424875b442623",
+     "f20": "7b73b73899c0a34b",
+     "f40": "ddc4eb474b6af776",
+     "f60": "eba3e87b308e4882",
+     "f80": "c6042841423ca285"
+    },
+    "log": {
+     "params": {
+      "bi_k": 1.0,
+      "bi_w": 15.0,
+      "relleno": 0.0,
+      "relleno_h": 18.0,
+      "relleno_r": 45.0,
+      "relleno_g": 21.0,
+      "sand_kc": 2.0,
+      "sand_len": 20.0,
+      "pl_bh": 10.0,
+      "pc_w": 10.0,
+      "hf": 1.0,
+      "hf_w": 0.1,
+      "fric": 40.0,
+      "muneca": 0.031,
+      "bth": 0.001,
+      "ath": 0.001,
+      "stop_open": 8.0
+     },
+     "stop": [],
+     "cortada_f": null,
+     "asentada_f": null,
+     "fin": true,
+     "malla_log": "m133_e2zzhp_pico.json"
+    },
+    "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+    "cartuv_regla": "R21: corte = contacto de costura si su punto medio esta a <= 5.0 mm de la costura en el molde (uv) en las dos caras y a < 15 mm en el V0",
+    "ultimo": 80,
+    "f80": {
+     "rel_flecha": 14.554825583619301,
+     "rel_amp": 0.09320010434727083,
+     "rel_n": 15,
+     "cruces_cosidos": 1059,
+     "cruces_zonas": 45,
+     "cart_cuello_n": 0,
+     "cart_cuello_p95": 0.0,
+     "cart_cuello_max": 0.0,
+     "cart_cierre_n": 0,
+     "cart_cierre_p95": 0.0,
+     "cart_cierre_max": 0.0,
+     "cart_ruedo_n": 0,
+     "cart_ruedo_p95": 0.0,
+     "cart_ruedo_max": 0.0,
+     "cruces_cosidos_uv": 1068,
+     "cartuv_cuello_n": 0,
+     "cartuv_cuello_p95": 0.0,
+     "cartuv_cuello_max": 0.0,
+     "cartuv_cuello_mm": 0.0,
+     "cartuv_cierre_n": 0,
+     "cartuv_cierre_p95": 0.0,
+     "cartuv_cierre_max": 0.0,
+     "cartuv_cierre_mm": 0.0,
+     "cartuv_ruedo_n": 0,
+     "cartuv_ruedo_p95": 0.0,
+     "cartuv_ruedo_max": 0.0,
+     "cartuv_ruedo_mm": 0.0,
+     "sisaR_n": 2,
+     "sisaR_p95": 3.209344805876145,
+     "sisaR_max": 3.209344805876145,
+     "sisaR_asoma_n": 40,
+     "sisaR_asoma_max": 13.432523375962054,
+     "sisaR_gap_max": 2.0434722217444343,
+     "sisaL_n": 1,
+     "sisaL_p95": 0.003756759306661195,
+     "sisaL_max": 0.003756759306661195,
+     "sisaL_asoma_n": 56,
+     "sisaL_asoma_max": 9.487506603650345,
+     "sisaL_gap_max": 1.854128682257957,
+     "hb_gap_p95": 0.3038722085025875,
+     "hb_gap_max": 0.7000687918116935,
+     "hbx_n": 9,
+     "hbx_p95": 0.30013323195523584,
+     "hbx_max": 0.4991396257684706,
+     "hb_cruces_todo": 9,
+     "costura_max_mm": 5.418178012225161,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 1,
+     "costuras_gt5": {
+      "tapeta": 5.4
+     },
+     "aparte_mm": {
+      "broche": 6.682815792951737
+     }
+    }
+   }
+  },
+  "q1_0": {
+   "item": "m133_quad--q1_0",
+   "tag": "q1_0",
+   "prenda": "m133",
+   "rc": 0,
+   "t_pared_s": 339,
+   "estado": "FIN",
+   "cuadros_pedidos": 80,
+   "grupo": "bp",
+   "cuadros_hechos": 78,
+   "t_sim_s": 330,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 78,
+    "t_s": 324,
+    "media_mm": 0.1,
+    "max_mm": 3.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "forro capucha boca",
+     "n": 38,
+     "max_mm": 3.4,
+     "p95_mm": 2.6,
+     "media_mm": 0.8
+    },
+    {
+     "costura": "sisa espalda R",
+     "n": 35,
+     "max_mm": 2.9,
+     "p95_mm": 2.0,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "cierre L",
+     "n": 79,
+     "max_mm": 2.9,
+     "p95_mm": 1.6,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "cierre R",
+     "n": 79,
+     "max_mm": 2.8,
+     "p95_mm": 1.2,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "cuello-capucha",
+     "n": 75,
+     "max_mm": 2.3,
+     "p95_mm": 1.9,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "capucha-ht base R",
+     "n": 13,
+     "max_mm": 2.3,
+     "p95_mm": 2.1,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "vista-cuerpo R",
+     "n": 16,
+     "max_mm": 2.2,
+     "p95_mm": 1.6,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "vista-cuerpo L",
+     "n": 16,
+     "max_mm": 2.2,
+     "p95_mm": 1.8,
+     "media_mm": 0.6
+    }
+   ],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [
+    "X_q1_0_f1.npy",
+    "X_q1_0_f12.npy",
+    "X_q1_0_f2.npy",
+    "X_q1_0_f20.npy",
+    "X_q1_0_f40.npy",
+    "X_q1_0_f6.npy",
+    "X_q1_0_f60.npy",
+    "X_q1_0_f80.npy"
+   ],
+   "params_variante": {
+    "bi_k": "1.000",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "quads": "1"
+   },
+   "metricas": {
+    "tag": "q1_0",
+    "malla": "m133_e2zzhp_pico.json",
+    "cuadros_pedidos": [
+     80
+    ],
+    "dumps": [
+     1,
+     2,
+     6,
+     12,
+     20,
+     40,
+     60,
+     80
+    ],
+    "huellas": {
+     "f1": "70f646c872a4dda4",
+     "f2": "30e59a9a9b70c987",
+     "f6": "e866a65b65f52c7c",
+     "f12": "86e9af6066d5c2fc",
+     "f20": "c67f38c0fa3f5e6d",
+     "f40": "9513806d34648d38",
+     "f60": "241c5738dce810a6",
+     "f80": "cd12b351a640a92b"
+    },
+    "log": {
+     "params": {
+      "bi_k": 1.0,
+      "bi_w": 15.0,
+      "relleno": 0.0,
+      "relleno_h": 18.0,
+      "relleno_r": 45.0,
+      "relleno_g": 21.0,
+      "sand_kc": 2.0,
+      "sand_len": 20.0,
+      "pl_bh": 10.0,
+      "pc_w": 10.0,
+      "hf": 1.0,
+      "hf_w": 0.1,
+      "fric": 40.0,
+      "muneca": 0.031,
+      "bth": 0.001,
+      "ath": 0.001,
+      "stop_open": 8.0
+     },
+     "stop": [],
+     "cortada_f": null,
+     "asentada_f": null,
+     "fin": true,
+     "malla_log": "m133_e2zzhp_pico.json"
+    },
+    "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+    "cartuv_regla": "R21: corte = contacto de costura si su punto medio esta a <= 5.0 mm de la costura en el molde (uv) en las dos caras y a < 15 mm en el V0",
+    "ultimo": 80,
+    "f80": {
+     "rel_flecha": 13.004449980218636,
+     "rel_amp": 0.08283814403710014,
+     "rel_n": 15,
+     "cruces_cosidos": 1026,
+     "cruces_zonas": 114,
+     "cart_cuello_n": 9,
+     "cart_cuello_p95": 1.9960462649694817,
+     "cart_cuello_max": 2.276443478816824,
+     "cart_cierre_n": 0,
+     "cart_cierre_p95": 0.0,
+     "cart_cierre_max": 0.0,
+     "cart_ruedo_n": 0,
+     "cart_ruedo_p95": 0.0,
+     "cart_ruedo_max": 0.0,
+     "cruces_cosidos_uv": 1030,
+     "cartuv_cuello_n": 3,
+     "cartuv_cuello_p95": 1.134113082774783,
+     "cartuv_cuello_max": 1.1975500455726231,
+     "cartuv_cuello_mm": 8.344214150856478,
+     "cartuv_cierre_n": 0,
+     "cartuv_cierre_p95": 0.0,
+     "cartuv_cierre_max": 0.0,
+     "cartuv_cierre_mm": 0.0,
+     "cartuv_ruedo_n": 0,
+     "cartuv_ruedo_p95": 0.0,
+     "cartuv_ruedo_max": 0.0,
+     "cartuv_ruedo_mm": 0.0,
+     "sisaR_n": 0,
+     "sisaR_p95": 0.0,
+     "sisaR_max": 0.0,
+     "sisaR_asoma_n": 33,
+     "sisaR_asoma_max": 7.601275721142829,
+     "sisaR_gap_max": 2.903143374779793,
+     "sisaL_n": 2,
+     "sisaL_p95": 0.0038849505428573974,
+     "sisaL_max": 0.003978774092173065,
+     "sisaL_asoma_n": 73,
+     "sisaL_asoma_max": 14.88378700530961,
+     "sisaL_gap_max": 2.086461071667765,
+     "hb_gap_p95": 0.7982246416327343,
+     "hb_gap_max": 1.5483354616486373,
+     "hbx_n": 4,
+     "hbx_p95": 0.020735848517268687,
+     "hbx_max": 0.02395598354268192,
+     "hb_cruces_todo": 4,
+     "costura_max_mm": 6.490243422310205,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 1,
+     "costuras_gt5": {
+      "tapeta": 6.5
+     },
+     "aparte_mm": {
+      "broche": 6.601889621653826
+     }
+    }
+   }
+  },
+  "q1_1": {
+   "item": "m133_quad--q1_1",
+   "tag": "q1_1",
+   "prenda": "m133",
+   "rc": 0,
+   "t_pared_s": 360,
+   "estado": "FIN",
+   "cuadros_pedidos": 80,
+   "grupo": "bp",
+   "cuadros_hechos": 78,
+   "t_sim_s": 351,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 78,
+    "t_s": 344,
+    "media_mm": 0.1,
+    "max_mm": 3.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "cierre R",
+     "n": 79,
+     "max_mm": 2.7,
+     "p95_mm": 1.6,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "forro capucha boca",
+     "n": 38,
+     "max_mm": 2.6,
+     "p95_mm": 1.8,
+     "media_mm": 0.5
+    },
+    {
+     "costura": "vista-cuerpo R",
+     "n": 16,
+     "max_mm": 2.5,
+     "p95_mm": 1.7,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "vista-cuerpo L",
+     "n": 16,
+     "max_mm": 2.4,
+     "p95_mm": 1.5,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "cuello-capucha",
+     "n": 75,
+     "max_mm": 2.3,
+     "p95_mm": 1.4,
+     "media_mm": 0.5
+    },
+    {
+     "costura": "cierre L",
+     "n": 79,
+     "max_mm": 2.3,
+     "p95_mm": 1.5,
+     "media_mm": 0.5
+    },
+    {
+     "costura": "capucha-ht base R",
+     "n": 13,
+     "max_mm": 2.3,
+     "p95_mm": 1.8,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "vista-escote L",
+     "n": 16,
+     "max_mm": 2.2,
+     "p95_mm": 1.7,
+     "media_mm": 0.7
+    }
+   ],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [
+    "X_q1_1_f1.npy",
+    "X_q1_1_f12.npy",
+    "X_q1_1_f2.npy",
+    "X_q1_1_f20.npy",
+    "X_q1_1_f40.npy",
+    "X_q1_1_f6.npy",
+    "X_q1_1_f60.npy",
+    "X_q1_1_f80.npy"
+   ],
+   "params_variante": {
+    "bi_k": "1.001",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "quads": "1"
+   },
+   "metricas": {
+    "tag": "q1_1",
+    "malla": "m133_e2zzhp_pico.json",
+    "cuadros_pedidos": [
+     80
+    ],
+    "dumps": [
+     1,
+     2,
+     6,
+     12,
+     20,
+     40,
+     60,
+     80
+    ],
+    "huellas": {
+     "f1": "70f646c872a4dda4",
+     "f2": "66ec68ffb372cb1f",
+     "f6": "99c6cc4c692b2a51",
+     "f12": "028febe32ca006d9",
+     "f20": "66a739438ea39c89",
+     "f40": "4ff818e52b9a7947",
+     "f60": "b1426ba34099c28a",
+     "f80": "451ac3d286425870"
+    },
+    "log": {
+     "params": {
+      "bi_k": 1.001,
+      "bi_w": 15.0,
+      "relleno": 0.0,
+      "relleno_h": 18.0,
+      "relleno_r": 45.0,
+      "relleno_g": 21.0,
+      "sand_kc": 2.0,
+      "sand_len": 20.0,
+      "pl_bh": 10.0,
+      "pc_w": 10.0,
+      "hf": 1.0,
+      "hf_w": 0.1,
+      "fric": 40.0,
+      "muneca": 0.031,
+      "bth": 0.001,
+      "ath": 0.001,
+      "stop_open": 8.0
+     },
+     "stop": [],
+     "cortada_f": null,
+     "asentada_f": null,
+     "fin": true,
+     "malla_log": "m133_e2zzhp_pico.json"
+    },
+    "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+    "cartuv_regla": "R21: corte = contacto de costura si su punto medio esta a <= 5.0 mm de la costura en el molde (uv) en las dos caras y a < 15 mm en el V0",
+    "ultimo": 80,
+    "f80": {
+     "rel_flecha": 13.127711225139345,
+     "rel_amp": 0.08382711125978806,
+     "rel_n": 15,
+     "cruces_cosidos": 1167,
+     "cruces_zonas": 99,
+     "cart_cuello_n": 3,
+     "cart_cuello_p95": 1.3088742634145603,
+     "cart_cuello_max": 1.3088742634145603,
+     "cart_cierre_n": 0,
+     "cart_cierre_p95": 0.0,
+     "cart_cierre_max": 0.0,
+     "cart_ruedo_n": 0,
+     "cart_ruedo_p95": 0.0,
+     "cart_ruedo_max": 0.0,
+     "cruces_cosidos_uv": 1143,
+     "cartuv_cuello_n": 3,
+     "cartuv_cuello_p95": 1.3088742634145603,
+     "cartuv_cuello_max": 1.3088742634145603,
+     "cartuv_cuello_mm": 2.77238587619348,
+     "cartuv_cierre_n": 0,
+     "cartuv_cierre_p95": 0.0,
+     "cartuv_cierre_max": 0.0,
+     "cartuv_cierre_mm": 0.0,
+     "cartuv_ruedo_n": 0,
+     "cartuv_ruedo_p95": 0.0,
+     "cartuv_ruedo_max": 0.0,
+     "cartuv_ruedo_mm": 0.0,
+     "sisaR_n": 0,
+     "sisaR_p95": 0.0,
+     "sisaR_max": 0.0,
+     "sisaR_asoma_n": 43,
+     "sisaR_asoma_max": 13.965137308253977,
+     "sisaR_gap_max": 0.4102264868541139,
+     "sisaL_n": 2,
+     "sisaL_p95": 0.004633040022445204,
+     "sisaL_max": 0.004678577468580494,
+     "sisaL_asoma_n": 49,
+     "sisaL_asoma_max": 12.863429772239467,
+     "sisaL_gap_max": 1.6196663787119274,
+     "hb_gap_p95": 0.5497416049613951,
+     "hb_gap_max": 1.3970657198536505,
+     "hbx_n": 4,
+     "hbx_p95": 0.013683923822940907,
+     "hbx_max": 0.014274158911496377,
+     "hb_cruces_todo": 4,
+     "costura_max_mm": 5.622549699111863,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 1,
+     "costuras_gt5": {
+      "tapeta": 5.6
+     },
+     "aparte_mm": {
+      "broche": 6.782846270677044
+     }
+    }
+   }
+  },
+  "q1_2": {
+   "item": "m133_quad--q1_2",
+   "tag": "q1_2",
+   "prenda": "m133",
+   "rc": 0,
+   "t_pared_s": 238,
+   "estado": "FIN",
+   "cuadros_pedidos": 80,
+   "grupo": "bp",
+   "cuadros_hechos": 78,
+   "t_sim_s": 232,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 78,
+    "t_s": 228,
+    "media_mm": 0.1,
+    "max_mm": 3.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "cuello-capucha",
+     "n": 75,
+     "max_mm": 3.2,
+     "p95_mm": 2.9,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "forro capucha base ht",
+     "n": 28,
+     "max_mm": 2.7,
+     "p95_mm": 2.4,
+     "media_mm": 1.1
+    },
+    {
+     "costura": "vista-cuerpo R",
+     "n": 16,
+     "max_mm": 2.6,
+     "p95_mm": 1.8,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "cierre R",
+     "n": 79,
+     "max_mm": 2.6,
+     "p95_mm": 1.7,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "cierre L",
+     "n": 79,
+     "max_mm": 2.6,
+     "p95_mm": 1.5,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "vista-cuerpo L",
+     "n": 16,
+     "max_mm": 2.5,
+     "p95_mm": 1.8,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "sisa espalda R",
+     "n": 35,
+     "max_mm": 2.2,
+     "p95_mm": 1.4,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "vista del. escote R",
+     "n": 20,
+     "max_mm": 2.0,
+     "p95_mm": 1.7,
+     "media_mm": 0.7
+    }
+   ],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [
+    "X_q1_2_f1.npy",
+    "X_q1_2_f12.npy",
+    "X_q1_2_f2.npy",
+    "X_q1_2_f20.npy",
+    "X_q1_2_f40.npy",
+    "X_q1_2_f6.npy",
+    "X_q1_2_f60.npy",
+    "X_q1_2_f80.npy"
+   ],
+   "params_variante": {
+    "bi_k": "1.002",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "quads": "1"
+   },
+   "metricas": {
+    "tag": "q1_2",
+    "malla": "m133_e2zzhp_pico.json",
+    "cuadros_pedidos": [
+     80
+    ],
+    "dumps": [
+     1,
+     2,
+     6,
+     12,
+     20,
+     40,
+     60,
+     80
+    ],
+    "huellas": {
+     "f1": "70f646c872a4dda4",
+     "f2": "7335dea3507f2944",
+     "f6": "96d5d3225f8fb29c",
+     "f12": "44ccd5e2c3a0aa19",
+     "f20": "2a361cde38d09235",
+     "f40": "7d883dfe4b385841",
+     "f60": "1f8e8e5b3d1a8ac8",
+     "f80": "13d23f5ee1b8cd8f"
+    },
+    "log": {
+     "params": {
+      "bi_k": 1.002,
+      "bi_w": 15.0,
+      "relleno": 0.0,
+      "relleno_h": 18.0,
+      "relleno_r": 45.0,
+      "relleno_g": 21.0,
+      "sand_kc": 2.0,
+      "sand_len": 20.0,
+      "pl_bh": 10.0,
+      "pc_w": 10.0,
+      "hf": 1.0,
+      "hf_w": 0.1,
+      "fric": 40.0,
+      "muneca": 0.031,
+      "bth": 0.001,
+      "ath": 0.001,
+      "stop_open": 8.0
+     },
+     "stop": [],
+     "cortada_f": null,
+     "asentada_f": null,
+     "fin": true,
+     "malla_log": "m133_e2zzhp_pico.json"
+    },
+    "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+    "cartuv_regla": "R21: corte = contacto de costura si su punto medio esta a <= 5.0 mm de la costura en el molde (uv) en las dos caras y a < 15 mm en el V0",
+    "ultimo": 80,
+    "f80": {
+     "rel_flecha": 13.732796767785658,
+     "rel_amp": 0.08968236939690402,
+     "rel_n": 15,
+     "cruces_cosidos": 979,
+     "cruces_zonas": 84,
+     "cart_cuello_n": 9,
+     "cart_cuello_p95": 1.7651941140523078,
+     "cart_cuello_max": 1.9475727653397024,
+     "cart_cierre_n": 0,
+     "cart_cierre_p95": 0.0,
+     "cart_cierre_max": 0.0,
+     "cart_ruedo_n": 0,
+     "cart_ruedo_p95": 0.0,
+     "cart_ruedo_max": 0.0,
+     "cruces_cosidos_uv": 984,
+     "cartuv_cuello_n": 2,
+     "cartuv_cuello_p95": 1.9247754339287781,
+     "cartuv_cuello_max": 1.9475727653397024,
+     "cartuv_cuello_mm": 4.890315904159547,
+     "cartuv_cierre_n": 0,
+     "cartuv_cierre_p95": 0.0,
+     "cartuv_cierre_max": 0.0,
+     "cartuv_cierre_mm": 0.0,
+     "cartuv_ruedo_n": 0,
+     "cartuv_ruedo_p95": 0.0,
+     "cartuv_ruedo_max": 0.0,
+     "cartuv_ruedo_mm": 0.0,
+     "sisaR_n": 1,
+     "sisaR_p95": 3.768803681399169,
+     "sisaR_max": 3.768803681399169,
+     "sisaR_asoma_n": 37,
+     "sisaR_asoma_max": 14.185194001220887,
+     "sisaR_gap_max": 2.2365523115194232,
+     "sisaL_n": 1,
+     "sisaL_p95": 0.007339638622112709,
+     "sisaL_max": 0.007339638622112709,
+     "sisaL_asoma_n": 48,
+     "sisaL_asoma_max": 17.83468920532053,
+     "sisaL_gap_max": 0.3379204072582867,
+     "hb_gap_p95": 0.19144014639192122,
+     "hb_gap_max": 0.5378606915915872,
+     "hbx_n": 5,
+     "hbx_p95": 0.0023824832768429283,
+     "hbx_max": 0.002405406949381364,
+     "hb_cruces_todo": 5,
+     "costura_max_mm": 6.489045292142541,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 1,
+     "costuras_gt5": {
+      "tapeta": 6.5
+     },
+     "aparte_mm": {
+      "broche": 6.544226096917676
+     }
+    }
+   }
+  },
+  "q1_3": {
+   "item": "m133_quad--q1_3",
+   "tag": "q1_3",
+   "prenda": "m133",
+   "rc": 0,
+   "t_pared_s": 225,
+   "estado": "FIN",
+   "cuadros_pedidos": 80,
+   "grupo": "bp",
+   "cuadros_hechos": 78,
+   "t_sim_s": 220,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 78,
+    "t_s": 216,
+    "media_mm": 0.1,
+    "max_mm": 3.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "forro capucha base ht",
+     "n": 28,
+     "max_mm": 3.2,
+     "p95_mm": 2.4,
+     "media_mm": 1.3
+    },
+    {
+     "costura": "forro capucha boca",
+     "n": 38,
+     "max_mm": 2.6,
+     "p95_mm": 2.0,
+     "media_mm": 0.8
+    },
+    {
+     "costura": "vista-escote R",
+     "n": 16,
+     "max_mm": 2.5,
+     "p95_mm": 2.1,
+     "media_mm": 0.8
+    },
+    {
+     "costura": "cuello-capucha",
+     "n": 75,
+     "max_mm": 2.5,
+     "p95_mm": 1.9,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "cierre R",
+     "n": 79,
+     "max_mm": 2.3,
+     "p95_mm": 1.7,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "vista-cuerpo R",
+     "n": 16,
+     "max_mm": 2.2,
+     "p95_mm": 1.8,
+     "media_mm": 0.9
+    },
+    {
+     "costura": "vista-cuerpo L",
+     "n": 16,
+     "max_mm": 2.1,
+     "p95_mm": 1.8,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "cierre L",
+     "n": 79,
+     "max_mm": 2.1,
+     "p95_mm": 1.0,
+     "media_mm": 0.4
+    }
+   ],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [
+    "X_q1_3_f1.npy",
+    "X_q1_3_f12.npy",
+    "X_q1_3_f2.npy",
+    "X_q1_3_f20.npy",
+    "X_q1_3_f40.npy",
+    "X_q1_3_f6.npy",
+    "X_q1_3_f60.npy",
+    "X_q1_3_f80.npy"
+   ],
+   "params_variante": {
+    "bi_k": "1.003",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "quads": "1"
+   },
+   "metricas": {
+    "tag": "q1_3",
+    "malla": "m133_e2zzhp_pico.json",
+    "cuadros_pedidos": [
+     80
+    ],
+    "dumps": [
+     1,
+     2,
+     6,
+     12,
+     20,
+     40,
+     60,
+     80
+    ],
+    "huellas": {
+     "f1": "70f646c872a4dda4",
+     "f2": "2a4706cdc4988647",
+     "f6": "f7210e19a24074b0",
+     "f12": "455f3196793827c9",
+     "f20": "5fa8106401ea6297",
+     "f40": "3be6904c3d6ba880",
+     "f60": "7db671ea1d842eae",
+     "f80": "8408161f24226836"
+    },
+    "log": {
+     "params": {
+      "bi_k": 1.003,
+      "bi_w": 15.0,
+      "relleno": 0.0,
+      "relleno_h": 18.0,
+      "relleno_r": 45.0,
+      "relleno_g": 21.0,
+      "sand_kc": 2.0,
+      "sand_len": 20.0,
+      "pl_bh": 10.0,
+      "pc_w": 10.0,
+      "hf": 1.0,
+      "hf_w": 0.1,
+      "fric": 40.0,
+      "muneca": 0.031,
+      "bth": 0.001,
+      "ath": 0.001,
+      "stop_open": 8.0
+     },
+     "stop": [],
+     "cortada_f": null,
+     "asentada_f": null,
+     "fin": true,
+     "malla_log": "m133_e2zzhp_pico.json"
+    },
+    "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+    "cartuv_regla": "R21: corte = contacto de costura si su punto medio esta a <= 5.0 mm de la costura en el molde (uv) en las dos caras y a < 15 mm en el V0",
+    "ultimo": 80,
+    "f80": {
+     "rel_flecha": 12.350189592954177,
+     "rel_amp": 0.0794584892426223,
+     "rel_n": 15,
+     "cruces_cosidos": 949,
+     "cruces_zonas": 23,
+     "cart_cuello_n": 0,
+     "cart_cuello_p95": 0.0,
+     "cart_cuello_max": 0.0,
+     "cart_cierre_n": 0,
+     "cart_cierre_p95": 0.0,
+     "cart_cierre_max": 0.0,
+     "cart_ruedo_n": 0,
+     "cart_ruedo_p95": 0.0,
+     "cart_ruedo_max": 0.0,
+     "cruces_cosidos_uv": 953,
+     "cartuv_cuello_n": 0,
+     "cartuv_cuello_p95": 0.0,
+     "cartuv_cuello_max": 0.0,
+     "cartuv_cuello_mm": 0.0,
+     "cartuv_cierre_n": 0,
+     "cartuv_cierre_p95": 0.0,
+     "cartuv_cierre_max": 0.0,
+     "cartuv_cierre_mm": 0.0,
+     "cartuv_ruedo_n": 0,
+     "cartuv_ruedo_p95": 0.0,
+     "cartuv_ruedo_max": 0.0,
+     "cartuv_ruedo_mm": 0.0,
+     "sisaR_n": 0,
+     "sisaR_p95": 0.0,
+     "sisaR_max": 0.0,
+     "sisaR_asoma_n": 50,
+     "sisaR_asoma_max": 10.414366252775915,
+     "sisaR_gap_max": 2.0287064435912625,
+     "sisaL_n": 1,
+     "sisaL_p95": 0.0017833974329787507,
+     "sisaL_max": 0.0017833974329787507,
+     "sisaL_asoma_n": 42,
+     "sisaL_asoma_max": 10.530276134083685,
+     "sisaL_gap_max": 0.34629372513224416,
+     "hb_gap_p95": 0.6048366166370068,
+     "hb_gap_max": 0.8364271656222468,
+     "hbx_n": 6,
+     "hbx_p95": 0.00987554857371003,
+     "hbx_max": 0.010805446395209854,
+     "hb_cruces_todo": 6,
+     "costura_max_mm": 6.322545103242315,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 1,
+     "costuras_gt5": {
+      "tapeta": 6.3
+     },
+     "aparte_mm": {
+      "broche": 6.845590782251784
+     }
+    }
+   }
+  },
+  "q1_4": {
+   "item": "m133_quad--q1_4",
+   "tag": "q1_4",
+   "prenda": "m133",
+   "rc": 0,
+   "t_pared_s": 314,
+   "estado": "FIN",
+   "cuadros_pedidos": 80,
+   "grupo": "bp",
+   "cuadros_hechos": 78,
+   "t_sim_s": 307,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 78,
+    "t_s": 301,
+    "media_mm": 0.1,
+    "max_mm": 3.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "cierre R",
+     "n": 79,
+     "max_mm": 3.8,
+     "p95_mm": 1.4,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "vista-escote L",
+     "n": 16,
+     "max_mm": 2.7,
+     "p95_mm": 2.0,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "sisa frente R",
+     "n": 34,
+     "max_mm": 2.5,
+     "p95_mm": 1.5,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "cuello-capucha",
+     "n": 75,
+     "max_mm": 2.5,
+     "p95_mm": 2.0,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "sisa espalda L",
+     "n": 35,
+     "max_mm": 2.4,
+     "p95_mm": 1.9,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "vista-cuerpo R",
+     "n": 16,
+     "max_mm": 2.2,
+     "p95_mm": 1.6,
+     "media_mm": 0.8
+    },
+    {
+     "costura": "vista-cuerpo L",
+     "n": 16,
+     "max_mm": 2.1,
+     "p95_mm": 2.1,
+     "media_mm": 0.8
+    },
+    {
+     "costura": "forro capucha base ht",
+     "n": 28,
+     "max_mm": 2.1,
+     "p95_mm": 2.0,
+     "media_mm": 1.0
+    }
+   ],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [
+    "X_q1_4_f1.npy",
+    "X_q1_4_f12.npy",
+    "X_q1_4_f2.npy",
+    "X_q1_4_f20.npy",
+    "X_q1_4_f40.npy",
+    "X_q1_4_f6.npy",
+    "X_q1_4_f60.npy",
+    "X_q1_4_f80.npy"
+   ],
+   "params_variante": {
+    "bi_k": "1.004",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "quads": "1"
+   },
+   "metricas": {
+    "tag": "q1_4",
+    "malla": "m133_e2zzhp_pico.json",
+    "cuadros_pedidos": [
+     80
+    ],
+    "dumps": [
+     1,
+     2,
+     6,
+     12,
+     20,
+     40,
+     60,
+     80
+    ],
+    "huellas": {
+     "f1": "70f646c872a4dda4",
+     "f2": "e8c772f04226429f",
+     "f6": "105219eba2bc4b61",
+     "f12": "55b136613b96eab3",
+     "f20": "c035cfb75d946f18",
+     "f40": "50dc6aa3b360aadf",
+     "f60": "dbfdc00214d6b2b2",
+     "f80": "f0743db72a684e17"
+    },
+    "log": {
+     "params": {
+      "bi_k": 1.004,
+      "bi_w": 15.0,
+      "relleno": 0.0,
+      "relleno_h": 18.0,
+      "relleno_r": 45.0,
+      "relleno_g": 21.0,
+      "sand_kc": 2.0,
+      "sand_len": 20.0,
+      "pl_bh": 10.0,
+      "pc_w": 10.0,
+      "hf": 1.0,
+      "hf_w": 0.1,
+      "fric": 40.0,
+      "muneca": 0.031,
+      "bth": 0.001,
+      "ath": 0.001,
+      "stop_open": 8.0
+     },
+     "stop": [],
+     "cortada_f": null,
+     "asentada_f": null,
+     "fin": true,
+     "malla_log": "m133_e2zzhp_pico.json"
+    },
+    "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+    "cartuv_regla": "R21: corte = contacto de costura si su punto medio esta a <= 5.0 mm de la costura en el molde (uv) en las dos caras y a < 15 mm en el V0",
+    "ultimo": 80,
+    "f80": {
+     "rel_flecha": 14.675018014485959,
+     "rel_amp": 0.09559020628458996,
+     "rel_n": 15,
+     "cruces_cosidos": 1027,
+     "cruces_zonas": 88,
+     "cart_cuello_n": 2,
+     "cart_cuello_p95": 0.642008129377563,
+     "cart_cuello_max": 0.6613889201879426,
+     "cart_cierre_n": 0,
+     "cart_cierre_p95": 0.0,
+     "cart_cierre_max": 0.0,
+     "cart_ruedo_n": 0,
+     "cart_ruedo_p95": 0.0,
+     "cart_ruedo_max": 0.0,
+     "cruces_cosidos_uv": 1019,
+     "cartuv_cuello_n": 0,
+     "cartuv_cuello_p95": 0.0,
+     "cartuv_cuello_max": 0.0,
+     "cartuv_cuello_mm": 0.0,
+     "cartuv_cierre_n": 0,
+     "cartuv_cierre_p95": 0.0,
+     "cartuv_cierre_max": 0.0,
+     "cartuv_cierre_mm": 0.0,
+     "cartuv_ruedo_n": 0,
+     "cartuv_ruedo_p95": 0.0,
+     "cartuv_ruedo_max": 0.0,
+     "cartuv_ruedo_mm": 0.0,
+     "sisaR_n": 0,
+     "sisaR_p95": 0.0,
+     "sisaR_max": 0.0,
+     "sisaR_asoma_n": 31,
+     "sisaR_asoma_max": 8.018648073620081,
+     "sisaR_gap_max": 1.2065047068501396,
+     "sisaL_n": 1,
+     "sisaL_p95": 0.003038475608115654,
+     "sisaL_max": 0.003038475608115654,
+     "sisaL_asoma_n": 53,
+     "sisaL_asoma_max": 15.731534891929307,
+     "sisaL_gap_max": 2.403140961334744,
+     "hb_gap_p95": 0.17069375332464048,
+     "hb_gap_max": 0.6623756117448955,
+     "hbx_n": 1,
+     "hbx_p95": 0.009387133793511637,
+     "hbx_max": 0.009387133793511637,
+     "hb_cruces_todo": 1,
+     "costura_max_mm": 6.855862046628637,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 1,
+     "costuras_gt5": {
+      "tapeta": 6.9
+     },
+     "aparte_mm": {
+      "broche": 6.626893213084503
+     }
+    }
+   }
+  },
+  "q2_0": {
+   "item": "m133_quad--q2_0",
+   "tag": "q2_0",
+   "prenda": "m133",
+   "rc": 0,
+   "t_pared_s": 225,
+   "estado": "FIN",
+   "cuadros_pedidos": 80,
+   "grupo": "bp",
+   "cuadros_hechos": 78,
+   "t_sim_s": 217,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 78,
+    "t_s": 213,
+    "media_mm": 0.2,
+    "max_mm": 3.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "forro capucha boca",
+     "n": 38,
+     "max_mm": 3.5,
+     "p95_mm": 3.0,
+     "media_mm": 1.1
+    },
+    {
+     "costura": "vista-escote R",
+     "n": 16,
+     "max_mm": 3.0,
+     "p95_mm": 2.7,
+     "media_mm": 0.8
+    },
+    {
+     "costura": "cierre L",
+     "n": 79,
+     "max_mm": 3.0,
+     "p95_mm": 2.4,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "cuello-capucha",
+     "n": 75,
+     "max_mm": 2.8,
+     "p95_mm": 2.5,
+     "media_mm": 0.8
+    },
+    {
+     "costura": "cierre R",
+     "n": 79,
+     "max_mm": 2.8,
+     "p95_mm": 1.9,
+     "media_mm": 0.5
+    },
+    {
+     "costura": "vista-cuerpo R",
+     "n": 16,
+     "max_mm": 2.6,
+     "p95_mm": 1.7,
+     "media_mm": 0.8
+    },
+    {
+     "costura": "capucha-ht base R",
+     "n": 13,
+     "max_mm": 2.5,
+     "p95_mm": 2.1,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "vista del. CF R",
+     "n": 65,
+     "max_mm": 2.4,
+     "p95_mm": 0.4,
+     "media_mm": 0.3
+    }
+   ],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [
+    "X_q2_0_f1.npy",
+    "X_q2_0_f12.npy",
+    "X_q2_0_f2.npy",
+    "X_q2_0_f20.npy",
+    "X_q2_0_f40.npy",
+    "X_q2_0_f6.npy",
+    "X_q2_0_f60.npy",
+    "X_q2_0_f80.npy"
+   ],
+   "params_variante": {
+    "bi_k": "1.000",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "quads": "2"
+   },
+   "metricas": {
+    "tag": "q2_0",
+    "malla": "m133_e2zzhp_pico.json",
+    "cuadros_pedidos": [
+     80
+    ],
+    "dumps": [
+     1,
+     2,
+     6,
+     12,
+     20,
+     40,
+     60,
+     80
+    ],
+    "huellas": {
+     "f1": "70f646c872a4dda4",
+     "f2": "4964278d74807bfb",
+     "f6": "6e6ff4d40bdad55a",
+     "f12": "417a2cf19bd5f04a",
+     "f20": "33a87e3935f36dab",
+     "f40": "58c146126dad0f1b",
+     "f60": "5a49bfb6b6d7b119",
+     "f80": "30daf6c36895e06a"
+    },
+    "log": {
+     "params": {
+      "bi_k": 1.0,
+      "bi_w": 15.0,
+      "relleno": 0.0,
+      "relleno_h": 18.0,
+      "relleno_r": 45.0,
+      "relleno_g": 21.0,
+      "sand_kc": 2.0,
+      "sand_len": 20.0,
+      "pl_bh": 10.0,
+      "pc_w": 10.0,
+      "hf": 1.0,
+      "hf_w": 0.1,
+      "fric": 40.0,
+      "muneca": 0.031,
+      "bth": 0.001,
+      "ath": 0.001,
+      "stop_open": 8.0
+     },
+     "stop": [],
+     "cortada_f": null,
+     "asentada_f": null,
+     "fin": true,
+     "malla_log": "m133_e2zzhp_pico.json"
+    },
+    "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+    "cartuv_regla": "R21: corte = contacto de costura si su punto medio esta a <= 5.0 mm de la costura en el molde (uv) en las dos caras y a < 15 mm en el V0",
+    "ultimo": 80,
+    "f80": {
+     "rel_flecha": 11.900107817962173,
+     "rel_amp": 0.07605689621654431,
+     "rel_n": 15,
+     "cruces_cosidos": 1044,
+     "cruces_zonas": 193,
+     "cart_cuello_n": 65,
+     "cart_cuello_p95": 3.7394563914213093,
+     "cart_cuello_max": 4.511909560904091,
+     "cart_cierre_n": 0,
+     "cart_cierre_p95": 0.0,
+     "cart_cierre_max": 0.0,
+     "cart_ruedo_n": 0,
+     "cart_ruedo_p95": 0.0,
+     "cart_ruedo_max": 0.0,
+     "cruces_cosidos_uv": 1003,
+     "cartuv_cuello_n": 71,
+     "cartuv_cuello_p95": 3.93149323885753,
+     "cartuv_cuello_max": 4.511909560904091,
+     "cartuv_cuello_mm": 136.52067185504342,
+     "cartuv_cierre_n": 0,
+     "cartuv_cierre_p95": 0.0,
+     "cartuv_cierre_max": 0.0,
+     "cartuv_cierre_mm": 0.0,
+     "cartuv_ruedo_n": 0,
+     "cartuv_ruedo_p95": 0.0,
+     "cartuv_ruedo_max": 0.0,
+     "cartuv_ruedo_mm": 0.0,
+     "sisaR_n": 0,
+     "sisaR_p95": 0.0,
+     "sisaR_max": 0.0,
+     "sisaR_asoma_n": 33,
+     "sisaR_asoma_max": 17.308595454918834,
+     "sisaR_gap_max": 0.4346797771478481,
+     "sisaL_n": 0,
+     "sisaL_p95": 0.0,
+     "sisaL_max": 0.0,
+     "sisaL_asoma_n": 20,
+     "sisaL_asoma_max": 6.402040085818602,
+     "sisaL_gap_max": 1.6768861640293966,
+     "hb_gap_p95": 1.027421266206169,
+     "hb_gap_max": 1.5889941227382363,
+     "hbx_n": 9,
+     "hbx_p95": 0.014901948092123194,
+     "hbx_max": 0.016123426446951417,
+     "hb_cruces_todo": 14,
+     "costura_max_mm": 6.039981040002044,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 1,
+     "costuras_gt5": {
+      "tapeta": 6.0
+     },
+     "aparte_mm": {
+      "broche": 6.727810967851006
+     }
+    }
+   }
+  },
+  "q2_1": {
+   "item": "m133_quad--q2_1",
+   "tag": "q2_1",
+   "prenda": "m133",
+   "rc": 0,
+   "t_pared_s": 366,
+   "estado": "FIN",
+   "cuadros_pedidos": 80,
+   "grupo": "bp",
+   "cuadros_hechos": 78,
+   "t_sim_s": 348,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 78,
+    "t_s": 340,
+    "media_mm": 0.1,
+    "max_mm": 4.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "forro capucha boca",
+     "n": 38,
+     "max_mm": 4.0,
+     "p95_mm": 2.6,
+     "media_mm": 1.0
+    },
+    {
+     "costura": "vista-cuerpo L",
+     "n": 16,
+     "max_mm": 2.4,
+     "p95_mm": 1.6,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "capucha-ht lado L",
+     "n": 19,
+     "max_mm": 2.4,
+     "p95_mm": 1.5,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "capucha-ht base L",
+     "n": 13,
+     "max_mm": 2.4,
+     "p95_mm": 2.3,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "cuello-capucha",
+     "n": 75,
+     "max_mm": 2.3,
+     "p95_mm": 1.9,
+     "media_mm": 0.8
+    },
+    {
+     "costura": "cierre L",
+     "n": 79,
+     "max_mm": 2.3,
+     "p95_mm": 1.2,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "vista-escote L",
+     "n": 16,
+     "max_mm": 2.2,
+     "p95_mm": 1.6,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "cierre R",
+     "n": 79,
+     "max_mm": 2.2,
+     "p95_mm": 1.4,
+     "media_mm": 0.4
+    }
+   ],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [
+    "X_q2_1_f1.npy",
+    "X_q2_1_f12.npy",
+    "X_q2_1_f2.npy",
+    "X_q2_1_f20.npy",
+    "X_q2_1_f40.npy",
+    "X_q2_1_f6.npy",
+    "X_q2_1_f60.npy",
+    "X_q2_1_f80.npy"
+   ],
+   "params_variante": {
+    "bi_k": "1.001",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "quads": "2"
+   },
+   "metricas": {
+    "tag": "q2_1",
+    "malla": "m133_e2zzhp_pico.json",
+    "cuadros_pedidos": [
+     80
+    ],
+    "dumps": [
+     1,
+     2,
+     6,
+     12,
+     20,
+     40,
+     60,
+     80
+    ],
+    "huellas": {
+     "f1": "70f646c872a4dda4",
+     "f2": "3c177171c4ff5fe7",
+     "f6": "662f4bc714ea1734",
+     "f12": "2dfda5acee0619e6",
+     "f20": "4f595d28f8026252",
+     "f40": "be254f5f02429769",
+     "f60": "aa72996999e6634e",
+     "f80": "73afdb2abafc3dbc"
+    },
+    "log": {
+     "params": {
+      "bi_k": 1.001,
+      "bi_w": 15.0,
+      "relleno": 0.0,
+      "relleno_h": 18.0,
+      "relleno_r": 45.0,
+      "relleno_g": 21.0,
+      "sand_kc": 2.0,
+      "sand_len": 20.0,
+      "pl_bh": 10.0,
+      "pc_w": 10.0,
+      "hf": 1.0,
+      "hf_w": 0.1,
+      "fric": 40.0,
+      "muneca": 0.031,
+      "bth": 0.001,
+      "ath": 0.001,
+      "stop_open": 8.0
+     },
+     "stop": [],
+     "cortada_f": null,
+     "asentada_f": null,
+     "fin": true,
+     "malla_log": "m133_e2zzhp_pico.json"
+    },
+    "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+    "cartuv_regla": "R21: corte = contacto de costura si su punto medio esta a <= 5.0 mm de la costura en el molde (uv) en las dos caras y a < 15 mm en el V0",
+    "ultimo": 80,
+    "f80": {
+     "rel_flecha": 12.596212026349477,
+     "rel_amp": 0.08065461451682877,
+     "rel_n": 15,
+     "cruces_cosidos": 739,
+     "cruces_zonas": 80,
+     "cart_cuello_n": 8,
+     "cart_cuello_p95": 2.4939662731289465,
+     "cart_cuello_max": 2.705688901888887,
+     "cart_cierre_n": 0,
+     "cart_cierre_p95": 0.0,
+     "cart_cierre_max": 0.0,
+     "cart_ruedo_n": 0,
+     "cart_ruedo_p95": 0.0,
+     "cart_ruedo_max": 0.0,
+     "cruces_cosidos_uv": 721,
+     "cartuv_cuello_n": 5,
+     "cartuv_cuello_p95": 1.8060014043424963,
+     "cartuv_cuello_max": 2.100767105431915,
+     "cartuv_cuello_mm": 4.052328098936867,
+     "cartuv_cierre_n": 0,
+     "cartuv_cierre_p95": 0.0,
+     "cartuv_cierre_max": 0.0,
+     "cartuv_cierre_mm": 0.0,
+     "cartuv_ruedo_n": 0,
+     "cartuv_ruedo_p95": 0.0,
+     "cartuv_ruedo_max": 0.0,
+     "cartuv_ruedo_mm": 0.0,
+     "sisaR_n": 0,
+     "sisaR_p95": 0.0,
+     "sisaR_max": 0.0,
+     "sisaR_asoma_n": 17,
+     "sisaR_asoma_max": 10.796859271473926,
+     "sisaR_gap_max": 0.3115544225689111,
+     "sisaL_n": 0,
+     "sisaL_p95": 0.0,
+     "sisaL_max": 0.0,
+     "sisaL_asoma_n": 26,
+     "sisaL_asoma_max": 9.455259091845853,
+     "sisaL_gap_max": 1.7082070173146953,
+     "hb_gap_p95": 0.8886037144378934,
+     "hb_gap_max": 1.0703556913963852,
+     "hbx_n": 6,
+     "hbx_p95": 0.12162626267041617,
+     "hbx_max": 0.15256993712700234,
+     "hb_cruces_todo": 6,
+     "costura_max_mm": 5.7974230377857054,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 1,
+     "costuras_gt5": {
+      "tapeta": 5.8
+     },
+     "aparte_mm": {
+      "broche": 6.494101193720722
+     }
+    }
+   }
+  },
+  "q2_2": {
+   "item": "m133_quad--q2_2",
+   "tag": "q2_2",
+   "prenda": "m133",
+   "rc": 0,
+   "t_pared_s": 369,
+   "estado": "FIN",
+   "cuadros_pedidos": 80,
+   "grupo": "bp",
+   "cuadros_hechos": 78,
+   "t_sim_s": 351,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 78,
+    "t_s": 344,
+    "media_mm": 0.1,
+    "max_mm": 3.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "cierre R",
+     "n": 79,
+     "max_mm": 3.3,
+     "p95_mm": 1.2,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "forro capucha boca",
+     "n": 38,
+     "max_mm": 3.0,
+     "p95_mm": 2.1,
+     "media_mm": 0.9
+    },
+    {
+     "costura": "sisa frente L",
+     "n": 34,
+     "max_mm": 2.5,
+     "p95_mm": 1.0,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "sisa espalda L",
+     "n": 35,
+     "max_mm": 2.5,
+     "p95_mm": 0.5,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "forro capucha base ht",
+     "n": 28,
+     "max_mm": 2.4,
+     "p95_mm": 2.2,
+     "media_mm": 1.4
+    },
+    {
+     "costura": "vista-escote R",
+     "n": 16,
+     "max_mm": 2.2,
+     "p95_mm": 1.5,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "borde forro",
+     "n": 1453,
+     "max_mm": 2.2,
+     "p95_mm": 0.5,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "vista-cuerpo L",
+     "n": 16,
+     "max_mm": 2.1,
+     "p95_mm": 1.8,
+     "media_mm": 0.7
+    }
+   ],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [
+    "X_q2_2_f1.npy",
+    "X_q2_2_f12.npy",
+    "X_q2_2_f2.npy",
+    "X_q2_2_f20.npy",
+    "X_q2_2_f40.npy",
+    "X_q2_2_f6.npy",
+    "X_q2_2_f60.npy",
+    "X_q2_2_f80.npy"
+   ],
+   "params_variante": {
+    "bi_k": "1.002",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "quads": "2"
+   },
+   "metricas": {
+    "tag": "q2_2",
+    "malla": "m133_e2zzhp_pico.json",
+    "cuadros_pedidos": [
+     80
+    ],
+    "dumps": [
+     1,
+     2,
+     6,
+     12,
+     20,
+     40,
+     60,
+     80
+    ],
+    "huellas": {
+     "f1": "70f646c872a4dda4",
+     "f2": "dbf48239ce869934",
+     "f6": "595f8d56f57ae533",
+     "f12": "8b02d70901209dbf",
+     "f20": "18e77335a1dac6b1",
+     "f40": "f51fbc6c33962aec",
+     "f60": "3febc165e52ebd47",
+     "f80": "6f61dc144e3a271e"
+    },
+    "log": {
+     "params": {
+      "bi_k": 1.002,
+      "bi_w": 15.0,
+      "relleno": 0.0,
+      "relleno_h": 18.0,
+      "relleno_r": 45.0,
+      "relleno_g": 21.0,
+      "sand_kc": 2.0,
+      "sand_len": 20.0,
+      "pl_bh": 10.0,
+      "pc_w": 10.0,
+      "hf": 1.0,
+      "hf_w": 0.1,
+      "fric": 40.0,
+      "muneca": 0.031,
+      "bth": 0.001,
+      "ath": 0.001,
+      "stop_open": 8.0
+     },
+     "stop": [],
+     "cortada_f": null,
+     "asentada_f": null,
+     "fin": true,
+     "malla_log": "m133_e2zzhp_pico.json"
+    },
+    "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+    "cartuv_regla": "R21: corte = contacto de costura si su punto medio esta a <= 5.0 mm de la costura en el molde (uv) en las dos caras y a < 15 mm en el V0",
+    "ultimo": 80,
+    "f80": {
+     "rel_flecha": 10.230215067771038,
+     "rel_amp": 0.0667055453433282,
+     "rel_n": 15,
+     "cruces_cosidos": 945,
+     "cruces_zonas": 108,
+     "cart_cuello_n": 0,
+     "cart_cuello_p95": 0.0,
+     "cart_cuello_max": 0.0,
+     "cart_cierre_n": 0,
+     "cart_cierre_p95": 0.0,
+     "cart_cierre_max": 0.0,
+     "cart_ruedo_n": 0,
+     "cart_ruedo_p95": 0.0,
+     "cart_ruedo_max": 0.0,
+     "cruces_cosidos_uv": 937,
+     "cartuv_cuello_n": 0,
+     "cartuv_cuello_p95": 0.0,
+     "cartuv_cuello_max": 0.0,
+     "cartuv_cuello_mm": 0.0,
+     "cartuv_cierre_n": 0,
+     "cartuv_cierre_p95": 0.0,
+     "cartuv_cierre_max": 0.0,
+     "cartuv_cierre_mm": 0.0,
+     "cartuv_ruedo_n": 0,
+     "cartuv_ruedo_p95": 0.0,
+     "cartuv_ruedo_max": 0.0,
+     "cartuv_ruedo_mm": 0.0,
+     "sisaR_n": 1,
+     "sisaR_p95": 0.0002885870012683256,
+     "sisaR_max": 0.0002885870012683256,
+     "sisaR_asoma_n": 16,
+     "sisaR_asoma_max": 7.44009088146161,
+     "sisaR_gap_max": 1.1241347368650736,
+     "sisaL_n": 0,
+     "sisaL_p95": 0.0,
+     "sisaL_max": 0.0,
+     "sisaL_asoma_n": 30,
+     "sisaL_asoma_max": 15.313136195067912,
+     "sisaL_gap_max": 2.4506974397674592,
+     "hb_gap_p95": 1.1820347126417958,
+     "hb_gap_max": 1.5006851897149502,
+     "hbx_n": 6,
+     "hbx_p95": 0.0070791193195278365,
+     "hbx_max": 0.008674559685439523,
+     "hb_cruces_todo": 6,
+     "costura_max_mm": 5.3758279133180675,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 1,
+     "costuras_gt5": {
+      "tapeta": 5.4
+     },
+     "aparte_mm": {
+      "broche": 6.621204239709213
+     }
+    }
+   }
+  },
+  "q2_3": {
+   "item": "m133_quad--q2_3",
+   "tag": "q2_3",
+   "prenda": "m133",
+   "rc": 0,
+   "t_pared_s": 397,
+   "estado": "FIN",
+   "cuadros_pedidos": 80,
+   "grupo": "bp",
+   "cuadros_hechos": 78,
+   "t_sim_s": 382,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 78,
+    "t_s": 374,
+    "media_mm": 0.2,
+    "max_mm": 3.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "cierre R",
+     "n": 79,
+     "max_mm": 3.3,
+     "p95_mm": 1.7,
+     "media_mm": 0.5
+    },
+    {
+     "costura": "vista-cuerpo L",
+     "n": 16,
+     "max_mm": 3.2,
+     "p95_mm": 1.8,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "cuello-capucha",
+     "n": 75,
+     "max_mm": 3.2,
+     "p95_mm": 2.4,
+     "media_mm": 0.9
+    },
+    {
+     "costura": "sisa frente L",
+     "n": 34,
+     "max_mm": 3.1,
+     "p95_mm": 0.2,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "cierre L",
+     "n": 79,
+     "max_mm": 2.9,
+     "p95_mm": 1.7,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "forro capucha nuca",
+     "n": 13,
+     "max_mm": 2.7,
+     "p95_mm": 2.5,
+     "media_mm": 0.8
+    },
+    {
+     "costura": "vista-escote R",
+     "n": 16,
+     "max_mm": 2.6,
+     "p95_mm": 1.6,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "capucha-ht base R",
+     "n": 13,
+     "max_mm": 2.3,
+     "p95_mm": 1.8,
+     "media_mm": 0.6
+    }
+   ],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [
+    "X_q2_3_f1.npy",
+    "X_q2_3_f12.npy",
+    "X_q2_3_f2.npy",
+    "X_q2_3_f20.npy",
+    "X_q2_3_f40.npy",
+    "X_q2_3_f6.npy",
+    "X_q2_3_f60.npy",
+    "X_q2_3_f80.npy"
+   ],
+   "params_variante": {
+    "bi_k": "1.003",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "quads": "2"
+   },
+   "metricas": {
+    "tag": "q2_3",
+    "malla": "m133_e2zzhp_pico.json",
+    "cuadros_pedidos": [
+     80
+    ],
+    "dumps": [
+     1,
+     2,
+     6,
+     12,
+     20,
+     40,
+     60,
+     80
+    ],
+    "huellas": {
+     "f1": "70f646c872a4dda4",
+     "f2": "d4e7c4c01423058b",
+     "f6": "e5e038cc892afc31",
+     "f12": "f50991f8185cd285",
+     "f20": "f5c9b006640585ab",
+     "f40": "7979fbb8b604bd4a",
+     "f60": "a7a8e856d31d52c1",
+     "f80": "6e65f7d4c52f6ed8"
+    },
+    "log": {
+     "params": {
+      "bi_k": 1.003,
+      "bi_w": 15.0,
+      "relleno": 0.0,
+      "relleno_h": 18.0,
+      "relleno_r": 45.0,
+      "relleno_g": 21.0,
+      "sand_kc": 2.0,
+      "sand_len": 20.0,
+      "pl_bh": 10.0,
+      "pc_w": 10.0,
+      "hf": 1.0,
+      "hf_w": 0.1,
+      "fric": 40.0,
+      "muneca": 0.031,
+      "bth": 0.001,
+      "ath": 0.001,
+      "stop_open": 8.0
+     },
+     "stop": [],
+     "cortada_f": null,
+     "asentada_f": null,
+     "fin": true,
+     "malla_log": "m133_e2zzhp_pico.json"
+    },
+    "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+    "cartuv_regla": "R21: corte = contacto de costura si su punto medio esta a <= 5.0 mm de la costura en el molde (uv) en las dos caras y a < 15 mm en el V0",
+    "ultimo": 80,
+    "f80": {
+     "rel_flecha": 9.17206433851744,
+     "rel_amp": 0.058487368928746404,
+     "rel_n": 15,
+     "cruces_cosidos": 1003,
+     "cruces_zonas": 110,
+     "cart_cuello_n": 1,
+     "cart_cuello_p95": 2.8432053775071946,
+     "cart_cuello_max": 2.8432053775071946,
+     "cart_cierre_n": 0,
+     "cart_cierre_p95": 0.0,
+     "cart_cierre_max": 0.0,
+     "cart_ruedo_n": 0,
+     "cart_ruedo_p95": 0.0,
+     "cart_ruedo_max": 0.0,
+     "cruces_cosidos_uv": 976,
+     "cartuv_cuello_n": 4,
+     "cartuv_cuello_p95": 0.8713130702252729,
+     "cartuv_cuello_max": 0.8713130702252729,
+     "cartuv_cuello_mm": 4.448034946113316,
+     "cartuv_cierre_n": 0,
+     "cartuv_cierre_p95": 0.0,
+     "cartuv_cierre_max": 0.0,
+     "cartuv_cierre_mm": 0.0,
+     "cartuv_ruedo_n": 0,
+     "cartuv_ruedo_p95": 0.0,
+     "cartuv_ruedo_max": 0.0,
+     "cartuv_ruedo_mm": 0.0,
+     "sisaR_n": 0,
+     "sisaR_p95": 0.0,
+     "sisaR_max": 0.0,
+     "sisaR_asoma_n": 20,
+     "sisaR_asoma_max": 6.052411818896372,
+     "sisaR_gap_max": 0.7405609860541574,
+     "sisaL_n": 3,
+     "sisaL_p95": 0.48098512390499565,
+     "sisaL_max": 0.5242457805525464,
+     "sisaL_asoma_n": 32,
+     "sisaL_asoma_max": 9.677713546150668,
+     "sisaL_gap_max": 2.036640861131989,
+     "hb_gap_p95": 0.30472548660306015,
+     "hb_gap_max": 0.5570577671621322,
+     "hbx_n": 7,
+     "hbx_p95": 0.15198948734897302,
+     "hbx_max": 0.21542542247308688,
+     "hb_cruces_todo": 7,
+     "costura_max_mm": 5.945904071699643,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 1,
+     "costuras_gt5": {
+      "tapeta": 5.9
+     },
+     "aparte_mm": {
+      "broche": 6.963353487664916
+     }
+    }
+   }
+  },
+  "q2_4": {
+   "item": "m133_quad--q2_4",
+   "tag": "q2_4",
+   "prenda": "m133",
+   "rc": 0,
+   "t_pared_s": 363,
+   "estado": "FIN",
+   "cuadros_pedidos": 80,
+   "grupo": "bp",
+   "cuadros_hechos": 78,
+   "t_sim_s": 345,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 78,
+    "t_s": 339,
+    "media_mm": 0.2,
+    "max_mm": 3.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "vista del. escote R",
+     "n": 20,
+     "max_mm": 2.8,
+     "p95_mm": 2.5,
+     "media_mm": 0.8
+    },
+    {
+     "costura": "cuello-capucha",
+     "n": 75,
+     "max_mm": 2.8,
+     "p95_mm": 2.3,
+     "media_mm": 0.8
+    },
+    {
+     "costura": "cierre R",
+     "n": 79,
+     "max_mm": 2.7,
+     "p95_mm": 1.9,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "vista-escote R",
+     "n": 16,
+     "max_mm": 2.5,
+     "p95_mm": 2.4,
+     "media_mm": 0.8
+    },
+    {
+     "costura": "forro capucha boca",
+     "n": 38,
+     "max_mm": 2.5,
+     "p95_mm": 2.3,
+     "media_mm": 0.8
+    },
+    {
+     "costura": "vista del. CF R",
+     "n": 65,
+     "max_mm": 2.4,
+     "p95_mm": 0.3,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "cierre L",
+     "n": 79,
+     "max_mm": 2.4,
+     "p95_mm": 1.3,
+     "media_mm": 0.5
+    },
+    {
+     "costura": "vista-cuerpo R",
+     "n": 16,
+     "max_mm": 2.2,
+     "p95_mm": 1.9,
+     "media_mm": 0.8
+    }
+   ],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [
+    "X_q2_4_f1.npy",
+    "X_q2_4_f12.npy",
+    "X_q2_4_f2.npy",
+    "X_q2_4_f20.npy",
+    "X_q2_4_f40.npy",
+    "X_q2_4_f6.npy",
+    "X_q2_4_f60.npy",
+    "X_q2_4_f80.npy"
+   ],
+   "params_variante": {
+    "bi_k": "1.004",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "quads": "2"
+   },
+   "metricas": {
+    "tag": "q2_4",
+    "malla": "m133_e2zzhp_pico.json",
+    "cuadros_pedidos": [
+     80
+    ],
+    "dumps": [
+     1,
+     2,
+     6,
+     12,
+     20,
+     40,
+     60,
+     80
+    ],
+    "huellas": {
+     "f1": "70f646c872a4dda4",
+     "f2": "a6cd693bf15bd211",
+     "f6": "be8db53a6ff01d71",
+     "f12": "d169952d367f5c27",
+     "f20": "ce6cf271965e6f35",
+     "f40": "fc412a8af86abda0",
+     "f60": "32ce2b16eb34d4ce",
+     "f80": "578ef43669e32c4c"
+    },
+    "log": {
+     "params": {
+      "bi_k": 1.004,
+      "bi_w": 15.0,
+      "relleno": 0.0,
+      "relleno_h": 18.0,
+      "relleno_r": 45.0,
+      "relleno_g": 21.0,
+      "sand_kc": 2.0,
+      "sand_len": 20.0,
+      "pl_bh": 10.0,
+      "pc_w": 10.0,
+      "hf": 1.0,
+      "hf_w": 0.1,
+      "fric": 40.0,
+      "muneca": 0.031,
+      "bth": 0.001,
+      "ath": 0.001,
+      "stop_open": 8.0
+     },
+     "stop": [],
+     "cortada_f": null,
+     "asentada_f": null,
+     "fin": true,
+     "malla_log": "m133_e2zzhp_pico.json"
+    },
+    "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+    "cartuv_regla": "R21: corte = contacto de costura si su punto medio esta a <= 5.0 mm de la costura en el molde (uv) en las dos caras y a < 15 mm en el V0",
+    "ultimo": 80,
+    "f80": {
+     "rel_flecha": 12.43448209254155,
+     "rel_amp": 0.07870021611406644,
+     "rel_n": 15,
+     "cruces_cosidos": 905,
+     "cruces_zonas": 120,
+     "cart_cuello_n": 0,
+     "cart_cuello_p95": 0.0,
+     "cart_cuello_max": 0.0,
+     "cart_cierre_n": 0,
+     "cart_cierre_p95": 0.0,
+     "cart_cierre_max": 0.0,
+     "cart_ruedo_n": 0,
+     "cart_ruedo_p95": 0.0,
+     "cart_ruedo_max": 0.0,
+     "cruces_cosidos_uv": 894,
+     "cartuv_cuello_n": 3,
+     "cartuv_cuello_p95": 1.4736589981065786,
+     "cartuv_cuello_max": 1.4736589981065786,
+     "cartuv_cuello_mm": 4.279992573277033,
+     "cartuv_cierre_n": 0,
+     "cartuv_cierre_p95": 0.0,
+     "cartuv_cierre_max": 0.0,
+     "cartuv_cierre_mm": 0.0,
+     "cartuv_ruedo_n": 0,
+     "cartuv_ruedo_p95": 0.0,
+     "cartuv_ruedo_max": 0.0,
+     "cartuv_ruedo_mm": 0.0,
+     "sisaR_n": 0,
+     "sisaR_p95": 0.0,
+     "sisaR_max": 0.0,
+     "sisaR_asoma_n": 21,
+     "sisaR_asoma_max": 7.963898575510361,
+     "sisaR_gap_max": 1.6035685826608752,
+     "sisaL_n": 0,
+     "sisaL_p95": 0.0,
+     "sisaL_max": 0.0,
+     "sisaL_asoma_n": 31,
+     "sisaL_asoma_max": 10.416426904705261,
+     "sisaL_gap_max": 1.9329024790746716,
+     "hb_gap_p95": 0.5101157530978525,
+     "hb_gap_max": 0.5440928672426141,
+     "hbx_n": 9,
+     "hbx_p95": 0.0032714157110728895,
+     "hbx_max": 0.0032714157110728895,
+     "hb_cruces_todo": 9,
+     "costura_max_mm": 7.684820462205574,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 1,
+     "costuras_gt5": {
+      "tapeta": 7.7
+     },
+     "aparte_mm": {
+      "broche": 6.6858786763136715
+     }
+    }
+   }
+  },
+  "q1s_0": {
+   "item": "m133_quad--q1s_0",
+   "tag": "q1s_0",
+   "prenda": "m133",
+   "rc": 0,
+   "t_pared_s": 344,
+   "estado": "FIN",
+   "cuadros_pedidos": 80,
+   "grupo": "bp",
+   "cuadros_hechos": 78,
+   "t_sim_s": 335,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 78,
+    "t_s": 329,
+    "media_mm": 0.1,
+    "max_mm": 3.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "forro capucha base ht",
+     "n": 28,
+     "max_mm": 3.2,
+     "p95_mm": 2.4,
+     "media_mm": 1.0
+    },
+    {
+     "costura": "capucha-ht base L",
+     "n": 13,
+     "max_mm": 3.1,
+     "p95_mm": 2.6,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "cierre R",
+     "n": 79,
+     "max_mm": 3.0,
+     "p95_mm": 1.4,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "forro capucha boca",
+     "n": 38,
+     "max_mm": 2.7,
+     "p95_mm": 2.2,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "sisa espalda R",
+     "n": 35,
+     "max_mm": 2.6,
+     "p95_mm": 1.9,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "cierre L",
+     "n": 79,
+     "max_mm": 2.6,
+     "p95_mm": 1.4,
+     "media_mm": 0.5
+    },
+    {
+     "costura": "vista-escote R",
+     "n": 16,
+     "max_mm": 2.3,
+     "p95_mm": 1.7,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "cuello-capucha",
+     "n": 75,
+     "max_mm": 2.2,
+     "p95_mm": 1.6,
+     "media_mm": 0.5
+    }
+   ],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [
+    "X_q1s_0_f1.npy",
+    "X_q1s_0_f12.npy",
+    "X_q1s_0_f2.npy",
+    "X_q1s_0_f20.npy",
+    "X_q1s_0_f40.npy",
+    "X_q1s_0_f6.npy",
+    "X_q1s_0_f60.npy",
+    "X_q1s_0_f80.npy"
+   ],
+   "params_variante": {
+    "bi_k": "1.000",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "quads": "1",
+    "shear": "50"
+   },
+   "metricas": {
+    "tag": "q1s_0",
+    "malla": "m133_e2zzhp_pico.json",
+    "cuadros_pedidos": [
+     80
+    ],
+    "dumps": [
+     1,
+     2,
+     6,
+     12,
+     20,
+     40,
+     60,
+     80
+    ],
+    "huellas": {
+     "f1": "70f646c872a4dda4",
+     "f2": "2f2c90b3ff6fda65",
+     "f6": "8abd921a89eb3fd9",
+     "f12": "5d07d84bdaf5679f",
+     "f20": "5102ac12c1eaaa75",
+     "f40": "a86f540549273236",
+     "f60": "88476865997aa91e",
+     "f80": "2b12453ee30788f8"
+    },
+    "log": {
+     "params": {
+      "bi_k": 1.0,
+      "bi_w": 15.0,
+      "relleno": 0.0,
+      "relleno_h": 18.0,
+      "relleno_r": 45.0,
+      "relleno_g": 21.0,
+      "sand_kc": 2.0,
+      "sand_len": 20.0,
+      "pl_bh": 10.0,
+      "pc_w": 10.0,
+      "hf": 1.0,
+      "hf_w": 0.1,
+      "fric": 40.0,
+      "muneca": 0.031,
+      "bth": 0.001,
+      "ath": 0.001,
+      "stop_open": 8.0
+     },
+     "stop": [],
+     "cortada_f": null,
+     "asentada_f": null,
+     "fin": true,
+     "malla_log": "m133_e2zzhp_pico.json"
+    },
+    "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+    "cartuv_regla": "R21: corte = contacto de costura si su punto medio esta a <= 5.0 mm de la costura en el molde (uv) en las dos caras y a < 15 mm en el V0",
+    "ultimo": 80,
+    "f80": {
+     "rel_flecha": 14.517699904657063,
+     "rel_amp": 0.09464546022599334,
+     "rel_n": 15,
+     "cruces_cosidos": 953,
+     "cruces_zonas": 196,
+     "cart_cuello_n": 38,
+     "cart_cuello_p95": 2.5719193385487755,
+     "cart_cuello_max": 3.1285338539016494,
+     "cart_cierre_n": 0,
+     "cart_cierre_p95": 0.0,
+     "cart_cierre_max": 0.0,
+     "cart_ruedo_n": 0,
+     "cart_ruedo_p95": 0.0,
+     "cart_ruedo_max": 0.0,
+     "cruces_cosidos_uv": 958,
+     "cartuv_cuello_n": 20,
+     "cartuv_cuello_p95": 2.210626754669037,
+     "cartuv_cuello_max": 2.5719193385487755,
+     "cartuv_cuello_mm": 29.092819513850277,
+     "cartuv_cierre_n": 0,
+     "cartuv_cierre_p95": 0.0,
+     "cartuv_cierre_max": 0.0,
+     "cartuv_cierre_mm": 0.0,
+     "cartuv_ruedo_n": 0,
+     "cartuv_ruedo_p95": 0.0,
+     "cartuv_ruedo_max": 0.0,
+     "cartuv_ruedo_mm": 0.0,
+     "sisaR_n": 0,
+     "sisaR_p95": 0.0,
+     "sisaR_max": 0.0,
+     "sisaR_asoma_n": 42,
+     "sisaR_asoma_max": 11.501947761888392,
+     "sisaR_gap_max": 2.5505894706675747,
+     "sisaL_n": 0,
+     "sisaL_p95": 0.0,
+     "sisaL_max": 0.0,
+     "sisaL_asoma_n": 37,
+     "sisaL_asoma_max": 8.70874868403368,
+     "sisaL_gap_max": 1.5784524786747236,
+     "hb_gap_p95": 0.9444834765000116,
+     "hb_gap_max": 1.1853899216482622,
+     "hbx_n": 18,
+     "hbx_p95": 3.6435933641401035,
+     "hbx_max": 4.081076065514028,
+     "hb_cruces_todo": 77,
+     "costura_max_mm": 5.6605779022448655,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 1,
+     "costuras_gt5": {
+      "tapeta": 5.7
+     },
+     "aparte_mm": {
+      "broche": 6.762298065960766
+     }
+    }
+   }
+  },
+  "q1s_1": {
+   "item": "m133_quad--q1s_1",
+   "tag": "q1s_1",
+   "prenda": "m133",
+   "rc": 0,
+   "t_pared_s": 329,
+   "estado": "FIN",
+   "cuadros_pedidos": 80,
+   "grupo": "bp",
+   "cuadros_hechos": 78,
+   "t_sim_s": 320,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 78,
+    "t_s": 314,
+    "media_mm": 0.1,
+    "max_mm": 3.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "cierre R",
+     "n": 79,
+     "max_mm": 3.6,
+     "p95_mm": 1.6,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "sisa espalda R",
+     "n": 35,
+     "max_mm": 2.9,
+     "p95_mm": 1.7,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "forro capucha boca",
+     "n": 38,
+     "max_mm": 2.8,
+     "p95_mm": 2.3,
+     "media_mm": 0.3
+    },
+    {
+     "costura": "cierre L",
+     "n": 79,
+     "max_mm": 2.7,
+     "p95_mm": 1.4,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "capucha-ht base R",
+     "n": 13,
+     "max_mm": 2.6,
+     "p95_mm": 1.8,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "sisa espalda L",
+     "n": 35,
+     "max_mm": 2.2,
+     "p95_mm": 1.9,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "borde forro",
+     "n": 1453,
+     "max_mm": 2.2,
+     "p95_mm": 0.2,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "vista-cuerpo L",
+     "n": 16,
+     "max_mm": 2.1,
+     "p95_mm": 1.6,
+     "media_mm": 0.7
+    }
+   ],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [
+    "X_q1s_1_f1.npy",
+    "X_q1s_1_f12.npy",
+    "X_q1s_1_f2.npy",
+    "X_q1s_1_f20.npy",
+    "X_q1s_1_f40.npy",
+    "X_q1s_1_f6.npy",
+    "X_q1s_1_f60.npy",
+    "X_q1s_1_f80.npy"
+   ],
+   "params_variante": {
+    "bi_k": "1.001",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "quads": "1",
+    "shear": "50"
+   },
+   "metricas": {
+    "tag": "q1s_1",
+    "malla": "m133_e2zzhp_pico.json",
+    "cuadros_pedidos": [
+     80
+    ],
+    "dumps": [
+     1,
+     2,
+     6,
+     12,
+     20,
+     40,
+     60,
+     80
+    ],
+    "huellas": {
+     "f1": "70f646c872a4dda4",
+     "f2": "dc74e1daf658d77a",
+     "f6": "037febacb4a8bfe9",
+     "f12": "8836c4b2894ab38b",
+     "f20": "fc527c51fb17a405",
+     "f40": "52da3cc6d70e3a67",
+     "f60": "22050ee4d4957d54",
+     "f80": "6425bbe5709164c4"
+    },
+    "log": {
+     "params": {
+      "bi_k": 1.001,
+      "bi_w": 15.0,
+      "relleno": 0.0,
+      "relleno_h": 18.0,
+      "relleno_r": 45.0,
+      "relleno_g": 21.0,
+      "sand_kc": 2.0,
+      "sand_len": 20.0,
+      "pl_bh": 10.0,
+      "pc_w": 10.0,
+      "hf": 1.0,
+      "hf_w": 0.1,
+      "fric": 40.0,
+      "muneca": 0.031,
+      "bth": 0.001,
+      "ath": 0.001,
+      "stop_open": 8.0
+     },
+     "stop": [],
+     "cortada_f": null,
+     "asentada_f": null,
+     "fin": true,
+     "malla_log": "m133_e2zzhp_pico.json"
+    },
+    "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+    "cartuv_regla": "R21: corte = contacto de costura si su punto medio esta a <= 5.0 mm de la costura en el molde (uv) en las dos caras y a < 15 mm en el V0",
+    "ultimo": 80,
+    "f80": {
+     "rel_flecha": 13.420389252669608,
+     "rel_amp": 0.08589654020151144,
+     "rel_n": 15,
+     "cruces_cosidos": 1115,
+     "cruces_zonas": 115,
+     "cart_cuello_n": 16,
+     "cart_cuello_p95": 3.1617181459522694,
+     "cart_cuello_max": 3.417831780596406,
+     "cart_cierre_n": 0,
+     "cart_cierre_p95": 0.0,
+     "cart_cierre_max": 0.0,
+     "cart_ruedo_n": 0,
+     "cart_ruedo_p95": 0.0,
+     "cart_ruedo_max": 0.0,
+     "cruces_cosidos_uv": 1125,
+     "cartuv_cuello_n": 4,
+     "cartuv_cuello_p95": 2.8021870206492503,
+     "cartuv_cuello_max": 3.0049245179469186,
+     "cartuv_cuello_mm": 6.2680957108385345,
+     "cartuv_cierre_n": 0,
+     "cartuv_cierre_p95": 0.0,
+     "cartuv_cierre_max": 0.0,
+     "cartuv_cierre_mm": 0.0,
+     "cartuv_ruedo_n": 0,
+     "cartuv_ruedo_p95": 0.0,
+     "cartuv_ruedo_max": 0.0,
+     "cartuv_ruedo_mm": 0.0,
+     "sisaR_n": 0,
+     "sisaR_p95": 0.0,
+     "sisaR_max": 0.0,
+     "sisaR_asoma_n": 35,
+     "sisaR_asoma_max": 9.505275636648848,
+     "sisaR_gap_max": 2.9218214772460813,
+     "sisaL_n": 1,
+     "sisaL_p95": 0.0002506741255338678,
+     "sisaL_max": 0.0002506741255338678,
+     "sisaL_asoma_n": 35,
+     "sisaL_asoma_max": 10.756405246426686,
+     "sisaL_gap_max": 2.2039475850370356,
+     "hb_gap_p95": 0.019978154146155728,
+     "hb_gap_max": 0.05427226706006127,
+     "hbx_n": 8,
+     "hbx_p95": 0.3226673999444829,
+     "hbx_max": 0.4956753960621044,
+     "hb_cruces_todo": 8,
+     "costura_max_mm": 6.081018732327683,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 1,
+     "costuras_gt5": {
+      "tapeta": 6.1
+     },
+     "aparte_mm": {
+      "broche": 6.696866829152855
+     }
+    }
+   }
+  },
+  "q1s_2": {
+   "item": "m133_quad--q1s_2",
+   "tag": "q1s_2",
+   "prenda": "m133",
+   "rc": 0,
+   "t_pared_s": 333,
+   "estado": "FIN",
+   "cuadros_pedidos": 80,
+   "grupo": "bp",
+   "cuadros_hechos": 78,
+   "t_sim_s": 325,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 78,
+    "t_s": 318,
+    "media_mm": 0.1,
+    "max_mm": 4.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "forro capucha boca",
+     "n": 38,
+     "max_mm": 4.3,
+     "p95_mm": 2.9,
+     "media_mm": 1.0
+    },
+    {
+     "costura": "cierre R",
+     "n": 79,
+     "max_mm": 2.5,
+     "p95_mm": 1.5,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "sisa espalda R",
+     "n": 35,
+     "max_mm": 2.3,
+     "p95_mm": 1.7,
+     "media_mm": 0.2
+    },
+    {
+     "costura": "cierre L",
+     "n": 79,
+     "max_mm": 2.3,
+     "p95_mm": 1.3,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "vista-cuerpo L",
+     "n": 16,
+     "max_mm": 2.2,
+     "p95_mm": 1.5,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "vista-escote R",
+     "n": 16,
+     "max_mm": 2.1,
+     "p95_mm": 1.4,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "cuello-capucha",
+     "n": 75,
+     "max_mm": 2.1,
+     "p95_mm": 1.6,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "vista-escote L",
+     "n": 16,
+     "max_mm": 1.9,
+     "p95_mm": 1.2,
+     "media_mm": 0.5
+    }
+   ],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [
+    "X_q1s_2_f1.npy",
+    "X_q1s_2_f12.npy",
+    "X_q1s_2_f2.npy",
+    "X_q1s_2_f20.npy",
+    "X_q1s_2_f40.npy",
+    "X_q1s_2_f6.npy",
+    "X_q1s_2_f60.npy",
+    "X_q1s_2_f80.npy"
+   ],
+   "params_variante": {
+    "bi_k": "1.002",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "quads": "1",
+    "shear": "50"
+   },
+   "metricas": {
+    "tag": "q1s_2",
+    "malla": "m133_e2zzhp_pico.json",
+    "cuadros_pedidos": [
+     80
+    ],
+    "dumps": [
+     1,
+     2,
+     6,
+     12,
+     20,
+     40,
+     60,
+     80
+    ],
+    "huellas": {
+     "f1": "70f646c872a4dda4",
+     "f2": "32c0d3d81a110f67",
+     "f6": "4a3194ab18d88238",
+     "f12": "269ad21bba691db9",
+     "f20": "56360ff2a1d0bdec",
+     "f40": "a2eae5c5ab271fa6",
+     "f60": "bee574c18361c3ef",
+     "f80": "7b4acde3e7e67a54"
+    },
+    "log": {
+     "params": {
+      "bi_k": 1.002,
+      "bi_w": 15.0,
+      "relleno": 0.0,
+      "relleno_h": 18.0,
+      "relleno_r": 45.0,
+      "relleno_g": 21.0,
+      "sand_kc": 2.0,
+      "sand_len": 20.0,
+      "pl_bh": 10.0,
+      "pc_w": 10.0,
+      "hf": 1.0,
+      "hf_w": 0.1,
+      "fric": 40.0,
+      "muneca": 0.031,
+      "bth": 0.001,
+      "ath": 0.001,
+      "stop_open": 8.0
+     },
+     "stop": [],
+     "cortada_f": null,
+     "asentada_f": null,
+     "fin": true,
+     "malla_log": "m133_e2zzhp_pico.json"
+    },
+    "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+    "cartuv_regla": "R21: corte = contacto de costura si su punto medio esta a <= 5.0 mm de la costura en el molde (uv) en las dos caras y a < 15 mm en el V0",
+    "ultimo": 80,
+    "f80": {
+     "rel_flecha": 13.246489056962202,
+     "rel_amp": 0.09154822624392231,
+     "rel_n": 15,
+     "cruces_cosidos": 1020,
+     "cruces_zonas": 99,
+     "cart_cuello_n": 2,
+     "cart_cuello_p95": 0.6309385746036789,
+     "cart_cuello_max": 0.6309385746036789,
+     "cart_cierre_n": 0,
+     "cart_cierre_p95": 0.0,
+     "cart_cierre_max": 0.0,
+     "cart_ruedo_n": 0,
+     "cart_ruedo_p95": 0.0,
+     "cart_ruedo_max": 0.0,
+     "cruces_cosidos_uv": 1012,
+     "cartuv_cuello_n": 2,
+     "cartuv_cuello_p95": 0.6309385746036789,
+     "cartuv_cuello_max": 0.6309385746036789,
+     "cartuv_cuello_mm": 2.0319955026942895,
+     "cartuv_cierre_n": 0,
+     "cartuv_cierre_p95": 0.0,
+     "cartuv_cierre_max": 0.0,
+     "cartuv_cierre_mm": 0.0,
+     "cartuv_ruedo_n": 0,
+     "cartuv_ruedo_p95": 0.0,
+     "cartuv_ruedo_max": 0.0,
+     "cartuv_ruedo_mm": 0.0,
+     "sisaR_n": 0,
+     "sisaR_p95": 0.0,
+     "sisaR_max": 0.0,
+     "sisaR_asoma_n": 53,
+     "sisaR_asoma_max": 9.55158239632373,
+     "sisaR_gap_max": 2.3215841102542156,
+     "sisaL_n": 0,
+     "sisaL_p95": 0.0,
+     "sisaL_max": 0.0,
+     "sisaL_asoma_n": 29,
+     "sisaL_asoma_max": 11.833621883714633,
+     "sisaL_gap_max": 1.514028471217692,
+     "hb_gap_p95": 0.34998647051409487,
+     "hb_gap_max": 0.5567678962341699,
+     "hbx_n": 6,
+     "hbx_p95": 0.22349514633833667,
+     "hbx_max": 0.22349514633833667,
+     "hb_cruces_todo": 6,
+     "costura_max_mm": 5.39126227035349,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 1,
+     "costuras_gt5": {
+      "tapeta": 5.4
+     },
+     "aparte_mm": {
+      "broche": 6.719571911112204
+     }
+    }
+   }
+  },
+  "q1s_3": {
+   "item": "m133_quad--q1s_3",
+   "tag": "q1s_3",
+   "prenda": "m133",
+   "rc": 0,
+   "t_pared_s": 322,
+   "estado": "FIN",
+   "cuadros_pedidos": 80,
+   "grupo": "bp",
+   "cuadros_hechos": 78,
+   "t_sim_s": 313,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 78,
+    "t_s": 307,
+    "media_mm": 0.1,
+    "max_mm": 3.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "sisa espalda R",
+     "n": 35,
+     "max_mm": 3.3,
+     "p95_mm": 2.4,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "borde forro",
+     "n": 1453,
+     "max_mm": 3.1,
+     "p95_mm": 0.7,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "sisa espalda L",
+     "n": 35,
+     "max_mm": 3.0,
+     "p95_mm": 2.3,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "forro capucha boca",
+     "n": 38,
+     "max_mm": 3.0,
+     "p95_mm": 2.2,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "cierre R",
+     "n": 79,
+     "max_mm": 3.0,
+     "p95_mm": 1.4,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "pespunte",
+     "n": 746,
+     "max_mm": 2.7,
+     "p95_mm": 0.2,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "vista-escote R",
+     "n": 16,
+     "max_mm": 2.5,
+     "p95_mm": 2.2,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "cierre L",
+     "n": 79,
+     "max_mm": 2.5,
+     "p95_mm": 1.5,
+     "media_mm": 0.4
+    }
+   ],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [
+    "X_q1s_3_f1.npy",
+    "X_q1s_3_f12.npy",
+    "X_q1s_3_f2.npy",
+    "X_q1s_3_f20.npy",
+    "X_q1s_3_f40.npy",
+    "X_q1s_3_f6.npy",
+    "X_q1s_3_f60.npy",
+    "X_q1s_3_f80.npy"
+   ],
+   "params_variante": {
+    "bi_k": "1.003",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "quads": "1",
+    "shear": "50"
+   },
+   "metricas": {
+    "tag": "q1s_3",
+    "malla": "m133_e2zzhp_pico.json",
+    "cuadros_pedidos": [
+     80
+    ],
+    "dumps": [
+     1,
+     2,
+     6,
+     12,
+     20,
+     40,
+     60,
+     80
+    ],
+    "huellas": {
+     "f1": "70f646c872a4dda4",
+     "f2": "da27d7091dc5f61e",
+     "f6": "f048b64d7733671a",
+     "f12": "078fa249d2659afc",
+     "f20": "c1f37c8531795528",
+     "f40": "1b73146e8deaa47c",
+     "f60": "205dd50832d0b557",
+     "f80": "a833c26de6334351"
+    },
+    "log": {
+     "params": {
+      "bi_k": 1.003,
+      "bi_w": 15.0,
+      "relleno": 0.0,
+      "relleno_h": 18.0,
+      "relleno_r": 45.0,
+      "relleno_g": 21.0,
+      "sand_kc": 2.0,
+      "sand_len": 20.0,
+      "pl_bh": 10.0,
+      "pc_w": 10.0,
+      "hf": 1.0,
+      "hf_w": 0.1,
+      "fric": 40.0,
+      "muneca": 0.031,
+      "bth": 0.001,
+      "ath": 0.001,
+      "stop_open": 8.0
+     },
+     "stop": [],
+     "cortada_f": null,
+     "asentada_f": null,
+     "fin": true,
+     "malla_log": "m133_e2zzhp_pico.json"
+    },
+    "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+    "cartuv_regla": "R21: corte = contacto de costura si su punto medio esta a <= 5.0 mm de la costura en el molde (uv) en las dos caras y a < 15 mm en el V0",
+    "ultimo": 80,
+    "f80": {
+     "rel_flecha": 14.879561240590162,
+     "rel_amp": 0.09609339521964116,
+     "rel_n": 15,
+     "cruces_cosidos": 1055,
+     "cruces_zonas": 55,
+     "cart_cuello_n": 2,
+     "cart_cuello_p95": 1.9269241216869977,
+     "cart_cuello_max": 1.9535555592345837,
+     "cart_cierre_n": 0,
+     "cart_cierre_p95": 0.0,
+     "cart_cierre_max": 0.0,
+     "cart_ruedo_n": 0,
+     "cart_ruedo_p95": 0.0,
+     "cart_ruedo_max": 0.0,
+     "cruces_cosidos_uv": 1052,
+     "cartuv_cuello_n": 1,
+     "cartuv_cuello_p95": 1.9535555592345837,
+     "cartuv_cuello_max": 1.9535555592345837,
+     "cartuv_cuello_mm": 1.3403155635289836,
+     "cartuv_cierre_n": 0,
+     "cartuv_cierre_p95": 0.0,
+     "cartuv_cierre_max": 0.0,
+     "cartuv_cierre_mm": 0.0,
+     "cartuv_ruedo_n": 0,
+     "cartuv_ruedo_p95": 0.0,
+     "cartuv_ruedo_max": 0.0,
+     "cartuv_ruedo_mm": 0.0,
+     "sisaR_n": 2,
+     "sisaR_p95": 2.4773000451246,
+     "sisaR_max": 2.4941873763577673,
+     "sisaR_asoma_n": 56,
+     "sisaR_asoma_max": 12.637693675058019,
+     "sisaR_gap_max": 3.271698286902468,
+     "sisaL_n": 0,
+     "sisaL_p95": 0.0,
+     "sisaL_max": 0.0,
+     "sisaL_asoma_n": 52,
+     "sisaL_asoma_max": 11.473240880805555,
+     "sisaL_gap_max": 3.0281971615354095,
+     "hb_gap_p95": 0.23072138695030922,
+     "hb_gap_max": 0.5728557469190028,
+     "hbx_n": 4,
+     "hbx_p95": 0.0031342449093443004,
+     "hbx_max": 0.003320545704384781,
+     "hb_cruces_todo": 4,
+     "costura_max_mm": 5.816175023385438,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 1,
+     "costuras_gt5": {
+      "tapeta": 5.8
+     },
+     "aparte_mm": {
+      "broche": 6.765852997331545
+     }
+    }
+   }
+  },
+  "q1s_4": {
+   "item": "m133_quad--q1s_4",
+   "tag": "q1s_4",
+   "prenda": "m133",
+   "rc": 0,
+   "t_pared_s": 335,
+   "estado": "FIN",
+   "cuadros_pedidos": 80,
+   "grupo": "bp",
+   "cuadros_hechos": 78,
+   "t_sim_s": 326,
+   "stop": [],
+   "costura_ultimo_cuadro": {
+    "f": 78,
+    "t_s": 319,
+    "media_mm": 0.1,
+    "max_mm": 4.0
+   },
+   "costuras_peores": [
+    {
+     "costura": "forro capucha boca",
+     "n": 38,
+     "max_mm": 3.4,
+     "p95_mm": 2.6,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "cuello-capucha",
+     "n": 75,
+     "max_mm": 3.0,
+     "p95_mm": 2.0,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "capucha-ht base L",
+     "n": 13,
+     "max_mm": 3.0,
+     "p95_mm": 2.6,
+     "media_mm": 0.7
+    },
+    {
+     "costura": "cierre L",
+     "n": 79,
+     "max_mm": 2.9,
+     "p95_mm": 1.6,
+     "media_mm": 0.5
+    },
+    {
+     "costura": "cierre R",
+     "n": 79,
+     "max_mm": 2.8,
+     "p95_mm": 1.9,
+     "media_mm": 0.4
+    },
+    {
+     "costura": "capucha-ht base R",
+     "n": 13,
+     "max_mm": 2.5,
+     "p95_mm": 2.1,
+     "media_mm": 0.6
+    },
+    {
+     "costura": "borde forro",
+     "n": 1453,
+     "max_mm": 2.3,
+     "p95_mm": 0.4,
+     "media_mm": 0.1
+    },
+    {
+     "costura": "sisa espalda L",
+     "n": 35,
+     "max_mm": 2.2,
+     "p95_mm": 1.6,
+     "media_mm": 0.2
+    }
+   ],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [
+    "X_q1s_4_f1.npy",
+    "X_q1s_4_f12.npy",
+    "X_q1s_4_f2.npy",
+    "X_q1s_4_f20.npy",
+    "X_q1s_4_f40.npy",
+    "X_q1s_4_f6.npy",
+    "X_q1s_4_f60.npy",
+    "X_q1s_4_f80.npy"
+   ],
+   "params_variante": {
+    "bi_k": "1.004",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "quads": "1",
+    "shear": "50"
+   },
+   "metricas": {
+    "tag": "q1s_4",
+    "malla": "m133_e2zzhp_pico.json",
+    "cuadros_pedidos": [
+     80
+    ],
+    "dumps": [
+     1,
+     2,
+     6,
+     12,
+     20,
+     40,
+     60,
+     80
+    ],
+    "huellas": {
+     "f1": "70f646c872a4dda4",
+     "f2": "ff678c548ca9f58b",
+     "f6": "2df285595a82def0",
+     "f12": "dd5287c57801667d",
+     "f20": "9b6cb6c7132dc1f5",
+     "f40": "59ee3b149bfde367",
+     "f60": "3fc1717b9487c46b",
+     "f80": "94e44ccf1589646b"
+    },
+    "log": {
+     "params": {
+      "bi_k": 1.004,
+      "bi_w": 15.0,
+      "relleno": 0.0,
+      "relleno_h": 18.0,
+      "relleno_r": 45.0,
+      "relleno_g": 21.0,
+      "sand_kc": 2.0,
+      "sand_len": 20.0,
+      "pl_bh": 10.0,
+      "pc_w": 10.0,
+      "hf": 1.0,
+      "hf_w": 0.1,
+      "fric": 40.0,
+      "muneca": 0.031,
+      "bth": 0.001,
+      "ath": 0.001,
+      "stop_open": 8.0
+     },
+     "stop": [],
+     "cortada_f": null,
+     "asentada_f": null,
+     "fin": true,
+     "malla_log": "m133_e2zzhp_pico.json"
+    },
+    "medidor": "medir_m133.py (= _qc_R16/medir_R16.py + costuras)",
+    "cartuv_regla": "R21: corte = contacto de costura si su punto medio esta a <= 5.0 mm de la costura en el molde (uv) en las dos caras y a < 15 mm en el V0",
+    "ultimo": 80,
+    "f80": {
+     "rel_flecha": 13.117912077221671,
+     "rel_amp": 0.08366219572215197,
+     "rel_n": 15,
+     "cruces_cosidos": 1116,
+     "cruces_zonas": 109,
+     "cart_cuello_n": 0,
+     "cart_cuello_p95": 0.0,
+     "cart_cuello_max": 0.0,
+     "cart_cierre_n": 0,
+     "cart_cierre_p95": 0.0,
+     "cart_cierre_max": 0.0,
+     "cart_ruedo_n": 0,
+     "cart_ruedo_p95": 0.0,
+     "cart_ruedo_max": 0.0,
+     "cruces_cosidos_uv": 1116,
+     "cartuv_cuello_n": 0,
+     "cartuv_cuello_p95": 0.0,
+     "cartuv_cuello_max": 0.0,
+     "cartuv_cuello_mm": 0.0,
+     "cartuv_cierre_n": 0,
+     "cartuv_cierre_p95": 0.0,
+     "cartuv_cierre_max": 0.0,
+     "cartuv_cierre_mm": 0.0,
+     "cartuv_ruedo_n": 0,
+     "cartuv_ruedo_p95": 0.0,
+     "cartuv_ruedo_max": 0.0,
+     "cartuv_ruedo_mm": 0.0,
+     "sisaR_n": 0,
+     "sisaR_p95": 0.0,
+     "sisaR_max": 0.0,
+     "sisaR_asoma_n": 44,
+     "sisaR_asoma_max": 15.711615937134608,
+     "sisaR_gap_max": 0.19357412690379613,
+     "sisaL_n": 2,
+     "sisaL_p95": 0.016862502426081737,
+     "sisaL_max": 0.017725158831935085,
+     "sisaL_asoma_n": 29,
+     "sisaL_asoma_max": 6.8109246751011945,
+     "sisaL_gap_max": 2.2409076253526514,
+     "hb_gap_p95": 0.22297645614068753,
+     "hb_gap_max": 0.47304776142064064,
+     "hbx_n": 7,
+     "hbx_p95": 0.0005207526381609876,
+     "hbx_max": 0.0006267741672330018,
+     "hb_cruces_todo": 7,
+     "costura_max_mm": 5.699392755376287,
+     "costura_max": "tapeta",
+     "costuras_gt5_n": 1,
+     "costuras_gt5": {
+      "tapeta": 5.7
+     },
+     "aparte_mm": {
+      "broche": 7.420470883279564
+     }
+    }
+   }
+  }
+ },
+ "artifacts": [
+  "prenda-m133_quad--quad_c0-<run>",
+  "prenda-m133_quad--q1_0-<run>",
+  "prenda-m133_quad--q1_1-<run>",
+  "prenda-m133_quad--q1_2-<run>",
+  "prenda-m133_quad--q1_3-<run>",
+  "prenda-m133_quad--q1_4-<run>",
+  "prenda-m133_quad--q2_0-<run>",
+  "prenda-m133_quad--q2_1-<run>",
+  "prenda-m133_quad--q2_2-<run>",
+  "prenda-m133_quad--q2_3-<run>",
+  "prenda-m133_quad--q2_4-<run>",
+  "prenda-m133_quad--q1s_0-<run>",
+  "prenda-m133_quad--q1s_1-<run>",
+  "prenda-m133_quad--q1s_2-<run>",
+  "prenda-m133_quad--q1s_3-<run>",
+  "prenda-m133_quad--q1s_4-<run>"
+ ]
+}
