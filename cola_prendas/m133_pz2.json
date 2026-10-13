@@ -1,0 +1,199 @@
+{
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  20,
+  40,
+  60,
+  80
+ ],
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  }
+ },
+ "nombre": "m133_pz2",
+ "tmo_min": 120,
+ "nf": 80,
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   80
+  ]
+ },
+ "nota": "[ESC f535] PZ2: extends m133_pz (p0 140/120) to p0=100, with and without fi_c=15, N=5 paired bi_k 1.000-1.004, so the crest-vs-pressure curve has 4 points (100/120/140/160). Same group bp, nf 80, dumps 1-80.",
+ "variantes": [
+  {
+   "tag": "pz_p100_0",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.000",
+    "p0": "100"
+   }
+  },
+  {
+   "tag": "pz_p100_1",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.001",
+    "p0": "100"
+   }
+  },
+  {
+   "tag": "pz_p100_2",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.002",
+    "p0": "100"
+   }
+  },
+  {
+   "tag": "pz_p100_3",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.003",
+    "p0": "100"
+   }
+  },
+  {
+   "tag": "pz_p100_4",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.004",
+    "p0": "100"
+   }
+  },
+  {
+   "tag": "pz_p100f_0",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.000",
+    "p0": "100",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "pz_p100f_1",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.001",
+    "p0": "100",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "pz_p100f_2",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.002",
+    "p0": "100",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "pz_p100f_3",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.003",
+    "p0": "100",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "pz_p100f_4",
+   "grupo": "bp",
+   "params": {
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "bi_k": "1.004",
+    "p0": "100",
+    "fi_c": "15"
+   }
+  }
+ ]
+}
