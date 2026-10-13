@@ -1,0 +1,77 @@
+{
+ "tanda": "s12_humo",
+ "prenda": "s12",
+ "url": "https://github.com/parka-oss/prenda3d-lab/actions/runs/38421812351",
+ "estado": "OK",
+ "nota": "[ESC f535] banco S12 (sintetico, disco de tela 300 mm): T equilatera / C cuadrada al hilo / R irregular (Poisson-disk + CDT de Blender), bending 5 y 1, apoyos Cusick (disco 180 pinzado) y esfera R 95, semillas 0-2 (mov. rigido), nf 150. Una palanca por eje: malla y bending. HUMO: 2 trabajos (R esfera s0, C_b1 disco s0).",
+ "tomada": {
+  "por": "actions 38421812351",
+  "utc": "2026-10-13T15:24:46Z"
+ },
+ "cerrada_utc": "2026-10-13T15:25:53Z",
+ "variantes": {
+  "r_b5_esf_s0": {
+   "item": "s12_humo--r_b5_esf_s0",
+   "tag": "r_b5_esf_s0",
+   "prenda": "s12",
+   "rc": 0,
+   "t_pared_s": 19,
+   "estado": "FIN",
+   "cuadros_pedidos": 150,
+   "grupo": null,
+   "cuadros_hechos": 0,
+   "t_sim_s": 18,
+   "stop": [],
+   "costura_ultimo_cuadro": null,
+   "costuras_peores": [],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [],
+   "params_variante": {
+    "var": "R",
+    "apoyo": "esfera",
+    "semilla": "0"
+   }
+  },
+  "c_b1_dis_s0": {
+   "item": "s12_humo--c_b1_dis_s0",
+   "tag": "c_b1_dis_s0",
+   "prenda": "s12",
+   "rc": 0,
+   "t_pared_s": 22,
+   "estado": "FIN",
+   "cuadros_pedidos": 150,
+   "grupo": null,
+   "cuadros_hechos": 0,
+   "t_sim_s": 21,
+   "stop": [],
+   "costura_ultimo_cuadro": null,
+   "costuras_peores": [],
+   "asent": "",
+   "avisos": [],
+   "error": "",
+   "params": {},
+   "receta_hash": null,
+   "id_corrida": null,
+   "blender": null,
+   "hilos": null,
+   "dumps": [],
+   "params_variante": {
+    "var": "C",
+    "apoyo": "disco",
+    "semilla": "0",
+    "bending": "1"
+   }
+  }
+ },
+ "artifacts": [
+  "prenda-s12_humo--r_b5_esf_s0-<run>",
+  "prenda-s12_humo--c_b1_dis_s0-<run>"
+ ]
+}
