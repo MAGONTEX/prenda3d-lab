@@ -1,0 +1,27 @@
+{
+ "modo": "argv",
+ "codigo": "s12",
+ "archivos": {
+  "s12.py": {
+   "origen": "s12.py",
+   "sha256_origen": "6fd5e5ae81c65cc211cf5b2fca8ec55358be08ef3aee2da3fad8b3f665de06cc",
+   "sha256": "6fd5e5ae81c65cc211cf5b2fca8ec55358be08ef3aee2da3fad8b3f665de06cc",
+   "saneado": false,
+   "ast_igual": true
+  },
+  "r_puntos.json": {
+   "origen": "r_puntos.json",
+   "sha256_origen": "79516eaaf4c418b5eff6e41d31e015b19036cfb52465099640de0ec849a44102",
+   "sha256": "79516eaaf4c418b5eff6e41d31e015b19036cfb52465099640de0ec849a44102",
+   "saneado": false,
+   "textos_saneados": []
+  },
+  "receta_s12.json": {
+   "origen": "receta_s12.txt",
+   "sha256_origen": "2dd71343fcfbd35f806fe351d4873cd9220fed3a930777d961cc6c39dd9fa561",
+   "sha256": "b6efba2b84a988380beaffd4b7bca34e10681254aaec93fc054aa50f2b322a4f",
+   "tokens": 7
+  }
+ },
+ "publico": "[ESC·f535] paquete --modo argv de scripts/empaquetar_prenda.py: sin DXF, notas privadas ni rutas"
+}

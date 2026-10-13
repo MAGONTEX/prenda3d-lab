@@ -1,0 +1,12 @@
+{
+ "modo": "argv",
+ "argv": [
+  "mass=0.02",
+  "tension=100",
+  "compression=15",
+  "shear=5",
+  "bending=5",
+  "quality=10",
+  "air=1"
+ ]
+}

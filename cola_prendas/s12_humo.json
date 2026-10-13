@@ -1,0 +1,33 @@
+{
+ "nombre": "s12_humo",
+ "prenda": "s12",
+ "modo": "argv",
+ "script": "prendas/s12/s12.py",
+ "receta": "receta_s12.json",
+ "entorno": {
+  "S12_OUT": "{salida}/"
+ },
+ "hilos": 4,
+ "tmo_min": 30,
+ "nf": 150,
+ "nota": "[ESC f535] banco S12 (sintetico, disco de tela 300 mm): T equilatera / C cuadrada al hilo / R irregular (Poisson-disk + CDT de Blender), bending 5 y 1, apoyos Cusick (disco 180 pinzado) y esfera R 95, semillas 0-2 (mov. rigido), nf 150. Una palanca por eje: malla y bending. HUMO: 2 trabajos (R esfera s0, C_b1 disco s0).",
+ "variantes": [
+  {
+   "tag": "r_b5_esf_s0",
+   "params": {
+    "var": "R",
+    "apoyo": "esfera",
+    "semilla": "0"
+   }
+  },
+  {
+   "tag": "c_b1_dis_s0",
+   "params": {
+    "var": "C",
+    "apoyo": "disco",
+    "semilla": "0",
+    "bending": "1"
+   }
+  }
+ ]
+}
