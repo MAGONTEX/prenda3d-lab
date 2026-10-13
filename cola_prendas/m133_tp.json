@@ -1,0 +1,102 @@
+{
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  }
+ },
+ "nombre": "m133_tp",
+ "tmo_min": 60,
+ "nf": 20,
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   20
+  ]
+ },
+ "nota": "[ESC·f535] TP humo: rigidez de flexion de la tapeta (w_plk) contra la deriva del CF a L (bp = r20u5_bp0). c w_plk 1 (500, control = tor_c); w02 w_plk 0.2 (104, = cuello, valor fisico central ~20x); w045 w_plk 0.45 (228, intermedio, bajo el tope de estabilidad q10). N=2 (bi_k 1.000/1.001), 20 f, dumps 1-20.",
+ "variantes": [
+  {
+   "tag": "tp_c_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "tp_c_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "tp_w02_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "w_plk": "0.2"
+   }
+  },
+  {
+   "tag": "tp_w02_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "w_plk": "0.2"
+   }
+  },
+  {
+   "tag": "tp_w045_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "w_plk": "0.45"
+   }
+  },
+  {
+   "tag": "tp_w045_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "w_plk": "0.45"
+   }
+  }
+ ]
+}
