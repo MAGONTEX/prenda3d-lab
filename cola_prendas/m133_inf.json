@@ -1,0 +1,222 @@
+{
+ "nombre": "m133_inf",
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "tmo_min": 120,
+ "nf": 80,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  24,
+  30,
+  36,
+  40,
+  44,
+  50,
+  56,
+  60,
+  70,
+  80
+ ],
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   20,
+   80
+  ]
+ },
+ "nota": "[ESC\u00b7f535] INF N=5: inflado vs reposo en el escote CB. c = bp de r20u5 (bi_k 1.000-1.004); p20 = presion 0->p0 en f2-f20; r20 = reposo V0 hasta f20 (rk_f0=20); pd = presion 0 hasta f40, p0 en f60. 80 f, dumps densos.",
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "inf_c_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "inf_c_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "inf_c_2",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.002"
+   }
+  },
+  {
+   "tag": "inf_c_3",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.003"
+   }
+  },
+  {
+   "tag": "inf_c_4",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.004"
+   }
+  },
+  {
+   "tag": "inf_p20_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "pramp": "pramp_inf20.json"
+   }
+  },
+  {
+   "tag": "inf_p20_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "pramp": "pramp_inf20.json"
+   }
+  },
+  {
+   "tag": "inf_p20_2",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.002",
+    "pramp": "pramp_inf20.json"
+   }
+  },
+  {
+   "tag": "inf_p20_3",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.003",
+    "pramp": "pramp_inf20.json"
+   }
+  },
+  {
+   "tag": "inf_p20_4",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.004",
+    "pramp": "pramp_inf20.json"
+   }
+  },
+  {
+   "tag": "inf_r20_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "rk_f0": "20"
+   }
+  },
+  {
+   "tag": "inf_r20_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "rk_f0": "20"
+   }
+  },
+  {
+   "tag": "inf_r20_2",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.002",
+    "rk_f0": "20"
+   }
+  },
+  {
+   "tag": "inf_r20_3",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.003",
+    "rk_f0": "20"
+   }
+  },
+  {
+   "tag": "inf_r20_4",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.004",
+    "rk_f0": "20"
+   }
+  },
+  {
+   "tag": "inf_pd_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "pramp": "pramp_inf40.json"
+   }
+  },
+  {
+   "tag": "inf_pd_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "pramp": "pramp_inf40.json"
+   }
+  },
+  {
+   "tag": "inf_pd_2",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.002",
+    "pramp": "pramp_inf40.json"
+   }
+  },
+  {
+   "tag": "inf_pd_3",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.003",
+    "pramp": "pramp_inf40.json"
+   }
+  },
+  {
+   "tag": "inf_pd_4",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.004",
+    "pramp": "pramp_inf40.json"
+   }
+  }
+ ]
+}
