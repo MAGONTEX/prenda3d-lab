@@ -1,0 +1,152 @@
+{
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  20,
+  40,
+  60,
+  80
+ ],
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  }
+ },
+ "nombre": "m133_tor5",
+ "tmo_min": 120,
+ "nf": 80,
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   80
+  ]
+ },
+ "nota": "[ESC f535] TOR5: (A) no-regression N=5 f80 of the hem facing band (bvp_w=10 ruedo_vivo=30 relleno 0), replicas bi_k 1.010-1.014; identity cell tor5_v_id = hem2_v0_0; (B) CF drift lever tp_acw_fc=1: tapeta seam strip out of self-collision ONLY next to its seam to fcR (neck part sewn to hsR stays in), tp_acw=15 and 8, N=2. Group bp.",
+ "variantes": [
+  {
+   "tag": "tor5_v_10",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.010",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0"
+   }
+  },
+  {
+   "tag": "tor5_v_11",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.011",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0"
+   }
+  },
+  {
+   "tag": "tor5_v_12",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.012",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0"
+   }
+  },
+  {
+   "tag": "tor5_v_13",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.013",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0"
+   }
+  },
+  {
+   "tag": "tor5_v_14",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.014",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0"
+   }
+  },
+  {
+   "tag": "tor5_v_id",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0"
+   }
+  },
+  {
+   "tag": "tor5_fc15_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "tp_acw": "15",
+    "tp_acw_fc": "1",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0"
+   }
+  },
+  {
+   "tag": "tor5_fc8_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "tp_acw": "8",
+    "tp_acw_fc": "1",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0"
+   }
+  },
+  {
+   "tag": "tor5_fc15_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "tp_acw": "15",
+    "tp_acw_fc": "1",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0"
+   }
+  },
+  {
+   "tag": "tor5_fc8_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "tp_acw": "8",
+    "tp_acw_fc": "1",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0"
+   }
+  }
+ ]
+}

@@ -6,6 +6,7 @@
 #   y bvp_w=<mm> [bvp_off=4.5] (PUENTE C01c/m10p sobre las 4 costuras vivo-fc/vivo-fs: margen de fc/fs que sigue su plano por debajo del marco y se cose en su canto
 #   al bv; misma maquinaria PTV/PT-R que pc_w, contiguo a su margen). Sin las claves = identico.
 # [ESC·f535] TOR3 (2026-10-13): tp_nohs=1 (costura 'tapeta' sin los pares a hsR) y tp_acw=<mm> (franja de la tapeta junto a su costura fuera de autocol). Sin las claves = identico.
+# [ESC·f535] TOR5 (2026-10-13): tp_acw_fc=1 (requiere tp_acw) -> la franja fuera de autocol SOLO donde la costura de la tapeta va al fcR; la del cuello (al hsR) sigue en autocol. Sin la clave = identico.
 # [ESC·f535] R20m (2026-10-12): parche R20b portado (_qc_R20m/r20m_port.py): body=<npz> con la clave "brazo" (cuerpo_L_R20c.npz: RE3 + brazos y manos
 #   de la piel MPFB2 talle L) -> esos triangulos van a CD_cuerpo_L_brazos (espesor ath, friccion fric, como los tubos) con las mismas claves angosto/brazos_8
 #   que el torso, y los tubos y deltoides del maniqui NO colisionan. Sin la clave (RE3 y anteriores) = identico a R24 (control: r24n_k1 bit a bit).
@@ -1091,7 +1092,17 @@ if P["selfcol"] > 0 and D.get("autocol"):   # e2d: tapeta sobre el fcL sin atrav
         _UVt = np.array(D["uv"], float); _tq = np.arange(*D["groups"]["tp"]); _tqs = set(_tq.tolist())
         _sv = sorted(set(a_ if a_ in _tqs else b_ for (a_, b_), nm in zip(D["sew"], D["sew_seam"]) if nm == "tapeta"))
         _dm = np.min(np.linalg.norm(_UVt[_tq][:, None, :] - _UVt[_sv][None, :, :], axis=2), axis=1)
-        _out = set(_tq[_dm <= P["tp_acw"]].tolist()); _nk = len(keep & _out); keep -= _out
+        _sel = _dm <= P["tp_acw"]
+        if P.get("tp_acw_fc", 0.0) > 0:   # [ESC·f535] TOR5 (2026-10-13): solo la franja cuya costura va al FRENTE (fcR). La del cuello (cosida al hsR) queda en autocol:
+            # ahi el margen es mas angosto (canto a 7,3-8 mm) y sin autocol su franja del canto atraviesa hsR/htR (TOR5: cortes de cuello de acw8). Sin la clave = identico
+            _pz = {}
+            for (a_, b_), nm in zip(D["sew"], D["sew_seam"]):
+                if nm == "tapeta": _t, _o = (a_, b_) if a_ in _tqs else (b_, a_); _pz.setdefault(_t, set()).add(_o)
+            _f0, _f1 = D["groups"]["fcR"]; _svfc = np.array([any(_f0 <= o_ < _f1 for o_ in _pz[v_]) for v_ in _sv])
+            _im = np.argmin(np.linalg.norm(_UVt[_tq][:, None, :] - _UVt[_sv][None, :, :], axis=2), axis=1); _nsel = int(_sel.sum()); _sel = _sel & _svfc[_im]
+            log("[ESC·f535] TOR5 tp_acw_fc: franja solo junto a la costura al fcR:", int(_sel.sum()), "de", _nsel, "vertices | costura tapeta al fcR", int(_svfc.sum()), "de", len(_sv),
+                "| z V0 de la franja fuera %.3f-%.3f m" % (V0[_tq[_sel], 2].min(), V0[_tq[_sel], 2].max()))
+        _out = set(_tq[_sel].tolist()); _nk = len(keep & _out); keep -= _out
         log("[ESC·f535] TOR3 tapeta: franja de costura fuera de autocol:", len(_out), "vertices a <=", P["tp_acw"], "mm de", len(_sv), "vertices cosidos |", _nk, "estaban en autocol")
     vac = gar.vertex_groups.new(name="sin_autocol"); vac.add([i for i in range(NV) if i not in keep], 1.0, 'REPLACE')
     cs.use_self_collision = True; cs.self_distance_min = P["self_d"]; cs.self_friction = P["sf"]; cs.vertex_group_self_collisions = "sin_autocol"
