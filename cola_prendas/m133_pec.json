@@ -1,0 +1,219 @@
+{
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  20,
+  40,
+  60,
+  80
+ ],
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  }
+ },
+ "nombre": "m133_pec",
+ "tmo_min": 120,
+ "nf": 80,
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   80
+  ]
+ },
+ "nota": "[ESC f535] PEC: chest dents + stitch-line breaks (critic point 4). Lever = material of the canal INNER WALL (pieces *_f, body+sleeves): fi_c=15 = in-plane compression of the inner wall equal to the shell (law I06, base soft=1); fi_b=25 = its bending x5 (base 5). Base sep45 (bvp_w=10 ruedo_vivo=30 ruedo_vivo_relleno=0 tp_sep=4.5), N=5 per cell, bi_k 1.000-1.004. Identity: pec_c_k must equal m133_sep--sep45_0/1 and m133_sep5--sep45_2..4 bit for bit (same seeds, keys absent).",
+ "variantes": [
+  {
+   "tag": "pec_c_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  },
+  {
+   "tag": "pec_c_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  },
+  {
+   "tag": "pec_c_2",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.002",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  },
+  {
+   "tag": "pec_c_3",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.003",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  },
+  {
+   "tag": "pec_c_4",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.004",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5"
+   }
+  },
+  {
+   "tag": "pec_fic_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "pec_fic_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "pec_fic_2",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.002",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "pec_fic_3",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.003",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "pec_fic_4",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.004",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "pec_fib_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fi_b": "25"
+   }
+  },
+  {
+   "tag": "pec_fib_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fi_b": "25"
+   }
+  },
+  {
+   "tag": "pec_fib_2",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.002",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fi_b": "25"
+   }
+  },
+  {
+   "tag": "pec_fib_3",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.003",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fi_b": "25"
+   }
+  },
+  {
+   "tag": "pec_fib_4",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.004",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fi_b": "25"
+   }
+  }
+ ]
+}

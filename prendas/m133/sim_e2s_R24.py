@@ -928,6 +928,24 @@ if P.get("hc_lo", -1.0) > 0:   # [ESC·f535] CUP: in-plane COMPRESSION of the ho
     assert 0.0 <= _wl <= 1.0, "hc_lo outside [soft, compression max]"
     vcas.add(sorted(HOODSET), _wl, 'REPLACE')
     log("[ESC·f535] CUP: compresion capucha", P["hc_lo"], "(peso", round(_wl, 5), ") en", len(HOODSET), "vertices | maximo", _cmx, "| traccion", s.tension_stiffness_max, "igual")
+if P.get("fi_c", -1.0) > 0 or P.get("fi_b", -1.0) > 0:   # [ESC·f535] PEC (2026-10-13): material of the canal INNER WALL (pieces *_f). Without both keys = identical
+    # fi_c = in-plane compression of the inner wall (law I06: a soft inner layer buckles the shell; base soft=1 vs shell 15).
+    # fi_b = bending of the inner wall (base = bending). Only vertices with NO previous weight in the group are touched (cuff, band, hem keep theirs).
+    def _pec_w(_g, _i):
+        try: return float(_g.weight(_i))
+        except RuntimeError: return 0.0
+    _pf = [n for n in ("back_f", "fcR_f", "fcL_f", "fsR_f", "fsL_f", "slR_f", "slL_f") if n in D["groups"]]; _pv = [i for n in _pf for i in range(*D["groups"][n])]
+    if P.get("fi_c", -1.0) > 0:
+        assert P["soft"] > 0, "fi_c needs soft > 0 (cascara = structural group)"
+        _cmx = s.compression_stiffness_max; _wc = (P["fi_c"] - s.compression_stiffness) / (_cmx - s.compression_stiffness)
+        assert 0.0 <= _wc <= 1.0, "fi_c outside [soft, compression max]"
+        _pc = [i for i in _pv if _pec_w(vcas, i) <= 0.0]; vcas.add(_pc, _wc, 'REPLACE')
+        log(f"[ESC·f535] PEC fi_c: compresion capa interior {P['fi_c']} (peso {_wc:.5f}, base {s.compression_stiffness}, maximo {_cmx}) en {len(_pc)} v de {','.join(_pf)} | saltados {len(_pv) - len(_pc)} con peso previo")
+    if P.get("fi_b", -1.0) > 0:
+        _bmx = s.bending_stiffness_max; _wb = (P["fi_b"] - s.bending_stiffness) / (_bmx - s.bending_stiffness)
+        assert 0.0 <= _wb <= 1.0, "fi_b outside [bending, bending max]"
+        _pb = [i for i in _pv if _pec_w(vrig, i) <= 0.0]; vrig.add(_pb, _wb, 'REPLACE')
+        log(f"[ESC·f535] PEC fi_b: flexion capa interior {P['fi_b']} (peso {_wb:.5f}, base {s.bending_stiffness}, maximo {_bmx}) en {len(_pb)} v de {','.join(_pf)} | saltados {len(_pv) - len(_pb)} con peso previo")
 if ESC_RIG:   # [ESC·f535] PQ: anillo del escote a flexion y compresion maximas (como la columna del cierre); va despues de todos los pesos de 'rigidez' y 'cascara'
     assert P["soft"] > 0, "esc rig requiere soft > 0 (cascara = grupo estructural)"
     def _wg(_g, _i):
