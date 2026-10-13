@@ -1,0 +1,339 @@
+{
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  20,
+  40,
+  60,
+  80
+ ],
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  }
+ },
+ "nombre": "m133_fin",
+ "tmo_min": 120,
+ "nf": 80,
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   80
+  ]
+ },
+ "nota": "[ESC f535] FIN: best candidate sep45fa (bvp_w=10 ruedo_vivo=30 ruedo_vivo_relleno=0 tp_sep=4.5 fa_acb=20 fa_acb_cf=18.5 fa_acb_cf1=32, N=13 in m133_sep5/m133_sep7, bi_k 1.000-1.012) vs the same + fi_c=15 (canal inner wall compression = shell, PEC). fin_c_0..2 = identity: must equal m133_sep5--sep45fa_0..2 bit for bit. sep45fa_3..12 already exist with the same seeds and the lab code did not change since m133_sep7, so the control is not re-run: new seeds fin_c_13..14 (control N=15) and fin_fic_0..14 paired by bi_k (N=15). Group bp, nf 80, dumps 1-80. One lever: fi_c.",
+ "variantes": [
+  {
+   "tag": "fin_c_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "fin_c_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "fin_c_2",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.002",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "fin_c_13",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.013",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "fin_c_14",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.014",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "fin_fic_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "fin_fic_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "fin_fic_2",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.002",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "fin_fic_3",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.003",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "fin_fic_4",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.004",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "fin_fic_5",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.005",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "fin_fic_6",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.006",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "fin_fic_7",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.007",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "fin_fic_8",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.008",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "fin_fic_9",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.009",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "fin_fic_10",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.010",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "fin_fic_11",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.011",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "fin_fic_12",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.012",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "fin_fic_13",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.013",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "fi_c": "15"
+   }
+  },
+  {
+   "tag": "fin_fic_14",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.014",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "tp_sep": "4.5",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32",
+    "fi_c": "15"
+   }
+  }
+ ]
+}
