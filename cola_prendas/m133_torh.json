@@ -1,0 +1,120 @@
+{
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  }
+ },
+ "nombre": "m133_torh",
+ "tmo_min": 60,
+ "nf": 20,
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   20
+  ]
+ },
+ "nota": "[ESC\u00b7f535] TOR humo: atribucion de la deriva del CF a L (bp = r20u5_bp0). c control; s0 sin broches (snaps=0); np sin tapeta (notp=1, diagnostico); g12 gravedad 0 hasta f10, 1 en f12 (g0=10 g1=12). N=2 (bi_k 1.000/1.001), 20 f, dumps 1-20.",
+ "variantes": [
+  {
+   "tag": "tor_c_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "tor_c_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "tor_s0_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "snaps": "0"
+   }
+  },
+  {
+   "tag": "tor_s0_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "snaps": "0"
+   }
+  },
+  {
+   "tag": "tor_np_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "notp": "1"
+   }
+  },
+  {
+   "tag": "tor_np_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "notp": "1"
+   }
+  },
+  {
+   "tag": "tor_g12_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "g0": "10",
+    "g1": "12"
+   }
+  },
+  {
+   "tag": "tor_g12_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "g0": "10",
+    "g1": "12"
+   }
+  }
+ ]
+}
