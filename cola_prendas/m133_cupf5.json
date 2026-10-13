@@ -1,0 +1,222 @@
+{
+ "nombre": "m133_cupf5",
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "tmo_min": 120,
+ "nf": 80,
+ "dumps": [
+  1,
+  2,
+  6,
+  18,
+  40,
+  60,
+  80
+ ],
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   60,
+   80
+  ]
+ },
+ "nota": "[ESC.f535] CUP5 N=5: hood soft in bending AND in-plane compression. bp 10/45, f5c5 (pl_bh=5 hc_lo=5), f2c5 (hood_bend=2 hc_lo=5), f2c2 (hood_bend=2 hc_lo=2); paired bi_k 1.000-1.004, 80 f. Judge f80 vs bp.",
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  },
+  "f5c5": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json",
+    "pl_bh": "5",
+    "hc_lo": "5"
+   }
+  },
+  "f2c5": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json",
+    "pl_bh": "-1",
+    "hood_bend": "2",
+    "hc_lo": "5"
+   }
+  },
+  "f2c2": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json",
+    "pl_bh": "-1",
+    "hood_bend": "2",
+    "hc_lo": "2"
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "cupf5_bp_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "cupf5_bp_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "cupf5_bp_2",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.002"
+   }
+  },
+  {
+   "tag": "cupf5_bp_3",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.003"
+   }
+  },
+  {
+   "tag": "cupf5_bp_4",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.004"
+   }
+  },
+  {
+   "tag": "cupf5_f5c5_0",
+   "grupo": "f5c5",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "cupf5_f5c5_1",
+   "grupo": "f5c5",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "cupf5_f5c5_2",
+   "grupo": "f5c5",
+   "params": {
+    "bi_k": "1.002"
+   }
+  },
+  {
+   "tag": "cupf5_f5c5_3",
+   "grupo": "f5c5",
+   "params": {
+    "bi_k": "1.003"
+   }
+  },
+  {
+   "tag": "cupf5_f5c5_4",
+   "grupo": "f5c5",
+   "params": {
+    "bi_k": "1.004"
+   }
+  },
+  {
+   "tag": "cupf5_f2c5_0",
+   "grupo": "f2c5",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "cupf5_f2c5_1",
+   "grupo": "f2c5",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "cupf5_f2c5_2",
+   "grupo": "f2c5",
+   "params": {
+    "bi_k": "1.002"
+   }
+  },
+  {
+   "tag": "cupf5_f2c5_3",
+   "grupo": "f2c5",
+   "params": {
+    "bi_k": "1.003"
+   }
+  },
+  {
+   "tag": "cupf5_f2c5_4",
+   "grupo": "f2c5",
+   "params": {
+    "bi_k": "1.004"
+   }
+  },
+  {
+   "tag": "cupf5_f2c2_0",
+   "grupo": "f2c2",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "cupf5_f2c2_1",
+   "grupo": "f2c2",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "cupf5_f2c2_2",
+   "grupo": "f2c2",
+   "params": {
+    "bi_k": "1.002"
+   }
+  },
+  {
+   "tag": "cupf5_f2c2_3",
+   "grupo": "f2c2",
+   "params": {
+    "bi_k": "1.003"
+   }
+  },
+  {
+   "tag": "cupf5_f2c2_4",
+   "grupo": "f2c2",
+   "params": {
+    "bi_k": "1.004"
+   }
+  }
+ ]
+}
