@@ -7,6 +7,7 @@
 #   al bv; misma maquinaria PTV/PT-R que pc_w, contiguo a su margen). Sin las claves = identico.
 # [ESC·f535] TOR3 (2026-10-13): tp_nohs=1 (costura 'tapeta' sin los pares a hsR) y tp_acw=<mm> (franja de la tapeta junto a su costura fuera de autocol). Sin las claves = identico.
 # [ESC·f535] TOR6 (2026-10-13): tp_acw_pl=<mm> (requiere tp_acw) -> la PUNTA LIBRE de la tapeta (ultimos <mm> de su costura, molde, desde el extremo bajo) sigue en autocol. Sin la clave = identico.
+# [ESC·f535] TOR7 (2026-10-13): fa_acb=<mm> [fa_acb_cf=<mm>] -> zona baja de la vista faR (<= mm sobre su borde bajo, z V0) EN autocol, salvo su fila cosida al CF. Sin la clave = identico.
 # [ESC·f535] TOR5 (2026-10-13): tp_acw_fc=1 (requiere tp_acw) -> la franja fuera de autocol SOLO donde la costura de la tapeta va al fcR; la del cuello (al hsR) sigue en autocol. Sin la clave = identico.
 # [ESC·f535] R20m (2026-10-12): parche R20b portado (_qc_R20m/r20m_port.py): body=<npz> con la clave "brazo" (cuerpo_L_R20c.npz: RE3 + brazos y manos
 #   de la piel MPFB2 talle L) -> esos triangulos van a CD_cuerpo_L_brazos (espesor ath, friccion fric, como los tubos) con las mismas claves angosto/brazos_8
@@ -1112,6 +1113,17 @@ if P["selfcol"] > 0 and D.get("autocol"):   # e2d: tapeta sobre el fcL sin atrav
                 "| costura a <= %.0f mm del extremo bajo: %d v, z V0 %.3f-%.3f m" % (P["tp_acw_pl"], int((_de <= P["tp_acw_pl"]).sum()), V0[_sva[_de <= P["tp_acw_pl"]], 2].min(), V0[_sva[_de <= P["tp_acw_pl"]], 2].max()))
         _out = set(_tq[_sel].tolist()); _nk = len(keep & _out); keep -= _out
         log("[ESC·f535] TOR3 tapeta: franja de costura fuera de autocol:", len(_out), "vertices a <=", P["tp_acw"], "mm de", len(_sv), "vertices cosidos |", _nk, "estaban en autocol")
+    if P.get("fa_acb", 0.0) > 0:   # [ESC·f535] TOR7 (2026-10-13): ZONA BAJA de la vista faR EN autocol (<= fa_acb mm en z V0 sobre su borde bajo). R26b la dejo fuera
+        # con la franja de 10 mm por triangulo alrededor de todo vertice cosido: el hilvan de su borde bajo (3 de 7 v, a fcR_f) arrastro el borde entero (0/7) y ahi la
+        # tapeta la atraviesa (TOR6: 18 de 23 cortes del ruedo de fc8). Exclusion minima por su costura: fuera solo la fila cosida al CF ('vista del. CF R') y los v a
+        # <= fa_acb_cf mm (molde) de ella; fa_acb_cf1 = tope lejano (molde). Ventana elegida en seco con la compuerta de luz de R26 (TOR7). Sin la clave = identico
+        _a, _b = D["groups"]["faR"]; _ids = np.arange(_a, _b); _UVa = np.array(D["uv"], float)
+        _cf = sorted(set(v_ for (a_, b_), nm in zip(D["sew"], D["sew_seam"]) if nm == "vista del. CF R" for v_ in (a_, b_) if _a <= v_ < _b))
+        _dcf = np.min(np.linalg.norm(_UVa[_ids][:, None, :] - _UVa[_cf][None, :, :], axis=2), axis=1)
+        _z = V0[_ids, 2]; _zona = _z <= _z.min() + P["fa_acb"] / 1000.0; _ok = _zona & (_dcf > P.get("fa_acb_cf", 0.0)) & (_dcf <= P.get("fa_acb_cf1", 1e9)) & ~np.isin(_ids, _cf)
+        _n0 = len(keep); keep |= set(_ids[_ok].tolist())
+        log("[ESC·f535] TOR7 fa_acb: zona baja de la vista faR en autocol: +%d v (zona %d v a <= %.0f mm del borde bajo; fuera fila CF y <= %.1f mm de ella: %d) | z V0 %.3f-%.3f m" % (
+            len(keep) - _n0, int(_zona.sum()), P["fa_acb"], P.get("fa_acb_cf", 0.0), int((_zona & ~_ok).sum()), _z[_ok].min(), _z[_ok].max()))
     vac = gar.vertex_groups.new(name="sin_autocol"); vac.add([i for i in range(NV) if i not in keep], 1.0, 'REPLACE')
     cs.use_self_collision = True; cs.self_distance_min = P["self_d"]; cs.self_friction = P["sf"]; cs.vertex_group_self_collisions = "sin_autocol"
     log("autocolision", len(D["autocol"]), "vertices, distancia", P["self_d"])

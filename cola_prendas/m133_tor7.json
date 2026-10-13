@@ -1,0 +1,170 @@
+{
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  20,
+  40,
+  60,
+  80
+ ],
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  }
+ },
+ "nombre": "m133_tor7",
+ "tmo_min": 120,
+ "nf": 80,
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   80
+  ]
+ },
+ "nota": "[ESC f535] TOR7: lower zone of the right front facing (faR) back in self-collision (fa_acb=20 fa_acb_cf=18.5 fa_acb_cf1=32: 3 vertices 7-14 mm above its free lower edge, 18.5-32 mm from its CF seam row; light gate at f1: 12 pairs, min 1.21 mm). vfc8 = on top of tp_acw=8 tp_acw_fc=1, N=5 bi_k 1.000-1.004; va = facing alone on the base, N=3 bi_k 1.000-1.002; identity tor7_id = tor5_fc8_0 (sim edited, key off). Group bp, base pte+hem facing band.",
+ "variantes": [
+  {
+   "tag": "tor7_vfc8_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "tp_acw": "8",
+    "tp_acw_fc": "1",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "tor7_vfc8_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "tp_acw": "8",
+    "tp_acw_fc": "1",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "tor7_vfc8_2",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.002",
+    "tp_acw": "8",
+    "tp_acw_fc": "1",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "tor7_vfc8_3",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.003",
+    "tp_acw": "8",
+    "tp_acw_fc": "1",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "tor7_vfc8_4",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.004",
+    "tp_acw": "8",
+    "tp_acw_fc": "1",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "tor7_va_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "tor7_va_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "tor7_va_2",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.002",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0",
+    "fa_acb": "20",
+    "fa_acb_cf": "18.5",
+    "fa_acb_cf1": "32"
+   }
+  },
+  {
+   "tag": "tor7_id",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "tp_acw": "8",
+    "tp_acw_fc": "1",
+    "bvp_w": "10",
+    "ruedo_vivo": "30",
+    "ruedo_vivo_relleno": "0"
+   }
+  }
+ ]
+}
