@@ -6,6 +6,7 @@
 #   y bvp_w=<mm> [bvp_off=4.5] (PUENTE C01c/m10p sobre las 4 costuras vivo-fc/vivo-fs: margen de fc/fs que sigue su plano por debajo del marco y se cose en su canto
 #   al bv; misma maquinaria PTV/PT-R que pc_w, contiguo a su margen). Sin las claves = identico.
 # [ESC·f535] TOR3 (2026-10-13): tp_nohs=1 (costura 'tapeta' sin los pares a hsR) y tp_acw=<mm> (franja de la tapeta junto a su costura fuera de autocol). Sin las claves = identico.
+# [ESC·f535] TOR6 (2026-10-13): tp_acw_pl=<mm> (requiere tp_acw) -> la PUNTA LIBRE de la tapeta (ultimos <mm> de su costura, molde, desde el extremo bajo) sigue en autocol. Sin la clave = identico.
 # [ESC·f535] TOR5 (2026-10-13): tp_acw_fc=1 (requiere tp_acw) -> la franja fuera de autocol SOLO donde la costura de la tapeta va al fcR; la del cuello (al hsR) sigue en autocol. Sin la clave = identico.
 # [ESC·f535] R20m (2026-10-12): parche R20b portado (_qc_R20m/r20m_port.py): body=<npz> con la clave "brazo" (cuerpo_L_R20c.npz: RE3 + brazos y manos
 #   de la piel MPFB2 talle L) -> esos triangulos van a CD_cuerpo_L_brazos (espesor ath, friccion fric, como los tubos) con las mismas claves angosto/brazos_8
@@ -1102,6 +1103,13 @@ if P["selfcol"] > 0 and D.get("autocol"):   # e2d: tapeta sobre el fcL sin atrav
             _im = np.argmin(np.linalg.norm(_UVt[_tq][:, None, :] - _UVt[_sv][None, :, :], axis=2), axis=1); _nsel = int(_sel.sum()); _sel = _sel & _svfc[_im]
             log("[ESC·f535] TOR5 tp_acw_fc: franja solo junto a la costura al fcR:", int(_sel.sum()), "de", _nsel, "vertices | costura tapeta al fcR", int(_svfc.sum()), "de", len(_sv),
                 "| z V0 de la franja fuera %.3f-%.3f m" % (V0[_tq[_sel], 2].min(), V0[_tq[_sel], 2].max()))
+        if P.get("tp_acw_pl", 0.0) > 0:   # [ESC·f535] TOR6 (2026-10-13): PUNTA LIBRE de la tapeta. Los ultimos tp_acw_pl mm de la franja (molde, desde el extremo bajo
+            # de su costura) siguen en autocol: ahi la costura termina y abajo queda la esquina libre de la vista (faR, fuera de autocol); sin autocol la franja se
+            # hunde en el fcR y corta la vista (TOR6: 18 de 23 cortes del ruedo de fc8 en f80 = tp x borde bajo de la vista, 5 = margen x fcR a 90-110 mm). Sin la clave = identico
+            _sva = np.array(_sv); _e = _sva[np.argmin(V0[_sva, 2])]; _de = np.linalg.norm(_UVt[_sva] - _UVt[_e], axis=1)
+            _jm = np.argmin(np.linalg.norm(_UVt[_tq][:, None, :] - _UVt[_sva][None, :, :], axis=2), axis=1); _npl = int(_sel.sum()); _sel = _sel & (_de[_jm] > P["tp_acw_pl"])
+            log("[ESC·f535] TOR6 tp_acw_pl: punta libre en autocol:", _npl - int(_sel.sum()), "vertices vuelven | franja fuera", int(_sel.sum()), "de", _npl,
+                "| costura a <= %.0f mm del extremo bajo: %d v, z V0 %.3f-%.3f m" % (P["tp_acw_pl"], int((_de <= P["tp_acw_pl"]).sum()), V0[_sva[_de <= P["tp_acw_pl"]], 2].min(), V0[_sva[_de <= P["tp_acw_pl"]], 2].max()))
         _out = set(_tq[_sel].tolist()); _nk = len(keep & _out); keep -= _out
         log("[ESC·f535] TOR3 tapeta: franja de costura fuera de autocol:", len(_out), "vertices a <=", P["tp_acw"], "mm de", len(_sv), "vertices cosidos |", _nk, "estaban en autocol")
     vac = gar.vertex_groups.new(name="sin_autocol"); vac.add([i for i in range(NV) if i not in keep], 1.0, 'REPLACE')
