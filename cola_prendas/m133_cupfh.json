@@ -1,0 +1,70 @@
+{
+ "nombre": "m133_cupfh",
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "tmo_min": 120,
+ "nf": 20,
+ "dumps": [
+  1,
+  2,
+  6,
+  18,
+  20
+ ],
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   20
+  ]
+ },
+ "nota": "[ESC.f535] CUP5 smoke: hood bending 2 (hood_bend remap) / 5 (pl_bh) with in-plane compression 2 / 5; 20 f, lever check only.",
+ "grupos": {
+  "f2c2": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json",
+    "pl_bh": "-1",
+    "hood_bend": "2",
+    "hc_lo": "2"
+   }
+  },
+  "f5c5": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json",
+    "pl_bh": "5",
+    "hc_lo": "5"
+   }
+  }
+ },
+ "variantes": [
+  {
+   "tag": "cupfh_f2c2",
+   "grupo": "f2c2",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "cupfh_f5c5",
+   "grupo": "f5c5",
+   "params": {
+    "bi_k": "1.000"
+   }
+  }
+ ]
+}
