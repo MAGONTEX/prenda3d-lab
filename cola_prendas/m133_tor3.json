@@ -1,0 +1,122 @@
+{
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "dumps": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  }
+ },
+ "nombre": "m133_tor3",
+ "tmo_min": 60,
+ "nf": 20,
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   20
+  ]
+ },
+ "nota": "[ESC·f535] TOR3 humo: que propiedad de la tapeta arranca la deriva del CF a L (bp = r20u5_bp0). c control (= tor_c bit a bit); nohs costura tapeta sin los 13 pares a hsR (tp_nohs=1); acw franja de la tp a <=15 mm de su costura fuera de autocol (tp_acw=15); noc tapeta sin autocol (tp_nocol=1, diagnostico). N=2 (bi_k 1.000/1.001), 20 f, dumps 1-20.",
+ "variantes": [
+  {
+   "tag": "tor3_c_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "tor3_c_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "tor3_nohs_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "tp_nohs": "1"
+   }
+  },
+  {
+   "tag": "tor3_nohs_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "tp_nohs": "1"
+   }
+  },
+  {
+   "tag": "tor3_acw_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "tp_acw": "15"
+   }
+  },
+  {
+   "tag": "tor3_acw_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "tp_acw": "15"
+   }
+  },
+  {
+   "tag": "tor3_noc_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "tp_nocol": "1"
+   }
+  },
+  {
+   "tag": "tor3_noc_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "tp_nocol": "1"
+   }
+  }
+ ],
+ "tomada": {
+  "por": "actions 38340697199",
+  "utc": "2026-10-13T03:13:56Z"
+ }
+}

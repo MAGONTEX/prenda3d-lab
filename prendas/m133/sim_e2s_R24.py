@@ -1,3 +1,4 @@
+# [ESC·f535] TOR3 (2026-10-13): tp_nohs=1 (costura 'tapeta' sin los pares a hsR) y tp_acw=<mm> (franja de la tapeta junto a su costura fuera de autocol). Sin las claves = identico.
 # [ESC·f535] R20m (2026-10-12): parche R20b portado (_qc_R20m/r20m_port.py): body=<npz> con la clave "brazo" (cuerpo_L_R20c.npz: RE3 + brazos y manos
 #   de la piel MPFB2 talle L) -> esos triangulos van a CD_cuerpo_L_brazos (espesor ath, friccion fric, como los tubos) con las mismas claves angosto/brazos_8
 #   que el torso, y los tubos y deltoides del maniqui NO colisionan. Sin la clave (RE3 y anteriores) = identico a R24 (control: r24n_k1 bit a bit).
@@ -179,6 +180,11 @@ TPV = set(range(*D["groups"]["tp"])) if P["notp"] > 0 else set()
 if TPV:   # e2l DIAGNOSTICO (no es construccion): sin la tapeta -> se quitan sus resortes (costura tapeta y broches), queda fijada (pin) en el molde plano y sin autocolision
     _k = [i for i, (a_, b_) in enumerate(D["sew"]) if a_ not in TPV and b_ not in TPV]
     log("tapeta FUERA (diagnostico):", len(D["sew"]) - len(_k), "resortes quitados", sorted(set(D["sew_seam"][i] for i in range(len(D["sew"])) if i not in set(_k))), "| fijada y sin autocolision")
+    D["sew"] = [D["sew"][i] for i in _k]; D["sew_seam"] = [D["sew_seam"][i] for i in _k]
+if P.get("tp_nohs", 0.0) > 0:   # [ESC·f535] TOR3 (2026-10-13, DIAGNOSTICO): costura 'tapeta' SIN los pares a hsR (queda cosida al fcR + broches). Sin la clave = identico
+    _hsq = set(range(*D["groups"]["hsR"]))
+    _k = [i for i, (a_, b_) in enumerate(D["sew"]) if not (D["sew_seam"][i] == "tapeta" and (a_ in _hsq or b_ in _hsq))]
+    log("[ESC·f535] TOR3 tapeta SIN pares a hsR:", len(D["sew"]) - len(_k), "resortes fuera")
     D["sew"] = [D["sew"][i] for i in _k]; D["sew_seam"] = [D["sew_seam"][i] for i in _k]
 sc = bpy.data.scenes.new("CAMPDIB_E2M")
 try: bpy.context.window.scene = sc
@@ -1019,6 +1025,13 @@ if P["selfcol"] > 0 and D.get("autocol"):   # e2d: tapeta sobre el fcL sin atrav
     keep -= TPV
     if P["tp_nocol"] > 0:   # e2zc DIAGNOSTICO: la tapeta sin autocolision (sigue cosida y con broches) -> si la deriva del CF a L se va, la empuja el choque de la tp
         keep -= set(range(*D["groups"]["tp"])); log("tapeta SIN autocolision (diagnostico e2zc)")
+    if P.get("tp_acw", 0.0) > 0:   # [ESC·f535] TOR3 (2026-10-13): franja de la tp a <= tp_acw mm (molde) de su costura 'tapeta' FUERA de autocol (cosida al fcR/hsR:
+        # no desliza ni choca contra la pieza a la que esta cosida). Sin la clave = identico
+        _UVt = np.array(D["uv"], float); _tq = np.arange(*D["groups"]["tp"]); _tqs = set(_tq.tolist())
+        _sv = sorted(set(a_ if a_ in _tqs else b_ for (a_, b_), nm in zip(D["sew"], D["sew_seam"]) if nm == "tapeta"))
+        _dm = np.min(np.linalg.norm(_UVt[_tq][:, None, :] - _UVt[_sv][None, :, :], axis=2), axis=1)
+        _out = set(_tq[_dm <= P["tp_acw"]].tolist()); _nk = len(keep & _out); keep -= _out
+        log("[ESC·f535] TOR3 tapeta: franja de costura fuera de autocol:", len(_out), "vertices a <=", P["tp_acw"], "mm de", len(_sv), "vertices cosidos |", _nk, "estaban en autocol")
     vac = gar.vertex_groups.new(name="sin_autocol"); vac.add([i for i in range(NV) if i not in keep], 1.0, 'REPLACE')
     cs.use_self_collision = True; cs.self_distance_min = P["self_d"]; cs.self_friction = P["sf"]; cs.vertex_group_self_collisions = "sin_autocol"
     log("autocolision", len(D["autocol"]), "vertices, distancia", P["self_d"])
