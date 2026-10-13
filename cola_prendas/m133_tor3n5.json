@@ -1,0 +1,123 @@
+{
+ "prenda": "m133",
+ "modo": "argv",
+ "script": "prendas/m133/sim_e2s_R24.py",
+ "receta": "receta_hq.json",
+ "entorno": {
+  "M133_E2": "{salida}/"
+ },
+ "hilos": 4,
+ "dumps": [
+  1,
+  2,
+  6,
+  12,
+  20,
+  40,
+  60,
+  80
+ ],
+ "grupos": {
+  "bp": {
+   "params": {
+    "relleno": "0",
+    "cq_fin": "5",
+    "rk": "rk_r24.npz",
+    "rk_f0": "2",
+    "rk_df": "1",
+    "mesh": "m133_e2zzhp_pico.json"
+   }
+  }
+ },
+ "nombre": "m133_tor3n5",
+ "tmo_min": 120,
+ "nf": 80,
+ "medir": {
+  "script": "prendas/m133/medir/medir_m133.py",
+  "cuadros": [
+   80
+  ]
+ },
+ "nota": "[ESC·f535] TOR3 N=5 f80: c control vs acw (tp_acw=15: franja de la tapeta a <=15 mm de su costura fuera de autocol). Humo run 38343880151: deriva f20 c -21,9/-20,4, acw +0,3/-1,1. bi_k 1.000-1.004, grupo bp.",
+ "variantes": [
+  {
+   "tag": "tor3n_c_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000"
+   }
+  },
+  {
+   "tag": "tor3n_c_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001"
+   }
+  },
+  {
+   "tag": "tor3n_c_2",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.002"
+   }
+  },
+  {
+   "tag": "tor3n_c_3",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.003"
+   }
+  },
+  {
+   "tag": "tor3n_c_4",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.004"
+   }
+  },
+  {
+   "tag": "tor3n_acw_0",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.000",
+    "tp_acw": "15"
+   }
+  },
+  {
+   "tag": "tor3n_acw_1",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.001",
+    "tp_acw": "15"
+   }
+  },
+  {
+   "tag": "tor3n_acw_2",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.002",
+    "tp_acw": "15"
+   }
+  },
+  {
+   "tag": "tor3n_acw_3",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.003",
+    "tp_acw": "15"
+   }
+  },
+  {
+   "tag": "tor3n_acw_4",
+   "grupo": "bp",
+   "params": {
+    "bi_k": "1.004",
+    "tp_acw": "15"
+   }
+  }
+ ],
+ "tomada": {
+  "por": "actions 38340697199",
+  "utc": "2026-10-13T03:13:56Z"
+ }
+}
