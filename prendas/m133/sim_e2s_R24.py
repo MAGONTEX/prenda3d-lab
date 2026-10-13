@@ -1,3 +1,7 @@
+# [ESC·f535] HEM2 (2026-10-13): ruedo_vivo=<mm> [ruedo_vivo_relleno=0|1] -> VIVO DEL RUEDO (prenda real: vivo de cascara de 35-40 mm por dentro, pespunte
+#   visible a ~30 mm del borde) como franja de back/fcR/fcL (los fs no llegan al ruedo): pespunte cascara-capa interior a <mm> de molde sobre el ruedo
+#   (ruedo_vivo.py) + la capa interior de la franja = cascara (hereda flexion y cascara de su gemela). relleno 0 = franja SIN presion (fuera del lazo;
+#   el objetivo de volumen del bolsillo de abajo pierde el area de la franja); 1 = la franja sigue con la presion de su canal. Sin la clave = identico.
 # [ESC·f535] JJ3 (2026-10-13): w_bv=<peso> (rigidez del marco del bolsillo: bvR/bvL + franja del grupo zipper de fc/fs y gemelos _f a <= 12 mm de molde de vivo-fc/vivo-fs)
 #   y bvp_w=<mm> [bvp_off=4.5] (PUENTE C01c/m10p sobre las 4 costuras vivo-fc/vivo-fs: margen de fc/fs que sigue su plano por debajo del marco y se cose en su canto
 #   al bv; misma maquinaria PTV/PT-R que pc_w, contiguo a su margen). Sin las claves = identico.
@@ -158,6 +162,7 @@ P["pc_w"] = 0.0; P["pc_off"] = 4.5
 #   peso CONSTANTE (fuera del lazo de volumen: la capucha lleva plancha 1200[x], no fibra por canal). Dumps XF_<tag>_f<n>.npy. hf=0 = identico.
 P["hf"] = 0.0; P["hf_w"] = 0.0; FHV = []; FHS = []
 P["hf_sc"] = 0.0; P["hf_sb"] = 12.0   # [ESC·f535] HQ: autocolision forro-cascara de la capucha (ver _qc_HP/parcha_HQ.py)
+P["ruedo_vivo"] = 0.0; P["ruedo_vivo_relleno"] = 0.0   # [ESC·f535] HEM2: vivo del ruedo (ver cabecera)
 for kv in argv[2:]:
     k, v = kv.split("=")
     if k == "mesh": MESH = v; continue
@@ -500,6 +505,14 @@ if P["hf"] > 0:   # [ESC·f535] HP: forro de capucha (ver cabecera)
     D["sew"] += [[_dec(a_), _dec(b_)] for a_, b_ in _fj["sew"]]; D["sew_seam"] += list(_fj["seam"])
     FHV = list(range(_p0, _p0 + _nm)); FHS = [int(i) for i in _fj["pocket_shell"]]; NV = len(V0)
     log(f"[ESC·f535] FORRO CAPUCHA (HP): +{_nm} v, +{len(_fj['f'])} caras, +{len(_fj['sew'])} resortes {sorted(set(_fj['seam']))} | NV {NV} | V0 cascara vs malla {_dv:.3f} mm || " + " || ".join(_fj["msg"]))
+RV = None   # [ESC·f535] HEM2: vivo del ruedo (ver cabecera)
+if P["ruedo_vivo"] > 0:
+    assert P["relleno"] <= 0, "ruedo_vivo con relleno>0 (lente) no probado: la lente no ve el pespunte nuevo"
+    sys.path.insert(0, E2); import ruedo_vivo as _RVm
+    RV = _RVm.banda(D, np.array(D["f"]), P["ruedo_vivo"])
+    D["sew"] += [[int(a_), int(b_)] for a_, b_ in RV["sew"]]; D["sew_seam"] += ["pespunte ruedo"] * len(RV["sew"])
+    for _ln in RV["log"]: log("[ESC·f535] VIVO RUEDO (HEM2):", _ln)
+    log(f"[ESC·f535] VIVO RUEDO (HEM2): {P['ruedo_vivo']} mm | +{len(RV['sew'])} resortes 'pespunte ruedo' | franja {len(RV['band'])} v de cascara + {len(RV['band_f'])} de capa interior | relleno {int(P['ruedo_vivo_relleno'])}")
 me = bpy.data.meshes.new("CD_campera"); me.from_pydata(V0.tolist(), D["sew"], D["f"])
 gar = bpy.data.objects.new("CD_campera", me); col.objects.link(gar)
 for name, (a, b) in D["groups"].items():
@@ -644,6 +657,14 @@ for i, pk in enumerate(PK):
     if pk is not None and pk in idx: vpk[idx[pk]].append(i)
 PLACK = set(D["placket"])
 for k in vpk: vpk[k] = [i for i in vpk[k] if i not in PLACK]
+RV_OUT = []   # [ESC·f535] HEM2: franja sin relleno = fuera de la presion y del lazo; objetivo del bolsillo sin el area de la franja
+if RV is not None and P["ruedo_vivo_relleno"] <= 0:
+    _bo = set(RV["band"]) | set(RV["band_f"]); RV_OUT = sorted(_bo)
+    for k in vpk: vpk[k] = [i for i in vpk[k] if i not in _bo]
+    _a0 = {n_: round(float(AREA[idx[n_]]) * 1e4, 1) for n_ in RV["area_m2"]}
+    for n_, a_ in RV["area_m2"].items(): AREA[idx[n_]] -= a_
+    VT = AREA * (4.0 / 3.0) * HK * P["vtk"]
+    log("[ESC·f535] VIVO RUEDO (HEM2): franja SIN presion,", len(RV_OUT), "v | area de bolsillo cm2 antes", _a0, "-> ahora", {n_: round(float(AREA[idx[n_]]) * 1e4, 1) for n_ in RV["area_m2"]})
 W = np.full(len(names), P["w0"])
 if WINI:   # e2zj: pesos de presion por bolsillo FIJOS desde f1 (los finales de un humo de control: bolsillos_<tag>.json); con nrb=1 no se reescriben
     _wj = json.load(open(E2 + WINI)); assert list(_wj["names"]) == list(names), "wini: otros bolsillos"; W = np.array(_wj["w"], float)
@@ -684,6 +705,7 @@ def set_weights():
         else: vpres.add(ids, wk, 'REPLACE')
 set_weights()
 if PLACK: vpres.add(sorted(PLACK), 0.0, 'REPLACE')
+if RV_OUT: vpres.add(RV_OUT, 0.0, 'REPLACE')   # [ESC·f535] HEM2
 if FHV and P["hf_w"] > 0:   # [ESC·f535] HP: presion cascara-forro de la capucha, peso constante (los ids no estan en vpk: set_weights no los toca)
     vpres.add(FHS + FHV, float(P["hf_w"]), 'REPLACE'); log(f"[ESC·f535] PRESION CAPUCHA (HP): peso {P['hf_w']} en {len(FHS)} v de cascara + {len(FHV)} v de forro (p0 {P['p0']})")
 vrig = gar.vertex_groups.new(name="rigidez")
@@ -891,6 +913,16 @@ if PTV:   # [ESC·f535] PT: el margen hereda flexion, cascara y encoge de su ver
             _g.add([_m], _w, 'REPLACE'); _ws_.append(_w)
         _hw[_g.name] = f"{min(_ws_):.3f}/{np.median(_ws_):.3f}/{max(_ws_):.3f}"
     log(f"[ESC·f535] PUENTE (PT): pesos heredados del cuello min/med/max {_hw} | flexion {s.bending_stiffness}->{s.bending_stiffness_max}")
+if RV is not None:   # [ESC·f535] HEM2: capa interior de la franja = vivo de CASCARA -> flexion y cascara de su gemela de cascara (pesos estaticos finales)
+    _hw = {}
+    for _g in (vrig, vcas):
+        _ws_ = []
+        for _i, _j in zip(RV["band_all"], RV["band_all_f"]):
+            try: _w = float(_g.weight(_i))
+            except RuntimeError: _w = 0.0
+            _g.add([_j], _w, 'REPLACE'); _ws_.append(_w)
+        _hw[_g.name] = f"{min(_ws_):.3f}/{np.median(_ws_):.3f}/{max(_ws_):.3f}"
+    log(f"[ESC·f535] VIVO RUEDO (HEM2): capa interior de la franja ({len(RV['band_all_f'])} v) con los pesos de su cascara min/med/max {_hw}")
 s.shrink_min = -P["S_cas"] if P["S_cas"] > 0 else 0.0; s.shrink_max = SMAX; s.vertex_group_shrink = "encoge"   # [ESC·f535] S_cas
 s.use_pressure = P["pres"] > 0; s.uniform_pressure_force = P["p0"]; s.pressure_factor = 1.0; s.vertex_group_pressure = "presion"
 if PRAMP and s.use_pressure:   # e2zj: presion por OTRA VIA (sin tocar grupos): uniform_pressure_force animada = p0 x mediana(W control en f) / mediana(W control final)
